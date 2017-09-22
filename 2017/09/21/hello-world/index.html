@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Marsorsun">
 <meta property="og:description" content="学习于廖雪峰的官方网站  创建12345git init命令把这个目录变成Git可以管理的仓库git add &amp;lt;file&amp;gt;告诉Git，把文件添加到仓库git commit -m &amp;lt;file&amp;gt;告诉Git，把文件提交到仓库">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-22T04:29:13.524Z">
+<meta property="og:updated_time" content="2017-09-22T12:26:13.084Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git简单操作">
 <meta name="twitter:description" content="学习于廖雪峰的官方网站  创建12345git init命令把这个目录变成Git可以管理的仓库git add &amp;lt;file&amp;gt;告诉Git，把文件添加到仓库git commit -m &amp;lt;file&amp;gt;告诉Git，把文件提交到仓库">
@@ -173,6 +173,30 @@
     
     <!-- 目录内容 -->
 
+    <p class="show-toc-btn" id="show-toc-btn" onclick="showToc();" style="display:none">
+          <span class="btn-bg"></span>
+          <span class="btn-text">文章导航</span>
+          </p>
+  <div id="toc-article" class="toc-article">
+      <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
+    <strong class="toc-title">文章目录</strong>
+           <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#创建"><span class="toc-number">1.</span> <span class="toc-text">创建</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#回溯"><span class="toc-number">2.</span> <span class="toc-text">回溯</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#远程操作"><span class="toc-number">3.</span> <span class="toc-text">远程操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分支操作"><span class="toc-number">4.</span> <span class="toc-text">分支操作</span></a></li></ol>
+         </div>
+   <script type="text/javascript">
+  function showToc(){
+    var toc_article = document.getElementById("toc-article");
+    var show_toc_btn = document.getElementById("show-toc-btn");
+    toc_article.setAttribute("style","display:block");
+    show_toc_btn.setAttribute("style","display:none");
+    };
+  function showBtn(){
+    var toc_article = document.getElementById("toc-article");
+    var show_toc_btn = document.getElementById("show-toc-btn");
+    toc_article.setAttribute("style","display:none");
+    show_toc_btn.setAttribute("style","display:block");
+    };
+   </script>
+      
 <!-- 目录内容结束 -->
     <div class="article-entry" itemprop="articleBody">
       
@@ -323,6 +347,19 @@
             </div>
         </div>
         
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#创建"><span class="toc-number">1.</span> <span class="toc-text">创建</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#回溯"><span class="toc-number">2.</span> <span class="toc-text">回溯</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#远程操作"><span class="toc-number">3.</span> <span class="toc-text">远程操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分支操作"><span class="toc-number">4.</span> <span class="toc-text">分支操作</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
         
     </div>
 </aside>
