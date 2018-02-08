@@ -8,18 +8,20 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>HTTP 入门 | Marsorsun</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="This is for everyone                                                                                —Tim Berners-Lee  当你习惯了一件事情你每一天都要去用它，若你能去了解他形成的原因的时候你定会感慨创造他的人是如此的了不起进而由衷的崇拜与感激。 HTTP(HyperText Tra">
+  <meta name="description" content="This is for everyone                                                                                —Tim Berners-Lee（下文简称为Lee）  当你习惯了一件事情你每一天都要去用它，若你能去了解他形成的原因的时候你定会感慨创造他的人是如此的了不起进而由衷的崇拜与感激。">
 <meta name="keywords" content="编程,HTTP">
 <meta property="og:type" content="article">
 <meta property="og:title" content="HTTP 入门">
 <meta property="og:url" content="http://yoursite.com/2018/02/08/HTTP-入门/index.html">
 <meta property="og:site_name" content="Marsorsun">
-<meta property="og:description" content="This is for everyone                                                                                —Tim Berners-Lee  当你习惯了一件事情你每一天都要去用它，若你能去了解他形成的原因的时候你定会感慨创造他的人是如此的了不起进而由衷的崇拜与感激。 HTTP(HyperText Tra">
+<meta property="og:description" content="This is for everyone                                                                                —Tim Berners-Lee（下文简称为Lee）  当你习惯了一件事情你每一天都要去用它，若你能去了解他形成的原因的时候你定会感慨创造他的人是如此的了不起进而由衷的崇拜与感激。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-02-08T01:54:00.024Z">
+<meta property="og:image" content="http://yoursite.com/img/dns.png">
+<meta property="og:updated_time" content="2018-02-08T06:14:45.718Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HTTP 入门">
-<meta name="twitter:description" content="This is for everyone                                                                                —Tim Berners-Lee  当你习惯了一件事情你每一天都要去用它，若你能去了解他形成的原因的时候你定会感慨创造他的人是如此的了不起进而由衷的崇拜与感激。 HTTP(HyperText Tra">
+<meta name="twitter:description" content="This is for everyone                                                                                —Tim Berners-Lee（下文简称为Lee）  当你习惯了一件事情你每一天都要去用它，若你能去了解他形成的原因的时候你定会感慨创造他的人是如此的了不起进而由衷的崇拜与感激。">
+<meta name="twitter:image" content="http://yoursite.com/img/dns.png">
   
     <link rel="alternative" href="/atom.xml" title="Marsorsun" type="application/atom+xml">
   
@@ -166,7 +168,7 @@
 
         
         <a href="/2018/02/08/HTTP-入门/" class="archive-article-date">
-  	<time datetime="2018-02-08T01:54:00.024Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-08</time>
+  	<time datetime="2018-02-08T06:14:45.718Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-08</time>
 </a>
         
       </header>
@@ -178,10 +180,51 @@
       
         <blockquote>
 <p>This is for everyone                                                                               </p>
-<p>—<a href="https://zh.wikipedia.org/wiki/%E8%92%82%E5%A7%86%C2%B7%E4%BC%AF%E7%BA%B3%E6%96%AF-%E6%9D%8E#cite_note-OlympicsTweet-15" target="_blank" rel="external">Tim Berners-Lee</a></p>
+<p>—<a href="https://zh.wikipedia.org/wiki/%E8%92%82%E5%A7%86%C2%B7%E4%BC%AF%E7%BA%B3%E6%96%AF-%E6%9D%8E#cite_note-OlympicsTweet-15" target="_blank" rel="external">Tim Berners-Lee</a>（下文简称为Lee）</p>
 </blockquote>
 <p>当你习惯了一件事情你每一天都要去用它，若你能去了解他形成的原因的时候你定会感慨创造他的人是如此的了不起进而由衷的崇拜与感激。</p>
-<h3 id="HTTP-HyperText-Transfer-Protocol"><a href="#HTTP-HyperText-Transfer-Protocol" class="headerlink" title="HTTP(HyperText Transfer Protocol)"></a>HTTP(<strong>HyperText Transfer Protocol</strong>)</h3><p>超文本传输协议</p>
+<a id="more"></a>
+<h3 id="历史"><a href="#历史" class="headerlink" title="历史"></a>历史</h3><p>Lee 在<a href="https://zh.wikipedia.org/wiki/%E6%AD%90%E6%B4%B2%E6%A0%B8%E5%AD%90%E7%A0%94%E7%A9%B6%E7%B5%84%E7%B9%94" target="_blank" rel="external">欧洲核子研究组织</a>上班，发现大家的电脑的系统都不一样，而为了方便大家的通信他想到来制定一种协议来是大家发送的信息在不同的地方得到相同的显示效果。进而有了 HTTP,HTML, 他弄出了第一台服务器，浏览器及第一个网页。并在 2017 获得图灵奖。</p>
+<p>###URL(Uniform Resource Locator)</p>
+<p>就是大家常说的网址，有了 URL 我们可以获取想要得到的信息。</p>
+<p><a href="https://zh.wikipedia.org/wiki/%E8%B6%85%E6%96%87%E6%9C%AC%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE" target="_blank" rel="external">超文本传输协议</a>（<a href="https://zh.wikipedia.org/wiki/HTTP" target="_blank" rel="external">HTTP</a>）的统一资源定位符将从因特网获取信息的五个基本元素包括在一个简单的地址中：</p>
+<ol>
+<li>传送协议。（http/https）</li>
+<li>层级URL标记符号(为[//],固定不变)</li>
+<li>访问资源需要的凭证信息（可省略）</li>
+<li>服务器。（通常为<a href="https://zh.wikipedia.org/wiki/%E5%9F%9F%E5%90%8D" target="_blank" rel="external">域名</a>，有时为<a href="https://zh.wikipedia.org/wiki/IP%E5%9C%B0%E5%9D%80" target="_blank" rel="external">IP地址</a>）</li>
+<li>端口号。（以数字方式表示，若为HTTP的默认值“:80”可省略）</li>
+<li>路径。（以“/”字符区别路径中的每一个目录名称）</li>
+<li>查询。（GET模式的窗体参数，以“?”字符为起点，每个参数以“&amp;”隔开，再以“=”分开参数名称与数据，通常以UTF8的URL编码，避开字符冲突的问题）</li>
+<li>片段。以“#”字符为起点<a href="https://zh.wikipedia.org/wiki/%E7%BB%9F%E4%B8%80%E8%B5%84%E6%BA%90%E5%AE%9A%E4%BD%8D%E7%AC%A6#cite_note-2" target="_blank" rel="external">[2]</a></li>
+</ol>
+<p>以<em><a href="http://zh.wikipedia.org:80/w/index.php?title=Special:%E9%9A%8F%E6%9C%BA%E9%A1%B5%E9%9D%A2" target="_blank" rel="external">http://zh.wikipedia.org:80/w/index.php?title=Special:%E9%9A%8F%E6%9C%BA%E9%A1%B5%E9%9D%A2</a></em> 为例, 其中：</p>
+<ol>
+<li><strong>http</strong>，是协议；</li>
+<li><strong>zh.wikipedia.org</strong>，是服务器；</li>
+<li><strong>80</strong>，是服务器上的网络<a href="https://zh.wikipedia.org/w/index.php?title=%E7%AB%AF%E5%8F%A3%E5%8F%B7&amp;action=edit&amp;redlink=1" target="_blank" rel="external">端口号</a>；</li>
+<li><strong>/w/index.php</strong>，是路径；</li>
+<li><strong>?title=Special:%E9%9A%8F%E6%9C%BA%E9%A1%B5%E9%9D%A2</strong>，是询问。</li>
+</ol>
+<p>大多数<a href="https://zh.wikipedia.org/wiki/%E7%BD%91%E9%A1%B5%E6%B5%8F%E8%A7%88%E5%99%A8" target="_blank" rel="external">网页浏览器</a>不要求用户输入<a href="https://zh.wikipedia.org/wiki/%E7%BD%91%E9%A1%B5" target="_blank" rel="external">网页</a>中“<strong>http://</strong>”的部分，因为绝大多数网页内容是超文本传输协议文件。同样，“<strong>80</strong>”是超文本传输协议文件的常用端口号，因此一般也不必写明。一般来说用户只要键入统一资源定位符的一部分（<strong>zh.wikipedia.org/wiki/Special:%E9%9A%8F%E6%9C%BA%E9%A1%B5%E9%9D%A2</strong>）就可以了。</p>
+<p>由于超文本传输协议允许服务器将浏览器重定向到另一个网页地址，因此许多服务器允许用户省略网页地址中的部分，比如 <strong>www</strong>。从技术上来说这样省略后的网页地址实际上是一个不同的网页地址，浏览器本身无法决定这个新地址是否通，服务器必须完成重定向的任务。</p>
+<h4 id="URN-URI-URL"><a href="#URN-URI-URL" class="headerlink" title="URN,URI,URL"></a>URN,URI,URL</h4><p>URI可被视为定位符（URL），名称（URN）或两者兼备。<a href="https://zh.wikipedia.org/wiki/%E7%BB%9F%E4%B8%80%E8%B5%84%E6%BA%90%E5%90%8D" target="_blank" rel="external">统一资源名</a>（URN）如同一个人的名称，而<a href="https://zh.wikipedia.org/wiki/%E7%BB%9F%E4%B8%80%E8%B5%84%E6%BA%90%E5%AE%9A%E4%BD%8D%E7%AC%A6" target="_blank" rel="external">统一资源定位符</a>（URL）代表一个人的住址。换言之，URN定义某事物的身份，而URL提供查找该事物的方法。(URL 是 URI 最常见的形式)</p>
+<h3 id="DNS（Domain-Name-System）"><a href="#DNS（Domain-Name-System）" class="headerlink" title="DNS（Domain Name System）"></a>DNS（<strong>D</strong>omain <strong>N</strong>ame <strong>S</strong>ystem）</h3><p>通过 DNS 我们可以获取查询网址的 IP 地址，因为 IP 地址实在是难以记住而网址大多比较容易记忆</p>
+<p><img src="/img/dns.png" alt=""></p>
+<h3 id="HTTP-HyperText-Transfer-Protocol"><a href="#HTTP-HyperText-Transfer-Protocol" class="headerlink" title="HTTP(HyperText Transfer Protocol)"></a>HTTP(<strong>HyperText Transfer Protocol</strong>)</h3><p>超文本传输协议在我看来其实就是客户端向服务器发起请求资源，而服务器则应答并返回该资源，为了使资源可用而使用了 HTTP。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span><span class="bash"> curl -v baidu.com  </span></div><div class="line">* Rebuilt URL to: baidu.com/</div><div class="line">*   Trying 111.13.101.208...</div><div class="line">* TCP_NODELAY set</div><div class="line">* Connected to baidu.com (111.13.101.208) port 80 (#0)</div><div class="line"><span class="meta">&gt;</span><span class="bash"> GET / HTTP/1.1</span></div><div class="line"><span class="meta">&gt;</span><span class="bash"> Host: baidu.com</span></div><div class="line"><span class="meta">&gt;</span><span class="bash"> User-Agent: curl/7.52.1</span></div><div class="line"><span class="meta">&gt;</span><span class="bash"> Accept: */*</span></div><div class="line"><span class="meta">&gt;</span><span class="bash"> </span></div><div class="line">&lt; HTTP/1.1 200 OK</div><div class="line">&lt; Date: Thu, 08 Feb 2018 03:05:13 GMT</div><div class="line">&lt; Server: Apache</div><div class="line">&lt; Last-Modified: Tue, 12 Jan 2010 13:48:00 GMT</div><div class="line">&lt; ETag: "51-47cf7e6ee8400"</div><div class="line">&lt; Accept-Ranges: bytes</div><div class="line">&lt; Content-Length: 81</div><div class="line">&lt; Cache-Control: max-age=86400</div><div class="line">&lt; Expires: Fri, 09 Feb 2018 03:05:13 GMT</div><div class="line">&lt; Connection: Keep-Alive</div><div class="line">&lt; Content-Type: text/html</div><div class="line">&lt; </div><div class="line">&lt;html&gt;</div><div class="line">&lt;meta http-equiv="refresh" content="0;url=http://www.baidu.com/"&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+<p><a href="https://www.explainshell.com/" target="_blank" rel="external">explainshell</a></p>
+<p>我们还可以通过 Google 浏览器的 Network 查看</p>
+<h3 id="面试题"><a href="#面试题" class="headerlink" title="面试题"></a>面试题</h3><h5 id="一个页面从输入-URL-到页面加载显示完成，这个过程中都发生了什么？（流程说的越详细越好）"><a href="#一个页面从输入-URL-到页面加载显示完成，这个过程中都发生了什么？（流程说的越详细越好）" class="headerlink" title="一个页面从输入 URL 到页面加载显示完成，这个过程中都发生了什么？（流程说的越详细越好）"></a>一个页面从输入 URL 到页面加载显示完成，这个过程中都发生了什么？（流程说的越详细越好）</h5><figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"> 注：这题胜在区分度高，知识点覆盖广，再不懂的人，也能答出几句，</div><div class="line"> 而高手可以根据自己擅长的领域自由发挥，从URL规范、HTTP协议、DNS、CDN、数据库查询、</div><div class="line"> 到浏览器流式解析、CSS规则构建、layout、paint、onload/domready、JS执行、JS API绑定等等；</div><div class="line"></div><div class="line"> 详细版：</div><div class="line"><span class="number">1</span>、浏览器会开启一个线程来处理这个请求，对 URL 分析判断如果是 http 协议就按照 Web 方式来处理;</div><div class="line"><span class="number">2</span>、调用浏览器内核中的对应方法，比如 WebView 中的 loadUrl 方法;</div><div class="line">   <span class="number">3</span>、通过DNS解析获取网址的IP地址，设置 UA 等信息发出第二个GET请求;</div><div class="line"><span class="number">4</span>、进行HTTP协议会话，客户端发送报头(请求报头);</div><div class="line">   <span class="number">5</span>、进入到web服务器上的 Web Server，如 Apache、Tomcat、Node.JS 等服务器;</div><div class="line">   <span class="number">6</span>、进入部署好的后端应用，如 PHP、Java、JavaScript、Python 等，找到对应的请求处理;</div><div class="line"><span class="number">7</span>、处理结束回馈报头，此处如果浏览器访问过，缓存上有对应资源，会与服务器最后修改时间对比，一致则返回<span class="number">304</span>;</div><div class="line">   <span class="number">8</span>、浏览器开始下载html文档(响应报头，状态码<span class="number">200</span>)，同时使用缓存;</div><div class="line">   <span class="number">9</span>、文档树建立，根据标记请求所需指定MIME类型的文件（比如css、js）,同时设置了cookie;</div><div class="line">   <span class="number">10</span>、页面开始渲染DOM，JS根据DOM API操作DOM,执行事件绑定等，页面显示完成。</div><div class="line"></div><div class="line"> 简洁版：</div><div class="line">浏览器根据请求的URL交给DNS域名解析，找到真实IP，向服务器发起请求；</div><div class="line">服务器交给后台处理完成后返回数据，浏览器接收文件（HTML、JS、CSS、图象等）；</div><div class="line">浏览器对加载到的资源（HTML、JS、CSS等）进行语法解析，建立相应的内部数据结构（如HTML的DOM）；</div><div class="line">载入解析到的资源文件，渲染页面，完成。</div></pre></td></tr></table></figure>
+<h5 id="http状态码有那些？分别代表是什么意思？"><a href="#http状态码有那些？分别代表是什么意思？" class="headerlink" title="http状态码有那些？分别代表是什么意思？"></a>http状态码有那些？分别代表是什么意思？</h5><figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div></pre></td><td class="code"><pre><div class="line">简单版</div><div class="line">[</div><div class="line">	<span class="number">100</span>  Continue	继续，一般在发送post请求时，已发送了http header之后服务端将返回此信息，表示确认，之后发送具体参数信息</div><div class="line">	<span class="number">200</span>  OK 		正常返回信息</div><div class="line">	<span class="number">201</span>  Created  	请求成功并且服务器创建了新的资源</div><div class="line">	<span class="number">202</span>  Accepted 	服务器已接受请求，但尚未处理</div><div class="line">	<span class="number">301</span>  Moved Permanently  请求的网页已永久移动到新位置。</div><div class="line">	<span class="number">302</span> Found  		临时性重定向。</div><div class="line">	<span class="number">303</span> See Other  	临时性重定向，且总是使用 GET 请求新的 URI。</div><div class="line">	<span class="number">304</span>  Not Modified 自从上次请求后，请求的网页未修改过。</div><div class="line"></div><div class="line">	<span class="number">400</span> Bad Request  服务器无法理解请求的格式，客户端不应当尝试再次使用相同的内容发起请求。</div><div class="line">	<span class="number">401</span> Unauthorized 请求未授权。</div><div class="line">	<span class="number">403</span> Forbidden  	禁止访问。</div><div class="line">	<span class="number">404</span> Not Found  	找不到如何与 URI 相匹配的资源。</div><div class="line"></div><div class="line">	<span class="number">500</span> Internal Server Error  最常见的服务器端错误。</div><div class="line">	<span class="number">503</span> Service Unavailable 服务器端暂时无法处理请求（可能是过载或维护）。</div><div class="line">]</div><div class="line"></div><div class="line"> 完整版</div><div class="line"> <span class="number">1</span>**(信息类)：表示接收到请求并且继续处理</div><div class="line"><span class="number">100</span>——客户必须继续发出请求</div><div class="line"><span class="number">101</span>——客户要求服务器根据请求转换HTTP协议版本</div><div class="line"></div><div class="line"> <span class="number">2</span>**(响应成功)：表示动作被成功接收、理解和接受</div><div class="line"><span class="number">200</span>——表明该请求被成功地完成，所请求的资源发送回客户端</div><div class="line"><span class="number">201</span>——提示知道新文件的URL</div><div class="line"><span class="number">202</span>——接受和处理、但处理未完成</div><div class="line"><span class="number">203</span>——返回信息不确定或不完整</div><div class="line"><span class="number">204</span>——请求收到，但返回信息为空</div><div class="line"><span class="number">205</span>——服务器完成了请求，用户代理必须复位当前已经浏览过的文件</div><div class="line"><span class="number">206</span>——服务器已经完成了部分用户的GET请求</div><div class="line"></div><div class="line"> <span class="number">3</span>**(重定向类)：为了完成指定的动作，必须接受进一步处理</div><div class="line"><span class="number">300</span>——请求的资源可在多处得到</div><div class="line"><span class="number">301</span>——本网页被永久性转移到另一个URL</div><div class="line"><span class="number">302</span>——请求的网页被转移到一个新的地址，但客户访问仍继续通过原始URL地址，重定向，新的URL会在response中的Location中返回，浏览器将会使用新的URL发出新的Request。</div><div class="line"><span class="number">303</span>——建议客户访问其他URL或访问方式</div><div class="line"><span class="number">304</span>——自从上次请求后，请求的网页未修改过，服务器返回此响应时，不会返回网页内容，代表上次的文档已经被缓存了，还可以继续使用</div><div class="line"><span class="number">305</span>——请求的资源必须从服务器指定的地址得到</div><div class="line"><span class="number">306</span>——前一版本HTTP中使用的代码，现行版本中不再使用</div><div class="line"><span class="number">307</span>——申明请求的资源临时性删除</div><div class="line"></div><div class="line"> <span class="number">4</span>**(客户端错误类)：请求包含错误语法或不能正确执行</div><div class="line"><span class="number">400</span>——客户端请求有语法错误，不能被服务器所理解</div><div class="line"><span class="number">401</span>——请求未经授权，这个状态代码必须和WWW-Authenticate报头域一起使用</div><div class="line">HTTP <span class="number">401.1</span> - 未授权：登录失败</div><div class="line">　　HTTP <span class="number">401.2</span> - 未授权：服务器配置问题导致登录失败</div><div class="line">　　HTTP <span class="number">401.3</span> - ACL 禁止访问资源</div><div class="line">　　HTTP <span class="number">401.4</span> - 未授权：授权被筛选器拒绝</div><div class="line">HTTP <span class="number">401.5</span> - 未授权：ISAPI 或 CGI 授权失败</div><div class="line"><span class="number">402</span>——保留有效ChargeTo头响应</div><div class="line"><span class="number">403</span>——禁止访问，服务器收到请求，但是拒绝提供服务</div><div class="line">HTTP <span class="number">403.1</span> 禁止访问：禁止可执行访问</div><div class="line">　　HTTP <span class="number">403.2</span> - 禁止访问：禁止读访问</div><div class="line">　　HTTP <span class="number">403.3</span> - 禁止访问：禁止写访问</div><div class="line">　　HTTP <span class="number">403.4</span> - 禁止访问：要求 SSL</div><div class="line">　　HTTP <span class="number">403.5</span> - 禁止访问：要求 SSL <span class="number">128</span></div><div class="line">　　HTTP <span class="number">403.6</span> - 禁止访问：IP 地址被拒绝</div><div class="line">　　HTTP <span class="number">403.7</span> - 禁止访问：要求客户证书</div><div class="line">　　HTTP <span class="number">403.8</span> - 禁止访问：禁止站点访问</div><div class="line">　　HTTP <span class="number">403.9</span> - 禁止访问：连接的用户过多</div><div class="line">　　HTTP <span class="number">403.10</span> - 禁止访问：配置无效</div><div class="line">　　HTTP <span class="number">403.11</span> - 禁止访问：密码更改</div><div class="line">　　HTTP <span class="number">403.12</span> - 禁止访问：映射器拒绝访问</div><div class="line">　　HTTP <span class="number">403.13</span> - 禁止访问：客户证书已被吊销</div><div class="line">　　HTTP <span class="number">403.15</span> - 禁止访问：客户访问许可过多</div><div class="line">　　HTTP <span class="number">403.16</span> - 禁止访问：客户证书不可信或者无效</div><div class="line">HTTP <span class="number">403.17</span> - 禁止访问：客户证书已经到期或者尚未生效</div><div class="line"><span class="number">404</span>——一个<span class="number">404</span>错误表明可连接服务器，但服务器无法取得所请求的网页，请求资源不存在。eg：输入了错误的URL</div><div class="line"><span class="number">405</span>——用户在Request-Line字段定义的方法不允许</div><div class="line"><span class="number">406</span>——根据用户发送的Accept拖，请求资源不可访问</div><div class="line"><span class="number">407</span>——类似<span class="number">401</span>，用户必须首先在代理服务器上得到授权</div><div class="line"><span class="number">408</span>——客户端没有在用户指定的饿时间内完成请求</div><div class="line"><span class="number">409</span>——对当前资源状态，请求不能完成</div><div class="line"><span class="number">410</span>——服务器上不再有此资源且无进一步的参考地址</div><div class="line"><span class="number">411</span>——服务器拒绝用户定义的Content-Length属性请求</div><div class="line"><span class="number">412</span>——一个或多个请求头字段在当前请求中错误</div><div class="line"><span class="number">413</span>——请求的资源大于服务器允许的大小</div><div class="line"><span class="number">414</span>——请求的资源URL长于服务器允许的长度</div><div class="line"><span class="number">415</span>——请求资源不支持请求项目格式</div><div class="line"><span class="number">416</span>——请求中包含Range请求头字段，在当前请求资源范围内没有range指示值，请求也不包含If-Range请求头字段</div><div class="line"><span class="number">417</span>——服务器不满足请求Expect头字段指定的期望值，如果是代理服务器，可能是下一级服务器不能满足请求长。</div><div class="line"></div><div class="line"> <span class="number">5</span>**(服务端错误类)：服务器不能正确执行一个正确的请求</div><div class="line">HTTP <span class="number">500</span> - 服务器遇到错误，无法完成请求</div><div class="line">　　HTTP <span class="number">500.100</span> - 内部服务器错误 - ASP 错误</div><div class="line">　　HTTP <span class="number">500</span><span class="number">-11</span> 服务器关闭</div><div class="line">　　HTTP <span class="number">500</span><span class="number">-12</span> 应用程序重新启动</div><div class="line">　　HTTP <span class="number">500</span><span class="number">-13</span> - 服务器太忙</div><div class="line">　　HTTP <span class="number">500</span><span class="number">-14</span> - 应用程序无效</div><div class="line">　　HTTP <span class="number">500</span><span class="number">-15</span> - 不允许请求 global.asa</div><div class="line">　　Error <span class="number">501</span> - 未实现</div><div class="line"> HTTP <span class="number">502</span> - 网关错误</div><div class="line"> HTTP <span class="number">503</span>：由于超载或停机维护，服务器目前无法使用，一段时间后可能恢复正常</div></pre></td></tr></table></figure>
+<p>文章只是随便说说，定有不对之处，谅解。</p>
+<p>参考：</p>
+<ul>
+<li><a href="http://www.ruanyifeng.com/blog/2016/08/http.html" target="_blank" rel="external">HTTP 协议入门</a></li>
+<li><a href="https://github.com/markyun/My-blog/tree/master/Front-end-Developer-Questions/Questions-and-Answers" target="_blank" rel="external">前端开发面试题</a></li>
+<li><a href="https://zh.wikipedia.org/wiki/%E8%B6%85%E6%96%87%E6%9C%AC%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE" target="_blank" rel="external">超文本传输协议</a></li>
+<li><a href="https://zh.wikipedia.org/w/index.php?title=%E7%BB%9F%E4%B8%80%E8%B5%84%E6%BA%90%E5%AE%9A%E4%BD%8D%E7%AC%A6&amp;action=edit&amp;section=0&amp;summary=/*%20%E9%A6%96%E6%AE%B5%20*/%20" target="_blank" rel="external">统一资源定位符</a></li>
+</ul>
 
       
 
@@ -269,18 +312,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/02/08/开启 Deepin/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          开启 deepin
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/02/06/初探vim/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">初探 vim</div>
+    <a href="/2018/02/08/开启 Deepin/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">开启 deepin</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -424,19 +458,19 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">编程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">英语</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">转载</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">编程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
               </li>
              
               <li class="article-tag-list-item">
