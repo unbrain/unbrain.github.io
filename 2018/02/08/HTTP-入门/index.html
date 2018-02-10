@@ -211,7 +211,7 @@
 <h3 id="DNS（Domain-Name-System）"><a href="#DNS（Domain-Name-System）" class="headerlink" title="DNS（Domain Name System）"></a>DNS（<strong>D</strong>omain <strong>N</strong>ame <strong>S</strong>ystem）</h3><p>通过 DNS 我们可以获取查询网址的 IP 地址，因为 IP 地址实在是难以记住而网址大多比较容易记忆</p>
 <p><img src="/img/dns.png" alt=""></p>
 <h3 id="HTTP-HyperText-Transfer-Protocol"><a href="#HTTP-HyperText-Transfer-Protocol" class="headerlink" title="HTTP(HyperText Transfer Protocol)"></a>HTTP(<strong>HyperText Transfer Protocol</strong>)</h3><p>超文本传输协议在我看来其实就是客户端向服务器发起请求资源，而服务器则应答并返回该资源，为了使资源可用而使用了 HTTP。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span><span class="bash"> curl -v baidu.com  </span></div><div class="line">* Rebuilt URL to: baidu.com/</div><div class="line">*   Trying 111.13.101.208...</div><div class="line">* TCP_NODELAY set</div><div class="line">* Connected to baidu.com (111.13.101.208) port 80 (#0)</div><div class="line"><span class="meta">&gt;</span><span class="bash"> GET / HTTP/1.1</span></div><div class="line"><span class="meta">&gt;</span><span class="bash"> Host: baidu.com</span></div><div class="line"><span class="meta">&gt;</span><span class="bash"> User-Agent: curl/7.52.1</span></div><div class="line"><span class="meta">&gt;</span><span class="bash"> Accept: */*</span></div><div class="line"><span class="meta">&gt;</span><span class="bash"> </span></div><div class="line">&lt; HTTP/1.1 200 OK</div><div class="line">&lt; Date: Thu, 08 Feb 2018 03:05:13 GMT</div><div class="line">&lt; Server: Apache</div><div class="line">&lt; Last-Modified: Tue, 12 Jan 2010 13:48:00 GMT</div><div class="line">&lt; ETag: "51-47cf7e6ee8400"</div><div class="line">&lt; Accept-Ranges: bytes</div><div class="line">&lt; Content-Length: 81</div><div class="line">&lt; Cache-Control: max-age=86400</div><div class="line">&lt; Expires: Fri, 09 Feb 2018 03:05:13 GMT</div><div class="line">&lt; Connection: Keep-Alive</div><div class="line">&lt; Content-Type: text/html</div><div class="line">&lt; </div><div class="line">&lt;html&gt;</div><div class="line">&lt;meta http-equiv="refresh" content="0;url=http://www.baidu.com/"&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span> curl -v baidu.com  </div><div class="line">* Rebuilt URL to: baidu.com/</div><div class="line">*   Trying 111.13.101.208...</div><div class="line">* TCP_NODELAY set</div><div class="line">* Connected to baidu.com (111.13.101.208) port 80 (#0)</div><div class="line"><span class="meta">&gt;</span> GET / HTTP/1.1</div><div class="line"><span class="meta">&gt;</span> Host: baidu.com</div><div class="line"><span class="meta">&gt;</span> User-Agent: curl/7.52.1</div><div class="line"><span class="meta">&gt;</span> Accept: */*</div><div class="line"><span class="meta">&gt;</span> </div><div class="line">&lt; HTTP/1.1 200 OK</div><div class="line">&lt; Date: Thu, 08 Feb 2018 03:05:13 GMT</div><div class="line">&lt; Server: Apache</div><div class="line">&lt; Last-Modified: Tue, 12 Jan 2010 13:48:00 GMT</div><div class="line">&lt; ETag: "51-47cf7e6ee8400"</div><div class="line">&lt; Accept-Ranges: bytes</div><div class="line">&lt; Content-Length: 81</div><div class="line">&lt; Cache-Control: max-age=86400</div><div class="line">&lt; Expires: Fri, 09 Feb 2018 03:05:13 GMT</div><div class="line">&lt; Connection: Keep-Alive</div><div class="line">&lt; Content-Type: text/html</div><div class="line">&lt; </div><div class="line">&lt;html&gt;</div><div class="line">&lt;meta http-equiv="refresh" content="0;url=http://www.baidu.com/"&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
 <p><a href="https://www.explainshell.com/" target="_blank" rel="external">explainshell</a></p>
 <p>我们还可以通过 Google 浏览器的 Network 查看</p>
 <h3 id="面试题"><a href="#面试题" class="headerlink" title="面试题"></a>面试题</h3><h5 id="一个页面从输入-URL-到页面加载显示完成，这个过程中都发生了什么？（流程说的越详细越好）"><a href="#一个页面从输入-URL-到页面加载显示完成，这个过程中都发生了什么？（流程说的越详细越好）" class="headerlink" title="一个页面从输入 URL 到页面加载显示完成，这个过程中都发生了什么？（流程说的越详细越好）"></a>一个页面从输入 URL 到页面加载显示完成，这个过程中都发生了什么？（流程说的越详细越好）</h5><figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"> 注：这题胜在区分度高，知识点覆盖广，再不懂的人，也能答出几句，</div><div class="line"> 而高手可以根据自己擅长的领域自由发挥，从URL规范、HTTP协议、DNS、CDN、数据库查询、</div><div class="line"> 到浏览器流式解析、CSS规则构建、layout、paint、onload/domready、JS执行、JS API绑定等等；</div><div class="line"></div><div class="line"> 详细版：</div><div class="line"><span class="number">1</span>、浏览器会开启一个线程来处理这个请求，对 URL 分析判断如果是 http 协议就按照 Web 方式来处理;</div><div class="line"><span class="number">2</span>、调用浏览器内核中的对应方法，比如 WebView 中的 loadUrl 方法;</div><div class="line">   <span class="number">3</span>、通过DNS解析获取网址的IP地址，设置 UA 等信息发出第二个GET请求;</div><div class="line"><span class="number">4</span>、进行HTTP协议会话，客户端发送报头(请求报头);</div><div class="line">   <span class="number">5</span>、进入到web服务器上的 Web Server，如 Apache、Tomcat、Node.JS 等服务器;</div><div class="line">   <span class="number">6</span>、进入部署好的后端应用，如 PHP、Java、JavaScript、Python 等，找到对应的请求处理;</div><div class="line"><span class="number">7</span>、处理结束回馈报头，此处如果浏览器访问过，缓存上有对应资源，会与服务器最后修改时间对比，一致则返回<span class="number">304</span>;</div><div class="line">   <span class="number">8</span>、浏览器开始下载html文档(响应报头，状态码<span class="number">200</span>)，同时使用缓存;</div><div class="line">   <span class="number">9</span>、文档树建立，根据标记请求所需指定MIME类型的文件（比如css、js）,同时设置了cookie;</div><div class="line">   <span class="number">10</span>、页面开始渲染DOM，JS根据DOM API操作DOM,执行事件绑定等，页面显示完成。</div><div class="line"></div><div class="line"> 简洁版：</div><div class="line">浏览器根据请求的URL交给DNS域名解析，找到真实IP，向服务器发起请求；</div><div class="line">服务器交给后台处理完成后返回数据，浏览器接收文件（HTML、JS、CSS、图象等）；</div><div class="line">浏览器对加载到的资源（HTML、JS、CSS等）进行语法解析，建立相应的内部数据结构（如HTML的DOM）；</div><div class="line">载入解析到的资源文件，渲染页面，完成。</div></pre></td></tr></table></figure>
@@ -310,6 +310,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2018/02/09/CSS/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          CSS 套路
+        
+      </div>
+    </a>
   
   
     <a href="/2018/02/08/开启 Deepin/" id="article-nav-older" class="article-nav-link-wrap">
@@ -457,11 +466,23 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">英语</a>
+                <a href="javascript:void(0)" class="js-tag color3">编程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">转载</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">英语</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -474,14 +495,6 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">编程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
               </li>
              
               <li class="article-tag-list-item">

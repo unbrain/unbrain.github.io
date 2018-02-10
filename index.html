@@ -153,6 +153,102 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-CSS" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/02/09/CSS/">CSS 套路</a>
+    </h1>
+  
+
+        
+        <a href="/2018/02/09/CSS/" class="archive-article-date">
+  	<time datetime="2018-02-09T13:15:41.047Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-09</time>
+</a>
+        
+      </header>
+    
+    <!-- 目录内容 -->
+
+<!-- 目录内容结束 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>CSS 总是会出现我们意想不到的结果，在这里记录一些会用到的小技巧来加深自己的记忆与理解。</p>
+<ul>
+<li><p>浮动过后在父级加 clearfix</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.clearfix</span> &#123;</div><div class="line">	<span class="attribute">clear</span>:both;</div><div class="line">	<span class="attribute">content</span>: <span class="string">''</span>;</div><div class="line">	<span class="attribute">display</span>:block;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>一般不写宽高</p>
+</li>
+<li><p>写宽的话多用 <code>max-width</code> 以便自适应</p>
+</li>
+<li><p><code>margin</code>可能导致撑出去(a 比 div 高)，用<code>display：block</code></p>
+</li>
+<li><p>多写一个 div 来设置 <code>margin</code>可以防止 width 变宽</p>
+</li>
+<li><p>对于绝对定位子集<code>position：absolute</code>，那么记得给父级一个<code>position：relative</code></p>
+</li>
+<li><p>css 三角形</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.triangle</span> &#123;</div><div class="line">  <span class="attribute">border</span>: <span class="number">10px</span> solid black;</div><div class="line">  <span class="attribute">boder-top-color</span>:red;</div><div class="line">&#125;</div><div class="line"><span class="comment">/*就可以看到三角形，可以设置某一边的宽，把颜色变透明来得到想要的三角形*/</span></div></pre></td></tr></table></figure>
+<p>​</p>
+</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/02/09/CSS/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-HTTP-入门" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -894,95 +990,6 @@
 
 
   
-    <article id="post-create-hexo" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/09/23/create-hexo/">利用Hexo + Github 搭建个人博客</a>
-    </h1>
-  
-
-        
-        <a href="/2017/09/23/create-hexo/" class="archive-article-date">
-  	<time datetime="2017-09-23T07:26:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-23</time>
-</a>
-        
-      </header>
-    
-    <!-- 目录内容 -->
-
-<!-- 目录内容结束 -->
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p># </p>
-<h3 id="利用的资源"><a href="#利用的资源" class="headerlink" title="利用的资源"></a>利用的资源</h3><blockquote>
-<p><a href="https://hexo.io/zh-cn/index.html" target="_blank" rel="external">hexo官方文档</a></p>
-<p><a href="https://luuman.github.io/categories/Hexo/" target="_blank" rel="external">spfk教程</a></p>
-<p>用以上教程就差不多了</p>
-<p>提醒一点 在部署后没有报错的前提下，第一次部署的时间有点长，我当时直接刷新发现没反应一直以为有错，很尴尬。</p>
-</blockquote>
-        
-          <a class="article-more-a" href="/2017/09/23/create-hexo/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">github</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/09/23/create-hexo/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1087,11 +1094,23 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">英语</a>
+                <a href="javascript:void(0)" class="js-tag color3">编程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">转载</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">英语</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1104,14 +1123,6 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">编程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
               </li>
              
               <li class="article-tag-list-item">
