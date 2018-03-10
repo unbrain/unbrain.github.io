@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>在线画板的制作 | Marsorsun</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="并不需要过多的 JS 基础就可以实现，尽管代码看起来很不尽人意但是能够完成需要的功能使用者并不关心你的实现方式。预览  Google Canvas MDN iconfont (获取需要的图标)  模拟方式我们最开始的是检测用户的行为，是否按下鼠标左键，当用户按着左键开始移动的时候就开始划线，当用户松开左键那么就不划线，所以需要一个变量来表示是否按下鼠标。并且监听点的点的位置。 1234567891">
+  <meta name="description" content="并不需要过多的 JS 基础就可以实现，尽管代码看起来很不尽人意但是能够完成需要的功能使用者并不关心你的实现方式。预览  Google Canvas MDN iconfont (获取需要的图标)">
 <meta name="keywords" content="canvas,画板,JavaScript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="在线画板的制作">
 <meta property="og:url" content="http://yoursite.com/2018/03/10/myCanvas/index.html">
 <meta property="og:site_name" content="Marsorsun">
-<meta property="og:description" content="并不需要过多的 JS 基础就可以实现，尽管代码看起来很不尽人意但是能够完成需要的功能使用者并不关心你的实现方式。预览  Google Canvas MDN iconfont (获取需要的图标)  模拟方式我们最开始的是检测用户的行为，是否按下鼠标左键，当用户按着左键开始移动的时候就开始划线，当用户松开左键那么就不划线，所以需要一个变量来表示是否按下鼠标。并且监听点的点的位置。 1234567891">
+<meta property="og:description" content="并不需要过多的 JS 基础就可以实现，尽管代码看起来很不尽人意但是能够完成需要的功能使用者并不关心你的实现方式。预览  Google Canvas MDN iconfont (获取需要的图标)">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-03-10T13:39:46.614Z">
+<meta property="og:updated_time" content="2018-03-10T13:44:04.628Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="在线画板的制作">
-<meta name="twitter:description" content="并不需要过多的 JS 基础就可以实现，尽管代码看起来很不尽人意但是能够完成需要的功能使用者并不关心你的实现方式。预览  Google Canvas MDN iconfont (获取需要的图标)  模拟方式我们最开始的是检测用户的行为，是否按下鼠标左键，当用户按着左键开始移动的时候就开始划线，当用户松开左键那么就不划线，所以需要一个变量来表示是否按下鼠标。并且监听点的点的位置。 1234567891">
+<meta name="twitter:description" content="并不需要过多的 JS 基础就可以实现，尽管代码看起来很不尽人意但是能够完成需要的功能使用者并不关心你的实现方式。预览  Google Canvas MDN iconfont (获取需要的图标)">
   
     <link rel="alternative" href="/atom.xml" title="Marsorsun" type="application/atom+xml">
   
@@ -166,7 +166,7 @@
 
         
         <a href="/2018/03/10/myCanvas/" class="archive-article-date">
-  	<time datetime="2018-03-10T13:39:46.614Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-10</time>
+  	<time datetime="2018-03-10T13:44:04.628Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-10</time>
 </a>
         
       </header>
@@ -206,6 +206,7 @@
 <li><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Canvas_API" target="_blank" rel="external">Canvas MDN</a></li>
 <li><a href="http://www.iconfont.cn/" target="_blank" rel="external">iconfont</a> (获取需要的图标)</li>
 </ul>
+<a id="more"></a>
 <h3 id="模拟方式"><a href="#模拟方式" class="headerlink" title="模拟方式"></a>模拟方式</h3><p>我们最开始的是检测用户的行为，是否按下鼠标左键，当用户按着左键开始移动的时候就开始划线，当用户松开左键那么就不划线，所以需要一个变量来表示是否按下鼠标。并且监听点的点的位置。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> canvas = <span class="built_in">document</span>.getElementById(<span class="string">'canvas'</span>)<span class="comment">//获取画板位置</span></div><div class="line"><span class="keyword">var</span> ctx = canvas.getContext(<span class="string">'2d'</span>)</div><div class="line"><span class="keyword">var</span> using = <span class="literal">false</span></div><div class="line">canvas.onmouseclick = <span class="function"><span class="keyword">function</span> (<span class="params">e</span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> x = e.clientX</div><div class="line">  <span class="keyword">var</span> y = e.clientY</div><div class="line">  <span class="comment">//oldpoint</span></div><div class="line">  using = <span class="literal">true</span></div><div class="line">  <span class="comment">//draw circle()</span></div><div class="line">&#125;</div><div class="line">canvas.onmousemove = <span class="function"><span class="keyword">function</span> (<span class="params">e</span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> x = e.clientX</div><div class="line">  <span class="keyword">var</span> y = e.clientY</div><div class="line">  <span class="comment">//newpoint</span></div><div class="line">  <span class="keyword">if</span>(using)&#123;</div><div class="line">    <span class="comment">//draw circle()</span></div><div class="line">    <span class="comment">//draw line()</span></div><div class="line">    <span class="comment">//oldpoint = newpoint</span></div><div class="line">  &#125;<span class="keyword">else</span>&#123;</div><div class="line">    </div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">canvas.onmouseup = <span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</div><div class="line">  using = <span class="literal">false</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h3 id="划线"><a href="#划线" class="headerlink" title="划线"></a>划线</h3><p>划线是画板最基本的功能，我们可以通过 <a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Canvas_API" target="_blank" rel="external">Canvas MDN</a> 很快的找到我们需要的 <code>API</code> 。但是我们会发现光画点的时候若快速移动就会有地方断开这是 js 并不会高速检测用户行为对于高速的我可以将其两点连线。这就需要我们记录旧的点和新的点，并且要及时更新点。封装一下，可以方便以后改变其颜色与粗细。</p>
@@ -511,15 +512,7 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">英语</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">转载</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -531,15 +524,19 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">转载</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">github</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -556,6 +553,10 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
               </li>
             
             <div class="clearfix"></div>
