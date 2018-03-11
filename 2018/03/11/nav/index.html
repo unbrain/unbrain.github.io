@@ -6,18 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: github | Marsorsun</title>
+  <title>一个导航网站 | Marsorsun</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="我的心，在哪里，忘了我的眼，在哪里，忘了我的魂，在哪里，忘了全忘了。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Marsorsun">
-<meta property="og:url" content="http://yoursite.com/tags/github/index.html">
+  <meta name="description" content="由简单无门槛 js 实现一个触发按键跳转网页的导航网站，效果预览">
+<meta name="keywords" content="JavaScript,导航">
+<meta property="og:type" content="article">
+<meta property="og:title" content="一个导航网站">
+<meta property="og:url" content="http://yoursite.com/2018/03/11/nav/index.html">
 <meta property="og:site_name" content="Marsorsun">
-<meta property="og:description" content="我的心，在哪里，忘了我的眼，在哪里，忘了我的魂，在哪里，忘了全忘了。">
+<meta property="og:description" content="由简单无门槛 js 实现一个触发按键跳转网页的导航网站，效果预览">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://yoursite.com/img/nav.png">
+<meta property="og:updated_time" content="2018-03-11T05:06:43.547Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Marsorsun">
-<meta name="twitter:description" content="我的心，在哪里，忘了我的眼，在哪里，忘了我的魂，在哪里，忘了全忘了。">
+<meta name="twitter:title" content="一个导航网站">
+<meta name="twitter:description" content="由简单无门槛 js 实现一个触发按键跳转网页的导航网站，效果预览">
+<meta name="twitter:image" content="http://yoursite.com/img/nav.png">
   
     <link rel="alternative" href="/atom.xml" title="Marsorsun" type="application/atom+xml">
   
@@ -151,64 +155,256 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-nav" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/09/23/create-hexo/" class="archive-article-date">
-  	<time datetime="2017-09-23T07:26:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-23</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/23/create-hexo/">利用Hexo + Github 搭建个人博客</a>
+    <h1 class="article-title" itemprop="name">
+      一个导航网站
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2018/03/11/nav/" class="archive-article-date">
+  	<time datetime="2018-03-11T05:06:43.547Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-11</time>
+</a>
+        
+      </header>
+    
+    <!-- 目录内容 -->
+
+    <p class="show-toc-btn" id="show-toc-btn" onclick="showToc();" style="display:none">
+          <span class="btn-bg"></span>
+          <span class="btn-text">文章导航</span>
+          </p>
+  <div id="toc-article" class="toc-article">
+      <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
+    <strong class="toc-title">文章目录</strong>
+           <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#数据结构"><span class="toc-number">1.</span> <span class="toc-text">数据结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#生成键盘"><span class="toc-number">2.</span> <span class="toc-text">生成键盘</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#监听键盘"><span class="toc-number">3.</span> <span class="toc-text">监听键盘</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#存储用户的改变"><span class="toc-number">4.</span> <span class="toc-text">存储用户的改变</span></a></li></ol>
+         </div>
+   <script type="text/javascript">
+  function showToc(){
+    var toc_article = document.getElementById("toc-article");
+    var show_toc_btn = document.getElementById("show-toc-btn");
+    toc_article.setAttribute("style","display:block");
+    show_toc_btn.setAttribute("style","display:none");
+    };
+  function showBtn(){
+    var toc_article = document.getElementById("toc-article");
+    var show_toc_btn = document.getElementById("show-toc-btn");
+    toc_article.setAttribute("style","display:none");
+    show_toc_btn.setAttribute("style","display:block");
+    };
+   </script>
+      
+<!-- 目录内容结束 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>由简单无门槛 js 实现一个触发按键跳转网页的导航网站，效果<a href="https://unbrain.github.io/myBookmarks/" target="_blank" rel="external">预览</a></p>
+<p><img src="/img/nav.png" alt=""></p>
+<a id="more"></a>
+<h3 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h3><p>我们都知道工欲善其事，必先利其器，所以选择好数据结构再来进行编程是很有必要的。由于是一个键盘按键对应一个网站，我们很快就会想到 <code>key:value</code> 所以我用对象来存储。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">hash = &#123;</div><div class="line">    q: <span class="string">'qq.com'</span>, </div><div class="line">    w: <span class="string">'w3cplus.com'</span>, </div><div class="line">    e: <span class="string">'edx.org.com'</span>, </div><div class="line">    t: <span class="string">'cloud.tencent.com'</span>, </div><div class="line">    a: <span class="string">'alloyteam.com'</span>, </div><div class="line">    y: <span class="string">'youtube.com'</span>, </div><div class="line">    i: <span class="string">'iconfont.cn'</span>, </div><div class="line">    o: <span class="string">'opera.com'</span>, </div><div class="line">    z: <span class="string">'zhangxinxu.com'</span>, </div><div class="line">  <span class="comment">//...</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="生成键盘"><a href="#生成键盘" class="headerlink" title="生成键盘"></a>生成键盘</h3><p>想到键盘比较多，我就没有写键盘的 <code>HTML</code> 而是改用 <code>JS</code> 自动生成，把要用的三排键想成三个数组存储，可以用对象也可以是二维数组。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> keys = &#123;</div><div class="line">    <span class="number">0</span>: [<span class="string">'q'</span>, <span class="string">'w'</span>, <span class="string">'e'</span>, <span class="string">'r'</span>, <span class="string">'t'</span>, <span class="string">'y'</span>, <span class="string">'u'</span>, <span class="string">'i'</span>, <span class="string">'o'</span>, <span class="string">'p'</span>,],</div><div class="line">    <span class="number">1</span>: [<span class="string">'a'</span>, <span class="string">'s'</span>, <span class="string">'d'</span>, <span class="string">'f'</span>, <span class="string">'g'</span>, <span class="string">'h'</span>, <span class="string">'j'</span>, <span class="string">'k'</span>, <span class="string">'l'</span>,],</div><div class="line">    <span class="number">2</span>: [<span class="string">'z'</span>, <span class="string">'x'</span>, <span class="string">'c'</span>, <span class="string">'v'</span>, <span class="string">'b'</span>, <span class="string">'n'</span>, <span class="string">'m'</span>,],</div><div class="line">    length: <span class="number">3</span>,</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>根据获取到的 <code>keys[][]</code> 的字母来显示键值，遍历该对象进行键盘生成</p>
+<ul>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Document/createElement" target="_blank" rel="external">creatElement(targetname)</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Node/appendChild" target="_blank" rel="external">appendChild</a></li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">creatButton</span>(<span class="params">id</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> oBtn = tag(<span class="string">'button'</span>)</div><div class="line">    oBtn.id = id</div><div class="line">    oBtn.textContent = <span class="string">'E'</span></div><div class="line"></div><div class="line">    oBtn.onclick = <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</div><div class="line">      <span class="comment">//修该键盘的对应网址</span></div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> oBtn</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">generateKeyboard</span>(<span class="params">keys, hash</span>) </span>&#123;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; keys.length; i++) &#123;</div><div class="line">        <span class="keyword">var</span> oDiv = tag(<span class="string">'div'</span>)</div><div class="line">        <span class="built_in">document</span>.getElementById(<span class="string">'main'</span>).appendChild(oDiv)</div><div class="line"></div><div class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> j = <span class="number">0</span>; j &lt; keys[i].length; j++) &#123;</div><div class="line">            <span class="keyword">var</span> oKbd = tag(<span class="string">'kbd'</span>)</div><div class="line">            <span class="keyword">var</span> oBtn = creatButton(keys[i][j])</div><div class="line">            <span class="keyword">var</span> oImg = createImage(hash[keys[i][j]])</div><div class="line"></div><div class="line">            oKbd.textContent = keys[i][j]</div><div class="line">            oKbd.className = <span class="string">'key'</span></div><div class="line"></div><div class="line">            oDiv.appendChild(oKbd)</div><div class="line">            oKbd.appendChild(oImg)</div><div class="line">            oKbd.appendChild(oBtn)</div><div class="line"></div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="监听键盘"><a href="#监听键盘" class="headerlink" title="监听键盘"></a>监听键盘</h3><p>其实实现该项目最主要的其实就是监听用户按下的键盘，需要做一下监听的范围是 <code>document</code> ，然后就打开相应的网站，不太懂可以先 <code>console.log(e)</code> 可以看一下控制台。</p>
+<ul>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/KeyboardEvent" target="_blank" rel="external">KeyboardEvent</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/open" target="_blank" rel="external">window.open</a></li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">document</span>.onkeypress = <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</div><div class="line">    website = hash[e.key]</div><div class="line">    <span class="comment">//location.href = 'https://' + website</span></div><div class="line">    <span class="keyword">if</span> (website) &#123;</div><div class="line">        <span class="built_in">window</span>.open(<span class="string">'http://'</span> + website, <span class="string">'_blank'</span>)</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">        alert(<span class="string">'亲， 你还没有编辑呢'</span>)</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="存储用户的改变"><a href="#存储用户的改变" class="headerlink" title="存储用户的改变"></a>存储用户的改变</h3><p>用户可以对其的键盘进行网站的改变，也就是对 <code>hash</code> 进行修改，而我们需要对其修改进行保存以防丢失</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Node/previousSibling" target="_blank" rel="external">previousSibling</a> 为了获取上一节点</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">oBtn.onclick = <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</div><div class="line">    value = prompt(<span class="string">'你想用 '</span> + (e.target.id) + <span class="string">' 代表的网址:'</span>)</div><div class="line">    hash[e.target.id] = value</div><div class="line">    <span class="keyword">if</span> (value != <span class="literal">null</span>) &#123;</div><div class="line">        setLocalStorage(<span class="string">'myWebsite'</span>)</div><div class="line">        e.target.previousSibling.src = <span class="string">'http://'</span> + value + <span class="string">'/favicon.ico'</span></div><div class="line">        e.target.previousSibling.onerror = <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</div><div class="line">            e.target.src = <span class="string">'./favicon.ico'</span></div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getLocalStorage</span>(<span class="params">e</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="built_in">JSON</span>.parse(localStorage.getItem(e || <span class="string">'null'</span>))</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">setLocalStorage</span>(<span class="params">e</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> localStorage.setItem(e, <span class="built_in">JSON</span>.stringify(hash))</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>### </p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/wxpay.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">github</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">导航</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2018/03/11/nav/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2018/03/10/myCanvas/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">在线画板的制作</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#数据结构"><span class="toc-number">1.</span> <span class="toc-text">数据结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#生成键盘"><span class="toc-number">2.</span> <span class="toc-text">生成键盘</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#监听键盘"><span class="toc-number">3.</span> <span class="toc-text">监听键盘</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#存储用户的改变"><span class="toc-number">4.</span> <span class="toc-text">存储用户的改变</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
+  
+  
+  
+  <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+<script>
+  var cloudTieConfig = {
+    url: "http://yoursite.com/2018/03/11/nav/", 
+    sourceId: "nav",
+    productKey: "true",
+    target: "cloud-tie-wrapper"
+  };
+</script>
+<script src="//img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -238,9 +434,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
