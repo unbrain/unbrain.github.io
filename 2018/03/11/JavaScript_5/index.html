@@ -6,18 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Marsorsun</title>
+  <title>DOM 操作 | Marsorsun</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="我的心，在哪里，忘了我的眼，在哪里，忘了我的魂，在哪里，忘了全忘了。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Marsorsun">
-<meta property="og:url" content="http://yoursite.com/page/2/index.html">
+  <meta name="description" content="DOM节点childNodes     nodeType 节点类型    –&amp;gt;3文本节点     –&amp;gt;1元素节点 获取子节点 children    子节点 parentNode    父节点">
+<meta name="keywords" content="blue视频笔记,JavaScript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="DOM 操作">
+<meta property="og:url" content="http://yoursite.com/2018/03/11/JavaScript_5/index.html">
 <meta property="og:site_name" content="Marsorsun">
-<meta property="og:description" content="我的心，在哪里，忘了我的眼，在哪里，忘了我的魂，在哪里，忘了全忘了。">
+<meta property="og:description" content="DOM节点childNodes     nodeType 节点类型    –&amp;gt;3文本节点     –&amp;gt;1元素节点 获取子节点 children    子节点 parentNode    父节点">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-03-11T05:22:37.254Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Marsorsun">
-<meta name="twitter:description" content="我的心，在哪里，忘了我的眼，在哪里，忘了我的魂，在哪里，忘了全忘了。">
+<meta name="twitter:title" content="DOM 操作">
+<meta name="twitter:description" content="DOM节点childNodes     nodeType 节点类型    –&amp;gt;3文本节点     –&amp;gt;1元素节点 获取子节点 children    子节点 parentNode    父节点">
   
     <link rel="alternative" href="/atom.xml" title="Marsorsun" type="application/atom+xml">
   
@@ -151,120 +153,156 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-开启 Deepin" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-JavaScript_5" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/02/08/开启 Deepin/">开启 deepin</a>
+    <h1 class="article-title" itemprop="name">
+      DOM 操作
     </h1>
   
 
         
-        <a href="/2018/02/08/开启 Deepin/" class="archive-article-date">
-  	<time datetime="2018-02-08T02:16:37.416Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-08</time>
+        <a href="/2018/03/11/JavaScript_5/" class="archive-article-date">
+  	<time datetime="2018-03-11T05:22:37.254Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-11</time>
 </a>
         
       </header>
     
     <!-- 目录内容 -->
 
+    <p class="show-toc-btn" id="show-toc-btn" onclick="showToc();" style="display:none">
+          <span class="btn-bg"></span>
+          <span class="btn-text">文章导航</span>
+          </p>
+  <div id="toc-article" class="toc-article">
+      <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
+    <strong class="toc-title">文章目录</strong>
+           <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#DOM节点"><span class="toc-number">1.</span> <span class="toc-text">DOM节点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#操纵元素属性"><span class="toc-number">2.</span> <span class="toc-text">操纵元素属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DOM元素灵活查找"><span class="toc-number">3.</span> <span class="toc-text">DOM元素灵活查找</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#创建、插入和删除元素"><span class="toc-number">4.</span> <span class="toc-text">创建、插入和删除元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文档碎片"><span class="toc-number">5.</span> <span class="toc-text">文档碎片</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#表格应用"><span class="toc-number">6.</span> <span class="toc-text">表格应用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DOM方法的使用"><span class="toc-number">7.</span> <span class="toc-text">DOM方法的使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#表单应用"><span class="toc-number">8.</span> <span class="toc-text">表单应用</span></a></li></ol>
+         </div>
+   <script type="text/javascript">
+  function showToc(){
+    var toc_article = document.getElementById("toc-article");
+    var show_toc_btn = document.getElementById("show-toc-btn");
+    toc_article.setAttribute("style","display:block");
+    show_toc_btn.setAttribute("style","display:none");
+    };
+  function showBtn(){
+    var toc_article = document.getElementById("toc-article");
+    var show_toc_btn = document.getElementById("show-toc-btn");
+    toc_article.setAttribute("style","display:none");
+    show_toc_btn.setAttribute("style","display:block");
+    };
+   </script>
+      
 <!-- 目录内容结束 -->
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Linux 这个系统从平常角度来看总有一种高大上的感觉，但是你放下脚步去了解你会发现他也很平常并非高高在上。Deepin 系统也非常的适合国人使用，也非常漂亮，个人觉得比 Ubuntu 好使好看。安装双系统简直是无脑安装真的好。<a href="https://www.deepin.org/" target="_blank" rel="external">官网</a>的教程很详尽了就自己看吧。</p>
-<p><img src="/img/deepin.png" alt=""></p>
-        
-          <a class="article-more-a" href="/2018/02/08/开启 Deepin/#more">more >></a>
-        
+        <h3 id="DOM节点"><a href="#DOM节点" class="headerlink" title="DOM节点"></a>DOM节点</h3><p>childNodes     nodeType 节点类型    –&gt;3文本节点     –&gt;1元素节点</p>
+<p>获取子节点</p>
+<p>children    子节点</p>
+<p>parentNode    父节点</p>
+<a id="more"></a>
+<p>例子：点击链接，隐藏整个li</p>
+<p>offsetParent    获取元素在页面上相对谁定位</p>
+<p>首尾子节点</p>
+<p>有兼容性问题    –&gt;    nodeType    </p>
+<p>firstChild、firstElementChild </p>
+<p>lastChild 、lastElementChild</p>
+<p>兄弟节点</p>
+<p>有兼容性问题</p>
+<p>nextSibling、nextElementSibling</p>
+<p>previousSibling、previousElementSibling</p>
+<h3 id="操纵元素属性"><a href="#操纵元素属性" class="headerlink" title="操纵元素属性"></a>操纵元素属性</h3><p>元素属性操作</p>
+<p>第一种：oDiv.style.display=“block”;</p>
+<p>第二种：oDiv.style[“display”]=“block”;</p>
+<p>第三种：Dom方式</p>
+<p>DOM方式操作元素属性</p>
+<p>获取：getAttribute(名称)</p>
+<p>设置：setAttribute(名称, 值)</p>
+<p>删除：removeAttribute(名称)</p>
+<h3 id="DOM元素灵活查找"><a href="#DOM元素灵活查找" class="headerlink" title="DOM元素灵活查找"></a>DOM元素灵活查找</h3><p>用className选择元素</p>
+<p>如何用className选择元素</p>
+<p>选出所有元素</p>
+<p>通过className条件筛选</p>
+<p>封装成函数</p>
+<h3 id="创建、插入和删除元素"><a href="#创建、插入和删除元素" class="headerlink" title="创建、插入和删除元素"></a>创建、插入和删除元素</h3><p>创建DOM元素</p>
+<p>createElement(标签名)        创建一个节点    document.createElement(‘li’);</p>
+<p>appendChild(节点)            追加一个节点    父级.apppendChild(子节点)</p>
+<p>例子：为ul插入li</p>
+<p>插入元素</p>
+<p>insertBefore(节点, 原有节点)    在已有元素前插入    oUl.insertBefore(oLi, aLi[0]);</p>
+<p>例子：倒序插入li</p>
+<p>删除DOM元素</p>
+<p>removeChild(节点)            删除一个节点    oUl.removeChild(this.parentNode);</p>
+<p>例子：删除li</p>
+<h3 id="文档碎片"><a href="#文档碎片" class="headerlink" title="文档碎片"></a>文档碎片</h3><p>文档碎片可以提高DOM操作性能(理论上)</p>
+<p>文档碎片原理</p>
+<p>document.createDocumentFragment()    //但是现在几乎不用这个  低级浏览器    几乎无用</p>
+<h3 id="表格应用"><a href="#表格应用" class="headerlink" title="表格应用"></a>表格应用</h3><p>tBodies、tHead、tFoot、rows、cells</p>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">// alert(<span class="name">aTb</span>.getElementsByTagName('tbody')[<span class="number">0</span>].getElementsByTagName('tr')[<span class="number">0</span>].getElementsByTagName('td')[<span class="number">1</span>].innerHTML)<span class="comment">;</span></div><div class="line">alert(<span class="name">aTb</span>.tBodies[<span class="number">0</span>].rows[<span class="number">0</span>].cells[<span class="number">1</span>].innerHTML)<span class="comment">;</span></div></pre></td></tr></table></figure>
+<p>隔行变色</p>
+<p>鼠标移入高亮</p>
+<p>添加、删除一行</p>
+<h3 id="DOM方法的使用"><a href="#DOM方法的使用" class="headerlink" title="DOM方法的使用"></a>DOM方法的使用</h3><p>搜索    —-&gt;    主要是后端</p>
+<p>版本1：基础版本——字符串比较</p>
+<p>版本2：忽略大小写——大小写转换</p>
+<p>版本3：模糊搜索——search的使用</p>
+<p>版本4：多关键词——split</p>
+<p>高亮显示、筛选    background / display</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">window</span>.onload =<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="keyword">var</span> oTb = <span class="built_in">document</span>.getElementById(<span class="string">'table1'</span>);</div><div class="line">	<span class="keyword">var</span> oT1 = <span class="built_in">document</span>.getElementById(<span class="string">'text1'</span>);</div><div class="line">	<span class="keyword">var</span> oBtn1 = <span class="built_in">document</span>.getElementById(<span class="string">'btn1'</span>);</div><div class="line"></div><div class="line">	oBtn1.onclick = <span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; oTb.tBodies[<span class="number">0</span>].rows.length; i++)&#123;</div><div class="line">			<span class="keyword">var</span> search = oT1.value.toLowerCase();</div><div class="line">			<span class="keyword">var</span> oldText = oTb.tBodies[<span class="number">0</span>].rows[i].cells[<span class="number">1</span>].innerHTML.toLowerCase();</div><div class="line">			<span class="keyword">var</span> arr = search.split(<span class="string">' '</span>);</div><div class="line">			oTb.tBodies[<span class="number">0</span>].rows[i].style.background = <span class="string">''</span>;</div><div class="line"></div><div class="line">			<span class="keyword">for</span>(<span class="keyword">var</span> j = <span class="number">0</span>; j &lt; arr.length; j++)&#123;</div><div class="line">				<span class="keyword">if</span>( oldText.search(arr[j]) != <span class="number">-1</span>)&#123;</div><div class="line">					oTb.tBodies[<span class="number">0</span>].rows[i].style.background = <span class="string">'green'</span>;</div><div class="line">				&#125;</div><div class="line">			&#125;	</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>排序</p>
+<p>移动Li    appendChild(); //1.从原有父级删掉2.添加到新的父级</p>
+<p>元素排序：转换——排序——插入</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">window</span>.onload =<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="keyword">var</span> oTb = <span class="built_in">document</span>.getElementById(<span class="string">'table1'</span>);</div><div class="line">	<span class="keyword">var</span> oBtn1 = <span class="built_in">document</span>.getElementById(<span class="string">'btn1'</span>);</div><div class="line"></div><div class="line">	oBtn1.onclick = <span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</div><div class="line">		<span class="keyword">var</span> arr = [];</div><div class="line"></div><div class="line">		<span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; oTb.tBodies[<span class="number">0</span>].rows.length; i++)&#123;</div><div class="line">			arr[i] = oTb.tBodies[<span class="number">0</span>].rows[i];</div><div class="line">		&#125;</div><div class="line"></div><div class="line">		arr.sort(<span class="function"><span class="keyword">function</span> (<span class="params">num1, num2</span>)</span>&#123;</div><div class="line">			<span class="keyword">var</span> n1 = <span class="built_in">parseInt</span>(num1.cells[<span class="number">0</span>].innerHTML);</div><div class="line">			<span class="keyword">var</span> n2 = <span class="built_in">parseInt</span>(num2.cells[<span class="number">0</span>].innerHTML);</div><div class="line"></div><div class="line">			<span class="keyword">return</span> (n1 - n2);</div><div class="line">		&#125;);</div><div class="line"></div><div class="line">		<span class="keyword">for</span> (<span class="keyword">var</span> i <span class="keyword">in</span> arr)&#123;</div><div class="line">			oTb.tBodies[<span class="number">0</span>].appendChild(arr[i]);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="表单应用"><a href="#表单应用" class="headerlink" title="表单应用"></a>表单应用</h3><p>表单基础知识</p>
+<p>什么是表单</p>
+<p>向服务器提交数据，比如：用户注册</p>
+<p>action        提交到哪里 </p>
+<p>表单事件</p>
+<p>onsubmit    提交时发生</p>
+<p>onreset        重置时发生</p>
+<p>表单内容验证</p>
+<p>阻止用户输入非法字符        阻止事件</p>
+<p>输入时、失去焦点时验证        onkeyup、onblur</p>
+<p>提交时检查                onsubmit</p>
+<p><em>后台数据检查</em></p>
+
       
 
       
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">编程</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/02/08/开启 Deepin/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/wxpay.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-初探vim" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/02/06/初探vim/">初探 vim</a>
-    </h1>
-  
-
-        
-        <a href="/2018/02/06/初探vim/" class="archive-article-date">
-  	<time datetime="2018-02-06T06:48:26.860Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-06</time>
-</a>
-        
-      </header>
-    
-    <!-- 目录内容 -->
-
-<!-- 目录内容结束 -->
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>教程来自 vimtutor 版本1.7 shell 下直接输入 vimtutor</p>
-</blockquote>
-<p>先输入 <code>：set number</code> 显示行号</p>
-        
-          <a class="article-more-a" href="/2018/02/06/初探vim/#more">more >></a>
-        
-      
-
       
     </div>
     <div class="article-info article-info-index">
@@ -275,417 +313,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">编程</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/02/06/初探vim/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-bboc" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/01/01/bboc/">BBOC</a>
-    </h1>
-  
-
-        
-        <a href="/2018/01/01/bboc/" class="archive-article-date">
-  	<time datetime="2017-12-31T16:42:08.914Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-01</time>
-</a>
-        
-      </header>
-    
-    <!-- 目录内容 -->
-
-<!-- 目录内容结束 -->
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>BBOC=Best Boy Of China。</p>
-<p>这篇文章是曾博在2011年刚去美国写的。</p>
-<p>当年，他还是BBOC，还会浪漫的给自己写信，</p>
-</blockquote>
-        
-          <a class="article-more-a" href="/2018/01/01/bboc/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">转载</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/01/01/bboc/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-suibi11last" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/06/suibi11last/">11 月末</a>
-    </h1>
-  
-
-        
-        <a href="/2017/12/06/suibi11last/" class="archive-article-date">
-  	<time datetime="2017-12-06T11:00:29.208Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-06</time>
-</a>
-        
-      </header>
-    
-    <!-- 目录内容 -->
-
-<!-- 目录内容结束 -->
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="今天再看了一次阿米尔汗的《地球上的星星》，在三颜色事件后另有一番感慨，你不得不惊叹阿米汗的一流，只要你有爱，你定流泪。真的感谢那些帮助孩子的老师家长还有可爱的孩子。我痛恨那些造谣的人，-永远"><a href="#今天再看了一次阿米尔汗的《地球上的星星》，在三颜色事件后另有一番感慨，你不得不惊叹阿米汗的一流，只要你有爱，你定流泪。真的感谢那些帮助孩子的老师家长还有可爱的孩子。我痛恨那些造谣的人，-永远" class="headerlink" title="今天再看了一次阿米尔汗的《地球上的星星》，在三颜色事件后另有一番感慨，你不得不惊叹阿米汗的一流，只要你有爱，你定流泪。真的感谢那些帮助孩子的老师家长还有可爱的孩子。我痛恨那些造谣的人， 永远"></a>今天再看了一次阿米尔汗的《地球上的星星》，在三颜色事件后另有一番感慨，你不得不惊叹阿米汗的一流，只要你有爱，你定流泪。真的感谢那些帮助孩子的老师家长还有可爱的孩子。我痛恨那些造谣的人， 永远</h3>
-        
-          <a class="article-more-a" href="/2017/12/06/suibi11last/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/12/06/suibi11last/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-think1030" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/01/think1030/">十月末</a>
-    </h1>
-  
-
-        
-        <a href="/2017/11/01/think1030/" class="archive-article-date">
-  	<time datetime="2017-11-01T12:34:34.438Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-01</time>
-</a>
-        
-      </header>
-    
-    <!-- 目录内容 -->
-
-<!-- 目录内容结束 -->
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>从九月初学习前端快两个月，我已经确定了自己的这条路。从前端到全栈是我的终级目的，而我在这十个月的目标就是在明年暑假能够去找一家互联网公司实习做前端不论是在成都或深圳。<br>
-        
-          <a class="article-more-a" href="/2017/11/01/think1030/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/01/think1030/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-yemao" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/10/19/yemao/">随笔记夜猫子英语</a>
-    </h1>
-  
-
-        
-        <a href="/2017/10/19/yemao/" class="archive-article-date">
-  	<time datetime="2017-10-19T12:54:57.295Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-19</time>
-</a>
-        
-      </header>
-    
-    <!-- 目录内容 -->
-
-<!-- 目录内容结束 -->
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="第一天"><a href="#第一天" class="headerlink" title="第一天"></a>第一天</h3><p>American Revolution 独立战争 = American war of independence</p>
-<p>No representation, no tax 无代表不纳税</p>
-<p>monarchy 君主制 democracy 民主制</p>
-<p>the gun of lexington 莱克辛顿的枪声 the beginning of  important event</p>
-<hr>
-        
-          <a class="article-more-a" href="/2017/10/19/yemao/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">英语</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/10/19/yemao/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-kaocong" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/09/26/kaocong/">考虫长难句</a>
-    </h1>
-  
-
-        
-        <a href="/2017/09/26/kaocong/" class="archive-article-date">
-  	<time datetime="2017-09-26T00:49:03.207Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-26</time>
-</a>
-        
-      </header>
-    
-    <!-- 目录内容 -->
-
-<!-- 目录内容结束 -->
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>每日长难句</p>
-</blockquote>
-<h1 id="九月"><a href="#九月" class="headerlink" title="九月"></a>九月</h1>
-        
-          <a class="article-more-a" href="/2017/09/26/kaocong/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">英语</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">blue视频笔记</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">考虫</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
         		</li>
       		
 		</ul>
@@ -694,16 +326,84 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/09/26/kaocong/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2018/03/11/JavaScript_5/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2018/03/11/JavaScript_6/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          JavaScript 运动
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/03/11/JavaScript_4/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">定时器的使用</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -718,267 +418,43 @@
         </div>
         
         
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-201170923" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/09/23/201170923/">九月</a>
-    </h1>
-  
-
-        
-        <a href="/2017/09/23/201170923/" class="archive-article-date">
-  	<time datetime="2017-09-23T07:55:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-23</time>
-</a>
-        
-      </header>
-    
-    <!-- 目录内容 -->
-
-<!-- 目录内容结束 -->
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="http://blogs.c.yimg.jp/res/blog-0f-9f/mitsounob/folder/777168/15/32780715/img_0" alt=""></p>
-<blockquote>
-<p>天色已晚，人们都赶在回家的路上，我的一天才刚开始。 营业时间从深夜12点到次日7点，人们称这里为“深夜食堂”。 菜单只有这些，可以随意点其他菜，能做就尽量做，是我的营业方针。你问有没有客人，其实还不少呢。</p>
-</blockquote>
-        
-          <a class="article-more-a" href="/2017/09/23/201170923/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/09/23/201170923/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#DOM节点"><span class="toc-number">1.</span> <span class="toc-text">DOM节点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#操纵元素属性"><span class="toc-number">2.</span> <span class="toc-text">操纵元素属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DOM元素灵活查找"><span class="toc-number">3.</span> <span class="toc-text">DOM元素灵活查找</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#创建、插入和删除元素"><span class="toc-number">4.</span> <span class="toc-text">创建、插入和删除元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文档碎片"><span class="toc-number">5.</span> <span class="toc-text">文档碎片</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#表格应用"><span class="toc-number">6.</span> <span class="toc-text">表格应用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DOM方法的使用"><span class="toc-number">7.</span> <span class="toc-text">DOM方法的使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#表单应用"><span class="toc-number">8.</span> <span class="toc-text">表单应用</span></a></li></ol>
+                    </div>
+                </span>
             </div>
         </div>
         
-        
     </div>
 </aside>
 
 
 
-
-  
-    <article id="post-create-hexo" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/09/23/create-hexo/">利用Hexo + Github 搭建个人博客</a>
-    </h1>
-  
-
-        
-        <a href="/2017/09/23/create-hexo/" class="archive-article-date">
-  	<time datetime="2017-09-23T07:26:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-23</time>
-</a>
-        
-      </header>
-    
-    <!-- 目录内容 -->
-
-<!-- 目录内容结束 -->
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p># </p>
-<h3 id="利用的资源"><a href="#利用的资源" class="headerlink" title="利用的资源"></a>利用的资源</h3><blockquote>
-<p><a href="https://hexo.io/zh-cn/index.html" target="_blank" rel="external">hexo官方文档</a></p>
-<p><a href="https://luuman.github.io/categories/Hexo/" target="_blank" rel="external">spfk教程</a></p>
-<p>用以上教程就差不多了</p>
-<p>提醒一点 在部署后没有报错的前提下，第一次部署的时间有点长，我当时直接刷新发现没反应一直以为有错，很尴尬。</p>
-</blockquote>
-        
-          <a class="article-more-a" href="/2017/09/23/create-hexo/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">github</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/09/23/create-hexo/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-my-o" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/09/23/my-o/">无题</a>
-    </h1>
-  
-
-        
-        <a href="/2017/09/23/my-o/" class="archive-article-date">
-  	<time datetime="2017-09-23T02:00:08.997Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-23</time>
-</a>
-        
-      </header>
-    
-    <!-- 目录内容 -->
-
-<!-- 目录内容结束 -->
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>我已经将近21岁了，花着父母的钱，却在大学消耗着青春，不是说后不后悔，只是愧疚。今天看了几个大佬的博客，有这么一段</p>
-        
-          <a class="article-more-a" href="/2017/09/23/my-o/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/09/23/my-o/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
   
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
-    </nav>
+  
+  <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+<script>
+  var cloudTieConfig = {
+    url: "http://yoursite.com/2018/03/11/JavaScript_5/", 
+    sourceId: "JavaScript_5",
+    productKey: "true",
+    target: "cloud-tie-wrapper"
+  };
+</script>
+<script src="//img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
+  
+
+  
+
+  
+
   
 
 
@@ -1008,8 +484,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
