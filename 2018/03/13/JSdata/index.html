@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Marsorsun">
 <meta property="og:description" content="JS 中数据类型有七种　number null undefined string boolean object symbol(es6) 今天就来看看他们的一些平常会用到的东西 JavaScript 历史">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-03-13T12:47:26.082Z">
+<meta property="og:updated_time" content="2018-03-13T13:00:04.089Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="浅谈 JS 数据">
 <meta name="twitter:description" content="JS 中数据类型有七种　number null undefined string boolean object symbol(es6) 今天就来看看他们的一些平常会用到的东西 JavaScript 历史">
@@ -166,7 +166,7 @@
 
         
         <a href="/2018/03/13/JSdata/" class="archive-article-date">
-  	<time datetime="2018-03-13T12:47:26.082Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-13</time>
+  	<time datetime="2018-03-13T13:00:04.089Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-13</time>
 </a>
         
       </header>
@@ -180,7 +180,7 @@
   <div id="toc-article" class="toc-article">
       <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
     <strong class="toc-title">文章目录</strong>
-           <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#JS-中数据类型有七种-number-null-undefined-string-boolean-object-symbol-es6-今天就来看看他们的一些平常会用到的东西"><span class="toc-number">1.</span> <span class="toc-text">JS 中数据类型有七种　number null undefined string boolean object symbol(es6) 今天就来看看他们的一些平常会用到的东西</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#注意事项"><span class="toc-number">2.</span> <span class="toc-text">注意事项</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#２．string"><span class="toc-number">2.0.1.</span> <span class="toc-text">２．string</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#typeof-操作符"><span class="toc-number">3.</span> <span class="toc-text">typeof 操作符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数据转换"><span class="toc-number">4.</span> <span class="toc-text">数据转换</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#任意类型转-String"><span class="toc-number">4.0.0.1.</span> <span class="toc-text">任意类型转 String</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#任意类型转数字"><span class="toc-number">4.0.0.2.</span> <span class="toc-text">任意类型转数字</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#任意类型转布尔"><span class="toc-number">4.0.1.</span> <span class="toc-text">任意类型转布尔</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#面试题"><span class="toc-number">5.</span> <span class="toc-text">面试题</span></a></li></ol>
+           <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#JS-中数据类型有七种-number-null-undefined-string-boolean-object-symbol-es6-今天就来看看他们的一些平常会用到的东西"><span class="toc-number">1.</span> <span class="toc-text">JS 中数据类型有七种　number null undefined string boolean object symbol(es6) 今天就来看看他们的一些平常会用到的东西</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#注意事项"><span class="toc-number">2.</span> <span class="toc-text">注意事项</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#２．string"><span class="toc-number">2.0.1.</span> <span class="toc-text">２．string</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#３．undefined-与-null"><span class="toc-number">2.0.2.</span> <span class="toc-text">３．undefined 与 null</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#typeof-操作符"><span class="toc-number">3.</span> <span class="toc-text">typeof 操作符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数据转换"><span class="toc-number">4.</span> <span class="toc-text">数据转换</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#任意类型转-String"><span class="toc-number">4.0.0.1.</span> <span class="toc-text">任意类型转 String</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#任意类型转数字"><span class="toc-number">4.0.1.</span> <span class="toc-text">任意类型转数字</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#任意类型转布尔"><span class="toc-number">4.0.2.</span> <span class="toc-text">任意类型转布尔</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#面试题"><span class="toc-number">5.</span> <span class="toc-text">面试题</span></a></li></ol>
          </div>
    <script type="text/javascript">
   function showToc(){
@@ -205,7 +205,7 @@
 </blockquote>
 <a id="more"></a>
 <p>这七种不包括 Array Funtion 这两种其实就是　object</p>
-<h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><p>######１．number</p>
+<h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><p>#####１．number</p>
 <ul>
 <li>八进制: <code>011</code> (es5新增　0o11　语法)</li>
 </ul>
@@ -214,17 +214,16 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"> <span class="keyword">var</span> s = <span class="string">'12345'</span> +</div><div class="line">             <span class="string">'67890'</span> <span class="comment">// 无回车符号</span></div><div class="line"> 或</div><div class="line"> <span class="keyword">var</span> s = <span class="string">`12345</span></div><div class="line"><span class="string"> 67890`</span> <span class="comment">// 含回车符号</span></div><div class="line"> <span class="comment">//其实还可以但不推荐,因为若在\后面有' '就会报错且不易发现</span></div><div class="line"> <span class="keyword">var</span> longString = <span class="string">'Long \</span></div><div class="line"><span class="string">string'</span>;</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<p>######３．undefined 与 null</p>
-<p>就连 JS 之父都说这是他当初没有设计好的地方</p>
+<h5 id="３．undefined-与-null"><a href="#３．undefined-与-null" class="headerlink" title="３．undefined 与 null"></a>３．undefined 与 null</h5><p>就连 JS 之父都说这是他当初没有设计好的地方</p>
 <p>不过一般情况下会对一个未赋值的对象，就用 null</p>
 <p>对于不是对象的数据类型没有赋值，就是 undefined</p>
-<h3 id="typeof-操作符"><a href="#typeof-操作符" class="headerlink" title="typeof 操作符"></a>typeof 操作符</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">typeof</span> <span class="built_in">String</span><span class="comment">//"function"</span></div><div class="line"><span class="keyword">typeof</span> <span class="string">'hello'</span></div><div class="line"><span class="comment">//"string"</span></div><div class="line"><span class="keyword">typeof</span> <span class="number">1</span></div><div class="line"><span class="comment">//"number"</span></div><div class="line"><span class="keyword">typeof</span> <span class="literal">true</span></div><div class="line"><span class="comment">//"boolean"</span></div><div class="line"><span class="keyword">typeof</span> &#123;&#125;</div><div class="line"><span class="comment">//"object"</span></div><div class="line"><span class="keyword">typeof</span> <span class="literal">null</span></div><div class="line"><span class="comment">//"object"</span></div><div class="line"><span class="keyword">var</span> a = <span class="literal">null</span></div><div class="line"><span class="comment">//undefined</span></div><div class="line"><span class="keyword">typeof</span> a</div><div class="line"><span class="comment">//"object"</span></div><div class="line"><span class="keyword">var</span> b = <span class="built_in">Symbol</span>()</div><div class="line"><span class="comment">//undefined</span></div><div class="line"><span class="keyword">typeof</span> b</div><div class="line"><span class="comment">//"symbol"</span></div></pre></td></tr></table></figure>
+<h3 id="typeof-操作符"><a href="#typeof-操作符" class="headerlink" title="typeof 操作符"></a>typeof 操作符</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">typeof</span> <span class="built_in">String</span></div><div class="line"><span class="comment">//"function"</span></div><div class="line"><span class="keyword">typeof</span> <span class="string">'hello'</span></div><div class="line"><span class="comment">//"string"</span></div><div class="line"><span class="keyword">typeof</span> <span class="number">1</span></div><div class="line"><span class="comment">//"number"</span></div><div class="line"><span class="keyword">typeof</span> <span class="literal">true</span></div><div class="line"><span class="comment">//"boolean"</span></div><div class="line"><span class="keyword">typeof</span> &#123;&#125;</div><div class="line"><span class="comment">//"object"</span></div><div class="line"><span class="keyword">typeof</span> <span class="literal">null</span></div><div class="line"><span class="comment">//"object"</span></div><div class="line"><span class="keyword">var</span> a = <span class="literal">null</span></div><div class="line"><span class="comment">//undefined</span></div><div class="line"><span class="keyword">typeof</span> a</div><div class="line"><span class="comment">//"object"</span></div><div class="line"><span class="keyword">var</span> b = <span class="built_in">Symbol</span>()</div><div class="line"><span class="comment">//undefined</span></div><div class="line"><span class="keyword">typeof</span> b</div><div class="line"><span class="comment">//"symbol"</span></div></pre></td></tr></table></figure>
 <p>需要注意的就是 null 和 function, function并不是一个类型</p>
 <h3 id="数据转换"><a href="#数据转换" class="headerlink" title="数据转换"></a>数据转换</h3><p>可以说在 code 的世界中有很大一部分的事情就是在将数据的格式进行转换</p>
 <h6 id="任意类型转-String"><a href="#任意类型转-String" class="headerlink" title="任意类型转 String"></a>任意类型转 String</h6><p>有三种 <code>String()</code> <code>.toString()</code> 与最方便的 <code>&#39;&#39;+1/true...</code></p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">String</span>(<span class="number">1</span>)</div><div class="line"><span class="comment">//"1"</span></div><div class="line"><span class="built_in">String</span>(&#123;&#125;)</div><div class="line"><span class="comment">//"[object Object]"</span></div><div class="line"><span class="built_in">String</span>(&#123;</div><div class="line">key: <span class="string">'99'</span>,</div><div class="line">&#125;)</div><div class="line"><span class="comment">//"[object Object]"</span></div><div class="line">(<span class="number">1</span>).toString()</div><div class="line"><span class="comment">//"1"</span></div><div class="line"><span class="number">1</span> + <span class="string">''</span></div><div class="line"><span class="comment">//"1"</span></div><div class="line"><span class="literal">null</span> + <span class="string">''</span></div><div class="line"><span class="comment">//"null"</span></div><div class="line"><span class="literal">undefined</span> + <span class="string">''</span></div><div class="line"><span class="comment">//"undefined"</span></div></pre></td></tr></table></figure>
 <p>需要注意的是 null/undefined 是没有 <code>toString()</code> 方法的，会报错</p>
-<h6 id="任意类型转数字"><a href="#任意类型转数字" class="headerlink" title="任意类型转数字"></a>任意类型转数字</h6><ol>
+<h5 id="任意类型转数字"><a href="#任意类型转数字" class="headerlink" title="任意类型转数字"></a>任意类型转数字</h5><ol>
 <li>Number(x)</li>
 <li>parseInt(x, 10) <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/parseInt" target="_blank" rel="external">MDN</a></li>
 <li>parseFloat(x) <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/parseFloat" target="_blank" rel="external">MDN</a></li>
@@ -387,7 +386,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#JS-中数据类型有七种-number-null-undefined-string-boolean-object-symbol-es6-今天就来看看他们的一些平常会用到的东西"><span class="toc-number">1.</span> <span class="toc-text">JS 中数据类型有七种　number null undefined string boolean object symbol(es6) 今天就来看看他们的一些平常会用到的东西</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#注意事项"><span class="toc-number">2.</span> <span class="toc-text">注意事项</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#２．string"><span class="toc-number">2.0.1.</span> <span class="toc-text">２．string</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#typeof-操作符"><span class="toc-number">3.</span> <span class="toc-text">typeof 操作符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数据转换"><span class="toc-number">4.</span> <span class="toc-text">数据转换</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#任意类型转-String"><span class="toc-number">4.0.0.1.</span> <span class="toc-text">任意类型转 String</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#任意类型转数字"><span class="toc-number">4.0.0.2.</span> <span class="toc-text">任意类型转数字</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#任意类型转布尔"><span class="toc-number">4.0.1.</span> <span class="toc-text">任意类型转布尔</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#面试题"><span class="toc-number">5.</span> <span class="toc-text">面试题</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#JS-中数据类型有七种-number-null-undefined-string-boolean-object-symbol-es6-今天就来看看他们的一些平常会用到的东西"><span class="toc-number">1.</span> <span class="toc-text">JS 中数据类型有七种　number null undefined string boolean object symbol(es6) 今天就来看看他们的一些平常会用到的东西</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#注意事项"><span class="toc-number">2.</span> <span class="toc-text">注意事项</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#２．string"><span class="toc-number">2.0.1.</span> <span class="toc-text">２．string</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#３．undefined-与-null"><span class="toc-number">2.0.2.</span> <span class="toc-text">３．undefined 与 null</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#typeof-操作符"><span class="toc-number">3.</span> <span class="toc-text">typeof 操作符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数据转换"><span class="toc-number">4.</span> <span class="toc-text">数据转换</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#任意类型转-String"><span class="toc-number">4.0.0.1.</span> <span class="toc-text">任意类型转 String</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#任意类型转数字"><span class="toc-number">4.0.1.</span> <span class="toc-text">任意类型转数字</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#任意类型转布尔"><span class="toc-number">4.0.2.</span> <span class="toc-text">任意类型转布尔</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#面试题"><span class="toc-number">5.</span> <span class="toc-text">面试题</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -517,10 +516,6 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">编程</a>
               </li>
              
@@ -529,7 +524,11 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">英语</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -537,7 +536,7 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">英语</a>
+                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -557,15 +556,15 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">考虫</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">canvas</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">demo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">考虫</a>
               </li>
              
               <li class="article-tag-list-item">
