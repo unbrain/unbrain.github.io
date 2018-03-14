@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Marsorsun">
 <meta property="og:description" content="JS 中数据类型有七种　number null undefined string boolean object symbol(es6) 今天就来看看他们的一些平常会用到的东西 JavaScript 历史">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-03-13T13:00:04.089Z">
+<meta property="og:updated_time" content="2018-03-13T13:04:46.189Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="浅谈 JS 数据">
 <meta name="twitter:description" content="JS 中数据类型有七种　number null undefined string boolean object symbol(es6) 今天就来看看他们的一些平常会用到的东西 JavaScript 历史">
@@ -166,7 +166,7 @@
 
         
         <a href="/2018/03/13/JSdata/" class="archive-article-date">
-  	<time datetime="2018-03-13T13:00:04.089Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-13</time>
+  	<time datetime="2018-03-13T13:04:46.189Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-13</time>
 </a>
         
       </header>
@@ -236,11 +236,11 @@
 <li>!!x</li>
 <li><a href="https://developer.mozilla.org/zh-CN/docs/Glossary/Falsy" target="_blank" rel="external">五个 Falsy 值</a><code>nul undefined NaN &#39;&#39; 0</code></li>
 </ol>
-<h3 id="面试题"><a href="#面试题" class="headerlink" title="面试题"></a>面试题</h3><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">​```javascript</div><div class="line"><span class="selector-tag">var</span> <span class="selector-tag">a</span> = <span class="number">1</span></div><div class="line"><span class="selector-tag">var</span> <span class="selector-tag">b</span> = a</div><div class="line"><span class="selector-tag">b</span> = <span class="number">2</span></div><div class="line">请问 <span class="selector-tag">a</span> 显示是几？  </div><div class="line">​</div></pre></td></tr></table></figure>
+<h3 id="面试题"><a href="#面试题" class="headerlink" title="面试题"></a>面试题</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">​<span class="string">``</span><span class="string">`javascript</span></div><div class="line"><span class="string">var a = 1</span></div><div class="line"><span class="string">var b = a</span></div><div class="line"><span class="string">b = 2</span></div><div class="line"><span class="string">请问 a 显示是几？  </span></div><div class="line"><span class="string">​</span></div></pre></td></tr></table></figure>
 <p>​<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = &#123;<span class="attr">name</span>: <span class="string">'a'</span>&#125;</div><div class="line"><span class="keyword">var</span> b = a</div><div class="line">b = &#123;<span class="attr">name</span>: <span class="string">'b'</span>&#125;</div><div class="line">请问现在 a.name 是多少？</div><div class="line">​</div></pre></td></tr></table></figure></p>
 <p>​<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = &#123;<span class="attr">name</span>: <span class="string">'a'</span>&#125;</div><div class="line"><span class="keyword">var</span> b = a</div><div class="line">b.name = <span class="string">'b'</span></div><div class="line">请问现在 a.name 是多少？</div><div class="line">​</div></pre></td></tr></table></figure></p>
 <p>​<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = &#123;<span class="attr">name</span>: <span class="string">'a'</span>&#125;</div><div class="line"><span class="keyword">var</span> b = a</div><div class="line">b = <span class="literal">null</span></div><div class="line">请问现在 a 是什么？</div><div class="line">​</div></pre></td></tr></table></figure></p>
-<figure class="highlight clean"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">主要是画内存图，分清楚 `Heap` 和 ` Stack` ，像复杂类型一般都是放到 `Stack`中的比如对象。</div><div class="line"></div><div class="line">### 垃圾回收</div><div class="line"></div><div class="line">JavaScript 的 gc 个人觉得与Java 是很像的，至少表面上看都是当不被引用的时候就会被当做垃圾然后就会等待垃圾车的到来。</div><div class="line"></div><div class="line">### 深复制与浅复制</div><div class="line"></div><div class="line">这是一个浅拷贝的例子</div><div class="line"></div><div class="line">```javascript</div><div class="line">var a = &#123;name: <span class="string">'frank'</span>&#125;</div><div class="line">var b = a</div><div class="line">b.name = <span class="string">'b'</span></div><div class="line">a.name === <span class="string">'b'</span> <span class="comment">// true</span></div></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">主要是画内存图，分清楚 `Heap` 和 ` Stack` ，像复杂类型一般都是放到 `Stack`中的比如对象。</div><div class="line"></div><div class="line">### 垃圾回收</div><div class="line"></div><div class="line">JavaScript 的 gc 个人觉得与Java 是很像的，至少表面上看都是当不被引用的时候就会被当做垃圾然后就会等待垃圾车的到来。</div><div class="line"></div><div class="line">### 深复制与浅复制</div><div class="line"></div><div class="line">这是一个浅拷贝的例子</div><div class="line"></div><div class="line">```javascript</div><div class="line">var a = &#123;name: 'frank'&#125;</div><div class="line">var b = a</div><div class="line">b.name = 'b'</div><div class="line">a.name === 'b' // true</div></pre></td></tr></table></figure>
 <p>因为我们对 b 操作后，a 也变了</p>
 <p>什么是深拷贝了，就是对 Heap 内存进行完全的拷贝。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = &#123;<span class="attr">name</span>: <span class="string">'frank'</span>&#125;</div><div class="line"><span class="keyword">var</span> b = deepClone(a) <span class="comment">// deepClone 还不知道怎么实现</span></div><div class="line">b.name = <span class="string">'b'</span></div><div class="line">a.name === <span class="string">'a'</span> <span class="comment">// true</span></div></pre></td></tr></table></figure>
@@ -356,6 +356,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2018/03/14/JSobject/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          JS　里面的对象
+        
+      </div>
+    </a>
   
   
     <a href="/2018/03/11/nav/" id="article-nav-older" class="article-nav-link-wrap">
@@ -516,14 +525,6 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">编程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">CSS</a>
               </li>
              
@@ -532,15 +533,23 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">blue视频笔记</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">转载</a>
+                <a href="javascript:void(0)" class="js-tag color5">__proto__</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">编程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">blue视频笔记</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -552,11 +561,15 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+                <a href="javascript:void(0)" class="js-tag color3">转载</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">考虫</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">
