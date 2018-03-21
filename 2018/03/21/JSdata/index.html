@@ -12,11 +12,11 @@
 <meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="浅谈 JS 数据">
-<meta property="og:url" content="http://yoursite.com/2018/03/13/JSdata/index.html">
+<meta property="og:url" content="http://yoursite.com/2018/03/21/JSdata/index.html">
 <meta property="og:site_name" content="Marsorsun">
 <meta property="og:description" content="JS 中数据类型有七种　number null undefined string boolean object symbol(es6) 今天就来看看他们的一些平常会用到的东西 JavaScript 历史">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-03-13T13:04:46.189Z">
+<meta property="og:updated_time" content="2018-03-21T12:46:59.513Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="浅谈 JS 数据">
 <meta name="twitter:description" content="JS 中数据类型有七种　number null undefined string boolean object symbol(es6) 今天就来看看他们的一些平常会用到的东西 JavaScript 历史">
@@ -165,8 +165,8 @@
   
 
         
-        <a href="/2018/03/13/JSdata/" class="archive-article-date">
-  	<time datetime="2018-03-13T13:04:46.189Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-13</time>
+        <a href="/2018/03/21/JSdata/" class="archive-article-date">
+  	<time datetime="2018-03-21T12:46:59.513Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-21</time>
 </a>
         
       </header>
@@ -180,7 +180,7 @@
   <div id="toc-article" class="toc-article">
       <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
     <strong class="toc-title">文章目录</strong>
-           <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#JS-中数据类型有七种-number-null-undefined-string-boolean-object-symbol-es6-今天就来看看他们的一些平常会用到的东西"><span class="toc-number">1.</span> <span class="toc-text">JS 中数据类型有七种　number null undefined string boolean object symbol(es6) 今天就来看看他们的一些平常会用到的东西</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#注意事项"><span class="toc-number">2.</span> <span class="toc-text">注意事项</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#２．string"><span class="toc-number">2.0.1.</span> <span class="toc-text">２．string</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#３．undefined-与-null"><span class="toc-number">2.0.2.</span> <span class="toc-text">３．undefined 与 null</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#typeof-操作符"><span class="toc-number">3.</span> <span class="toc-text">typeof 操作符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数据转换"><span class="toc-number">4.</span> <span class="toc-text">数据转换</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#任意类型转-String"><span class="toc-number">4.0.0.1.</span> <span class="toc-text">任意类型转 String</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#任意类型转数字"><span class="toc-number">4.0.1.</span> <span class="toc-text">任意类型转数字</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#任意类型转布尔"><span class="toc-number">4.0.2.</span> <span class="toc-text">任意类型转布尔</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#面试题"><span class="toc-number">5.</span> <span class="toc-text">面试题</span></a></li></ol>
+           <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#JS-中数据类型有七种-number-null-undefined-string-boolean-object-symbol-es6-今天就来看看他们的一些平常会用到的东西"><span class="toc-number">1.</span> <span class="toc-text">JS 中数据类型有七种　number null undefined string boolean object symbol(es6) 今天就来看看他们的一些平常会用到的东西</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#注意事项"><span class="toc-number">2.</span> <span class="toc-text">注意事项</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#２．string"><span class="toc-number">2.0.1.</span> <span class="toc-text">２．string</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#３．undefined-与-null"><span class="toc-number">2.0.2.</span> <span class="toc-text">３．undefined 与 null</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#typeof-操作符"><span class="toc-number">3.</span> <span class="toc-text">typeof 操作符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数据转换"><span class="toc-number">4.</span> <span class="toc-text">数据转换</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#任意类型转-String"><span class="toc-number">4.0.0.1.</span> <span class="toc-text">任意类型转 String</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#任意类型转数字"><span class="toc-number">4.0.1.</span> <span class="toc-text">任意类型转数字</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#任意类型转布尔"><span class="toc-number">4.0.2.</span> <span class="toc-text">任意类型转布尔</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#面试题"><span class="toc-number">5.</span> <span class="toc-text">面试题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#垃圾回收"><span class="toc-number">6.</span> <span class="toc-text">垃圾回收</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#深复制与浅复制"><span class="toc-number">7.</span> <span class="toc-text">深复制与浅复制</span></a></li></ol>
          </div>
    <script type="text/javascript">
   function showToc(){
@@ -236,11 +236,14 @@
 <li>!!x</li>
 <li><a href="https://developer.mozilla.org/zh-CN/docs/Glossary/Falsy" target="_blank" rel="external">五个 Falsy 值</a><code>nul undefined NaN &#39;&#39; 0</code></li>
 </ol>
-<h3 id="面试题"><a href="#面试题" class="headerlink" title="面试题"></a>面试题</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">​<span class="string">``</span><span class="string">`javascript</span></div><div class="line"><span class="string">var a = 1</span></div><div class="line"><span class="string">var b = a</span></div><div class="line"><span class="string">b = 2</span></div><div class="line"><span class="string">请问 a 显示是几？  </span></div><div class="line"><span class="string">​</span></div></pre></td></tr></table></figure>
-<p>​<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = &#123;<span class="attr">name</span>: <span class="string">'a'</span>&#125;</div><div class="line"><span class="keyword">var</span> b = a</div><div class="line">b = &#123;<span class="attr">name</span>: <span class="string">'b'</span>&#125;</div><div class="line">请问现在 a.name 是多少？</div><div class="line">​</div></pre></td></tr></table></figure></p>
-<p>​<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = &#123;<span class="attr">name</span>: <span class="string">'a'</span>&#125;</div><div class="line"><span class="keyword">var</span> b = a</div><div class="line">b.name = <span class="string">'b'</span></div><div class="line">请问现在 a.name 是多少？</div><div class="line">​</div></pre></td></tr></table></figure></p>
-<p>​<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = &#123;<span class="attr">name</span>: <span class="string">'a'</span>&#125;</div><div class="line"><span class="keyword">var</span> b = a</div><div class="line">b = <span class="literal">null</span></div><div class="line">请问现在 a 是什么？</div><div class="line">​</div></pre></td></tr></table></figure></p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">主要是画内存图，分清楚 `Heap` 和 ` Stack` ，像复杂类型一般都是放到 `Stack`中的比如对象。</div><div class="line"></div><div class="line">### 垃圾回收</div><div class="line"></div><div class="line">JavaScript 的 gc 个人觉得与Java 是很像的，至少表面上看都是当不被引用的时候就会被当做垃圾然后就会等待垃圾车的到来。</div><div class="line"></div><div class="line">### 深复制与浅复制</div><div class="line"></div><div class="line">这是一个浅拷贝的例子</div><div class="line"></div><div class="line">```javascript</div><div class="line">var a = &#123;name: 'frank'&#125;</div><div class="line">var b = a</div><div class="line">b.name = 'b'</div><div class="line">a.name === 'b' // true</div></pre></td></tr></table></figure>
+<h3 id="面试题"><a href="#面试题" class="headerlink" title="面试题"></a>面试题</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="number">1</span></div><div class="line"><span class="keyword">var</span> b = a</div><div class="line">b = <span class="number">2</span></div><div class="line">请问 a 显示是几？</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = &#123;<span class="attr">name</span>: <span class="string">'a'</span>&#125;</div><div class="line"><span class="keyword">var</span> b = a</div><div class="line">b = &#123;<span class="attr">name</span>: <span class="string">'b'</span>&#125;</div><div class="line">请问现在 a.name 是多少？</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = &#123;<span class="attr">name</span>: <span class="string">'a'</span>&#125;</div><div class="line"><span class="keyword">var</span> b = a</div><div class="line">b.name = <span class="string">'b'</span></div><div class="line">请问现在 a.name 是多少？</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = &#123;<span class="attr">name</span>: <span class="string">'a'</span>&#125;</div><div class="line"><span class="keyword">var</span> b = a</div><div class="line">b = <span class="literal">null</span></div><div class="line">请问现在 a 是什么？</div></pre></td></tr></table></figure>
+<p>主要是画内存图，分清楚 <code>Heap</code> 和 <code>Stack</code> ，像复杂类型一般都是放到 <code>Stack</code>中的比如对象。</p>
+<h3 id="垃圾回收"><a href="#垃圾回收" class="headerlink" title="垃圾回收"></a>垃圾回收</h3><p>JavaScript 的 gc 个人觉得与Java 是很像的，至少表面上看都是当不被引用的时候就会被当做垃圾然后就会等待垃圾车的到来。</p>
+<h3 id="深复制与浅复制"><a href="#深复制与浅复制" class="headerlink" title="深复制与浅复制"></a>深复制与浅复制</h3><p>这是一个浅拷贝的例子</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = &#123;<span class="attr">name</span>: <span class="string">'frank'</span>&#125;</div><div class="line"><span class="keyword">var</span> b = a</div><div class="line">b.name = <span class="string">'b'</span></div><div class="line">a.name === <span class="string">'b'</span> <span class="comment">// true</span></div></pre></td></tr></table></figure>
 <p>因为我们对 b 操作后，a 也变了</p>
 <p>什么是深拷贝了，就是对 Heap 内存进行完全的拷贝。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = &#123;<span class="attr">name</span>: <span class="string">'frank'</span>&#125;</div><div class="line"><span class="keyword">var</span> b = deepClone(a) <span class="comment">// deepClone 还不知道怎么实现</span></div><div class="line">b.name = <span class="string">'b'</span></div><div class="line">a.name === <span class="string">'a'</span> <span class="comment">// true</span></div></pre></td></tr></table></figure>
@@ -343,7 +346,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2018/03/13/JSdata/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2018/03/21/JSdata/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -357,7 +360,7 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/03/14/JSobject/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/03/21/JSobject/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
@@ -367,8 +370,8 @@
     </a>
   
   
-    <a href="/2018/03/11/nav/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">一个导航网站</div>
+    <a href="/2018/03/21/JavaScript -Function/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">JavaScript 中的函数</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -395,7 +398,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#JS-中数据类型有七种-number-null-undefined-string-boolean-object-symbol-es6-今天就来看看他们的一些平常会用到的东西"><span class="toc-number">1.</span> <span class="toc-text">JS 中数据类型有七种　number null undefined string boolean object symbol(es6) 今天就来看看他们的一些平常会用到的东西</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#注意事项"><span class="toc-number">2.</span> <span class="toc-text">注意事项</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#２．string"><span class="toc-number">2.0.1.</span> <span class="toc-text">２．string</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#３．undefined-与-null"><span class="toc-number">2.0.2.</span> <span class="toc-text">３．undefined 与 null</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#typeof-操作符"><span class="toc-number">3.</span> <span class="toc-text">typeof 操作符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数据转换"><span class="toc-number">4.</span> <span class="toc-text">数据转换</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#任意类型转-String"><span class="toc-number">4.0.0.1.</span> <span class="toc-text">任意类型转 String</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#任意类型转数字"><span class="toc-number">4.0.1.</span> <span class="toc-text">任意类型转数字</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#任意类型转布尔"><span class="toc-number">4.0.2.</span> <span class="toc-text">任意类型转布尔</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#面试题"><span class="toc-number">5.</span> <span class="toc-text">面试题</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#JS-中数据类型有七种-number-null-undefined-string-boolean-object-symbol-es6-今天就来看看他们的一些平常会用到的东西"><span class="toc-number">1.</span> <span class="toc-text">JS 中数据类型有七种　number null undefined string boolean object symbol(es6) 今天就来看看他们的一些平常会用到的东西</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#注意事项"><span class="toc-number">2.</span> <span class="toc-text">注意事项</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#２．string"><span class="toc-number">2.0.1.</span> <span class="toc-text">２．string</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#３．undefined-与-null"><span class="toc-number">2.0.2.</span> <span class="toc-text">３．undefined 与 null</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#typeof-操作符"><span class="toc-number">3.</span> <span class="toc-text">typeof 操作符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数据转换"><span class="toc-number">4.</span> <span class="toc-text">数据转换</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#任意类型转-String"><span class="toc-number">4.0.0.1.</span> <span class="toc-text">任意类型转 String</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#任意类型转数字"><span class="toc-number">4.0.1.</span> <span class="toc-text">任意类型转数字</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#任意类型转布尔"><span class="toc-number">4.0.2.</span> <span class="toc-text">任意类型转布尔</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#面试题"><span class="toc-number">5.</span> <span class="toc-text">面试题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#垃圾回收"><span class="toc-number">6.</span> <span class="toc-text">垃圾回收</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#深复制与浅复制"><span class="toc-number">7.</span> <span class="toc-text">深复制与浅复制</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -412,7 +415,7 @@
   <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
 <script>
   var cloudTieConfig = {
-    url: "http://yoursite.com/2018/03/13/JSdata/", 
+    url: "http://yoursite.com/2018/03/21/JSdata/", 
     sourceId: "JSdata",
     productKey: "true",
     target: "cloud-tie-wrapper"
@@ -525,10 +528,6 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">英语</a>
               </li>
              
@@ -537,7 +536,7 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">__proto__</a>
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -546,6 +545,10 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">__proto__</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -565,14 +568,6 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">考虫</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">canvas</a>
               </li>
              
@@ -581,7 +576,15 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">导航</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">考虫</a>
               </li>
             
             <div class="clearfix"></div>

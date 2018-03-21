@@ -12,11 +12,11 @@
 <meta name="keywords" content="JavaScript,__proto__">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JS　里面的对象">
-<meta property="og:url" content="http://yoursite.com/2018/03/14/JSobject/index.html">
+<meta property="og:url" content="http://yoursite.com/2018/03/21/JSobject/index.html">
 <meta property="og:site_name" content="Marsorsun">
 <meta property="og:description" content="全局对象 windowECMAScript 规定全局对象叫做 global，但是浏览器把 window 作为全局对象（浏览器先存在的） window 就是一个哈希表，有很多属性。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-03-14T13:29:10.108Z">
+<meta property="og:updated_time" content="2018-03-21T12:47:25.054Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS　里面的对象">
 <meta name="twitter:description" content="全局对象 windowECMAScript 规定全局对象叫做 global，但是浏览器把 window 作为全局对象（浏览器先存在的） window 就是一个哈希表，有很多属性。">
@@ -165,8 +165,8 @@
   
 
         
-        <a href="/2018/03/14/JSobject/" class="archive-article-date">
-  	<time datetime="2018-03-14T13:29:10.108Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-14</time>
+        <a href="/2018/03/21/JSobject/" class="archive-article-date">
+  	<time datetime="2018-03-21T12:47:25.054Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-21</time>
 </a>
         
       </header>
@@ -232,13 +232,11 @@
 <h2 id="全局函数"><a href="#全局函数" class="headerlink" title="全局函数"></a>全局函数</h2><ol>
 <li><p>Number<br>var n = new Number(1) 创建一个 Number 对象<br>1 与 new Number(1) 的区别是什么？</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> n = <span class="number">2</span></div><div class="line"><span class="keyword">var</span> n.xxx = <span class="number">2</span></div><div class="line"><span class="built_in">console</span>.log(n.xxx)<span class="comment">//undefined</span></div></pre></td></tr></table></figure>
-<p>​</p>
 </li>
 <li><p>String<br>var s = new String(‘hello’) 创建一个 String 对象<br>‘hello’ 与 new String(‘hello’) 的区别是什么？看内存图</p>
 </li>
 <li><p>Boolean<br>var b = new Boolean(true) 创建一个 Boolean 对象<br>true 与 new Boolean(true) 的区别是什么？看内存图</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> f1 = <span class="literal">false</span></div><div class="line"><span class="keyword">var</span> f2 = <span class="keyword">new</span> <span class="built_in">Boolean</span>(<span class="literal">false</span>)</div><div class="line"><span class="keyword">if</span>(f1)&#123;<span class="built_in">console</span>.log(f1)&#125;</div><div class="line"><span class="keyword">if</span>(f2)&#123;<span class="built_in">console</span>.log(f2)&#125;<span class="comment">//f2</span></div></pre></td></tr></table></figure>
-<p>​</p>
 </li>
 <li><p>Object<br>var o1 = {}<br>var o2 = new Object()<br>o1 和 o2 没区别</p>
 </li>
@@ -351,7 +349,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2018/03/14/JSobject/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2018/03/21/JSobject/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -366,7 +364,7 @@
 <nav id="article-nav">
   
   
-    <a href="/2018/03/13/JSdata/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2018/03/21/JSdata/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">浅谈 JS 数据</div>
       <i class="icon-circle-right"></i>
     </a>
@@ -411,7 +409,7 @@
   <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
 <script>
   var cloudTieConfig = {
-    url: "http://yoursite.com/2018/03/14/JSobject/", 
+    url: "http://yoursite.com/2018/03/21/JSobject/", 
     sourceId: "JSobject",
     productKey: "true",
     target: "cloud-tie-wrapper"
@@ -524,10 +522,6 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">英语</a>
               </li>
              
@@ -536,7 +530,7 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">__proto__</a>
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -545,6 +539,10 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">__proto__</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -564,14 +562,6 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">考虫</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">canvas</a>
               </li>
              
@@ -580,7 +570,15 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">导航</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">考虫</a>
               </li>
             
             <div class="clearfix"></div>
