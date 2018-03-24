@@ -6,22 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>九月 | Marsorsun</title>
+  <title>初探 jQuery | Marsorsun</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="天色已晚，人们都赶在回家的路上，我的一天才刚开始。 营业时间从深夜12点到次日7点，人们称这里为“深夜食堂”。 菜单只有这些，可以随意点其他菜，能做就尽量做，是我的营业方针。你问有没有客人，其实还不少呢。">
-<meta name="keywords" content="随笔">
+  <meta name="description" content="jQuery 可以说是大部分网站都会使用到的库了 builtwith今天从简单的地方入手去模拟 jQuery 的实现，但还不是真的实现原理，但是可以帮助我们去理解学习 jQuery ，其实程序员都是害怕麻烦的，有这么多的库就是为了让自己尽可能的少打代码，所以就将完成复杂过程的代码封装起来，在下一次用的时候只需要给出参数就能复用之前的代码使得自己不去干重复而无意义的事情，但是呢作为初学者直接就去使用">
+<meta name="keywords" content="JavaScript,jQuery">
 <meta property="og:type" content="article">
-<meta property="og:title" content="九月">
-<meta property="og:url" content="http://yoursite.com/2017/09/23/201170923/index.html">
+<meta property="og:title" content="初探 jQuery">
+<meta property="og:url" content="http://yoursite.com/2018/03/24/jQuery-first/index.html">
 <meta property="og:site_name" content="Marsorsun">
-<meta property="og:description" content="天色已晚，人们都赶在回家的路上，我的一天才刚开始。 营业时间从深夜12点到次日7点，人们称这里为“深夜食堂”。 菜单只有这些，可以随意点其他菜，能做就尽量做，是我的营业方针。你问有没有客人，其实还不少呢。">
+<meta property="og:description" content="jQuery 可以说是大部分网站都会使用到的库了 builtwith今天从简单的地方入手去模拟 jQuery 的实现，但还不是真的实现原理，但是可以帮助我们去理解学习 jQuery ，其实程序员都是害怕麻烦的，有这么多的库就是为了让自己尽可能的少打代码，所以就将完成复杂过程的代码封装起来，在下一次用的时候只需要给出参数就能复用之前的代码使得自己不去干重复而无意义的事情，但是呢作为初学者直接就去使用">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://blogs.c.yimg.jp/res/blog-0f-9f/mitsounob/folder/777168/15/32780715/img_0">
-<meta property="og:updated_time" content="2017-09-23T08:44:48.622Z">
+<meta property="og:image" content="http://yoursite.com/img/jQueryfirst.png">
+<meta property="og:updated_time" content="2018-03-24T12:34:39.307Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="九月">
-<meta name="twitter:description" content="天色已晚，人们都赶在回家的路上，我的一天才刚开始。 营业时间从深夜12点到次日7点，人们称这里为“深夜食堂”。 菜单只有这些，可以随意点其他菜，能做就尽量做，是我的营业方针。你问有没有客人，其实还不少呢。">
-<meta name="twitter:image" content="http://blogs.c.yimg.jp/res/blog-0f-9f/mitsounob/folder/777168/15/32780715/img_0">
+<meta name="twitter:title" content="初探 jQuery">
+<meta name="twitter:description" content="jQuery 可以说是大部分网站都会使用到的库了 builtwith今天从简单的地方入手去模拟 jQuery 的实现，但还不是真的实现原理，但是可以帮助我们去理解学习 jQuery ，其实程序员都是害怕麻烦的，有这么多的库就是为了让自己尽可能的少打代码，所以就将完成复杂过程的代码封装起来，在下一次用的时候只需要给出参数就能复用之前的代码使得自己不去干重复而无意义的事情，但是呢作为初学者直接就去使用">
+<meta name="twitter:image" content="http://yoursite.com/img/jQueryfirst.png">
   
     <link rel="alternative" href="/atom.xml" title="Marsorsun" type="application/atom+xml">
   
@@ -155,20 +155,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-201170923" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-jQuery-first" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      九月
+      初探 jQuery
     </h1>
   
 
         
-        <a href="/2017/09/23/201170923/" class="archive-article-date">
-  	<time datetime="2017-09-23T07:55:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-23</time>
+        <a href="/2018/03/24/jQuery-first/" class="archive-article-date">
+  	<time datetime="2018-03-24T12:34:39.307Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-24</time>
 </a>
         
       </header>
@@ -178,20 +178,34 @@
 <!-- 目录内容结束 -->
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="http://blogs.c.yimg.jp/res/blog-0f-9f/mitsounob/folder/777168/15/32780715/img_0" alt=""></p>
-<blockquote>
-<p>天色已晚，人们都赶在回家的路上，我的一天才刚开始。 营业时间从深夜12点到次日7点，人们称这里为“深夜食堂”。 菜单只有这些，可以随意点其他菜，能做就尽量做，是我的营业方针。你问有没有客人，其实还不少呢。</p>
-</blockquote>
+        <h3 id="jQuery-可以说是大部分网站都会使用到的库了-builtwith"><a href="#jQuery-可以说是大部分网站都会使用到的库了-builtwith" class="headerlink" title="jQuery 可以说是大部分网站都会使用到的库了 builtwith"></a>jQuery 可以说是大部分网站都会使用到的库了 <a href="https://trends.builtwith.com/javascript" target="_blank" rel="external">builtwith</a></h3><p>今天从简单的地方入手去模拟 <code>jQuery</code> 的实现，但还不是真的实现原理，但是可以帮助我们去理解学习 <code>jQuery</code> ，其实程序员都是害怕麻烦的，有这么多的库就是为了让自己尽可能的少打代码，所以就将完成复杂过程的代码封装起来，在下一次用的时候只需要给出参数就能复用之前的代码使得自己不去干重复而无意义的事情，但是呢作为初学者直接就去使用 <code>jQuery</code> 看上去并无大碍，但一般就不会看到他最本质的东西。</p>
 <a id="more"></a>
-<p>熬夜看了深夜食堂2的电影，感慨良多。<br>我没有见过真正的生离死别，所以我不知道去珍惜那愿意陪伴在自己身边的人吧，我把最坏的自已留给了她</p>
-<blockquote>
-<p>重要的是两个人能不能下定决心携手解决问题       </p>
-<p>睡前把脸贴过来小声跟我说谢谢你陪在我身边</p>
-<p>人就的活得像这风铃声一样清脆</p>
+<h3 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">window</span>.jQuery = ???</div><div class="line"><span class="built_in">window</span>.$ = jQuery</div><div class="line"></div><div class="line"><span class="keyword">var</span> $div = $(<span class="string">'div'</span>)</div><div class="line">$div.addClass(<span class="string">'red'</span>) <span class="comment">// 可将所有 div 的 class 添加一个 red</span></div><div class="line">$div.setText(<span class="string">'hi'</span>) <span class="comment">// 可将所有 div 的 textContent 变为 hi</span></div></pre></td></tr></table></figure>
+<h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><ol>
+<li><code>$(&#39;div&#39;)</code> 可以看出我们需要出入一个参数（jQuery 会自动判断为选择器还是节点）</li>
+<li>我们需要在该函数封装两个方法<code>addClass()</code> <code>setText()</code></li>
+<li>考虑到 div 可能不止一个需要用一个对象来保存多个节点</li>
+</ol>
+<h3 id="jQuery-函数"><a href="#jQuery-函数" class="headerlink" title="jQuery 函数"></a><code>jQuery</code> 函数</h3><p>根据传入参数的类型来判断如何初始化节点对象</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">window</span>.jQuery = <span class="function"><span class="keyword">function</span>(<span class="params">node</span>)</span>&#123;</div><div class="line">  <span class="keyword">let</span> nodes = &#123;&#125;<span class="comment">//声明一个空对象节点</span></div><div class="line">  <span class="keyword">if</span>(<span class="keyword">typeof</span> node === <span class="string">'string'</span>)&#123;</div><div class="line">    <span class="keyword">let</span> arr = <span class="built_in">document</span>.querySelectorAll(node)</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; arr.length; i++)&#123;</div><div class="line">        nodes[i] = arr[i]</div><div class="line">      &#125;</div><div class="line">      nodes.length = arr.length</div><div class="line">  &#125;<span class="keyword">else</span> <span class="keyword">if</span>(<span class="keyword">typeof</span> node === <span class="string">'Node'</span>)&#123;</div><div class="line">    nodes[<span class="number">0</span>] = node</div><div class="line">    nodes.length = <span class="number">1</span></div><div class="line">  &#125;</div><div class="line">  </div><div class="line">  <span class="keyword">return</span> nodes</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="built_in">window</span>.$ = jQuery<span class="comment">//给他弄一个名字让大家都不会弄重的名字</span></div></pre></td></tr></table></figure>
+<h3 id="addClass-函数"><a href="#addClass-函数" class="headerlink" title="addClass() 函数"></a><code>addClass()</code> 函数</h3><p>使用 <code>classList.add()</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">nodes.addClass = <span class="function"><span class="keyword">function</span>(<span class="params">style</span>)</span>&#123;</div><div class="line">    <span class="keyword">if</span>(<span class="keyword">typeof</span> style === <span class="string">'string'</span>)&#123;</div><div class="line">      <span class="keyword">for</span>(<span class="keyword">let</span> i =<span class="number">0</span>; i &lt; nodes.length; i++)&#123;</div><div class="line">        nodes[i].classList.add(style)</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
+<h3 id="setText-函数"><a href="#setText-函数" class="headerlink" title="setText() 函数"></a><code>setText()</code> 函数</h3><p>更改 <code>textContext</code> 属性</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">nodes.setText = <span class="function"><span class="keyword">function</span>(<span class="params">message</span>)</span>&#123;</div><div class="line">  <span class="keyword">for</span>(<span class="keyword">let</span> i =<span class="number">0</span>; i &lt; nodes.length; i++)&#123;</div><div class="line">      nodes[i].textContent = message</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h3><p><img src="/img/jQueryfirst.png" alt=""></p>
+<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>其实 jQuery 也就是一个对象，只是他单独封装他的属性与方法，将 DOM 的方法与属性隐藏得更深了一点，使用起来更方便，兼容性更强。</p>
+<h3 id="思考"><a href="#思考" class="headerlink" title="思考"></a>思考</h3><blockquote>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt; <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">x</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">&gt;</div></pre></td></tr></table></figure>
 </blockquote>
-<p>做人就应该像风钤一般啊，现在是凌晨一点二十二了，九月的第一次这么晚，外面下着雨，肚子咕咕叫，突然想这样的日子真的不多了。也许再也找不<br>到愿意陪伴我的人了，我已经忘记了爱。</p>
-<hr>
-<p>最近两天昨天与前天都在用hexo+github 搭这个博客，明天做下总结，继续学习。嗯我先睡个懒觉，图书馆坐我背后的小姐姐请不要想我为什么没来</p>
+<p>&gt;</p>
+<blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&gt; <span class="keyword">var</span> div = <span class="built_in">document</span>.getElementById(<span class="string">'x'</span>)</div><div class="line">&gt; <span class="keyword">var</span> div = (<span class="string">'#x'</span>)</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+</blockquote>
+<p>&gt;</p>
+<blockquote>
+<p>请说出 <code>div</code> 和 <code>$div</code> 的联系和区别。</p>
+</blockquote>
+<p><code>document.getElementById()</code>返回的是 <code>DOM</code> 对象，而 <code>$()</code> 返回的是 <code>jQuery</code> 对象<br><code>div</code> 和 <code>$div</code> 的联系是：<br>只要 <code>$(div)</code>就可以把 <code>div</code>变成<code>$div</code><br>两种转换方式将一个<code>jQuery</code>对象转换成 <code>DOM</code> 对象：[index]和.get(index);<br>只要 $div[0] 与 $div.get(0) 就能$div 变成 div<br>div 和 $div 的区别是：<br>div 的属性和方法有<code>appendChild(),cloneNode(),contains(),hasChildNodes(),insertBefore(),isEqualNode(),isSameNode(),removeChild(),replaceChild(),normalize()</code><br>$div 的 属性和方法有 <code>add,addBack,addClass,after,ajaxComplete,ajaxError,ajaxSend,ajaxStart,ajaxStop,ajaxSuccess,andSelf,animate,append,appendTo...</code></p>
 
       
 
@@ -205,7 +219,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">jQuery</a>
         		</li>
       		
 		</ul>
@@ -261,7 +279,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/09/23/201170923/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2018/03/24/jQuery-first/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -275,18 +293,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/09/26/kaocong/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          考虫长难句
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/09/23/create-hexo/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">利用Hexo + Github 搭建个人博客</div>
+    <a href="/2018/03/24/css-tricks01/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">CSS 文字对齐</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -317,8 +326,8 @@
   <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
 <script>
   var cloudTieConfig = {
-    url: "http://yoursite.com/2017/09/23/201170923/", 
-    sourceId: "201170923",
+    url: "http://yoursite.com/2018/03/24/jQuery-first/", 
+    sourceId: "jQuery-first",
     productKey: "true",
     target: "cloud-tie-wrapper"
   };
