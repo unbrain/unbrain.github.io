@@ -207,7 +207,7 @@
 <p>显示隐藏(display: block, none)</p>
 <p>注意: 我个人的错误代码<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">document</span>.getElementById(<span class="string">'div1'</span>).style.display = block;</div></pre></td></tr></table></figure></p>
 <p>此时在浏览器运行会报错，因为浏览器会将 block 看为一个变量而不是字面量，若想将其看成字面量需要在其左右加上 ‘’ 就能解决问题。<br>用代码解释字面量与变量<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> num = <span class="string">'123'</span>;<span class="comment">//num为变量</span></div><div class="line">alert(<span class="number">123</span>);<span class="comment">//报错，未定义变量</span></div><div class="line">alert(<span class="string">'123'</span>);<span class="comment">//这里的123就是字面量，提示123</span></div><div class="line">alert(num);<span class="comment">//提示123</span></div></pre></td></tr></table></figure></p>
-<h3 id="3-初识函数与变量"><a href="#3-初识函数与变量" class="headerlink" title="3.  初识函数与变量"></a>3.  初识函数与变量</h3><p>变量就好似尚方宝剑代表着皇帝<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//函数</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">function_name</span>(<span class="params">argument</span>)</span>&#123;</div><div class="line">    <span class="comment">//body…</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="3-初识函数与变量"><a href="#3-初识函数与变量" class="headerlink" title="3.  初识函数与变量"></a>3.  初识函数与变量</h3><p>变量就好似尚方宝剑代表着皇帝<br><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//函数</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">function_name</span><span class="params">(argument)</span></span>&#123;</div><div class="line">    <span class="comment">//body…</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>使用函数的好处就是当发现有大量代码的重用进行观察并组合，同时有不同参数进行传参解决就好<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// oB1.onclick = function toY() &#123;</span></div><div class="line"><span class="comment">// 	// body...</span></div><div class="line"><span class="comment">// 	oDiv.style.background = "yellow";</span></div><div class="line"><span class="comment">// &#125;</span></div><div class="line"></div><div class="line"><span class="comment">// oB2.onclick = function toG() &#123;</span></div><div class="line"><span class="comment">// 	// body...</span></div><div class="line"><span class="comment">// 	oDiv.style.background = "green";</span></div><div class="line"><span class="comment">// &#125;</span></div><div class="line"></div><div class="line"><span class="comment">// oB3.onclick = function toB() &#123;</span></div><div class="line"><span class="comment">// 	// body...</span></div><div class="line"><span class="comment">// 	oDiv.style.background = "Black";</span></div><div class="line"><span class="comment">// &#125;</span></div><div class="line"><span class="comment">//长得像，进行观察，进行合并，便于重用，少写代码		----&gt;		函数传参</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">setColor</span>(<span class="params">color</span>)</span>&#123;</div><div class="line">	oDiv.style.background = color;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <h3 id="4-实现页面换肤"><a href="#4-实现页面换肤" class="headerlink" title="4. 实现页面换肤"></a>4. 实现页面换肤</h3><p>思路: 用多个 CSS 实现换肤</p>
 <p>总结: id 可以加在任何标签，甚至能改变 href。HTML 中如何写 JavaScript 就如何写。但有唯一一个例外就是 class 需要写成 className，因为 class 是 JavaScript 中的关键字</p>
@@ -505,18 +505,6 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">英语</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">blue视频笔记</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">编程</a>
               </li>
              
@@ -525,7 +513,15 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">__proto__</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">blue视频笔记</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -549,6 +545,18 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">导航</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">demo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">英语</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">考虫</a>
               </li>
              
@@ -557,11 +565,7 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">demo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">导航</a>
+                <a href="javascript:void(0)" class="js-tag color4">面试题</a>
               </li>
             
             <div class="clearfix"></div>
