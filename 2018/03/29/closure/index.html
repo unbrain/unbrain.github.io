@@ -6,19 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>tags | Marsorsun</title>
+  <title>啥是闭包 | Marsorsun</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="我的心，在哪里，忘了我的眼，在哪里，忘了我的魂，在哪里，忘了全忘了。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="tags">
-<meta property="og:url" content="http://yoursite.com/tags/index.html">
+  <meta name="description" content="闭包这个名词可能是在还没了解计算机领域常常听见的，那就可以说他是一个比较常用到的一种技巧而被圈外的人所知道，仅仅是名字比较高深但其实认真一看也不过是「函数」和「函数内部能访问到的变量」（也叫环境）的总和，就是一个闭包。">
+<meta name="keywords" content="面试题">
+<meta property="og:type" content="article">
+<meta property="og:title" content="啥是闭包">
+<meta property="og:url" content="http://yoursite.com/2018/03/29/closure/index.html">
 <meta property="og:site_name" content="Marsorsun">
-<meta property="og:description" content="我的心，在哪里，忘了我的眼，在哪里，忘了我的魂，在哪里，忘了全忘了。">
+<meta property="og:description" content="闭包这个名词可能是在还没了解计算机领域常常听见的，那就可以说他是一个比较常用到的一种技巧而被圈外的人所知道，仅仅是名字比较高深但其实认真一看也不过是「函数」和「函数内部能访问到的变量」（也叫环境）的总和，就是一个闭包。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-09-22T08:43:34.855Z">
+<meta property="og:updated_time" content="2018-03-29T11:22:40.949Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="tags">
-<meta name="twitter:description" content="我的心，在哪里，忘了我的眼，在哪里，忘了我的魂，在哪里，忘了全忘了。">
+<meta name="twitter:title" content="啥是闭包">
+<meta name="twitter:description" content="闭包这个名词可能是在还没了解计算机领域常常听见的，那就可以说他是一个比较常用到的一种技巧而被圈外的人所知道，仅仅是名字比较高深但其实认真一看也不过是「函数」和「函数内部能访问到的变量」（也叫环境）的总和，就是一个闭包。">
   
     <link rel="alternative" href="/atom.xml" title="Marsorsun" type="application/atom+xml">
   
@@ -152,20 +153,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="page-" class="article article-type-page " itemscope itemprop="blogPost">
+            <article id="post-closure" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      tags
+      啥是闭包
     </h1>
   
 
         
-        <a href="/tags/index.html" class="archive-article-date">
-  	<time datetime="2017-09-22T08:03:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-22</time>
+        <a href="/2018/03/29/closure/" class="archive-article-date">
+  	<time datetime="2018-03-29T11:22:40.949Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-29</time>
 </a>
         
       </header>
@@ -175,7 +176,34 @@
 <!-- 目录内容结束 -->
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>闭包这个名词可能是在还没了解计算机领域常常听见的，那就可以说他是一个比较常用到的一种技巧而被圈外的人所知道，仅仅是名字比较高深但其实认真一看也不过是<strong>「函数」和「函数内部能访问到的变量」（也叫环境）的总和，就是一个闭包。</strong></p>
+<a id="more"></a>
+<blockquote>
+<p>在<a href="https://zh.wikipedia.org/wiki/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6" target="_blank" rel="external">计算机科学</a>中，<strong>闭包</strong>（英语：Closure），又称<strong>词法闭包</strong>（Lexical Closure）或<strong>函数闭包</strong>（function closures），是引用了自由变量的函数。这个被引用的自由变量将和这个函数一同存在，即使已经离开了创造它的环境也不例外。所以，有另一种说法认为<code>闭包是由函数和与其相关的引用环境组合而成的实体</code>。闭包在运行时可以有多个实例，不同的引用环境和相同的函数组合可以产生不同的实例。（wiki）</p>
+</blockquote>
+<p>说实话闭包这个名词看上去高大上，其实有很多的人在不知道这个概念的时候就已经悄悄的使用过了而且还可能是经常使用，只是不知道大家把这样的方法叫做闭包。</p>
+<p>闭包就好是一种巧妙的设计，程序员为了方便调用而使用的，它通过分析上下文，来简化用户的调用，让用户在不知晓的情况下，达到他的目的。在程序语言中，闭包就是一种语法糖，它以很自然的形式，把我们的目的和我们的目的所涉及的资源全给自动打包在一起，以某种自然、尽量不让人误解的方式让人来使用。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//常见闭包代码</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">init</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> x = <span class="number">20</span></div><div class="line">  <span class="function"><span class="keyword">function</span> <span class="title">printX</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    x--</div><div class="line">    <span class="built_in">console</span>.log(x)</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> printX</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> fun = init()</div><div class="line">fun()</div></pre></td></tr></table></figure>
+<p>闭包从 MDN 上可以看到很多的用法但是我个人看来最常用的是为了<code>隐藏变量</code>（私有化），使用闭包这个手段是非常方便的。</p>
+<ol>
+<li>就是函数作用域的简单调用，内部函数可以访问函数外的变量。</li>
+<li>函数当做值来赋值，当作参数传给别的函数，也可以把函数当作一个值 return</li>
+</ol>
+<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><ul>
+<li><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Closures" target="_blank" rel="external">MDN</a></p>
+</li>
+<li><p><a href="https://zh.wikipedia.org/wiki/%E9%97%AD%E5%8C%85_(%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6" target="_blank" rel="external">wiki</a>)</p>
+</li>
+<li><p><a href="https://www.zhihu.com/question/34210214" target="_blank" rel="external">知乎</a></p>
+</li>
+<li><p><a href="http://www.cnblogs.com/xiaotie/archive/2011/08/03/2126145.html" target="_blank" rel="external">什么是闭包，我的理解</a></p>
+</li>
+<li><p><a href="https://stackoverflow.com/questions/111102/how-do-javascript-closures-work/111111#111111" target="_blank" rel="external"> How do JavaScript closures work?</a></p>
+</li>
+<li><p><a href="https://zhuanlan.zhihu.com/p/22486908?refer=study-fe" target="_blank" rel="external">JS 中的闭包是什么？</a></p>
+</li>
+</ul>
+
       
 
       
@@ -183,6 +211,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">面试题</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -233,7 +272,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/tags/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2018/03/29/closure/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -245,6 +284,16 @@
 </article>
 
   
+<nav id="article-nav">
+  
+  
+    <a href="/2018/03/29/移动端如何适配（响应式）/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">移动端如何适配（响应式）</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -270,8 +319,8 @@
   <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
 <script>
   var cloudTieConfig = {
-    url: "http://yoursite.com/tags/index.html", 
-    sourceId: "",
+    url: "http://yoursite.com/2018/03/29/closure/", 
+    sourceId: "closure",
     productKey: "true",
     target: "cloud-tie-wrapper"
   };
@@ -313,7 +362,7 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
