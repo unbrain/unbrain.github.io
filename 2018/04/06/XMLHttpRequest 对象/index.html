@@ -6,18 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: JavaScript | Marsorsun</title>
+  <title>AJAX | Marsorsun</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="我的心，在哪里，忘了我的眼，在哪里，忘了我的魂，在哪里，忘了全忘了。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Marsorsun">
-<meta property="og:url" content="http://yoursite.com/tags/JavaScript/index.html">
+  <meta name="description" content="正是由于 AJAX 的出现才导致前端的快速发展，异步 JavaScript 和 XML，不过经过发展现在不再使用 XML 而使用 JSON 这门轻量级数据语言。 XMLHttpRequest 对象1let request = new XMLHttpRequest()">
+<meta name="keywords" content="javascript,ajax">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AJAX">
+<meta property="og:url" content="http://yoursite.com/2018/04/06/XMLHttpRequest 对象/index.html">
 <meta property="og:site_name" content="Marsorsun">
-<meta property="og:description" content="我的心，在哪里，忘了我的眼，在哪里，忘了我的魂，在哪里，忘了全忘了。">
+<meta property="og:description" content="正是由于 AJAX 的出现才导致前端的快速发展，异步 JavaScript 和 XML，不过经过发展现在不再使用 XML 而使用 JSON 这门轻量级数据语言。 XMLHttpRequest 对象1let request = new XMLHttpRequest()">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-04-06T11:46:59.462Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Marsorsun">
-<meta name="twitter:description" content="我的心，在哪里，忘了我的眼，在哪里，忘了我的魂，在哪里，忘了全忘了。">
+<meta name="twitter:title" content="AJAX">
+<meta name="twitter:description" content="正是由于 AJAX 的出现才导致前端的快速发展，异步 JavaScript 和 XML，不过经过发展现在不再使用 XML 而使用 JSON 这门轻量级数据语言。 XMLHttpRequest 对象1let request = new XMLHttpRequest()">
   
     <link rel="alternative" href="/atom.xml" title="Marsorsun" type="application/atom+xml">
   
@@ -151,361 +153,235 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-XMLHttpRequest 对象" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      AJAX
+    </h1>
+  
+
+        
+        <a href="/2018/04/06/XMLHttpRequest 对象/" class="archive-article-date">
+  	<time datetime="2018-04-06T11:46:59.462Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-06</time>
+</a>
+        
+      </header>
     
+    <!-- 目录内容 -->
+
+<!-- 目录内容结束 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>正是由于 AJAX 的出现才导致前端的快速发展，异步 JavaScript 和 XML，不过经过发展现在不再使用 XML 而使用 JSON 这门轻量级数据语言。</p>
+<h3 id="XMLHttpRequest-对象"><a href="#XMLHttpRequest-对象" class="headerlink" title="XMLHttpRequest 对象"></a>XMLHttpRequest 对象</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> request = <span class="keyword">new</span> XMLHttpRequest()</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<h3 id="XMLHttpRequest-实例的属性"><a href="#XMLHttpRequest-实例的属性" class="headerlink" title="XMLHttpRequest 实例的属性"></a>XMLHttpRequest 实例的属性</h3><h5 id="readyState"><a href="#readyState" class="headerlink" title="readyState"></a>readyState</h5><blockquote>
+<ul>
+<li>0，对应常量<code>UNSENT</code>，表示XMLHttpRequest实例已经生成，但是<code>open()</code>方法还没有被调用。</li>
+<li>1，对应常量<code>OPENED</code>，表示<code>send()</code>方法还没有被调用，仍然可以使用<code>setRequestHeader()</code>，设定HTTP请求的头信息。</li>
+<li>2，对应常量<code>HEADERS_RECEIVED</code>，表示<code>send()</code>方法已经执行，并且头信息和状态码已经收到。</li>
+<li>3，对应常量<code>LOADING</code>，表示正在接收服务器传来的body部分的数据，如果<code>responseType</code>属性是<code>text</code>或者空字符串，<code>responseText</code>就会包含已经收到的部分信息。</li>
+<li>4，对应常量<code>DONE</code>，表示服务器数据已经完全接收，或者本次接收已经失败了</li>
+</ul>
+</blockquote>
+<h5 id="onreaadystatechange"><a href="#onreaadystatechange" class="headerlink" title="onreaadystatechange"></a>onreaadystatechange</h5><blockquote>
+<p><code>onreadystatechange</code>属性指向一个回调函数，当<code>readystatechange</code>事件发生的时候，这个回调函数就会调用，并且XMLHttpRequest实例的<code>readyState</code>属性也会发生变化。</p>
+<p>另外，如果使用<code>abort()</code>方法，终止XMLHttpRequest请求，<code>onreadystatechange</code>回调函数也会被调用。</p>
+</blockquote>
+<h5 id="response"><a href="#response" class="headerlink" title="response"></a>response</h5><p>response 属性为只读</p>
+<h5 id="responseType"><a href="#responseType" class="headerlink" title="responseType"></a>responseType</h5><p>指定服务器返回的数据类型</p>
+<blockquote>
+<p>“”：字符串（默认值）</p>
+<p>“arraybuffer”：ArrayBuffer对象</p>
+<p>“blob”：Blob对象</p>
+<p>“document”：Document对象</p>
+<p>“json”：JSON对象</p>
+<p>“text”：字符串</p>
+</blockquote>
+<p>text类型适合大多数情况，而且直接处理文本也比较方便，document类型适合返回XML文档的情况，blob类型适合读取二进制数据，比如图片文件。</p>
+<h5 id="responseText"><a href="#responseText" class="headerlink" title="responseText"></a>responseText</h5><p>返回从服务器接收到的字符串，属性只读，若请求不成功或数据不完整，属性等于 <code>null</code></p>
+<h5 id="responseXML"><a href="#responseXML" class="headerlink" title="responseXML"></a>responseXML</h5><p>接受 <code>Document</code> 对象</p>
+<h5 id="status"><a href="#status" class="headerlink" title="status"></a>status</h5><p>表示请求到的状态码</p>
+<blockquote>
+<p>200, OK，访问正常</p>
+<p>301, Moved Permanently，永久移动</p>
+<p>302, Move temporarily，暂时移动</p>
+<p>304, Not Modified，未修改</p>
+<p>307, Temporary Redirect，暂时重定向</p>
+<p>401, Unauthorized，未授权</p>
+<p>403, Forbidden，禁止访问</p>
+<p>404, Not Found，未发现指定网址</p>
+<p>500, Internal Server Error，服务器发生错误</p>
+</blockquote>
+<h5 id="statusText"><a href="#statusText" class="headerlink" title="statusText"></a>statusText</h5><p>返回一个字符串，包含整个状态信息，就比如 <code>200 OK</code></p>
+<h5 id="timeout"><a href="#timeout" class="headerlink" title="timeout"></a>timeout</h5><p>表示一段时间后，若请求没有结果，就自动终止，若为 <code>0</code> 就表示你没有时间限制</p>
+<h5 id="事件监听接口"><a href="#事件监听接口" class="headerlink" title="事件监听接口"></a>事件监听接口</h5><blockquote>
+<p>XMLHttpRequest第一版，只能对<code>onreadystatechange</code>这一个事件指定回调函数。该事件对所有情况作出响应。 XMLHttpRequest第二版允许对更多的事件指定回调函数。</p>
+<p>onloadstart 请求发出</p>
+<p>onprogress 正在发送和加载数据</p>
+<p>onabort 请求被中止，比如用户调用了<code>abort()</code>方法</p>
+<p>onerror 请求失败</p>
+<p>onload 请求成功完成</p>
+<p>ontimeout 用户指定的时限到期，请求还未完成</p>
+<p>onloadend 请求完成，不管成果或失败</p>
+<p>注意，如果发生网络错误（比如服务器无法连通），<code>onerror</code>事件无法获取报错信息，所以只能显示报错。</p>
+</blockquote>
+<h5 id="withCredentials"><a href="#withCredentials" class="headerlink" title="withCredentials"></a>withCredentials</h5><p>表示跨域请求，用户信息（比如Cookie和认证的HTTP头信息）是否会包含在请求之中，默认为 <code>false</code>。</p>
+<h3 id="XMLHttpRequest-实例的方法"><a href="#XMLHttpRequest-实例的方法" class="headerlink" title="XMLHttpRequest 实例的方法"></a>XMLHttpRequest 实例的方法</h3><h5 id="abort"><a href="#abort" class="headerlink" title="abort()"></a>abort()</h5><p>用来终止已经发出的HTTP请求</p>
+<h5 id="getAllResponseHeaders"><a href="#getAllResponseHeaders" class="headerlink" title="getAllResponseHeaders()"></a>getAllResponseHeaders()</h5><p>方法返回服务器发来的所有HTTP头信息。格式为字符串，每个头信息之间使用<code>CRLF</code>分隔，如果没有受到服务器回应，该属性返回<code>null</code></p>
+<h5 id="getResponseHeader"><a href="#getResponseHeader" class="headerlink" title="getResponseHeader()"></a>getResponseHeader()</h5><p>方法返回HTTP头信息指定字段的值，如果还没有收到服务器回应或者指定字段不存在，则该属性为<code>null</code></p>
+<h5 id="open"><a href="#open" class="headerlink" title="open()"></a>open()</h5><p>对象的<code>open</code>方法用于指定发送HTTP请求的参数，它的使用格式如下，一共可以接受五个参数</p>
+<blockquote>
+<p><code>method</code>：表示HTTP动词，比如“GET”、“POST”、“PUT”和“DELETE”。</p>
+<p><code>url</code>: 表示请求发送的网址。</p>
+<p><code>async</code>: 格式为布尔值，默认为<code>true</code>，表示请求是否为异步。如果设为<code>false</code>，则<code>send()</code>方法只有等到收到服务器返回的结果，才会有返回值。</p>
+<p><code>user</code>：表示用于认证的用户名，默认为空字符串。</p>
+<p><code>password</code>：表示用于认证的密码，默认为空字符串。</p>
+</blockquote>
+<h5 id="send"><a href="#send" class="headerlink" title="send()"></a>send()</h5><p>方法用于实际发出HTTP请求。如果不带参数，就表示HTTP请求只包含头信息，也就是只有一个URL，典型例子就是GET请求；如果带有参数，就表示除了头信息，还带有包含具体数据的信息体，典型例子就是POST请求。</p>
+<h5 id="setRequestHeader"><a href="#setRequestHeader" class="headerlink" title="setRequestHeader()"></a>setRequestHeader()</h5><p>方法用于设置HTTP头信息。该方法必须在<code>open()</code>之后、<code>send()</code>之前调用。如果该方法多次调用，设定同一个字段，则每一次调用的值会被合并成一个单一的值发送。</p>
+<h5 id="overrideMimeType"><a href="#overrideMimeType" class="headerlink" title="overrideMimeType()"></a>overrideMimeType()</h5><p>该方法用来指定服务器返回数据的MIME类型。该方法必须在<code>send()</code>之前调用。</p>
+<p>传统上，如果希望从服务器取回二进制数据，就要使用这个方法，人为将数据类型伪装成文本数据。</p>
+<h3 id="XMLHttpRequest实例的事件"><a href="#XMLHttpRequest实例的事件" class="headerlink" title="XMLHttpRequest实例的事件"></a>XMLHttpRequest实例的事件</h3><h5 id="readyStateChange"><a href="#readyStateChange" class="headerlink" title="readyStateChange"></a>readyStateChange</h5><p>readyState 属性的值发生改变，就会触发 readyStateChange 事件</p>
+<h5 id="progress"><a href="#progress" class="headerlink" title="progress"></a>progress</h5><p>上传文件时，XMLHTTPRequest对象的upload属性有一个progress，会不断返回上传的进度。</p>
+<h5 id="load-error-abort-loadend"><a href="#load-error-abort-loadend" class="headerlink" title="load error abort loadend"></a>load error abort loadend</h5><p><code>load</code>事件表示服务器传来的数据接收完毕，<code>error</code>事件表示请求出错，<code>abort</code>事件表示请求被中断。<code>abort</code>、<code>load</code>和<code>error</code>这三个事件，会伴随一个<code>loadend</code>事件，表示请求结束，但不知道其是否成功。</p>
+<h3 id="原生-JS-写-AJAX"><a href="#原生-JS-写-AJAX" class="headerlink" title="原生 JS 写 AJAX"></a>原生 JS 写 AJAX</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> xhr = <span class="keyword">new</span> XMLHttpReauest()</div><div class="line">xhr.open(<span class="string">'post'</span>, <span class="string">'http://baidu.com'</span>)</div><div class="line">xhr.send()</div><div class="line">xhr.onreadystatchange = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">    <span class="keyword">if</span>(xhr.readyState === <span class="number">4</span>) &#123;</div><div class="line">        <span class="keyword">if</span>(xhr.status &gt;= <span class="number">200</span> &amp;&amp; xhr.status &lt; <span class="number">400</span>)&#123;</div><div class="line">            <span class="keyword">let</span> string = xhr.responseText</div><div class="line">            <span class="keyword">let</span> object = <span class="built_in">window</span>.JSON.parse(string)</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/03/30/jscallapply/" class="archive-article-date">
-  	<time datetime="2018-03-30T05:37:58.538Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-30</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/03/30/jscallapply/">简聊 JavaScript call() apply() 与 bind()</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">面试题</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">ajax</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2018/04/06/XMLHttpRequest 对象/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/03/24/jQuery-first/" class="archive-article-date">
-  	<time datetime="2018-03-24T12:34:39.307Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-24</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/04/05/Whats-JSONP/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">What&#39;s JSONP</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/03/24/jQuery-first/">初探 jQuery</a>
-    </h1>
+  
+  
+  <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+<script>
+  var cloudTieConfig = {
+    url: "http://yoursite.com/2018/04/06/XMLHttpRequest 对象/", 
+    sourceId: "XMLHttpRequest 对象",
+    productKey: "true",
+    target: "cloud-tie-wrapper"
+  };
+</script>
+<script src="//img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">jQuery</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/03/21/JSobject/" class="archive-article-date">
-  	<time datetime="2018-03-21T12:47:25.054Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-21</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/03/21/JSobject/">JS　里面的对象</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">__proto__</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/03/21/JSdata/" class="archive-article-date">
-  	<time datetime="2018-03-21T12:46:59.513Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-21</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/03/21/JSdata/">浅谈 JS 数据</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/03/21/JavaScript -Function/" class="archive-article-date">
-  	<time datetime="2018-03-21T12:43:28.902Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-21</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/03/21/JavaScript -Function/">JavaScript 中的函数</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/03/11/nav/" class="archive-article-date">
-  	<time datetime="2018-03-11T05:28:47.490Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-11</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/03/11/nav/">一个导航网站</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">导航</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">demo</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/03/11/myCanvas/" class="archive-article-date">
-  	<time datetime="2018-03-11T05:28:26.960Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-11</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/03/11/myCanvas/">在线画板的制作</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">demo</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">canvas</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/03/11/JavaScript_2/" class="archive-article-date">
-  	<time datetime="2018-03-11T05:23:35.663Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-11</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/03/11/JavaScript_2/">JavaScript 基础</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">blue视频笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/tags/JavaScript/page/2/">2</a><a class="extend next" rel="next" href="/tags/JavaScript/page/2/">Next &raquo;</a>
-    </nav>
   
 
 
@@ -536,9 +412,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
