@@ -6,20 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>十月末 | Marsorsun</title>
+  <title>JavaScript 原型链 | Marsorsun</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="从九月初学习前端快两个月，我已经确定了自己的这条路。从前端到全栈是我的终级目的，而我在这十个月的目标就是在明年暑假能够去找一家互联网公司实习做前端不论是在成都或深圳。">
-<meta name="keywords" content="随笔">
+  <meta name="keywords" content="javascript,prototype">
 <meta property="og:type" content="article">
-<meta property="og:title" content="十月末">
-<meta property="og:url" content="http://yoursite.com/2017/11/01/think1030/index.html">
+<meta property="og:title" content="JavaScript 原型链">
+<meta property="og:url" content="http://yoursite.com/2018/04/19/JavaScript-原型链/index.html">
 <meta property="og:site_name" content="Marsorsun">
-<meta property="og:description" content="从九月初学习前端快两个月，我已经确定了自己的这条路。从前端到全栈是我的终级目的，而我在这十个月的目标就是在明年暑假能够去找一家互联网公司实习做前端不论是在成都或深圳。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-11-01T12:34:34.438Z">
+<meta property="og:image" content="http://yoursite.com/img/proto.png">
+<meta property="og:updated_time" content="2018-04-19T10:01:39.417Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="十月末">
-<meta name="twitter:description" content="从九月初学习前端快两个月，我已经确定了自己的这条路。从前端到全栈是我的终级目的，而我在这十个月的目标就是在明年暑假能够去找一家互联网公司实习做前端不论是在成都或深圳。">
+<meta name="twitter:title" content="JavaScript 原型链">
+<meta name="twitter:image" content="http://yoursite.com/img/proto.png">
   
     <link rel="alternative" href="/atom.xml" title="Marsorsun" type="application/atom+xml">
   
@@ -153,20 +152,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-think1030" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-JavaScript-原型链" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      十月末
+      JavaScript 原型链
     </h1>
   
 
         
-        <a href="/2017/11/01/think1030/" class="archive-article-date">
-  	<time datetime="2017-11-01T12:34:34.438Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-01</time>
+        <a href="/2018/04/19/JavaScript-原型链/" class="archive-article-date">
+  	<time datetime="2018-04-19T10:01:39.417Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-19</time>
 </a>
         
       </header>
@@ -176,32 +175,16 @@
 <!-- 目录内容结束 -->
     <div class="article-entry" itemprop="articleBody">
       
-        <p>从九月初学习前端快两个月，我已经确定了自己的这条路。从前端到全栈是我的终级目的，而我在这十个月的目标就是在明年暑假能够去找一家互联网公司实习做前端不论是在成都或深圳。<br><a id="more"></a></p>
-<ol>
-<li>前两个月，浅学了 Git 的简单操作，用 Hexo 搭建了个人博客，看 W3C 及 MDN 浅学了 HTML 及 CSS，完成了老师的作业（本学期学校选修有 web ）及 IFE 上的微微学院及斌斌学院的前几个小项目还有 MDN 上的部分练手。</li>
-</ol>
-<ol>
-<li>最近看妙味的视频对敲样式代码有点力不从心，有抵触的心情而不是之前那般激动去解决问题。打算先放 JavaScript 先系统看下 CSS 的书籍，之前脚步似乎大了点，力不从心，去牛客网做相关试题竟然十对三更让我觉得应该好好看看书了。</li>
-</ol>
-<ol>
-<li><p>时间规划，效率依然是一个难题。英语，前端，专业，其实本不矛盾，但我总是看看这个又再看看那个。先拟定一个小计划，试行一周下周总结再更改。</p>
+        <p><img src="/img/proto.png" alt=""><br><a id="more"></a></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name</span>)</span>&#123;</div><div class="line">  <span class="keyword">this</span>.name = name</div><div class="line">&#125;</div><div class="line"></div><div class="line">Person.prototype.say = <span class="string">'fuck prototype'</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> one = <span class="keyword">new</span> Person(<span class="string">'小三'</span>)</div><div class="line"><span class="keyword">var</span> two = <span class="keyword">new</span> Person(<span class="string">'小吴'</span>)</div><div class="line"></div><div class="line">one.name</div><div class="line">one.say</div><div class="line">two.name</div><div class="line">two.say</div></pre></td></tr></table></figure>
+<p>看图可知</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">one.__proto__ === Person.prototype</div><div class="line">Person.prototype.__proto__ === <span class="built_in">Object</span>.prototype</div><div class="line"></div><div class="line">Person.__proto__ === <span class="built_in">Function</span>.prototype</div><div class="line"><span class="built_in">Function</span>.__proto__ === <span class="built_in">Function</span>.prototype</div><div class="line"><span class="built_in">Object</span>.__proto__ === <span class="built_in">Function</span>.prototype</div><div class="line"></div><div class="line"><span class="built_in">Function</span>.prototype.__proto__ === <span class="built_in">Object</span>.prototype</div><div class="line"></div><div class="line"><span class="built_in">Object</span>.prototype.__proto__ === <span class="literal">null</span></div></pre></td></tr></table></figure>
+<p>总结</p>
 <ul>
-<li><p>每天一练习一篇字</p>
-</li>
-<li><p>英语每天两小时 至少背 50 个单词准备六级一次性过</p>
-</li>
-<li>前端每天至少两小时</li>
-<li>专业课跟着课程走就好</li>
+<li>当 new 一个函数的时候会创建一个对象，<code>被创建对象.__proto__ === 函数.prototype</code></li>
+<li>一切函数都是由 Function 这个函数创建的，<code>被创建函数.__proto__ === Function.prototype</code></li>
+<li>一切函数的原型对象都是由 Object 这个函数创建的，<code>Object.prototype === 一切函数.prototype.__proto__</code></li>
 </ul>
-</li>
-</ol>
-<ol>
-<li>这两个月没有系统的学习知识但是了解了很多其它知识，学会用 Github  然后很幸运从中认识了 stormzhang  知道了 freecodecamp  知道了很多行业中牛逼的人。他们乐于分享及开源精神是我需要学习的，我要走的路还有很多，最近生病了两次（身体真的很重要），还有看了前端的知识框架真的很多，内心似乎在畏惧？我从内心告诉自己一定要 step  by step 永不放弃.</li>
-</ol>
-<ol>
-<li>一定要爱自己的父母及爱自己的人，我永远的避风港，永远支持着你。父母与可能思想不同，言语不同，可是总有那一瞬间你会愧疚自己没有好好爱过她们。我已经辜负了爱过我的人了。</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">青春只有一次，不在放纵中成长就在坠落中灭亡，不在灭亡中死地而后生，那只有在灭亡中寻找永恒的秘密。</div></pre></td></tr></table></figure>
 
       
 
@@ -215,7 +198,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">prototype</a>
         		</li>
       		
 		</ul>
@@ -271,7 +258,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/11/01/think1030/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2018/04/19/JavaScript-原型链/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -285,18 +272,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/12/06/suibi11last/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          11 月末
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/10/19/yemao/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">随笔记夜猫子英语</div>
+    <a href="/2018/04/13/初探-mvc/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">初探 MVC</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -327,8 +305,8 @@
   <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
 <script>
   var cloudTieConfig = {
-    url: "http://yoursite.com/2017/11/01/think1030/", 
-    sourceId: "think1030",
+    url: "http://yoursite.com/2018/04/19/JavaScript-原型链/", 
+    sourceId: "JavaScript-原型链",
     productKey: "true",
     target: "cloud-tie-wrapper"
   };
