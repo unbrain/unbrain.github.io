@@ -153,6 +153,111 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-stacking-content" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/04/20/stacking-content/">深入 JavaScript</a>
+    </h1>
+  
+
+        
+        <a href="/2018/04/20/stacking-content/" class="archive-article-date">
+  	<time datetime="2018-04-20T06:01:33.083Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-20</time>
+</a>
+        
+      </header>
+    
+    <!-- 目录内容 -->
+
+<!-- 目录内容结束 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="堆叠顺序"><a href="#堆叠顺序" class="headerlink" title="堆叠顺序"></a>堆叠顺序</h3><p>就好像一个<code>div</code>他的<code>background</code>的颜色是会在<code>border</code>下面的，可以通过设置<code>rgba</code>来验证</p>
+<ol>
+<li>background</li>
+<li>boder</li>
+<li>块级</li>
+<li>浮动</li>
+<li>内联</li>
+<li>z-index: 0（定位才有效）</li>
+<li>z-index(+)</li>
+</ol>
+<h3 id="堆叠上下文"><a href="#堆叠上下文" class="headerlink" title="堆叠上下文"></a>堆叠上下文</h3><p>只要满足以下的条件</p>
+<blockquote>
+<ul>
+<li>根元素 (HTML),</li>
+<li>z-index 值不为 “auto”的 绝对/相对定位，</li>
+<li>一个 z-index 值不为 “auto”的 flex 项目 (flex item)，即：父元素 display: flex|inline-flex，</li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/opacity" target="_blank" rel="external"><code>opacity</code></a> 属性值小于 1 的元素（参考 <a href="http://www.w3.org/TR/css3-color/#transparency" target="_blank" rel="external">the specification for opacity</a>），</li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/transform" target="_blank" rel="external"><code>transform</code></a> 属性值不为 “none”的元素，</li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/mix-blend-mode" target="_blank" rel="external"><code>mix-blend-mode</code></a> 属性值不为 “normal”的元素，</li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/filter" target="_blank" rel="external"><code>filter</code></a>值不为“none”的元素，</li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/perspective" target="_blank" rel="external"><code>perspective</code></a>值不为“none”的元素，</li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/isolation" target="_blank" rel="external"><code>isolation</code></a> 属性被设置为 “isolate”的元素，</li>
+<li><code>position: fixed</code></li>
+<li>在 <a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/will-change" target="_blank" rel="external"><code>will-change</code></a> 中指定了任意 CSS 属性，即便你没有直接指定这些属性的值（参考 <a href="http://dev.opera.com/articles/css-will-change-property/" target="_blank" rel="external">这篇文章</a>）</li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/-webkit-overflow-scrolling" target="_blank" rel="external"><code>-webkit-overflow-scrolling</code></a> 属性被设置 “touch”的元素</li>
+</ul>
+</blockquote>
+<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/Guide/CSS/Understanding_z_index/The_stacking_context" target="_blank" rel="external">MDN stacking content</a></p>
+<p><a href="http://www.zhangxinxu.com/wordpress/2016/01/understand-css-stacking-context-order-z-index/" target="_blank" rel="external">张鑫旭</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/04/20/stacking-content/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-JavaScript-原型链" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -738,89 +843,6 @@
 
 
   
-    <article id="post-jQuery-first" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/03/24/jQuery-first/">初探 jQuery</a>
-    </h1>
-  
-
-        
-        <a href="/2018/03/24/jQuery-first/" class="archive-article-date">
-  	<time datetime="2018-03-24T12:34:39.307Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-24</time>
-</a>
-        
-      </header>
-    
-    <!-- 目录内容 -->
-
-<!-- 目录内容结束 -->
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="jQuery-可以说是大部分网站都会使用到的库了-builtwith"><a href="#jQuery-可以说是大部分网站都会使用到的库了-builtwith" class="headerlink" title="jQuery 可以说是大部分网站都会使用到的库了 builtwith"></a>jQuery 可以说是大部分网站都会使用到的库了 <a href="https://trends.builtwith.com/javascript" target="_blank" rel="external">builtwith</a></h3><p>今天从简单的地方入手去模拟 <code>jQuery</code> 的实现，但还不是真的实现原理，但是可以帮助我们去理解学习 <code>jQuery</code> ，其实程序员都是害怕麻烦的，有这么多的库就是为了让自己尽可能的少打代码，所以就将完成复杂过程的代码封装起来，在下一次用的时候只需要给出参数就能复用之前的代码使得自己不去干重复而无意义的事情，但是呢作为初学者直接就去使用 <code>jQuery</code> 看上去并无大碍，但一般就不会看到他最本质的东西。</p>
-        
-          <a class="article-more-a" href="/2018/03/24/jQuery-first/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">jQuery</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/03/24/jQuery-first/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -921,10 +943,6 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
@@ -933,11 +951,7 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">__proto__</a>
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -946,6 +960,14 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">__proto__</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -965,7 +987,7 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">转载</a>
+                <a href="javascript:void(0)" class="js-tag color5">ajax</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -977,7 +999,7 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">面试题</a>
+                <a href="javascript:void(0)" class="js-tag color3">转载</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -985,11 +1007,11 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">ajax</a>
+                <a href="javascript:void(0)" class="js-tag color4">面试题</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">考虫</a>
+                <a href="javascript:void(0)" class="js-tag color2">jQuery</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1001,15 +1023,15 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">jQuery</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">导航</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">MVC</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">考虫</a>
               </li>
             
             <div class="clearfix"></div>
