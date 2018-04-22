@@ -153,6 +153,105 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Awesome-resume" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/04/22/Awesome-resume/">Awesome resume</a>
+    </h1>
+  
+
+        
+        <a href="/2018/04/22/Awesome-resume/" class="archive-article-date">
+  	<time datetime="2018-04-22T13:35:51.937Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-22</time>
+</a>
+        
+      </header>
+    
+    <!-- 目录内容 -->
+
+<!-- 目录内容结束 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p><a href="https://unbrain.github.io/awesome-resume/" target="_blank" rel="external">预览</a></p>
+</blockquote>
+<p>这个项目灵感来自 <a href="http://strml.net/" target="_blank" rel="external">strml.net</a> 不过它的源码不是很懂但是知道大概思路我们可以用纯 js 来实现，代码实现是简单的，可是能想出这样灵感的人是令人敬佩的。</p>
+<h3 id="代码写在页面上"><a href="#代码写在页面上" class="headerlink" title="代码写在页面上"></a>代码写在页面上</h3><p>代码出现在页面上肯定是用 js 修改 html</p>
+<p>在 js 中准备好代码 string </p>
+<p>由于代码是一个字一个字的出现的，肯定时会用到 setInterval </p>
+<p>每一次多取 string 一个字母</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">writeCode</span>(<span class="params">code</span>)</span>&#123;</div><div class="line">  <span class="keyword">let</span> n = <span class="number">0</span></div><div class="line">  <span class="keyword">let</span> domCode = <span class="built_in">document</span>.querySlecelt(<span class="string">'.xxx'</span>)</div><div class="line">  <span class="keyword">let</span> timer = srtInterval(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">    domCode.innerHTML = code.substring(<span class="number">0</span>, n)</div><div class="line">    <span class="keyword">if</span>(n === code.length)&#123;</div><div class="line">      clearInterval(timer)</div><div class="line">    &#125;</div><div class="line">    n++</div><div class="line">  &#125;, <span class="number">30</span>)</div><div class="line">  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="代码高亮"><a href="#代码高亮" class="headerlink" title="代码高亮"></a>代码高亮</h3><p>css 仿造 html 一样加在 style 标签中（中文使用注释）</p>
+<p>我们当然不需要自己去词法分析（其实是我做不来），网上有现成的</p>
+<p>使用 <a href="http://prismjs.com/" target="_blank" rel="external">Prism</a></p>
+<p>根据官网使用就好哈，下载的时候记得勾选 markdown 后面需要</p>
+<p>Prism 其实是在关键词周围加上 span 标签，而我们应该如何制造一种我们加高亮的假象呢？当然就是先将样式提前修改后面再加上就好了。</p>
+<p>后面在代码优化就可以得到</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">writeCode</span>(<span class="params">precode, code, callback</span>) </span>&#123;</div><div class="line">  <span class="keyword">let</span> pcode = precode || <span class="string">''</span></div><div class="line">  <span class="keyword">let</span> Domcode = <span class="built_in">document</span>.querySelector(<span class="string">'#code'</span>)</div><div class="line">  <span class="keyword">let</span> n = <span class="number">0</span></div><div class="line">  <span class="keyword">let</span> timer = setInterval(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">    Domcode.innerHTML = Prism.highlight(pcode + code.substring(<span class="number">0</span>, n), Prism.languages.css, <span class="string">'css'</span>);</div><div class="line">    styleTag.innerHTML = result = pcode + code.substring(<span class="number">0</span>, n)</div><div class="line">    <span class="keyword">let</span> now = code.substring(n + <span class="number">1</span>, n)</div><div class="line">    pressKey(now);</div><div class="line">    Domcode.scrollTop = Domcode.scrollHeight</div><div class="line">    <span class="keyword">if</span> (n === code.length) &#123;</div><div class="line">      <span class="built_in">window</span>.clearInterval(timer)</div><div class="line">      callback &amp;&amp; callback.call()</div><div class="line">    &#125;</div><div class="line">    n++</div><div class="line">  &#125;, <span class="number">30</span>)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="HTML-–-gt-markdown"><a href="#HTML-–-gt-markdown" class="headerlink" title="HTML –&gt; markdown"></a>HTML –&gt; markdown</h3><p>当然我们也没必要自己去写</p>
+<p><a href="https://github.com/markedjs/marked" target="_blank" rel="external">markedjs</a></p>
+<p>依然是按着官网走就好</p>
+<h3 id="CALLBACK"><a href="#CALLBACK" class="headerlink" title="CALLBACK"></a>CALLBACK</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">writeCode(<span class="string">''</span>, css1, () =&gt; &#123;</div><div class="line">  creatPaper(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">    writeCode(css1, css2, () =&gt; &#123;</div><div class="line">      writeMarkdown(md, () =&gt; &#123;</div><div class="line">        writeCode(css1+css2, css3, () =&gt; &#123;</div><div class="line">          <span class="built_in">document</span>.querySelector(<span class="string">'#paper .content'</span>).innerHTML = marked(md);</div><div class="line">          <span class="built_in">console</span>.log(<span class="string">'over'</span>)</div><div class="line">        &#125;)</div><div class="line">      &#125;)      </div><div class="line">    &#125;)</div><div class="line">  &#125;)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>由于最近看了回调，所以就在这一次使用了。</p>
+<p>不过一般还是不要这样写，至少我实现知道咋回事过段时间这就是天书了hahahahaha</p>
+<p>下次用 Promise 改改？</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">demo</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/04/22/Awesome-resume/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-stacking-content" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -762,87 +861,6 @@
 
 
   
-    <article id="post-移动端如何适配（响应式）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/03/29/移动端如何适配（响应式）/">移动端如何适配（响应式）</a>
-    </h1>
-  
-
-        
-        <a href="/2018/03/29/移动端如何适配（响应式）/" class="archive-article-date">
-  	<time datetime="2018-03-29T09:17:00.661Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-29</time>
-</a>
-        
-      </header>
-    
-    <!-- 目录内容 -->
-
-<!-- 目录内容结束 -->
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="meta-viewport"><a href="#meta-viewport" class="headerlink" title="meta viewport"></a>meta viewport</h3><p>使用此标签就是为了告诉浏览器你别给我乱缩放，按我的标准来。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, user-scalable=no, initial-scale=1.0,maximum-scale=1.0, minimum-scale=1.0"</span> &gt;</span></div></pre></td></tr></table></figure>
-<p>viewport mata标签的每一对name/value都是一条指令。总共有6条指令：</p>
-        
-          <a class="article-more-a" href="/2018/03/29/移动端如何适配（响应式）/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">面试题</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/03/29/移动端如何适配（响应式）/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -943,23 +961,15 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">demo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">英语</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">CSS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">编程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -971,6 +981,22 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">英语</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">编程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HTTP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">blue视频笔记</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">javascript</a>
               </li>
              
@@ -979,15 +1005,23 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">blue视频笔记</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">JSONP</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">转载</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">面试题</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">ajax</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -999,27 +1033,15 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">转载</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">面试题</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">jQuery</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">canvas</a>
+                <a href="javascript:void(0)" class="js-tag color3">考虫</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">demo</a>
+                <a href="javascript:void(0)" class="js-tag color2">canvas</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1028,10 +1050,6 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">MVC</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">考虫</a>
               </li>
             
             <div class="clearfix"></div>
