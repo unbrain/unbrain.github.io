@@ -153,20 +153,20 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-Awesome-resume" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-webpack-初识" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/04/22/Awesome-resume/">Awesome resume</a>
+      <a class="article-title" href="/2018/04/27/webpack-初识/">webpack 初识</a>
     </h1>
   
 
         
-        <a href="/2018/04/22/Awesome-resume/" class="archive-article-date">
-  	<time datetime="2018-04-22T13:35:51.937Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-22</time>
+        <a href="/2018/04/27/webpack-初识/" class="archive-article-date">
+  	<time datetime="2018-04-27T15:07:39.040Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-27</time>
 </a>
         
       </header>
@@ -176,30 +176,14 @@
 <!-- 目录内容结束 -->
     <div class="article-entry" itemprop="articleBody">
       
-        <blockquote>
-<p><a href="https://unbrain.github.io/awesome-resume/" target="_blank" rel="external">预览</a></p>
-</blockquote>
-<p>这个项目灵感来自 <a href="http://strml.net/" target="_blank" rel="external">strml.net</a> 不过它的源码不是很懂但是知道大概思路我们可以用纯 js 来实现，代码实现是简单的，可是能想出这样灵感的人是令人敬佩的。</p>
-<h3 id="代码写在页面上"><a href="#代码写在页面上" class="headerlink" title="代码写在页面上"></a>代码写在页面上</h3><p>代码出现在页面上肯定是用 js 修改 html</p>
-<p>在 js 中准备好代码 string </p>
-<p>由于代码是一个字一个字的出现的，肯定时会用到 setInterval </p>
-<p>每一次多取 string 一个字母</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">writeCode</span>(<span class="params">code</span>)</span>&#123;</div><div class="line">  <span class="keyword">let</span> n = <span class="number">0</span></div><div class="line">  <span class="keyword">let</span> domCode = <span class="built_in">document</span>.querySlecelt(<span class="string">'.xxx'</span>)</div><div class="line">  <span class="keyword">let</span> timer = srtInterval(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">    domCode.innerHTML = code.substring(<span class="number">0</span>, n)</div><div class="line">    <span class="keyword">if</span>(n === code.length)&#123;</div><div class="line">      clearInterval(timer)</div><div class="line">    &#125;</div><div class="line">    n++</div><div class="line">  &#125;, <span class="number">30</span>)</div><div class="line">  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="代码高亮"><a href="#代码高亮" class="headerlink" title="代码高亮"></a>代码高亮</h3><p>css 仿造 html 一样加在 style 标签中（中文使用注释）</p>
-<p>我们当然不需要自己去词法分析（其实是我做不来），网上有现成的</p>
-<p>使用 <a href="http://prismjs.com/" target="_blank" rel="external">Prism</a></p>
-<p>根据官网使用就好哈，下载的时候记得勾选 markdown 后面需要</p>
-<p>Prism 其实是在关键词周围加上 span 标签，而我们应该如何制造一种我们加高亮的假象呢？当然就是先将样式提前修改后面再加上就好了。</p>
-<p>后面在代码优化就可以得到</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">writeCode</span>(<span class="params">precode, code, callback</span>) </span>&#123;</div><div class="line">  <span class="keyword">let</span> pcode = precode || <span class="string">''</span></div><div class="line">  <span class="keyword">let</span> Domcode = <span class="built_in">document</span>.querySelector(<span class="string">'#code'</span>)</div><div class="line">  <span class="keyword">let</span> n = <span class="number">0</span></div><div class="line">  <span class="keyword">let</span> timer = setInterval(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">    Domcode.innerHTML = Prism.highlight(pcode + code.substring(<span class="number">0</span>, n), Prism.languages.css, <span class="string">'css'</span>);</div><div class="line">    styleTag.innerHTML = result = pcode + code.substring(<span class="number">0</span>, n)</div><div class="line">    <span class="keyword">let</span> now = code.substring(n + <span class="number">1</span>, n)</div><div class="line">    pressKey(now);</div><div class="line">    Domcode.scrollTop = Domcode.scrollHeight</div><div class="line">    <span class="keyword">if</span> (n === code.length) &#123;</div><div class="line">      <span class="built_in">window</span>.clearInterval(timer)</div><div class="line">      callback &amp;&amp; callback.call()</div><div class="line">    &#125;</div><div class="line">    n++</div><div class="line">  &#125;, <span class="number">30</span>)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="HTML-–-gt-markdown"><a href="#HTML-–-gt-markdown" class="headerlink" title="HTML –&gt; markdown"></a>HTML –&gt; markdown</h3><p>当然我们也没必要自己去写</p>
-<p><a href="https://github.com/markedjs/marked" target="_blank" rel="external">markedjs</a></p>
-<p>依然是按着官网走就好</p>
-<h3 id="CALLBACK"><a href="#CALLBACK" class="headerlink" title="CALLBACK"></a>CALLBACK</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">writeCode(<span class="string">''</span>, css1, () =&gt; &#123;</div><div class="line">  creatPaper(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">    writeCode(css1, css2, () =&gt; &#123;</div><div class="line">      writeMarkdown(md, () =&gt; &#123;</div><div class="line">        writeCode(css1+css2, css3, () =&gt; &#123;</div><div class="line">          <span class="built_in">document</span>.querySelector(<span class="string">'#paper .content'</span>).innerHTML = marked(md);</div><div class="line">          <span class="built_in">console</span>.log(<span class="string">'over'</span>)</div><div class="line">        &#125;)</div><div class="line">      &#125;)      </div><div class="line">    &#125;)</div><div class="line">  &#125;)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-<p>由于最近看了回调，所以就在这一次使用了。</p>
-<p>不过一般还是不要这样写，至少我实现知道咋回事过段时间这就是天书了hahahahaha</p>
-<p>下次用 Promise 改改？</p>
-
+        <h2 id="为啥要用-webpack"><a href="#为啥要用-webpack" class="headerlink" title="为啥要用 webpack"></a>为啥要用 webpack</h2><h3 id="sass"><a href="#sass" class="headerlink" title="sass"></a><a href="https://github.com/sass/node-sass" target="_blank" rel="external">sass</a></h3><p>为了更快更方便的编写 css 代码你是有可能使用 sass 等等，但是很明显的你不可能在 html 中直接的应用 sass，你必使用进行了转译才可以啊。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">node-sass input output</div></pre></td></tr></table></figure>
+<p>但是每一次更改都要重新转译很麻烦，所以一般就是</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">node-sass input output -w</div></pre></td></tr></table></figure>
+<p>以上 intput output 都是原文件地址。</p>
+        
+          <a class="article-more-a" href="/2018/04/27/webpack-初识/#more">more >></a>
+        
       
 
       
@@ -212,7 +196,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">demo</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">webpack</a>
         		</li>
       		
 		</ul>
@@ -222,7 +206,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/04/22/Awesome-resume/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/04/27/webpack-初识/">展开全文 >></a>
         </p>
       
 
@@ -259,13 +243,13 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/04/20/stacking-content/">深入 JavaScript</a>
+      <a class="article-title" href="/2018/04/26/stacking-content/">堆叠顺序</a>
     </h1>
   
 
         
-        <a href="/2018/04/20/stacking-content/" class="archive-article-date">
-  	<time datetime="2018-04-20T06:01:33.083Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-20</time>
+        <a href="/2018/04/26/stacking-content/" class="archive-article-date">
+  	<time datetime="2018-04-26T06:04:42.872Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-26</time>
 </a>
         
       </header>
@@ -275,7 +259,7 @@
 <!-- 目录内容结束 -->
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="堆叠顺序"><a href="#堆叠顺序" class="headerlink" title="堆叠顺序"></a>堆叠顺序</h3><p>就好像一个<code>div</code>他的<code>background</code>的颜色是会在<code>border</code>下面的，可以通过设置<code>rgba</code>来验证</p>
+        <p>就好像一个<code>div</code>他的<code>background</code>的颜色是会在<code>border</code>下面的，可以通过设置<code>rgba</code>来验证</p>
 <ol>
 <li>background</li>
 <li>boder</li>
@@ -285,26 +269,9 @@
 <li>z-index: 0（定位才有效）</li>
 <li>z-index(+)</li>
 </ol>
-<h3 id="堆叠上下文"><a href="#堆叠上下文" class="headerlink" title="堆叠上下文"></a>堆叠上下文</h3><p>只要满足以下的条件</p>
-<blockquote>
-<ul>
-<li>根元素 (HTML),</li>
-<li>z-index 值不为 “auto”的 绝对/相对定位，</li>
-<li>一个 z-index 值不为 “auto”的 flex 项目 (flex item)，即：父元素 display: flex|inline-flex，</li>
-<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/opacity" target="_blank" rel="external"><code>opacity</code></a> 属性值小于 1 的元素（参考 <a href="http://www.w3.org/TR/css3-color/#transparency" target="_blank" rel="external">the specification for opacity</a>），</li>
-<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/transform" target="_blank" rel="external"><code>transform</code></a> 属性值不为 “none”的元素，</li>
-<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/mix-blend-mode" target="_blank" rel="external"><code>mix-blend-mode</code></a> 属性值不为 “normal”的元素，</li>
-<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/filter" target="_blank" rel="external"><code>filter</code></a>值不为“none”的元素，</li>
-<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/perspective" target="_blank" rel="external"><code>perspective</code></a>值不为“none”的元素，</li>
-<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/isolation" target="_blank" rel="external"><code>isolation</code></a> 属性被设置为 “isolate”的元素，</li>
-<li><code>position: fixed</code></li>
-<li>在 <a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/will-change" target="_blank" rel="external"><code>will-change</code></a> 中指定了任意 CSS 属性，即便你没有直接指定这些属性的值（参考 <a href="http://dev.opera.com/articles/css-will-change-property/" target="_blank" rel="external">这篇文章</a>）</li>
-<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/-webkit-overflow-scrolling" target="_blank" rel="external"><code>-webkit-overflow-scrolling</code></a> 属性被设置 “touch”的元素</li>
-</ul>
-</blockquote>
-<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/Guide/CSS/Understanding_z_index/The_stacking_context" target="_blank" rel="external">MDN stacking content</a></p>
-<p><a href="http://www.zhangxinxu.com/wordpress/2016/01/understand-css-stacking-context-order-z-index/" target="_blank" rel="external">张鑫旭</a></p>
-
+        
+          <a class="article-more-a" href="/2018/04/26/stacking-content/#more">more >></a>
+        
       
 
       
@@ -327,7 +294,238 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/04/20/stacking-content/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/04/26/stacking-content/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-css-tricks01" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/04/26/css-tricks01/">CSS 文字对齐</a>
+    </h1>
+  
+
+        
+        <a href="/2018/04/26/css-tricks01/" class="archive-article-date">
+  	<time datetime="2018-04-26T06:02:17.142Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-26</time>
+</a>
+        
+      </header>
+    
+    <!-- 目录内容 -->
+
+<!-- 目录内容结束 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="在进行制作表单的时候为了使得让中文更加的顺眼可能会有让不同长度的文字左右对齐的需求就像这样"><a href="#在进行制作表单的时候为了使得让中文更加的顺眼可能会有让不同长度的文字左右对齐的需求就像这样" class="headerlink" title="在进行制作表单的时候为了使得让中文更加的顺眼可能会有让不同长度的文字左右对齐的需求就像这样"></a>在进行制作表单的时候为了使得让中文更加的顺眼可能会有让不同长度的文字左右对齐的需求就像这样</h3><p><img src="/img/csstrick01.png" alt=""></p>
+        
+          <a class="article-more-a" href="/2018/04/26/css-tricks01/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/04/26/css-tricks01/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-登录与注册" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <!-- 目录内容 -->
+
+<!-- 目录内容结束 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="登录与注册"><a href="#登录与注册" class="headerlink" title="登录与注册"></a>登录与注册</h2><h3 id="路由"><a href="#路由" class="headerlink" title="路由"></a>路由</h3><p>后端必需验证，curl 直接发请求绕过前端。</p>
+<h2 id="Cookie"><a href="#Cookie" class="headerlink" title="Cookie"></a>Cookie</h2><p><a href="https://zh.wikipedia.org/wiki/Cookie" target="_blank" rel="external">Cookie</a> 就好像游乐园的通行证</p>
+<ul>
+<li>服务器通过 Set-Cookie 响应头设置Cookie</li>
+<li>浏览器得到 Cookie 后，每次请求都会带上 Cookie</li>
+<li>服务器读到 Cookie 就知道登录用户是谁</li>
+</ul>
+<p>Cookie 可以做假</p>
+<p>http only</p>
+<p>Cookie 有有效期</p>
+<blockquote>
+<h2 id="Cookie的缺陷"><a href="#Cookie的缺陷" class="headerlink" title="Cookie的缺陷"></a>Cookie的缺陷</h2><ol>
+<li>Cookie会被附加在每个HTTP请求中，所以无形中增加了流量。</li>
+<li>由于在HTTP请求中的Cookie是明文传递的，所以安全性成问题，除非用<a href="https://zh.wikipedia.org/wiki/HTTPS" target="_blank" rel="external">HTTPS</a>。</li>
+<li>Cookie的大小限制在4KB左右，对于复杂的存储需求来说是不够用的。<a href="https://zh.wikipedia.org/wiki/Cookie#cite_note-3" target="_blank" rel="external">[3]</a></li>
+</ol>
+</blockquote>
+<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Caching_FAQ" target="_blank" rel="external">HTTP 缓存</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/04/26/登录与注册/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Awesome-resume" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/04/24/Awesome-resume/">Awesome resume</a>
+    </h1>
+  
+
+        
+        <a href="/2018/04/24/Awesome-resume/" class="archive-article-date">
+  	<time datetime="2018-04-24T12:44:57.372Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-24</time>
+</a>
+        
+      </header>
+    
+    <!-- 目录内容 -->
+
+<!-- 目录内容结束 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p><a href="https://unbrain.github.io/awesome-resume/" target="_blank" rel="external">预览</a></p>
+</blockquote>
+<p>这个项目灵感来自 <a href="http://strml.net/" target="_blank" rel="external">strml.net</a> 不过它的源码不是很懂但是知道大概思路我们可以用纯 js 来实现，代码实现是简单的，可是能想出这样灵感的人是令人敬佩的。</p>
+<h3 id="代码写在页面上"><a href="#代码写在页面上" class="headerlink" title="代码写在页面上"></a>代码写在页面上</h3><p>代码出现在页面上肯定是用 js 修改 html</p>
+<p>在 js 中准备好代码 string </p>
+        
+          <a class="article-more-a" href="/2018/04/24/Awesome-resume/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">demo</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/04/24/Awesome-resume/">展开全文 >></a>
         </p>
       
 
@@ -618,249 +816,6 @@
 
 
   
-    <article id="post-Whats-JSONP" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/04/05/Whats-JSONP/">What&#39;s JSONP</a>
-    </h1>
-  
-
-        
-        <a href="/2018/04/05/Whats-JSONP/" class="archive-article-date">
-  	<time datetime="2018-04-05T10:25:01.820Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-05</time>
-</a>
-        
-      </header>
-    
-    <!-- 目录内容 -->
-
-<!-- 目录内容结束 -->
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="wiki-上解释到-JSONP-is-JSON-with-padding"><a href="#wiki-上解释到-JSONP-is-JSON-with-padding" class="headerlink" title="wiki 上解释到 JSONP is JSON with padding"></a>wiki 上解释到 JSONP is JSON with padding</h3><p>其实个人看来啥也没说啊。stackoverflow上还是有不错的解释。我在这里会解释我看来的 JSONP</p>
-        
-          <a class="article-more-a" href="/2018/04/05/Whats-JSONP/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JSONP</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/04/05/Whats-JSONP/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-jscallapply" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/03/30/jscallapply/">简聊 JavaScript call() apply() 与 bind()</a>
-    </h1>
-  
-
-        
-        <a href="/2018/03/30/jscallapply/" class="archive-article-date">
-  	<time datetime="2018-03-30T05:37:58.538Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-30</time>
-</a>
-        
-      </header>
-    
-    <!-- 目录内容 -->
-
-<!-- 目录内容结束 -->
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&gt; <span class="function"><span class="keyword">function</span>.<span class="title">call</span>(<span class="params">thisArg, arg1, arg2, ...</span>)//在<span class="title">fun</span>函数运行时指定的<span class="title">this</span>值。需要注意的是，指定的<span class="title">this</span>值并不一定是该函数执行时真正的<span class="title">this</span>值，如果这个函数处于非严格模式下，则指定为<span class="title">null</span>和<span class="title">undefined</span>的<span class="title">this</span>值会自动指向全局对象(<span class="params">浏览器中就是window对象</span>)，同时值为原始值(<span class="params">数字，字符串，布尔值</span>)的<span class="title">this</span>会指向该原始值的自动包装对象。</span></div><div class="line"><span class="function">&gt; <span class="title">func</span>.<span class="title">apply</span>(<span class="params">thisArg, [argsArray]</span>)//同上</span></div><div class="line"><span class="function">&gt; <span class="title">fun</span>.<span class="title">bind</span>(<span class="params">thisArg[, arg1[, arg2[, ...]]]</span>)</span></div><div class="line"><span class="function">&gt; //<span class="title">thisArg</span>当绑定函数被调用时，该参数会作为原函数运行时的 <span class="title">this</span> 指向。当使用<span class="title">new</span> 操作符调用绑定函数时，该参数无效。</span></div><div class="line"><span class="function">&gt;</span></div></pre></td></tr></table></figure>
-</blockquote>
-        
-          <a class="article-more-a" href="/2018/03/30/jscallapply/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">面试题</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/03/30/jscallapply/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-closure" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/03/29/closure/">啥是闭包</a>
-    </h1>
-  
-
-        
-        <a href="/2018/03/29/closure/" class="archive-article-date">
-  	<time datetime="2018-03-29T11:37:22.475Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-29</time>
-</a>
-        
-      </header>
-    
-    <!-- 目录内容 -->
-
-<!-- 目录内容结束 -->
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>闭包这个名词可能是在还没了解计算机领域常常听见的，那就可以说他是一个比较常用到的一种技巧而被圈外的人所知道，仅仅是名字比较高深但其实认真一看也不过是<strong>「函数」和「函数内部能访问到的变量」（也叫环境）的总和，就是一个闭包。</strong></p>
-        
-          <a class="article-more-a" href="/2018/03/29/closure/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">面试题</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/03/29/closure/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -961,15 +916,19 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">demo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">demo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">英语</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -981,7 +940,11 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">英语</a>
+                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">prototype</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -997,14 +960,6 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">prototype</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">JSONP</a>
               </li>
              
@@ -1017,19 +972,15 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">ajax</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">github</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1049,7 +1000,15 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">webpack</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">MVC</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">ajax</a>
               </li>
             
             <div class="clearfix"></div>
