@@ -73,12 +73,12 @@
 <meta name="keywords" content="JavaScript,jQuery">
 <meta property="og:type" content="article">
 <meta property="og:title" content="初探 jQuery">
-<meta property="og:url" content="http://yoursite.com/2018/03/24/jQuery-first/index.html">
+<meta property="og:url" content="http://yoursite.com/2018/05/20/jQuery-first/index.html">
 <meta property="og:site_name" content="Marsorsun">
 <meta property="og:description" content="jQuery 可以说是大部分网站都会使用到的库了 builtwith今天从简单的地方入手去模拟 jQuery 的实现，但还不是真的实现原理，但是可以帮助我们去理解学习 jQuery ，其实程序员都是害怕麻烦的，有这么多的库就是为了让自己尽可能的少打代码，所以就将完成复杂过程的代码封装起来，在下一次用的时候只需要给出参数就能复用之前的代码使得自己不去干重复而无意义的事情，但是呢作为初学者直接就去使用">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://yoursite.com/img/jQueryfirst.png">
-<meta property="og:updated_time" content="2018-03-24T12:34:39.307Z">
+<meta property="og:updated_time" content="2018-05-20T12:58:51.127Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="初探 jQuery">
 <meta name="twitter:description" content="jQuery 可以说是大部分网站都会使用到的库了 builtwith今天从简单的地方入手去模拟 jQuery 的实现，但还不是真的实现原理，但是可以帮助我们去理解学习 jQuery ，其实程序员都是害怕麻烦的，有这么多的库就是为了让自己尽可能的少打代码，所以就将完成复杂过程的代码封装起来，在下一次用的时候只需要给出参数就能复用之前的代码使得自己不去干重复而无意义的事情，但是呢作为初学者直接就去使用">
@@ -112,7 +112,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/03/24/jQuery-first/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/05/20/jQuery-first/"/>
 
 
 
@@ -235,7 +235,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/24/jQuery-first/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/20/jQuery-first/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Marsorsun">
@@ -264,8 +264,8 @@
               
                 <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-24T20:34:39+08:00">
-                2018-03-24
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-20T20:58:51+08:00">
+                2018-05-20
               </time>
             
 
@@ -307,7 +307,7 @@
       
 
       
-        <h3 id="jQuery-可以说是大部分网站都会使用到的库了-builtwith"><a href="#jQuery-可以说是大部分网站都会使用到的库了-builtwith" class="headerlink" title="jQuery 可以说是大部分网站都会使用到的库了 builtwith"></a>jQuery 可以说是大部分网站都会使用到的库了 <a href="https://trends.builtwith.com/javascript" target="_blank" rel="external">builtwith</a></h3><p>今天从简单的地方入手去模拟 <code>jQuery</code> 的实现，但还不是真的实现原理，但是可以帮助我们去理解学习 <code>jQuery</code> ，其实程序员都是害怕麻烦的，有这么多的库就是为了让自己尽可能的少打代码，所以就将完成复杂过程的代码封装起来，在下一次用的时候只需要给出参数就能复用之前的代码使得自己不去干重复而无意义的事情，但是呢作为初学者直接就去使用 <code>jQuery</code> 看上去并无大碍，但一般就不会看到他最本质的东西。</p>
+        <h3 id="jQuery-可以说是大部分网站都会使用到的库了-builtwith"><a href="#jQuery-可以说是大部分网站都会使用到的库了-builtwith" class="headerlink" title="jQuery 可以说是大部分网站都会使用到的库了 builtwith"></a>jQuery 可以说是大部分网站都会使用到的库了 <a href="https://trends.builtwith.com/javascript" target="_blank" rel="external">builtwith</a></h3><p>今天从简单的地方入手去模拟 <code>jQuery</code> 的实现，但还不是真的实现原理，但是可以帮助我们去理解学习 <code>jQuery</code> ，其实程序员都是害怕麻烦的，有这么多的库就是为了让自己尽可能的少打代码，所以就将完成复杂过程的代码封装起来，在下一次用的时候只需要给出参数就能复用之前的代码使得自己不去干重复而无意义的事情，但是呢作为初学者直接就去使用 <code>jQuery</code> 看上去并无大碍，但一般就不会看到他最本质的东西。所以模拟来实现一个<code>jQuery</code></p>
 <a id="more"></a>
 <h3 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">window</span>.jQuery = ???</div><div class="line"><span class="built_in">window</span>.$ = jQuery</div><div class="line"></div><div class="line"><span class="keyword">var</span> $div = $(<span class="string">'div'</span>)</div><div class="line">$div.addClass(<span class="string">'red'</span>) <span class="comment">// 可将所有 div 的 class 添加一个 red</span></div><div class="line">$div.setText(<span class="string">'hi'</span>) <span class="comment">// 可将所有 div 的 textContent 变为 hi</span></div></pre></td></tr></table></figure>
 <h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><ol>
@@ -322,7 +322,7 @@
 <h3 id="setText-函数"><a href="#setText-函数" class="headerlink" title="setText() 函数"></a><code>setText()</code> 函数</h3><p>更改 <code>textContext</code> 属性</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">nodes.setText = <span class="function"><span class="keyword">function</span>(<span class="params">message</span>)</span>&#123;</div><div class="line">  <span class="keyword">for</span>(<span class="keyword">let</span> i =<span class="number">0</span>; i &lt; nodes.length; i++)&#123;</div><div class="line">      nodes[i].textContent = message</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h3 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h3><p><img src="/img/jQueryfirst.png" alt=""></p>
-<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>其实 jQuery 也就是一个对象，只是他单独封装他的属性与方法，将 DOM 的方法与属性隐藏得更深了一点，使用起来更方便，兼容性更强。</p>
+<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>其实 jQuery 也就是一个对象，只是他单独封装他的属性与方法，将 DOM 的方法与属性隐藏得更深了一点，使用起来更方便更强大，兼容性更强。</p>
 <h3 id="思考"><a href="#思考" class="headerlink" title="思考"></a>思考</h3><blockquote>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt; <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">x</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">&gt;</div></pre></td></tr></table></figure>
 </blockquote>
@@ -396,8 +396,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/03/21/JSobject/" rel="next" title="JS　里面的对象">
-                <i class="fa fa-chevron-left"></i> JS　里面的对象
+              <a href="/2018/05/17/回看-DOM/" rel="next" title="回看 DOM">
+                <i class="fa fa-chevron-left"></i> 回看 DOM
               </a>
             
           </div>
@@ -405,10 +405,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/03/29/移动端如何适配（响应式）/" rel="prev" title="移动端如何适配（响应式）">
-                移动端如何适配（响应式） <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -494,7 +490,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">41</span>
+                <span class="site-state-item-count">42</span>
                 <span class="site-state-item-name">Artikel</span>
               </a>
             </div>
@@ -507,7 +503,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">30</span>
+                <span class="site-state-item-count">31</span>
                 <span class="site-state-item-name">Tags</span>
               </a>
             </div>
