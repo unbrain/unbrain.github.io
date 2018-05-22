@@ -53,7 +53,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="javascript,es6,callback,promise," />
+  <meta name="keywords" content="demo,坑," />
 
 
 
@@ -69,18 +69,18 @@
 
 
 
-<meta name="description" content="callback一个函数在另一个函数中调用 12345function fn1()&amp;#123;&amp;#125;function fn2(fn)&amp;#123;fn()&amp;#125;fn2(fn1)//这就是回调//call a function//callback a function">
-<meta name="keywords" content="javascript,es6,callback,promise">
+<meta name="description" content="只是记录自己在写网易云的项目自己遇到的一些坑与使用到的一些小套路 MVC在编写admin.html使用了 MVC 模式使得代码更加的清晰和简单而强大 123456789101112131415161718192021222324&amp;#123;  let view = &amp;#123;    el: &apos;#selector&apos;,    template: `html`,    render(data)&amp;#12">
+<meta name="keywords" content="demo,坑">
 <meta property="og:type" content="article">
-<meta property="og:title" content="回看 promise">
-<meta property="og:url" content="http://yoursite.com/2018/05/16/es6-promise/index.html">
+<meta property="og:title" content="网易云音乐项目踩坑与套路">
+<meta property="og:url" content="http://yoursite.com/2018/05/22/网易云音乐项目踩坑与套路/index.html">
 <meta property="og:site_name" content="Marsorsun">
-<meta property="og:description" content="callback一个函数在另一个函数中调用 12345function fn1()&amp;#123;&amp;#125;function fn2(fn)&amp;#123;fn()&amp;#125;fn2(fn1)//这就是回调//call a function//callback a function">
+<meta property="og:description" content="只是记录自己在写网易云的项目自己遇到的一些坑与使用到的一些小套路 MVC在编写admin.html使用了 MVC 模式使得代码更加的清晰和简单而强大 123456789101112131415161718192021222324&amp;#123;  let view = &amp;#123;    el: &apos;#selector&apos;,    template: `html`,    render(data)&amp;#12">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-05-16T13:38:26.503Z">
+<meta property="og:updated_time" content="2018-05-22T12:31:51.158Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="回看 promise">
-<meta name="twitter:description" content="callback一个函数在另一个函数中调用 12345function fn1()&amp;#123;&amp;#125;function fn2(fn)&amp;#123;fn()&amp;#125;fn2(fn1)//这就是回调//call a function//callback a function">
+<meta name="twitter:title" content="网易云音乐项目踩坑与套路">
+<meta name="twitter:description" content="只是记录自己在写网易云的项目自己遇到的一些坑与使用到的一些小套路 MVC在编写admin.html使用了 MVC 模式使得代码更加的清晰和简单而强大 123456789101112131415161718192021222324&amp;#123;  let view = &amp;#123;    el: &apos;#selector&apos;,    template: `html`,    render(data)&amp;#12">
 
 
 
@@ -110,13 +110,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/05/16/es6-promise/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/05/22/网易云音乐项目踩坑与套路/"/>
 
 
 
 
 
-  <title>回看 promise | Marsorsun</title>
+  <title>网易云音乐项目踩坑与套路 | Marsorsun</title>
   
 
 
@@ -233,7 +233,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/16/es6-promise/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/22/网易云音乐项目踩坑与套路/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Marsorsun">
@@ -250,7 +250,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">回看 promise</h1>
+          <h1 class="post-title" itemprop="name headline">网易云音乐项目踩坑与套路</h1>
         
 
         <div class="post-meta">
@@ -262,8 +262,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-16T21:38:26+08:00">
-                2018-05-16
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-22T20:31:51+08:00">
+                2018-05-22
               </time>
             
 
@@ -305,22 +305,17 @@
       
 
       
-        <h2 id="callback"><a href="#callback" class="headerlink" title="callback"></a>callback</h2><p>一个函数在另一个函数中调用</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn1</span>(<span class="params"></span>)</span>&#123;&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn2</span>(<span class="params">fn</span>)</span>&#123;fn()&#125;</div><div class="line">fn2(fn1)<span class="comment">//这就是回调</span></div><div class="line"><span class="comment">//call a function</span></div><div class="line"><span class="comment">//callback a function</span></div></pre></td></tr></table></figure>
-<a id="more"></a>
-<h2 id="回调地狱"><a href="#回调地狱" class="headerlink" title="回调地狱"></a>回调地狱</h2><p>回调的嵌套多余 5 层的时候，你就会发现看不懂了…</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">writeCode(<span class="string">''</span>, css1, () =&gt; &#123;</div><div class="line">  creatPaper(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">    writeCode(css1, css2, () =&gt; &#123;</div><div class="line">      writeMarkdown(md, () =&gt; &#123;</div><div class="line">        writeCode(css1+css2, css3, () =&gt; &#123;</div><div class="line">          <span class="built_in">document</span>.querySelector(<span class="string">'#paper .content'</span>).innerHTML = marked(md);</div><div class="line">          <span class="built_in">console</span>.log(<span class="string">'over'</span>)</div><div class="line">        &#125;)</div><div class="line">      &#125;)      </div><div class="line">    &#125;)</div><div class="line">  &#125;)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-<p>这是我在我的一个项目中使用的代码，可读性为负</p>
-<p>忒酸爽</p>
-<p>为了解决回调地狱，以及在不同的库使用回调的方式是未知的需要去记</p>
-<p>所以就来了 <code>Promise</code></p>
-<h2 id="Promise"><a href="#Promise" class="headerlink" title="Promise"></a>Promise</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">get</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve, reject</span>)</span>&#123;</div><div class="line">    resolve(<span class="string">'zhaoyang'</span>)</div><div class="line">  &#125;)</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">print</span>(<span class="params">info</span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve, reject</span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(info)</div><div class="line">    resolve()</div><div class="line">  &#125;)</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getanother</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve, reject</span>)</span>&#123;</div><div class="line">    resolve(<span class="string">'bamax'</span>)</div><div class="line">  &#125;)</div><div class="line">&#125;</div><div class="line"></div><div class="line">get().then(print).then(getanother).then(print)</div></pre></td></tr></table></figure>
-<p>promise 三大金刚 then resolve reject </p>
-<h2 id="AJAX"><a href="#AJAX" class="headerlink" title="AJAX"></a>AJAX</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">ajax</span>(<span class="params">url, onsuccess, onerror</span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span>&#123;</div><div class="line">    <span class="keyword">let</span> xhr = <span class="keyword">new</span> XMLHttpRequest()</div><div class="line">    xhr.open(<span class="string">'Get'</span>, url, <span class="literal">true</span>)</div><div class="line">    xhr.onload() = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">      resolve(<span class="keyword">this</span>.responseText)</div><div class="line">    &#125;</div><div class="line">    xhr.onerror =<span class="function"><span class="params">()</span>=&gt;</span>&#123;reject(<span class="string">'err'</span>)&#125;</div><div class="line">  &#125;)</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">log</span>(<span class="params">name, password</span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> ajax(<span class="string">'/log'</span>,&#123;name, passname&#125;)</div><div class="line">&#125;</div><div class="line">log(<span class="string">'sb'</span>,<span class="string">'sbsbsb'</span>).then(<span class="function"><span class="params">ret</span>=&gt;</span>&#123;</div><div class="line">  </div><div class="line">&#125;).catch()</div></pre></td></tr></table></figure>
-<h2 id="Generator"><a href="#Generator" class="headerlink" title="Generator"></a>Generator</h2><p>ES6 提供的异步编程解决方案</p>
-<p><a href="http://es6.ruanyifeng.com/#docs/generator" target="_blank" rel="external">阮一峰</a></p>
-<p>感觉自己还不能很好地讲出来</p>
-<p>yield  next()</p>
+        <p>只是记录自己在写网易云的项目自己遇到的一些<code>坑</code>与使用到的一些小套路</p>
+<h2 id="MVC"><a href="#MVC" class="headerlink" title="MVC"></a>MVC</h2><p>在编写<code>admin.html</code>使用了 MVC 模式使得代码更加的清晰和简单而强大</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="keyword">let</span> view = &#123;</div><div class="line">    el: <span class="string">'#selector'</span>,</div><div class="line">    template: <span class="string">`html`</span>,</div><div class="line">    render(data)&#123;</div><div class="line">      $(<span class="keyword">this</span>.el).html(<span class="keyword">this</span>.template)</div><div class="line">    &#125;</div><div class="line">  &#125;,</div><div class="line">  <span class="keyword">let</span> moudel = &#123;</div><div class="line">  	data: &#123;&#125;,      </div><div class="line">  &#125;</div><div class="line">  <span class="keyword">let</span> controller = &#123;</div><div class="line">  	view: <span class="literal">null</span>,</div><div class="line">    moudel: <span class="literal">null</span>,</div><div class="line">    init(view, moudel)&#123;</div><div class="line">      view = <span class="keyword">this</span>.view</div><div class="line">      moudel = <span class="keyword">this</span>.moudel</div><div class="line">      <span class="keyword">this</span>.view.render(<span class="keyword">this</span>.moudel.data)</div><div class="line">      <span class="keyword">this</span>.bindEvent()</div><div class="line">    &#125;,</div><div class="line">    bindEvent()&#123;&#125;，</div><div class="line">  &#125;</div><div class="line">  controller.init(view, moudel)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="浅拷贝与深拷贝"><a href="#浅拷贝与深拷贝" class="headerlink" title="浅拷贝与深拷贝"></a>浅拷贝与深拷贝</h2><p>之前感觉这东东的概念啥的并不难，可是是个坑，我很久才发现，在<code>admin.html</code>上传歌曲后没事，但是上传第二首发现之前哪一首歌的名字在屏幕上与现在这一首的名字相同，<code>debug</code>后才发现了这一段代码<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">Object</span>.assign(<span class="keyword">this</span>.object, ...attributes)</div></pre></td></tr></table></figure></p>
+<p>Object.assign这个方法是个坑啊，这方法实行的是浅拷贝，而不是深拷贝。也就是说，如果源对象某个属性的值是对象，那么目标对象拷贝得到的是这个对象的引用。</p>
+<p>所以说我改成</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">this</span>.data = &#123;id, ...attribute&#125;</div></pre></td></tr></table></figure>
+<p>就好了，不过我选择了这样的，在使用 <code>this.data</code>对其进行深拷贝</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> data = <span class="built_in">JSON</span>.Parse(<span class="built_in">JSON</span>.Stringify(<span class="keyword">this</span>.model.data))</div></pre></td></tr></table></figure>
+<h2 id="发布与订阅模式"><a href="#发布与订阅模式" class="headerlink" title="发布与订阅模式"></a>发布与订阅模式</h2><p>为了实现传说中的低耦合高内聚，其实是为了各个模块中的数据能进行方便交互而暴露出一个小口子，定于的时候告知到调用的函数名，要发布的时候使用回调就可以了。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">window</span>.eventHub = &#123;</div><div class="line">  events:&#123;</div><div class="line">    <span class="comment">//事件名</span></div><div class="line">    人明日报：[],</div><div class="line">    光明日报：[],</div><div class="line">  &#125;,</div><div class="line">  <span class="comment">//订阅</span></div><div class="line">  on(eventName, fn)&#123;</div><div class="line">    <span class="keyword">if</span>(<span class="keyword">this</span>.events[eventName] === <span class="literal">undefined</span>)&#123;</div><div class="line">      <span class="keyword">this</span>.events[eventName] === []</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">this</span>.events[eventName].push(fn)</div><div class="line">  &#125;,</div><div class="line">  <span class="comment">//发布</span></div><div class="line">  emit(eventName, data)&#123;</div><div class="line">    fnList = <span class="keyword">this</span>.events[eventName]</div><div class="line">    fnList.map(<span class="function">(<span class="params">fn</span>)=&gt;</span>&#123;</div><div class="line">      fn.call(<span class="literal">undefined</span>, data)</div><div class="line">    &#125;)</div><div class="line">  &#125;,</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -367,13 +362,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/javascript/" rel="tag"># javascript</a>
+            <a href="/tags/demo/" rel="tag"># demo</a>
           
-            <a href="/tags/es6/" rel="tag"># es6</a>
-          
-            <a href="/tags/callback/" rel="tag"># callback</a>
-          
-            <a href="/tags/promise/" rel="tag"># promise</a>
+            <a href="/tags/坑/" rel="tag"># 坑</a>
           
         </div>
       
@@ -386,8 +377,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/05/10/box-sizing: /" rel="next" title="box-sizing">
-                <i class="fa fa-chevron-left"></i> box-sizing
+              <a href="/2018/05/20/jQuery-first/" rel="next" title="初探 jQuery">
+                <i class="fa fa-chevron-left"></i> 初探 jQuery
               </a>
             
           </div>
@@ -395,10 +386,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/05/17/回看-JS-数据类型/" rel="prev" title="回看 JS 数据类型">
-                回看 JS 数据类型 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -552,7 +539,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#callback"><span class="nav-number">1.</span> <span class="nav-text">callback</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#回调地狱"><span class="nav-number">2.</span> <span class="nav-text">回调地狱</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Promise"><span class="nav-number">3.</span> <span class="nav-text">Promise</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AJAX"><span class="nav-number">4.</span> <span class="nav-text">AJAX</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Generator"><span class="nav-number">5.</span> <span class="nav-text">Generator</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#MVC"><span class="nav-number">1.</span> <span class="nav-text">MVC</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#浅拷贝与深拷贝"><span class="nav-number">2.</span> <span class="nav-text">浅拷贝与深拷贝</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#发布与订阅模式"><span class="nav-number">3.</span> <span class="nav-text">发布与订阅模式</span></a></li></ol></div>
             
 
           </div>
