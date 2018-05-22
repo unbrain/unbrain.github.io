@@ -175,7 +175,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Home
+            Startseite
           </a>
         </li>
       
@@ -195,7 +195,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archives
+            Archiv
           </a>
         </li>
       
@@ -218,6 +218,131 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/22/参数处理&解构赋值/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Marsorsun">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/123.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Marsorsun">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/22/参数处理&解构赋值/" itemprop="url">参数处理&解构赋值</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-22T21:37:24+08:00">
+                2018-05-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="函数默认参数"><a href="#函数默认参数" class="headerlink" title="函数默认参数"></a>函数默认参数</h2><p>与 Python 的区别 <a href="http://effbot.org/zone/default-values.htm" target="_blank" rel="external">http://effbot.org/zone/default-values.htm</a><br>剩余参数</p>
+<h2 id="参数变为数组"><a href="#参数变为数组" class="headerlink" title="参数变为数组"></a>参数变为数组</h2><p>Array.prototype.slice.call(arguments,2)<br>Array.from(arguments).slice(2)<br>function fn (a,b, …c){}<br>展开操作</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/05/22/参数处理&解构赋值/#more" rel="contents">
+              Weiterlesen &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
     
       
 
@@ -261,9 +386,9 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-22T20:31:51+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-22T21:37:19+08:00">
                 2018-05-22
               </time>
             
@@ -302,20 +427,15 @@
 
       
         
-          
-            <p>只是记录自己在写网易云的项目自己遇到的一些<code>坑</code>与使用到的一些小套路</p>
+          <p>只是记录自己在写网易云的项目自己遇到的一些<code>坑</code>与使用到的一些小套路</p>
 <h2 id="MVC"><a href="#MVC" class="headerlink" title="MVC"></a>MVC</h2><p>在编写<code>admin.html</code>使用了 MVC 模式使得代码更加的清晰和简单而强大</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="keyword">let</span> view = &#123;</div><div class="line">    el: <span class="string">'#selector'</span>,</div><div class="line">    template: <span class="string">`html`</span>,</div><div class="line">    render(data)&#123;</div><div class="line">      $(<span class="keyword">this</span>.el).html(<span class="keyword">this</span>.template)</div><div class="line">    &#125;</div><div class="line">  &#125;,</div><div class="line">  <span class="keyword">let</span> moudel = &#123;</div><div class="line">  	data: &#123;&#125;,      </div><div class="line">  &#125;</div><div class="line">  <span class="keyword">let</span> controller = &#123;</div><div class="line">  	view: <span class="literal">null</span>,</div><div class="line">    moudel: <span class="literal">null</span>,</div><div class="line">    init(view, moudel)&#123;</div><div class="line">      view = <span class="keyword">this</span>.view</div><div class="line">      moudel = <span class="keyword">this</span>.moudel</div><div class="line">      <span class="keyword">this</span>.view.render(<span class="keyword">this</span>.moudel.data)</div><div class="line">      <span class="keyword">this</span>.bindEvent()</div><div class="line">    &#125;,</div><div class="line">    bindEvent()&#123;&#125;，</div><div class="line">  &#125;</div><div class="line">  controller.init(view, moudel)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="浅拷贝与深拷贝"><a href="#浅拷贝与深拷贝" class="headerlink" title="浅拷贝与深拷贝"></a>浅拷贝与深拷贝</h2><p>之前感觉这东东的概念啥的并不难，可是是个坑，我很久才发现，在<code>admin.html</code>上传歌曲后没事，但是上传第二首发现之前哪一首歌的名字在屏幕上与现在这一首的名字相同，<code>debug</code>后才发现了这一段代码<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">Object</span>.assign(<span class="keyword">this</span>.object, ...attributes)</div></pre></td></tr></table></figure></p>
-<p>Object.assign这个方法是个坑啊，这方法实行的是浅拷贝，而不是深拷贝。也就是说，如果源对象某个属性的值是对象，那么目标对象拷贝得到的是这个对象的引用。</p>
-<p>所以说我改成</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">this</span>.data = &#123;id, ...attribute&#125;</div></pre></td></tr></table></figure>
-<p>就好了，不过我选择了这样的，在使用 <code>this.data</code>对其进行深拷贝</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> data = <span class="built_in">JSON</span>.Parse(<span class="built_in">JSON</span>.Stringify(<span class="keyword">this</span>.model.data))</div></pre></td></tr></table></figure>
-<h2 id="发布与订阅模式"><a href="#发布与订阅模式" class="headerlink" title="发布与订阅模式"></a>发布与订阅模式</h2><p>为了实现传说中的低耦合高内聚，其实是为了各个模块中的数据能进行方便交互而暴露出一个小口子，定于的时候告知到调用的函数名，要发布的时候使用回调就可以了。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">window</span>.eventHub = &#123;</div><div class="line">  events:&#123;</div><div class="line">    <span class="comment">//事件名</span></div><div class="line">    人明日报：[],</div><div class="line">    光明日报：[],</div><div class="line">  &#125;,</div><div class="line">  <span class="comment">//订阅</span></div><div class="line">  on(eventName, fn)&#123;</div><div class="line">    <span class="keyword">if</span>(<span class="keyword">this</span>.events[eventName] === <span class="literal">undefined</span>)&#123;</div><div class="line">      <span class="keyword">this</span>.events[eventName] === []</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">this</span>.events[eventName].push(fn)</div><div class="line">  &#125;,</div><div class="line">  <span class="comment">//发布</span></div><div class="line">  emit(eventName, data)&#123;</div><div class="line">    fnList = <span class="keyword">this</span>.events[eventName]</div><div class="line">    fnList.map(<span class="function">(<span class="params">fn</span>)=&gt;</span>&#123;</div><div class="line">      fn.call(<span class="literal">undefined</span>, data)</div><div class="line">    &#125;)</div><div class="line">  &#125;,</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/05/22/网易云音乐项目踩坑与套路/#more" rel="contents">
+              Weiterlesen &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -391,7 +511,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-20T20:58:51+08:00">
                 2018-05-20
@@ -436,7 +556,7 @@
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/05/20/jQuery-first/#more" rel="contents">
-              Read more &raquo;
+              Weiterlesen &raquo;
             </a>
           </div>
           <!--/noindex-->
@@ -515,7 +635,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-17T21:44:21+08:00">
                 2018-05-17
@@ -635,7 +755,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-17T15:35:08+08:00">
                 2018-05-17
@@ -681,7 +801,7 @@
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/05/17/回看-JS-数据类型/#more" rel="contents">
-              Read more &raquo;
+              Weiterlesen &raquo;
             </a>
           </div>
           <!--/noindex-->
@@ -760,7 +880,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-16T21:38:26+08:00">
                 2018-05-16
@@ -806,7 +926,7 @@
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/05/16/es6-promise/#more" rel="contents">
-              Read more &raquo;
+              Weiterlesen &raquo;
             </a>
           </div>
           <!--/noindex-->
@@ -885,7 +1005,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-10T21:14:12+08:00">
                 2018-05-10
@@ -1010,7 +1130,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-07T21:51:32+08:00">
                 2018-05-07
@@ -1056,135 +1176,7 @@
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/05/07/XMLHttpRequest 对象/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/29/webpack-初识/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Marsorsun">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/123.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Marsorsun">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/04/29/webpack-初识/" itemprop="url">webpack 初识</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-29T09:47:03+08:00">
-                2018-04-29
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="为啥要用-webpack"><a href="#为啥要用-webpack" class="headerlink" title="为啥要用 webpack"></a>为啥要用 webpack</h2><h3 id="sass"><a href="#sass" class="headerlink" title="sass"></a><a href="https://github.com/sass/node-sass" target="_blank" rel="external">sass</a></h3><p>为了更快更方便的编写 css 代码你是有可能使用 sass 等等，但是很明显的你不可能在 html 中直接的应用 sass，你必使用进行了转译才可以啊。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">node-sass input output</div></pre></td></tr></table></figure>
-<p>但是每一次更改都要重新转译很麻烦，所以一般就是</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">node-sass input output -w</div></pre></td></tr></table></figure>
-<p>以上 intput output 都是原文件地址。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/04/29/webpack-初识/#more" rel="contents">
-              Read more &raquo;
+              Weiterlesen &raquo;
             </a>
           </div>
           <!--/noindex-->
@@ -1274,8 +1266,8 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">43</span>
-                <span class="site-state-item-name">posts</span>
+                <span class="site-state-item-count">44</span>
+                <span class="site-state-item-name">Artikel</span>
               </a>
             </div>
           
@@ -1288,7 +1280,7 @@
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
                 <span class="site-state-item-count">32</span>
-                <span class="site-state-item-name">tags</span>
+                <span class="site-state-item-name">Tags</span>
               </a>
             </div>
           
