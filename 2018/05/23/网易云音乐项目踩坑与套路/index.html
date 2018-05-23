@@ -77,7 +77,7 @@
 <meta property="og:site_name" content="Marsorsun">
 <meta property="og:description" content="只是记录自己在写网易云的项目自己遇到的一些坑与使用到的一些小套路 MVC在编写admin.html使用了 MVC 模式使得代码更加的清晰和简单而强大">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-05-23T01:14:51.215Z">
+<meta property="og:updated_time" content="2018-05-23T14:20:22.828Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="网易云音乐项目踩坑与套路">
 <meta name="twitter:description" content="只是记录自己在写网易云的项目自己遇到的一些坑与使用到的一些小套路 MVC在编写admin.html使用了 MVC 模式使得代码更加的清晰和简单而强大">
@@ -262,7 +262,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-23T09:14:51+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-23T22:20:22+08:00">
                 2018-05-23
               </time>
             
@@ -318,6 +318,7 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> data = <span class="built_in">JSON</span>.Parse(<span class="built_in">JSON</span>.Stringify(<span class="keyword">this</span>.model.data))</div></pre></td></tr></table></figure>
 <h2 id="发布与订阅模式"><a href="#发布与订阅模式" class="headerlink" title="发布与订阅模式"></a>发布与订阅模式</h2><p>为了实现传说中的低耦合高内聚，其实是为了各个模块中的数据能进行方便交互而暴露出一个小口子，定于的时候告知到调用的函数名，要发布的时候使用回调就可以了。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">window</span>.eventHub = &#123;</div><div class="line">  events:&#123;</div><div class="line">    <span class="comment">//事件名</span></div><div class="line">    人明日报：[],</div><div class="line">    光明日报：[],</div><div class="line">  &#125;,</div><div class="line">  <span class="comment">//订阅</span></div><div class="line">  on(eventName, fn)&#123;</div><div class="line">    <span class="keyword">if</span>(<span class="keyword">this</span>.events[eventName] === <span class="literal">undefined</span>)&#123;</div><div class="line">      <span class="keyword">this</span>.events[eventName] === []</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">this</span>.events[eventName].push(fn)</div><div class="line">  &#125;,</div><div class="line">  <span class="comment">//发布</span></div><div class="line">  emit(eventName, data)&#123;</div><div class="line">    fnList = <span class="keyword">this</span>.events[eventName]</div><div class="line">    fnList.map(<span class="function">(<span class="params">fn</span>)=&gt;</span>&#123;</div><div class="line">      fn.call(<span class="literal">undefined</span>, data)</div><div class="line">    &#125;)</div><div class="line">  &#125;,</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="字母的错"><a href="#字母的错" class="headerlink" title="字母的错?"></a>字母的错?</h2><p>说实在<code>JavaScript</code>感觉特坑啊, 有时候你打错了参数,不好意思连浏览器都可能不给你报错,你只有一步一步的去<code>debug</code>,可以说真的要。今天是被它虐得死去活来的。说实在这与自己思路不够清晰有关。</p>
 
       
     </div>
@@ -541,7 +542,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#MVC"><span class="nav-number">1.</span> <span class="nav-text">MVC</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#浅拷贝与深拷贝"><span class="nav-number">2.</span> <span class="nav-text">浅拷贝与深拷贝</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#发布与订阅模式"><span class="nav-number">3.</span> <span class="nav-text">发布与订阅模式</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#MVC"><span class="nav-number">1.</span> <span class="nav-text">MVC</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#浅拷贝与深拷贝"><span class="nav-number">2.</span> <span class="nav-text">浅拷贝与深拷贝</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#发布与订阅模式"><span class="nav-number">3.</span> <span class="nav-text">发布与订阅模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字母的错"><span class="nav-number">4.</span> <span class="nav-text">字母的错?</span></a></li></ol></div>
             
 
           </div>
