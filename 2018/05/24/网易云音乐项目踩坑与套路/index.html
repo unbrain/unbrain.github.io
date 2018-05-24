@@ -69,18 +69,18 @@
 
 
 
-<meta name="description" content="只是记录自己在写网易云的项目自己遇到的一些坑与使用到的一些小套路 MVC在编写admin.html使用了 MVC 模式使得代码更加的清晰和简单而强大">
+<meta name="description" content="只是记录自己在写网易云的项目自己遇到的一些坑与使用到的一些小套路 MVC把代码敲两遍，数十次 mvc，你会明白他的强大。 在编写admin.html使用了 MVC 模式使得代码更加的清晰和简单而强大">
 <meta name="keywords" content="demo,坑">
 <meta property="og:type" content="article">
 <meta property="og:title" content="网易云音乐项目踩坑与套路">
-<meta property="og:url" content="http://yoursite.com/2018/05/23/网易云音乐项目踩坑与套路/index.html">
+<meta property="og:url" content="http://yoursite.com/2018/05/24/网易云音乐项目踩坑与套路/index.html">
 <meta property="og:site_name" content="Marsorsun">
-<meta property="og:description" content="只是记录自己在写网易云的项目自己遇到的一些坑与使用到的一些小套路 MVC在编写admin.html使用了 MVC 模式使得代码更加的清晰和简单而强大">
+<meta property="og:description" content="只是记录自己在写网易云的项目自己遇到的一些坑与使用到的一些小套路 MVC把代码敲两遍，数十次 mvc，你会明白他的强大。 在编写admin.html使用了 MVC 模式使得代码更加的清晰和简单而强大">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-05-23T14:20:22.828Z">
+<meta property="og:updated_time" content="2018-05-24T13:40:16.066Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="网易云音乐项目踩坑与套路">
-<meta name="twitter:description" content="只是记录自己在写网易云的项目自己遇到的一些坑与使用到的一些小套路 MVC在编写admin.html使用了 MVC 模式使得代码更加的清晰和简单而强大">
+<meta name="twitter:description" content="只是记录自己在写网易云的项目自己遇到的一些坑与使用到的一些小套路 MVC把代码敲两遍，数十次 mvc，你会明白他的强大。 在编写admin.html使用了 MVC 模式使得代码更加的清晰和简单而强大">
 
 
 
@@ -110,7 +110,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/05/23/网易云音乐项目踩坑与套路/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/05/24/网易云音乐项目踩坑与套路/"/>
 
 
 
@@ -233,7 +233,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/23/网易云音乐项目踩坑与套路/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/24/网易云音乐项目踩坑与套路/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Marsorsun">
@@ -262,8 +262,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-23T22:20:22+08:00">
-                2018-05-23
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-24T21:40:16+08:00">
+                2018-05-24
               </time>
             
 
@@ -306,19 +306,22 @@
 
       
         <p>只是记录自己在写网易云的项目自己遇到的一些<code>坑</code>与使用到的一些小套路</p>
-<h2 id="MVC"><a href="#MVC" class="headerlink" title="MVC"></a>MVC</h2><p>在编写<code>admin.html</code>使用了 MVC 模式使得代码更加的清晰和简单而强大</p>
+<h2 id="MVC"><a href="#MVC" class="headerlink" title="MVC"></a>MVC</h2><p>把代码敲两遍，数十次 mvc，你会明白他的强大。</p>
+<p>在编写<code>admin.html</code>使用了 MVC 模式使得代码更加的清晰和简单而强大</p>
 <a id="more"></a>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="keyword">let</span> view = &#123;</div><div class="line">    el: <span class="string">'#selector'</span>,</div><div class="line">    template: <span class="string">`html`</span>,</div><div class="line">    render(data)&#123;</div><div class="line">      $(<span class="keyword">this</span>.el).html(<span class="keyword">this</span>.template)</div><div class="line">    &#125;</div><div class="line">  &#125;,</div><div class="line">  <span class="keyword">let</span> moudel = &#123;</div><div class="line">  	data: &#123;&#125;,      </div><div class="line">  &#125;</div><div class="line">  <span class="keyword">let</span> controller = &#123;</div><div class="line">  	view: <span class="literal">null</span>,</div><div class="line">    moudel: <span class="literal">null</span>,</div><div class="line">    init(view, moudel)&#123;</div><div class="line">      view = <span class="keyword">this</span>.view</div><div class="line">      moudel = <span class="keyword">this</span>.moudel</div><div class="line">      <span class="keyword">this</span>.view.render(<span class="keyword">this</span>.moudel.data)</div><div class="line">      <span class="keyword">this</span>.bindEvent()</div><div class="line">    &#125;,</div><div class="line">    bindEvent()&#123;&#125;，</div><div class="line">  &#125;</div><div class="line">  controller.init(view, moudel)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h2 id="浅拷贝与深拷贝"><a href="#浅拷贝与深拷贝" class="headerlink" title="浅拷贝与深拷贝"></a>浅拷贝与深拷贝</h2><p>之前感觉这东东的概念啥的并不难，可是是个坑，我很久才发现，在<code>admin.html</code>上传歌曲后没事，但是上传第二首发现之前哪一首歌的名字在屏幕上与现在这一首的名字相同，<code>debug</code>后才发现了这一段代码<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">Object</span>.assign(<span class="keyword">this</span>.object, ...attributes)</div></pre></td></tr></table></figure></p>
 <p>Object.assign这个方法是个坑啊，这方法实行的是浅拷贝，而不是深拷贝。也就是说，如果源对象某个属性的值是对象，那么目标对象拷贝得到的是这个对象的引用。</p>
 <p>所以说我改成</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">this</span>.data = &#123;id, ...attribute&#125;</div></pre></td></tr></table></figure>
-<p>就好了，但你可能说这他么不一样吗?哈哈地址不一样的,我当时也想了很久,我在后面代码传出去了<code>this.data</code>, 可是在使用<code>Object.assign()</code>并不会改变<code>this.data</code>的地址,而现在这方法是让它指向另一块地址,这样就不会导致第二次修改而导致第一次的值改变</p>
+<p>就好了，但你可能说这他么不一样吗?哈哈地址不一样的,我当时也想了很久,我在后面代码传出去了<code>this.data</code>, 可是在使用<code>Object.assign()</code>并不会改变<code>this.data</code>的地址,而现在这方法是让它指向另一块地址,这样就不会导致第二次修改而导致第一次的值改变。</p>
+<p>感觉就是最好不用 <code>Object.assign()</code></p>
 <p>不过我选择了另一方法，在使用 <code>this.data</code>时对其进行深拷贝这样就不会是一个地址了</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> data = <span class="built_in">JSON</span>.Parse(<span class="built_in">JSON</span>.Stringify(<span class="keyword">this</span>.model.data))</div></pre></td></tr></table></figure>
 <h2 id="发布与订阅模式"><a href="#发布与订阅模式" class="headerlink" title="发布与订阅模式"></a>发布与订阅模式</h2><p>为了实现传说中的低耦合高内聚，其实是为了各个模块中的数据能进行方便交互而暴露出一个小口子，定于的时候告知到调用的函数名，要发布的时候使用回调就可以了。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">window</span>.eventHub = &#123;</div><div class="line">  events:&#123;</div><div class="line">    <span class="comment">//事件名</span></div><div class="line">    人明日报：[],</div><div class="line">    光明日报：[],</div><div class="line">  &#125;,</div><div class="line">  <span class="comment">//订阅</span></div><div class="line">  on(eventName, fn)&#123;</div><div class="line">    <span class="keyword">if</span>(<span class="keyword">this</span>.events[eventName] === <span class="literal">undefined</span>)&#123;</div><div class="line">      <span class="keyword">this</span>.events[eventName] === []</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">this</span>.events[eventName].push(fn)</div><div class="line">  &#125;,</div><div class="line">  <span class="comment">//发布</span></div><div class="line">  emit(eventName, data)&#123;</div><div class="line">    fnList = <span class="keyword">this</span>.events[eventName]</div><div class="line">    fnList.map(<span class="function">(<span class="params">fn</span>)=&gt;</span>&#123;</div><div class="line">      fn.call(<span class="literal">undefined</span>, data)</div><div class="line">    &#125;)</div><div class="line">  &#125;,</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h2 id="字母的错"><a href="#字母的错" class="headerlink" title="字母的错?"></a>字母的错?</h2><p>说实在<code>JavaScript</code>感觉特坑啊, 有时候你打错了参数,不好意思连浏览器都可能不给你报错,你只有一步一步的去<code>debug</code>,可以说真的要。今天是被它虐得死去活来的。说实在这与自己思路不够清晰有关。</p>
+<h2 id="流程图"><a href="#流程图" class="headerlink" title="流程图"></a>流程图</h2><p>刚刚开始敲代码的时候，老师就说过画流程图的重要性，可是一直我都是不以为然，可适当代码的量上去了以后就发现自己脑袋中的栈不够用了，不知道前几部干了啥，后几部该咋走，后来用百度脑图把思路先想好在慢慢来感觉条理清晰很多。先想好要干啥在开始干。</p>
 
       
     </div>
@@ -542,7 +545,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#MVC"><span class="nav-number">1.</span> <span class="nav-text">MVC</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#浅拷贝与深拷贝"><span class="nav-number">2.</span> <span class="nav-text">浅拷贝与深拷贝</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#发布与订阅模式"><span class="nav-number">3.</span> <span class="nav-text">发布与订阅模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字母的错"><span class="nav-number">4.</span> <span class="nav-text">字母的错?</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#MVC"><span class="nav-number">1.</span> <span class="nav-text">MVC</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#浅拷贝与深拷贝"><span class="nav-number">2.</span> <span class="nav-text">浅拷贝与深拷贝</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#发布与订阅模式"><span class="nav-number">3.</span> <span class="nav-text">发布与订阅模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字母的错"><span class="nav-number">4.</span> <span class="nav-text">字母的错?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#流程图"><span class="nav-number">5.</span> <span class="nav-text">流程图</span></a></li></ol></div>
             
 
           </div>
