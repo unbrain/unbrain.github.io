@@ -73,11 +73,11 @@
 <meta name="keywords" content="demo,坑">
 <meta property="og:type" content="article">
 <meta property="og:title" content="网易云音乐项目踩坑与套路">
-<meta property="og:url" content="http://yoursite.com/2018/05/24/网易云音乐项目踩坑与套路/index.html">
+<meta property="og:url" content="http://yoursite.com/2018/05/27/网易云音乐项目踩坑与套路/index.html">
 <meta property="og:site_name" content="Marsorsun">
 <meta property="og:description" content="只是记录自己在写网易云的项目自己遇到的一些坑与使用到的一些小套路 MVC把代码敲两遍，数十次 mvc，你会明白他的强大。 在编写admin.html使用了 MVC 模式使得代码更加的清晰和简单而强大">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-05-24T13:40:16.066Z">
+<meta property="og:updated_time" content="2018-05-27T09:06:08.727Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="网易云音乐项目踩坑与套路">
 <meta name="twitter:description" content="只是记录自己在写网易云的项目自己遇到的一些坑与使用到的一些小套路 MVC把代码敲两遍，数十次 mvc，你会明白他的强大。 在编写admin.html使用了 MVC 模式使得代码更加的清晰和简单而强大">
@@ -110,7 +110,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/05/24/网易云音乐项目踩坑与套路/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/05/27/网易云音乐项目踩坑与套路/"/>
 
 
 
@@ -176,7 +176,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Home
+            Accueil
           </a>
         </li>
       
@@ -233,7 +233,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/24/网易云音乐项目踩坑与套路/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/27/网易云音乐项目踩坑与套路/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Marsorsun">
@@ -260,10 +260,10 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Posté le</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-24T21:40:16+08:00">
-                2018-05-24
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-27T17:06:08+08:00">
+                2018-05-27
               </time>
             
 
@@ -322,6 +322,7 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">window</span>.eventHub = &#123;</div><div class="line">  events:&#123;</div><div class="line">    <span class="comment">//事件名</span></div><div class="line">    人明日报：[],</div><div class="line">    光明日报：[],</div><div class="line">  &#125;,</div><div class="line">  <span class="comment">//订阅</span></div><div class="line">  on(eventName, fn)&#123;</div><div class="line">    <span class="keyword">if</span>(<span class="keyword">this</span>.events[eventName] === <span class="literal">undefined</span>)&#123;</div><div class="line">      <span class="keyword">this</span>.events[eventName] === []</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">this</span>.events[eventName].push(fn)</div><div class="line">  &#125;,</div><div class="line">  <span class="comment">//发布</span></div><div class="line">  emit(eventName, data)&#123;</div><div class="line">    fnList = <span class="keyword">this</span>.events[eventName]</div><div class="line">    fnList.map(<span class="function">(<span class="params">fn</span>)=&gt;</span>&#123;</div><div class="line">      fn.call(<span class="literal">undefined</span>, data)</div><div class="line">    &#125;)</div><div class="line">  &#125;,</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h2 id="字母的错"><a href="#字母的错" class="headerlink" title="字母的错?"></a>字母的错?</h2><p>说实在<code>JavaScript</code>感觉特坑啊, 有时候你打错了参数,不好意思连浏览器都可能不给你报错,你只有一步一步的去<code>debug</code>,可以说真的要。今天是被它虐得死去活来的。说实在这与自己思路不够清晰有关。</p>
 <h2 id="流程图"><a href="#流程图" class="headerlink" title="流程图"></a>流程图</h2><p>刚刚开始敲代码的时候，老师就说过画流程图的重要性，可是一直我都是不以为然，可适当代码的量上去了以后就发现自己脑袋中的栈不够用了，不知道前几部干了啥，后几部该咋走，后来用百度脑图把思路先想好在慢慢来感觉条理清晰很多。先想好要干啥在开始干。</p>
+<h2 id="为何不能两次上传"><a href="#为何不能两次上传" class="headerlink" title="为何不能两次上传"></a>为何不能两次上传</h2><p>第二次自己写这个项目的时候， 将之前的上传区域与创建新歌曲的 mvc 写在了一起，没有分开写，<br>后来发现歌曲上传一次后就不能再上传，刷新页面后又能上传一次，但是我没发现这重要的一点，一直以为是七牛 sdk 有问题。后来静静思考，是每一次上传后就不能再上传了，肯定是上传后的问题。我后来发现我每次 subit 表单以后都 render() 了 可是每 render() 应该再次调用 qiniuinit() 函数，这样来问题就引刃而解。</p>
 
       
     </div>
@@ -383,8 +384,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/05/22/参数处理&解构赋值/" rel="next" title="参数处理&解构赋值">
-                <i class="fa fa-chevron-left"></i> 参数处理&解构赋值
+              <a href="/2018/05/27/Vue-基础文档/" rel="next" title="Vue 基础文档">
+                <i class="fa fa-chevron-left"></i> Vue 基础文档
               </a>
             
           </div>
@@ -393,8 +394,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/05/27/Vue-基础文档/" rel="prev" title="Vue 基础文档">
-                Vue 基础文档 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/05/28/布局的套路/" rel="prev" title="布局的套路">
+                布局的套路 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -455,10 +456,10 @@
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            Table of Contents
+            Table Des Matières
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
-            Overview
+            Ensemble
           </li>
         </ul>
       
@@ -481,8 +482,8 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">44</span>
-                <span class="site-state-item-name">posts</span>
+                <span class="site-state-item-count">45</span>
+                <span class="site-state-item-name">articles</span>
               </a>
             </div>
           
@@ -494,7 +495,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">32</span>
+                <span class="site-state-item-count">33</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
@@ -549,7 +550,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#MVC"><span class="nav-number">1.</span> <span class="nav-text">MVC</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#浅拷贝与深拷贝"><span class="nav-number">2.</span> <span class="nav-text">浅拷贝与深拷贝</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#发布与订阅模式"><span class="nav-number">3.</span> <span class="nav-text">发布与订阅模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字母的错"><span class="nav-number">4.</span> <span class="nav-text">字母的错?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#流程图"><span class="nav-number">5.</span> <span class="nav-text">流程图</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#MVC"><span class="nav-number">1.</span> <span class="nav-text">MVC</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#浅拷贝与深拷贝"><span class="nav-number">2.</span> <span class="nav-text">浅拷贝与深拷贝</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#发布与订阅模式"><span class="nav-number">3.</span> <span class="nav-text">发布与订阅模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字母的错"><span class="nav-number">4.</span> <span class="nav-text">字母的错?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#流程图"><span class="nav-number">5.</span> <span class="nav-text">流程图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#为何不能两次上传"><span class="nav-number">6.</span> <span class="nav-text">为何不能两次上传</span></a></li></ol></div>
             
 
           </div>
