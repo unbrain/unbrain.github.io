@@ -175,7 +175,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Startseite
+            Accueil
           </a>
         </li>
       
@@ -195,7 +195,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archiv
+            Archives
           </a>
         </li>
       
@@ -232,7 +232,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/01/网易云音乐项目踩坑与套路/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/23/Vue组件通信/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Marsorsun">
@@ -251,7 +251,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/06/01/网易云音乐项目踩坑与套路/" itemprop="url">网易云音乐项目踩坑与套路</a></h1>
+                <a class="post-title-link" href="/2018/06/23/Vue组件通信/" itemprop="url">Vue组件通信</a></h1>
         
 
         <div class="post-meta">
@@ -261,10 +261,151 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posté le</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-06-01T23:55:33+08:00">
-                2018-06-01
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-06-23T12:17:49+08:00">
+                2018-06-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <ol>
+<li>父子组件</li>
+<li>爷孙组件</li>
+<li>兄弟组件</li>
+</ol>
+<p>从这三个方面来分析一下 vue 的组件通信</p>
+<h2 id="父子通信"><a href="#父子通信" class="headerlink" title="父子通信"></a>父子通信</h2><p>父亲给儿子一个数据，儿子通过 props</p>
+<p>儿子通过 $emit() 子向父传递信息，有点像发布订阅模式</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">hr</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">"dadcall=!dadcall"</span>&gt;</span>爸爸<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">v-if</span>=<span class="string">"soncall"</span>&gt;</span>&#123;&#123;message&#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">hr</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">son</span> @<span class="attr">call-dad</span>=<span class="string">"soncall=!soncall"</span> <span class="attr">:eat</span>=<span class="string">"eat"</span> <span class="attr">:dadcall</span>=<span class="string">"dadcall"</span>&gt;</span><span class="tag">&lt;/<span class="name">son</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">Vue.component(<span class="string">'son'</span>,&#123;</div><div class="line">    props: [<span class="string">'eat'</span>, <span class="string">'dadcall'</span>],</div><div class="line">	template:<span class="string">`</span></div><div class="line"><span class="string">    &lt;div&gt;</span></div><div class="line"><span class="string">    &lt;button @click="$emit('call-dad')"&gt;儿子&lt;/button&gt;</span></div><div class="line"><span class="string">    &lt;div v-if="dadcall"&gt;&#123;&#123;eat&#125;&#125;&lt;/div&gt;</span></div><div class="line"><span class="string">    &lt;/div&gt;`</span>,</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="keyword">new</span> Vue(&#123;</div><div class="line">  el: <span class="string">'#app'</span>,</div><div class="line">  data: &#123;</div><div class="line">    message: <span class="string">'别抽烟'</span>,</div><div class="line">    eat:<span class="string">"吃饭"</span>,</div><div class="line">    soncall:<span class="literal">false</span>,</div><div class="line">    dadcall:<span class="literal">false</span>,</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p><a href="http://jsbin.com/xalirufihi/edit?html,js,output" target="_blank" rel="external">预览链接</a></p>
+<p><a href="https://cn.vuejs.org/v2/guide/components.html#%E9%80%9A%E8%BF%87-Prop-%E5%90%91%E5%AD%90%E7%BB%84%E4%BB%B6%E4%BC%A0%E9%80%92%E6%95%B0%E6%8D%AE" target="_blank" rel="external">通过 Prop 向子组件传递数据</a></p>
+<p><a href="https://cn.vuejs.org/v2/guide/components.html#%E9%80%9A%E8%BF%87%E4%BA%8B%E4%BB%B6%E5%90%91%E7%88%B6%E7%BA%A7%E7%BB%84%E4%BB%B6%E5%8F%91%E9%80%81%E6%B6%88%E6%81%AF" target="_blank" rel="external">通过事件向父级组件发送消息</a></p>
+<h2 id="爷孙通信"><a href="#爷孙通信" class="headerlink" title="爷孙通信"></a>爷孙通信</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">"yeye=!yeye"</span> &gt;</span>爷爷<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">hr</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">dad</span> <span class="attr">:sleep</span>=<span class="string">"sleep"</span> <span class="attr">:yeye</span>=<span class="string">"yeye"</span> @<span class="attr">call</span>=<span class="string">"yeye=!yeye"</span>&gt;</span><span class="tag">&lt;/<span class="name">dad</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">Vue.component(<span class="string">'son'</span>,&#123;</div><div class="line">  props: [<span class="string">'yeye'</span>,<span class="string">'sleep'</span>],</div><div class="line">  template:<span class="string">`</span></div><div class="line"><span class="string">    &lt;div&gt;</span></div><div class="line"><span class="string">      &lt;button @click="$emit('call')"&gt;儿子&lt;/button&gt;</span></div><div class="line"><span class="string">      &lt;div v-if="yeye"&gt;&#123;&#123;sleep&#125;&#125;&lt;/div&gt;</span></div><div class="line"><span class="string">    &lt;/div&gt;`</span>,</div><div class="line">&#125;)</div><div class="line"></div><div class="line">Vue.component(<span class="string">'dad'</span>,&#123;</div><div class="line">  props: [<span class="string">'sleep'</span>, <span class="string">'yeye'</span>],</div><div class="line">  template:<span class="string">`</span></div><div class="line"><span class="string">  &lt;div&gt;</span></div><div class="line"><span class="string">    &lt;button @click="dad=!dad"&gt;爸爸&lt;/button&gt;</span></div><div class="line"><span class="string">    &lt;div v-if="yeye"&gt;&#123;&#123;sleep&#125;&#125;&lt;/div&gt;</span></div><div class="line"><span class="string">    &lt;div v-if="son"&gt;&#123;&#123;message&#125;&#125;&lt;/div&gt;</span></div><div class="line"><span class="string">    &lt;hr&gt;</span></div><div class="line"><span class="string">    &lt;son :sleep="sleep" :yeye="yeye" @call="$emit('call')"&gt;&lt;/son&gt;</span></div><div class="line"><span class="string">  &lt;/div&gt;`</span>,</div><div class="line">&#125;)</div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">new</span> Vue(&#123;</div><div class="line">  el: <span class="string">'#app'</span>,</div><div class="line">  data: &#123;</div><div class="line">    message: <span class="string">'抽烟'</span>,</div><div class="line">    sleep:<span class="string">"睡觉"</span>,</div><div class="line">    son:<span class="literal">false</span>,</div><div class="line">    dad:<span class="literal">false</span>,</div><div class="line">    yeye:<span class="literal">false</span>,</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>例子不是很好,但是通过调试可以很好的得出</p>
+<p>父组件只能通知子组件而不能通知到子组件其自身的子组件,同样的其自身的子组件也只能通知其父组件而不能通知其父组件的父组件.爷孙组件的通信只能通过父组件作为一个枢纽来进行信息的交换</p>
+<h2 id="兄弟组件"><a href="#兄弟组件" class="headerlink" title="兄弟组件"></a>兄弟组件</h2><p>通过上面的介绍你当然可以此想到兄弟间该如何通信,让他们在同一父组件下,通过父组件为枢纽来进行数据交换</p>
+<h2 id="组件名的大小写"><a href="#组件名的大小写" class="headerlink" title="组件名的大小写"></a><a href="https://cn.vuejs.org/v2/guide/components-registration.html#%E7%BB%84%E4%BB%B6%E5%90%8D%E5%A4%A7%E5%B0%8F%E5%86%99" target="_blank" rel="external">组件名的大小写</a></h2><p>写代码的时候常常在 template 使用驼峰式命名法导致一直渲染不出却没有报错</p>
+<p>定义组件名的方式有两种：</p>
+<p>使用 kebab-case<br>当使用 kebab-case (短横线分隔命名) 定义一个组件时，你也必须在引用这个自定义元素时使用 kebab-case，例如 <my-component-name>。</my-component-name></p>
+<p>使用 PascalCase<br>当使用 PascalCase (驼峰式命名) 定义一个组件时，你在引用这个自定义元素时两种命名法都可以使用。也就是说 <my-component-name> 和 <mycomponentname> 都是可接受的。注意，尽管如此，直接在 DOM (即非字符串的模板) 中使用时只有 kebab-case 是有效的。</mycomponentname></my-component-name></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/02/网易云音乐项目踩坑与套路/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Marsorsun">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/123.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Marsorsun">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/06/02/网易云音乐项目踩坑与套路/" itemprop="url">网易云音乐项目踩坑与套路</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posté le</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-06-02T12:54:48+08:00">
+                2018-06-02
               </time>
             
 
@@ -307,8 +448,8 @@
 <p>在编写<code>admin.html</code>使用了 MVC 模式使得代码更加的清晰和简单而强大</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/06/01/网易云音乐项目踩坑与套路/#more" rel="contents">
-              Weiterlesen &raquo;
+            <a class="btn" href="/2018/06/02/网易云音乐项目踩坑与套路/#more" rel="contents">
+              Lire la suite &raquo;
             </a>
           </div>
           <!--/noindex-->
@@ -387,7 +528,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posté le</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-28T22:59:57+08:00">
                 2018-05-28
@@ -449,7 +590,7 @@
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/05/28/布局的套路/#more" rel="contents">
-              Weiterlesen &raquo;
+              Lire la suite &raquo;
             </a>
           </div>
           <!--/noindex-->
@@ -528,7 +669,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posté le</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-27T16:35:26+08:00">
                 2018-05-27
@@ -574,7 +715,7 @@
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/05/27/Vue-基础文档/#more" rel="contents">
-              Weiterlesen &raquo;
+              Lire la suite &raquo;
             </a>
           </div>
           <!--/noindex-->
@@ -653,7 +794,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posté le</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-22T21:37:24+08:00">
                 2018-05-22
@@ -699,7 +840,7 @@
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/05/22/参数处理&解构赋值/#more" rel="contents">
-              Weiterlesen &raquo;
+              Lire la suite &raquo;
             </a>
           </div>
           <!--/noindex-->
@@ -778,7 +919,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posté le</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-20T20:58:51+08:00">
                 2018-05-20
@@ -823,7 +964,7 @@
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/05/20/jQuery-first/#more" rel="contents">
-              Weiterlesen &raquo;
+              Lire la suite &raquo;
             </a>
           </div>
           <!--/noindex-->
@@ -902,7 +1043,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posté le</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-17T15:35:08+08:00">
                 2018-05-17
@@ -948,7 +1089,7 @@
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/05/17/回看-JS-数据类型/#more" rel="contents">
-              Weiterlesen &raquo;
+              Lire la suite &raquo;
             </a>
           </div>
           <!--/noindex-->
@@ -1027,7 +1168,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posté le</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-16T21:38:26+08:00">
                 2018-05-16
@@ -1073,135 +1214,10 @@
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/05/16/es6-promise/#more" rel="contents">
-              Weiterlesen &raquo;
+              Lire la suite &raquo;
             </a>
           </div>
           <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/10/box-sizing: /">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Marsorsun">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/123.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Marsorsun">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/10/box-sizing: /" itemprop="url">box-sizing</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-10T21:14:12+08:00">
-                2018-05-10
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>盒模型这东西绝对算得上是 web 领域的高频词汇啦</p>
-<p>这东西两个值，之前是三个</p>
-<p>content-box（默认）标准盒模型</p>
-<p>border-box: width = border + padding +(内容的) width</p>
-<p>参考</p>
-<p><a href="https://leohxj.gitbooks.io/front-end-database/html-and-css-basic/box-module.html" target="_blank" rel="external">前端工程师手册</a></p>
-
-          
         
       
     </div>
@@ -1288,8 +1304,8 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">45</span>
-                <span class="site-state-item-name">Artikel</span>
+                <span class="site-state-item-count">46</span>
+                <span class="site-state-item-name">articles</span>
               </a>
             </div>
           
@@ -1302,7 +1318,7 @@
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
                 <span class="site-state-item-count">33</span>
-                <span class="site-state-item-name">Tags</span>
+                <span class="site-state-item-name">tags</span>
               </a>
             </div>
           
