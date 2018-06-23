@@ -69,18 +69,18 @@
 
 
 
-<meta name="description" content="父子组件 爷孙组件 兄弟组件  从这三个方面来分析一下 vue 的组件通信 父子通信父亲给儿子一个数据，儿子通过 props 儿子通过 $emit() 子向父传递信息，有点像发布订阅模式 12345678&amp;lt;div id=&quot;app&quot;&amp;gt;  &amp;lt;hr&amp;gt;  &amp;lt;button @click=&quot;dadcall=!dadcall&quot;&amp;gt;爸爸&amp;lt;/button&amp;gt;  &amp;lt;">
+<meta name="description" content="父子组件 爷孙组件 兄弟组件  从这三个方面来分析一下 vue 的组件通信 父子通信父亲给儿子一个数据，儿子通过 props 儿子通过 $emit() 子向父传递信息，有点像发布订阅模式">
 <meta name="keywords" content="vue">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Vue组件通信">
 <meta property="og:url" content="http://yoursite.com/2018/06/23/Vue组件通信/index.html">
 <meta property="og:site_name" content="Marsorsun">
-<meta property="og:description" content="父子组件 爷孙组件 兄弟组件  从这三个方面来分析一下 vue 的组件通信 父子通信父亲给儿子一个数据，儿子通过 props 儿子通过 $emit() 子向父传递信息，有点像发布订阅模式 12345678&amp;lt;div id=&quot;app&quot;&amp;gt;  &amp;lt;hr&amp;gt;  &amp;lt;button @click=&quot;dadcall=!dadcall&quot;&amp;gt;爸爸&amp;lt;/button&amp;gt;  &amp;lt;">
+<meta property="og:description" content="父子组件 爷孙组件 兄弟组件  从这三个方面来分析一下 vue 的组件通信 父子通信父亲给儿子一个数据，儿子通过 props 儿子通过 $emit() 子向父传递信息，有点像发布订阅模式">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-06-23T04:17:49.571Z">
+<meta property="og:updated_time" content="2018-06-23T04:21:25.652Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Vue组件通信">
-<meta name="twitter:description" content="父子组件 爷孙组件 兄弟组件  从这三个方面来分析一下 vue 的组件通信 父子通信父亲给儿子一个数据，儿子通过 props 儿子通过 $emit() 子向父传递信息，有点像发布订阅模式 12345678&amp;lt;div id=&quot;app&quot;&amp;gt;  &amp;lt;hr&amp;gt;  &amp;lt;button @click=&quot;dadcall=!dadcall&quot;&amp;gt;爸爸&amp;lt;/button&amp;gt;  &amp;lt;">
+<meta name="twitter:description" content="父子组件 爷孙组件 兄弟组件  从这三个方面来分析一下 vue 的组件通信 父子通信父亲给儿子一个数据，儿子通过 props 儿子通过 $emit() 子向父传递信息，有点像发布订阅模式">
 
 
 
@@ -176,7 +176,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Accueil
+            Home
           </a>
         </li>
       
@@ -260,9 +260,9 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posté le</span>
+                <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-06-23T12:17:49+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-06-23T12:21:25+08:00">
                 2018-06-23
               </time>
             
@@ -313,6 +313,7 @@
 <p>从这三个方面来分析一下 vue 的组件通信</p>
 <h2 id="父子通信"><a href="#父子通信" class="headerlink" title="父子通信"></a>父子通信</h2><p>父亲给儿子一个数据，儿子通过 props</p>
 <p>儿子通过 $emit() 子向父传递信息，有点像发布订阅模式</p>
+<a id="more"></a>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">hr</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">"dadcall=!dadcall"</span>&gt;</span>爸爸<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">v-if</span>=<span class="string">"soncall"</span>&gt;</span>&#123;&#123;message&#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">hr</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">son</span> @<span class="attr">call-dad</span>=<span class="string">"soncall=!soncall"</span> <span class="attr">:eat</span>=<span class="string">"eat"</span> <span class="attr">:dadcall</span>=<span class="string">"dadcall"</span>&gt;</span><span class="tag">&lt;/<span class="name">son</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">Vue.component(<span class="string">'son'</span>,&#123;</div><div class="line">    props: [<span class="string">'eat'</span>, <span class="string">'dadcall'</span>],</div><div class="line">	template:<span class="string">`</span></div><div class="line"><span class="string">    &lt;div&gt;</span></div><div class="line"><span class="string">    &lt;button @click="$emit('call-dad')"&gt;儿子&lt;/button&gt;</span></div><div class="line"><span class="string">    &lt;div v-if="dadcall"&gt;&#123;&#123;eat&#125;&#125;&lt;/div&gt;</span></div><div class="line"><span class="string">    &lt;/div&gt;`</span>,</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="keyword">new</span> Vue(&#123;</div><div class="line">  el: <span class="string">'#app'</span>,</div><div class="line">  data: &#123;</div><div class="line">    message: <span class="string">'别抽烟'</span>,</div><div class="line">    eat:<span class="string">"吃饭"</span>,</div><div class="line">    soncall:<span class="literal">false</span>,</div><div class="line">    dadcall:<span class="literal">false</span>,</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
 <p><a href="http://jsbin.com/xalirufihi/edit?html,js,output" target="_blank" rel="external">预览链接</a></p>
@@ -454,10 +455,10 @@
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            Table Des Matières
+            Table of Contents
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
-            Ensemble
+            Overview
           </li>
         </ul>
       
@@ -481,7 +482,7 @@
               <a href="/archives/">
             
                 <span class="site-state-item-count">46</span>
-                <span class="site-state-item-name">articles</span>
+                <span class="site-state-item-name">posts</span>
               </a>
             </div>
           
