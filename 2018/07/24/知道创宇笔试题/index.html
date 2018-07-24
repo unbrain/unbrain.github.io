@@ -53,7 +53,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="编程,MVC," />
+  <meta name="keywords" content="笔试题," />
 
 
 
@@ -69,18 +69,18 @@
 
 
 
-<meta name="description" content="MVC模式（Model–view–controller）是软件工程中的一种软件架构模式，把软件系统分为三个基本部分：模型（Model）、视图（View）和控制器（Controller）。 MVC模式最早由Trygve Reenskaug在1978年提出[1]，是施乐帕罗奥多研究中心（Xerox PARC）在20世纪80年代为程序语言Smalltalk发明的一种软件架构。MVC模式的目的是实现一种">
-<meta name="keywords" content="编程,MVC">
+<meta name="description" content="js 原型链 对数组进行复制并反转[2.3.5] —&amp;gt;[2，3，5，5，3，2] 12345Array.prototype.copyReverse = function()&amp;#123;  let self = this  let rev = self.slice(0).reverse()//拷贝并反转  return self.concat(rev)&amp;#125;">
+<meta name="keywords" content="笔试题">
 <meta property="og:type" content="article">
-<meta property="og:title" content="初探 MVC">
-<meta property="og:url" content="http://yoursite.com/2018/04/13/初探-mvc/index.html">
+<meta property="og:title" content="知道创宇笔试题">
+<meta property="og:url" content="http://yoursite.com/2018/07/24/知道创宇笔试题/index.html">
 <meta property="og:site_name" content="Marsorsun">
-<meta property="og:description" content="MVC模式（Model–view–controller）是软件工程中的一种软件架构模式，把软件系统分为三个基本部分：模型（Model）、视图（View）和控制器（Controller）。 MVC模式最早由Trygve Reenskaug在1978年提出[1]，是施乐帕罗奥多研究中心（Xerox PARC）在20世纪80年代为程序语言Smalltalk发明的一种软件架构。MVC模式的目的是实现一种">
+<meta property="og:description" content="js 原型链 对数组进行复制并反转[2.3.5] —&amp;gt;[2，3，5，5，3，2] 12345Array.prototype.copyReverse = function()&amp;#123;  let self = this  let rev = self.slice(0).reverse()//拷贝并反转  return self.concat(rev)&amp;#125;">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-04-13T09:23:34.794Z">
+<meta property="og:updated_time" content="2018-07-24T07:38:12.052Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="初探 MVC">
-<meta name="twitter:description" content="MVC模式（Model–view–controller）是软件工程中的一种软件架构模式，把软件系统分为三个基本部分：模型（Model）、视图（View）和控制器（Controller）。 MVC模式最早由Trygve Reenskaug在1978年提出[1]，是施乐帕罗奥多研究中心（Xerox PARC）在20世纪80年代为程序语言Smalltalk发明的一种软件架构。MVC模式的目的是实现一种">
+<meta name="twitter:title" content="知道创宇笔试题">
+<meta name="twitter:description" content="js 原型链 对数组进行复制并反转[2.3.5] —&amp;gt;[2，3，5，5，3，2] 12345Array.prototype.copyReverse = function()&amp;#123;  let self = this  let rev = self.slice(0).reverse()//拷贝并反转  return self.concat(rev)&amp;#125;">
 
 
 
@@ -110,13 +110,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/04/13/初探-mvc/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/07/24/知道创宇笔试题/"/>
 
 
 
 
 
-  <title>初探 MVC | Marsorsun</title>
+  <title>知道创宇笔试题 | Marsorsun</title>
   
 
 
@@ -233,7 +233,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/13/初探-mvc/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/24/知道创宇笔试题/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Marsorsun">
@@ -250,7 +250,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">初探 MVC</h1>
+          <h1 class="post-title" itemprop="name headline">知道创宇笔试题</h1>
         
 
         <div class="post-meta">
@@ -262,8 +262,8 @@
               
                 <span class="post-meta-item-text">Posté le</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-13T17:23:34+08:00">
-                2018-04-13
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-24T15:38:12+08:00">
+                2018-07-24
               </time>
             
 
@@ -305,21 +305,24 @@
       
 
       
-        <blockquote>
-<p><strong>MVC模式</strong>（Model–view–controller）是<a href="https://zh.wikipedia.org/wiki/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B" target="_blank" rel="external">软件工程</a>中的一种<a href="https://zh.wikipedia.org/wiki/%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84" target="_blank" rel="external">软件架构</a>模式，把软件系统分为三个基本部分：模型（Model）、视图（View）和控制器（Controller）。</p>
-<p>MVC模式最早由<a href="https://zh.wikipedia.org/w/index.php?title=Trygve_Reenskaug&amp;action=edit&amp;redlink=1" target="_blank" rel="external">Trygve Reenskaug</a>在1978年提出<a href="https://zh.wikipedia.org/wiki/MVC#cite_note-1" target="_blank" rel="external">[1]</a>，是<a href="https://zh.wikipedia.org/wiki/%E5%B8%95%E7%BE%85%E5%A5%A7%E5%A4%9A%E7%A0%94%E7%A9%B6%E4%B8%AD%E5%BF%83" target="_blank" rel="external">施乐帕罗奥多研究中心</a>（Xerox PARC）在20世纪80年代为程序语言<a href="https://zh.wikipedia.org/wiki/Smalltalk" target="_blank" rel="external">Smalltalk</a>发明的一种软件架构。<strong>MVC模式</strong>的目的是实现一种动态的程序设计，使后续对程序的修改和扩展简化，并且使程序某一部分的重复利用成为可能。除此之外，此模式通过对复杂度的简化，使程序结构更加直观。软件系统通过对自身基本部分分离的同时也赋予了各个基本部分应有的功能。专业人员可以通过自身的专长分组：</p>
-<ul>
-<li>控制器（Controller）- 负责转发请求，对请求进行处理。</li>
-<li>视图（View） - 界面设计人员进行图形界面设计。</li>
-<li>模型（Model） - 程序员编写程序应有的功能（实现算法等等）、数据库专家进行数据管理和数据库设计(可以实现具体的功能)。</li>
+        <h2 id="js-原型链-对数组进行复制并反转"><a href="#js-原型链-对数组进行复制并反转" class="headerlink" title="js 原型链 对数组进行复制并反转"></a>js 原型链 对数组进行复制并反转</h2><p>[2.3.5] —&gt;<br>[2，3，5，5，3，2]</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">Array</span>.prototype.copyReverse = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">let</span> self = <span class="keyword">this</span></div><div class="line">  <span class="keyword">let</span> rev = self.slice(<span class="number">0</span>).reverse()<span class="comment">//拷贝并反转</span></div><div class="line">  <span class="keyword">return</span> self.concat(rev)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<h2 id="css-文本超长使用…"><a href="#css-文本超长使用…" class="headerlink" title="css 文本超长使用…"></a><a href="https://css-tricks.com/line-clampin/" target="_blank" rel="external">css 文本超长使用…</a></h2><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">overflow</span><span class="selector-pseudo">:hidden</span>;</div><div class="line"><span class="selector-tag">text-overflow</span><span class="selector-pseudo">:ellipsis</span>;</div></pre></td></tr></table></figure>
+<h2 id="字符串，每个单词首字母大写"><a href="#字符串，每个单词首字母大写" class="headerlink" title="字符串，每个单词首字母大写"></a>字符串，每个单词首字母大写</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="string">'ni hao a'</span>.replace(<span class="regexp">/^\w|\s\w/g</span>,v =&gt; v.toUpperCase())</div></pre></td></tr></table></figure>
+<h2 id="cookie-与-session-区别"><a href="#cookie-与-session-区别" class="headerlink" title="cookie 与 session 区别"></a>cookie 与 session 区别</h2><p>cookie 是 session 的基石</p>
+<p>cookie 存放在客服端,伴随每次请求而发送给服务器</p>
+<p>session 存放在服务器, session id 是通过 cookie 发送给服务器的</p>
+<h2 id="304是？"><a href="#304是？" class="headerlink" title="304是？"></a>304是？</h2><p><strong>Not Modified</strong></p>
+<p>自从上次请求后，请求的网页未修改过，服务器返回此响应时，不会返回网页内容，代表上次的文档已经被缓存了，还可以继续使用</p>
+<h2 id="五种看不见-div-方法-用-css-实现"><a href="#五种看不见-div-方法-用-css-实现" class="headerlink" title="五种看不见 div 方法 用 css 实现"></a>五种看不见 div 方法 用 css 实现</h2><ul>
+<li>opcity: 0</li>
+<li>diplay: block</li>
+<li>visibility: none</li>
+<li>父元素 宽或高 给 0</li>
+<li>相对定位使其偏离出屏幕</li>
 </ul>
-</blockquote>
-<h3 id="总结一下："><a href="#总结一下：" class="headerlink" title="总结一下："></a>总结一下：</h3><p>简单来说 MVC 是一种代码设计模式，将代码分成三个部分，使得你的代码容易被理解</p>
-<ol>
-<li>Controller 监听 Model 变化，Model 一变，Controller 就会去更新 View。</li>
-<li>Controller 监听用户交互，用户点了提交或修改按钮，Controller 就要去更新 Model。</li>
-</ol>
-
+<h2 id="reactjs-组件通信"><a href="#reactjs-组件通信" class="headerlink" title="reactjs 组件通信"></a>reactjs 组件通信</h2><h2 id="10个-Linux-操作简单解释"><a href="#10个-Linux-操作简单解释" class="headerlink" title="10个 Linux 操作简单解释"></a>10个 Linux 操作简单解释</h2><h2 id="5个-git-操作简单解释"><a href="#5个-git-操作简单解释" class="headerlink" title="5个 git 操作简单解释"></a>5个 git 操作简单解释</h2>
       
     </div>
     
@@ -365,9 +368,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/编程/" rel="tag"># 编程</a>
-          
-            <a href="/tags/MVC/" rel="tag"># MVC</a>
+            <a href="/tags/笔试题/" rel="tag"># 笔试题</a>
           
         </div>
       
@@ -380,8 +381,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/05/Whats-JSONP/" rel="next" title="What's JSONP">
-                <i class="fa fa-chevron-left"></i> What's JSONP
+              <a href="/2018/06/23/Vue组件通信/" rel="next" title="Vue组件通信">
+                <i class="fa fa-chevron-left"></i> Vue组件通信
               </a>
             
           </div>
@@ -389,10 +390,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/04/19/JavaScript-原型链/" rel="prev" title="JavaScript 原型链">
-                JavaScript 原型链 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -546,7 +543,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#总结一下："><span class="nav-number">1.</span> <span class="nav-text">总结一下：</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#js-原型链-对数组进行复制并反转"><span class="nav-number">1.</span> <span class="nav-text">js 原型链 对数组进行复制并反转</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#css-文本超长使用…"><span class="nav-number">2.</span> <span class="nav-text">css 文本超长使用…</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字符串，每个单词首字母大写"><span class="nav-number">3.</span> <span class="nav-text">字符串，每个单词首字母大写</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cookie-与-session-区别"><span class="nav-number">4.</span> <span class="nav-text">cookie 与 session 区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#304是？"><span class="nav-number">5.</span> <span class="nav-text">304是？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#五种看不见-div-方法-用-css-实现"><span class="nav-number">6.</span> <span class="nav-text">五种看不见 div 方法 用 css 实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#reactjs-组件通信"><span class="nav-number">7.</span> <span class="nav-text">reactjs 组件通信</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10个-Linux-操作简单解释"><span class="nav-number">8.</span> <span class="nav-text">10个 Linux 操作简单解释</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5个-git-操作简单解释"><span class="nav-number">9.</span> <span class="nav-text">5个 git 操作简单解释</span></a></li></ol></div>
             
 
           </div>
