@@ -77,7 +77,7 @@
 <meta property="og:site_name" content="Marsorsun">
 <meta property="og:description" content="昨天去知道创宇面试的时候面试官当时提了这样的问题，你对对象的属性了解有哪些,当场我说了知道 Enumerable Value Writable 然后说就记得这些了。但是面试官当时就又问那如果想知道我改变了对象中的值应该如何呢？当时我就想到了 MVVM 可当时却没有与 get set联系到一起,当时就只能尬聊了。 深入响应式原理 回去后把很久之前看过的《JavaScript高级程序设计》第 6 张重">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-07-27T08:55:50.199Z">
+<meta property="og:updated_time" content="2018-07-27T09:03:58.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="面向对象程序设计">
 <meta name="twitter:description" content="昨天去知道创宇面试的时候面试官当时提了这样的问题，你对对象的属性了解有哪些,当场我说了知道 Enumerable Value Writable 然后说就记得这些了。但是面试官当时就又问那如果想知道我改变了对象中的值应该如何呢？当时我就想到了 MVVM 可当时却没有与 get set联系到一起,当时就只能尬聊了。 深入响应式原理 回去后把很久之前看过的《JavaScript高级程序设计》第 6 张重">
@@ -262,7 +262,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-27T16:55:50+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-27T17:03:58+08:00">
                 2018-07-27
               </time>
             
@@ -348,7 +348,10 @@
 <li>返回的对象与构造函数或则与构造函数的原型属性没有联系，也就是说，构造函数返回的对象与在构造函数外部创建的对象没有什么不同。</li>
 </ul>
 <h3 id="稳妥构造函数模式"><a href="#稳妥构造函数模式" class="headerlink" title="稳妥构造函数模式"></a>稳妥构造函数模式</h3><p>指没有公共属性，其方法也不引用 this </p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name, age</span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> a = <span class="keyword">new</span> <span class="built_in">Object</span>()</div><div class="line">  a.sayName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    alert(name)</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> a</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name, age</span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> a = <span class="keyword">new</span> <span class="built_in">Object</span>()</div><div class="line">  <span class="keyword">this</span>.name = name</div><div class="line">  <span class="keyword">this</span>.age = age</div><div class="line">  a.sayName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    alert(name)</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> a</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> p1 = Person(<span class="string">'aa'</span>, <span class="number">10</span>)</div><div class="line">p1.sayName()</div></pre></td></tr></table></figure>
+<ul>
+<li>这种模式除了 p1.sayName() 可以访问到 name 其他方式都不行</li>
+</ul>
 
       
     </div>
