@@ -173,7 +173,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Startseite
+            Home
           </a>
         </li>
       
@@ -193,7 +193,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archiv
+            Archives
           </a>
         </li>
       
@@ -230,7 +230,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/17/回看-JS-数据类型/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/03/hello-world/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Marsorsun">
@@ -249,7 +249,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/05/17/回看-JS-数据类型/" itemprop="url">回看 JS 数据类型</a></h1>
+                <a class="post-title-link" href="/2018/08/03/hello-world/" itemprop="url">Git简单操作</a></h1>
         
 
         <div class="post-meta">
@@ -259,10 +259,10 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-17T15:35:08+08:00">
-                2018-05-17
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-03T17:26:32+08:00">
+                2018-08-03
               </time>
             
 
@@ -300,12 +300,14 @@
 
       
         
-          <p>JS 数据类型不多，加上 <code>es6</code> 的 Symbol 有 7 种，我之前也写了关于 JavaScript 有关数据类型的文章个人觉得当时的总结还不够完善，记忆也不够深刻。前不久重新看了《 JavaScript 高级程序设计》的第三章，决定再次整理下。</p>
-<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><p>Undefined, Null, Number, String, Boolean, Objecct, Symbol</p>
+          <blockquote>
+<p><a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" target="_blank" rel="external">学习于廖雪峰的官方网站</a></p>
+</blockquote>
+<h2 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h2><figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">git init命令把这个目录变成Git可以管理的仓库</div><div class="line"></div><div class="line">git <span class="keyword">add</span><span class="bash"> &lt;file&gt;告诉Git，把文件添加到仓库</span></div><div class="line"><span class="bash"></span></div><div class="line"><span class="bash">git commit -m &lt;file&gt;告诉Git，把文件提交到仓库</span></div></pre></td></tr></table></figure>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/05/17/回看-JS-数据类型/#more" rel="contents">
-              Weiterlesen &raquo;
+            <a class="btn" href="/2018/08/03/hello-world/#more" rel="contents">
+              Read more &raquo;
             </a>
           </div>
           <!--/noindex-->
@@ -355,7 +357,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/16/es6-promise/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/03/bboc/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Marsorsun">
@@ -374,7 +376,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/05/16/es6-promise/" itemprop="url">回看 promise</a></h1>
+                <a class="post-title-link" href="/2018/08/03/bboc/" itemprop="url">BBOC</a></h1>
         
 
         <div class="post-meta">
@@ -384,10 +386,10 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-16T21:38:26+08:00">
-                2018-05-16
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-03T17:24:56+08:00">
+                2018-08-03
               </time>
             
 
@@ -425,12 +427,15 @@
 
       
         
-          <h2 id="callback"><a href="#callback" class="headerlink" title="callback"></a>callback</h2><p>一个函数在另一个函数中调用</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn1</span>(<span class="params"></span>)</span>&#123;&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn2</span>(<span class="params">fn</span>)</span>&#123;fn()&#125;</div><div class="line">fn2(fn1)<span class="comment">//这就是回调</span></div><div class="line"><span class="comment">//call a function</span></div><div class="line"><span class="comment">//callback a function</span></div></pre></td></tr></table></figure>
+          <blockquote>
+<p>BBOC=Best Boy Of China。</p>
+<p>这篇文章是曾博在2011年刚去美国写的。</p>
+<p>当年，他还是BBOC，还会浪漫的给自己写信，</p>
+</blockquote>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/05/16/es6-promise/#more" rel="contents">
-              Weiterlesen &raquo;
+            <a class="btn" href="/2018/08/03/bboc/#more" rel="contents">
+              Read more &raquo;
             </a>
           </div>
           <!--/noindex-->
@@ -480,7 +485,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/10/box-sizing: /">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/03/开启 Deepin/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Marsorsun">
@@ -499,7 +504,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/05/10/box-sizing: /" itemprop="url">box-sizing</a></h1>
+                <a class="post-title-link" href="/2018/08/03/开启 Deepin/" itemprop="url">开启 deepin</a></h1>
         
 
         <div class="post-meta">
@@ -509,10 +514,10 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-10T21:14:12+08:00">
-                2018-05-10
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-03T17:24:15+08:00">
+                2018-08-03
               </time>
             
 
@@ -550,137 +555,12 @@
 
       
         
-          
-            <p>盒模型这东西绝对算得上是 web 领域的高频词汇啦</p>
-<p>这东西两个值，之前是三个</p>
-<p>content-box（默认）标准盒模型</p>
-<p>border-box: width = border + padding +(内容的) width</p>
-<p>参考</p>
-<p><a href="https://leohxj.gitbooks.io/front-end-database/html-and-css-basic/box-module.html" target="_blank" rel="external">前端工程师手册</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/07/XMLHttpRequest 对象/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Marsorsun">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/123.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Marsorsun">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/07/XMLHttpRequest 对象/" itemprop="url">AJAX</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-07T21:51:32+08:00">
-                2018-05-07
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>正是由于 AJAX 的出现才导致前端的快速发展，异步 JavaScript 和 XML，不过经过发展现在不再使用 XML 而使用 JSON 这门轻量级数据语言。</p>
-<h3 id="XMLHttpRequest-对象"><a href="#XMLHttpRequest-对象" class="headerlink" title="XMLHttpRequest 对象"></a>XMLHttpRequest 对象</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> request = <span class="keyword">new</span> XMLHttpRequest()</div></pre></td></tr></table></figure>
+          <p>Linux 这个系统从平常角度来看总有一种高大上的感觉，但是你放下脚步去了解你会发现他也很平常并非高高在上。Deepin 系统也非常的适合国人使用，也非常漂亮，个人觉得比 Ubuntu 好使好看。安装双系统简直是无脑安装真的好。<a href="https://www.deepin.org/" target="_blank" rel="external">官网</a>的教程很详尽了就自己看吧。</p>
+<p><img src="/img/deepin.png" alt=""></p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/05/07/XMLHttpRequest 对象/#more" rel="contents">
-              Weiterlesen &raquo;
+            <a class="btn" href="/2018/08/03/开启 Deepin/#more" rel="contents">
+              Read more &raquo;
             </a>
           </div>
           <!--/noindex-->
@@ -730,7 +610,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/29/webpack-初识/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/03/CSS/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Marsorsun">
@@ -749,7 +629,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/04/29/webpack-初识/" itemprop="url">webpack 初识</a></h1>
+                <a class="post-title-link" href="/2018/08/03/CSS/" itemprop="url">CSS 套路</a></h1>
         
 
         <div class="post-meta">
@@ -759,10 +639,10 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-29T09:47:03+08:00">
-                2018-04-29
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-03T17:24:06+08:00">
+                2018-08-03
               </time>
             
 
@@ -800,15 +680,11 @@
 
       
         
-          <h2 id="为啥要用-webpack"><a href="#为啥要用-webpack" class="headerlink" title="为啥要用 webpack"></a>为啥要用 webpack</h2><h3 id="sass"><a href="#sass" class="headerlink" title="sass"></a><a href="https://github.com/sass/node-sass" target="_blank" rel="external">sass</a></h3><p>为了更快更方便的编写 css 代码你是有可能使用 sass 等等，但是很明显的你不可能在 html 中直接的应用 sass，你必使用进行了转译才可以啊。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">node-sass input output</div></pre></td></tr></table></figure>
-<p>但是每一次更改都要重新转译很麻烦，所以一般就是</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">node-sass input output -w</div></pre></td></tr></table></figure>
-<p>以上 intput output 都是原文件地址。</p>
+          <p>CSS 总是会出现我们意想不到的结果，在这里记录一些会用到的小技巧来加深自己的记忆与理解。</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/04/29/webpack-初识/#more" rel="contents">
-              Weiterlesen &raquo;
+            <a class="btn" href="/2018/08/03/CSS/#more" rel="contents">
+              Read more &raquo;
             </a>
           </div>
           <!--/noindex-->
@@ -858,7 +734,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/26/stacking-content/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/03/myCanvas/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Marsorsun">
@@ -877,7 +753,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/04/26/stacking-content/" itemprop="url">堆叠顺序</a></h1>
+                <a class="post-title-link" href="/2018/08/03/myCanvas/" itemprop="url">在线画板的制作</a></h1>
         
 
         <div class="post-meta">
@@ -887,10 +763,10 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-26T14:04:42+08:00">
-                2018-04-26
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-03T17:23:05+08:00">
+                2018-08-03
               </time>
             
 
@@ -928,20 +804,16 @@
 
       
         
-          <p>就好像一个<code>div</code>他的<code>background</code>的颜色是会在<code>border</code>下面的，可以通过设置<code>rgba</code>来验证</p>
-<ol>
-<li>background</li>
-<li>boder</li>
-<li>块级</li>
-<li>浮动</li>
-<li>内联</li>
-<li>z-index: 0（定位才有效）</li>
-<li>z-index(+)</li>
-</ol>
+          <p>并不需要过多的 JS 基础就可以实现，尽管代码看起来很不尽人意但是能够完成需要的功能使用者并不关心你的实现方式。<a href="https://unbrain.github.io/myCanvas/" target="_blank" rel="external">预览</a></p>
+<ul>
+<li><a href="www.google.com">Google</a></li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Canvas_API" target="_blank" rel="external">Canvas MDN</a></li>
+<li><a href="http://www.iconfont.cn/" target="_blank" rel="external">iconfont</a> (获取需要的图标)</li>
+</ul>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/04/26/stacking-content/#more" rel="contents">
-              Weiterlesen &raquo;
+            <a class="btn" href="/2018/08/03/myCanvas/#more" rel="contents">
+              Read more &raquo;
             </a>
           </div>
           <!--/noindex-->
@@ -991,7 +863,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/26/css-tricks01/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/03/nav/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Marsorsun">
@@ -1010,7 +882,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/04/26/css-tricks01/" itemprop="url">CSS 文字对齐</a></h1>
+                <a class="post-title-link" href="/2018/08/03/nav/" itemprop="url">一个导航网站</a></h1>
         
 
         <div class="post-meta">
@@ -1020,10 +892,135 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-26T14:02:17+08:00">
-                2018-04-26
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-03T17:22:51+08:00">
+                2018-08-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>由简单无门槛 js 实现一个触发按键跳转网页的导航网站，效果<a href="https://unbrain.github.io/myBookmarks/" target="_blank" rel="external">预览</a></p>
+<p><img src="/img/nav.png" alt=""></p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/08/03/nav/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/03/css-tricks01/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Marsorsun">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/123.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Marsorsun">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/03/css-tricks01/" itemprop="url">CSS 文字对齐</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-03T17:22:07+08:00">
+                2018-08-03
               </time>
             
 
@@ -1064,8 +1061,8 @@
           <h3 id="在进行制作表单的时候为了使得让中文更加的顺眼可能会有让不同长度的文字左右对齐的需求就像这样"><a href="#在进行制作表单的时候为了使得让中文更加的顺眼可能会有让不同长度的文字左右对齐的需求就像这样" class="headerlink" title="在进行制作表单的时候为了使得让中文更加的顺眼可能会有让不同长度的文字左右对齐的需求就像这样"></a>在进行制作表单的时候为了使得让中文更加的顺眼可能会有让不同长度的文字左右对齐的需求就像这样</h3><p><img src="/img/csstrick01.png" alt=""></p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/04/26/css-tricks01/#more" rel="contents">
-              Weiterlesen &raquo;
+            <a class="btn" href="/2018/08/03/css-tricks01/#more" rel="contents">
+              Read more &raquo;
             </a>
           </div>
           <!--/noindex-->
@@ -1115,7 +1112,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/26/登录与注册/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/03/移动端如何适配（响应式）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Marsorsun">
@@ -1134,7 +1131,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/04/26/登录与注册/" itemprop="url">Unbenannt</a></h1>
+                <a class="post-title-link" href="/2018/08/03/移动端如何适配（响应式）/" itemprop="url">移动端如何适配（响应式）</a></h1>
         
 
         <div class="post-meta">
@@ -1144,10 +1141,10 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-26T14:00:41+08:00">
-                2018-04-26
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-03T17:21:46+08:00">
+                2018-08-03
               </time>
             
 
@@ -1185,27 +1182,16 @@
 
       
         
-          
-            <h2 id="登录与注册"><a href="#登录与注册" class="headerlink" title="登录与注册"></a>登录与注册</h2><h3 id="路由"><a href="#路由" class="headerlink" title="路由"></a>路由</h3><p>后端必需验证，curl 直接发请求绕过前端。</p>
-<h2 id="Cookie"><a href="#Cookie" class="headerlink" title="Cookie"></a>Cookie</h2><p><a href="https://zh.wikipedia.org/wiki/Cookie" target="_blank" rel="external">Cookie</a> 就好像游乐园的通行证</p>
-<ul>
-<li>服务器通过 Set-Cookie 响应头设置Cookie</li>
-<li>浏览器得到 Cookie 后，每次请求都会带上 Cookie</li>
-<li>服务器读到 Cookie 就知道登录用户是谁</li>
-</ul>
-<p>Cookie 可以做假</p>
-<p>http only</p>
-<p>Cookie 有有效期</p>
-<blockquote>
-<h2 id="Cookie的缺陷"><a href="#Cookie的缺陷" class="headerlink" title="Cookie的缺陷"></a>Cookie的缺陷</h2><ol>
-<li>Cookie会被附加在每个HTTP请求中，所以无形中增加了流量。</li>
-<li>由于在HTTP请求中的Cookie是明文传递的，所以安全性成问题，除非用<a href="https://zh.wikipedia.org/wiki/HTTPS" target="_blank" rel="external">HTTPS</a>。</li>
-<li>Cookie的大小限制在4KB左右，对于复杂的存储需求来说是不够用的。<a href="https://zh.wikipedia.org/wiki/Cookie#cite_note-3" target="_blank" rel="external">[3]</a></li>
-</ol>
-</blockquote>
-<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Caching_FAQ" target="_blank" rel="external">HTTP 缓存</a></p>
-
-          
+          <h3 id="meta-viewport"><a href="#meta-viewport" class="headerlink" title="meta viewport"></a>meta viewport</h3><p>使用此标签就是为了告诉浏览器你别给我乱缩放，按我的标准来。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, user-scalable=no, initial-scale=1.0,maximum-scale=1.0, minimum-scale=1.0"</span> &gt;</span></div></pre></td></tr></table></figure>
+<p>viewport mata标签的每一对name/value都是一条指令。总共有6条指令：</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/08/03/移动端如何适配（响应式）/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1293,7 +1279,7 @@
               <a href="/archives/">
             
                 <span class="site-state-item-count">48</span>
-                <span class="site-state-item-name">Artikel</span>
+                <span class="site-state-item-name">posts</span>
               </a>
             </div>
           
@@ -1305,8 +1291,8 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">35</span>
-                <span class="site-state-item-name">Tags</span>
+                <span class="site-state-item-count">32</span>
+                <span class="site-state-item-name">tags</span>
               </a>
             </div>
           
