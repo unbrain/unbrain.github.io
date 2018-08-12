@@ -108,25 +108,25 @@
 
 
 
-  <meta name="description" content="语法 12345&amp;gt; function.call(thisArg, arg1, arg2, ...)//在fun函数运行时指定的this值。需要注意的是，指定的this值并不一定是该函数执行时真正的this值，如果这个函数处于非严格模式下，则指定为null和undefined的this值会自动指向全局对象(浏览器中就是window对象)，同时值为原始值(数字，字符串，布尔值)的this会指向该">
+  <meta name="description" content="语法1234567function.call(thisArg, arg1, arg2, ...)//在fun函数运行时指定的this值。需要注意的是，指定的this值并不一定是该函数执行时真正的this值，如果这个函数处于非严格模式下，则指定为null和undefined的this值会自动指向全局对象(浏览器中就是window对象)，同时值为原始值(数字，字符串，布尔值)的this会指向该原始值的">
 <meta name="keywords" content="JavaScript,笔试面试题">
 <meta property="og:type" content="article">
-<meta property="og:title" content="简聊 JavaScript call() apply() 与 bind()">
-<meta property="og:url" content="http://yoursite.com/2018/08/03/jscallapply/index.html">
+<meta property="og:title" content="简聊 JavaScript call apply 与 bind">
+<meta property="og:url" content="http://yoursite.com/2018/04/28/jscallapply/index.html">
 <meta property="og:site_name" content="Marsorsun">
-<meta property="og:description" content="语法 12345&amp;gt; function.call(thisArg, arg1, arg2, ...)//在fun函数运行时指定的this值。需要注意的是，指定的this值并不一定是该函数执行时真正的this值，如果这个函数处于非严格模式下，则指定为null和undefined的this值会自动指向全局对象(浏览器中就是window对象)，同时值为原始值(数字，字符串，布尔值)的this会指向该">
+<meta property="og:description" content="语法1234567function.call(thisArg, arg1, arg2, ...)//在fun函数运行时指定的this值。需要注意的是，指定的this值并不一定是该函数执行时真正的this值，如果这个函数处于非严格模式下，则指定为null和undefined的this值会自动指向全局对象(浏览器中就是window对象)，同时值为原始值(数字，字符串，布尔值)的this会指向该原始值的">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-08-03T09:21:04.397Z">
+<meta property="og:updated_time" content="2018-08-12T11:45:27.233Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="简聊 JavaScript call() apply() 与 bind()">
-<meta name="twitter:description" content="语法 12345&amp;gt; function.call(thisArg, arg1, arg2, ...)//在fun函数运行时指定的this值。需要注意的是，指定的this值并不一定是该函数执行时真正的this值，如果这个函数处于非严格模式下，则指定为null和undefined的this值会自动指向全局对象(浏览器中就是window对象)，同时值为原始值(数字，字符串，布尔值)的this会指向该">
+<meta name="twitter:title" content="简聊 JavaScript call apply 与 bind">
+<meta name="twitter:description" content="语法1234567function.call(thisArg, arg1, arg2, ...)//在fun函数运行时指定的this值。需要注意的是，指定的this值并不一定是该函数执行时真正的this值，如果这个函数处于非严格模式下，则指定为null和undefined的this值会自动指向全局对象(浏览器中就是window对象)，同时值为原始值(数字，字符串，布尔值)的this会指向该原始值的">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/08/03/jscallapply/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/04/28/jscallapply/"/>
 
 
 
@@ -136,7 +136,7 @@
   };
 </script>
 
-  <title>简聊 JavaScript call() apply() 与 bind() | Marsorsun</title>
+  <title>简聊 JavaScript call apply 与 bind | Marsorsun</title>
   
 
 
@@ -293,7 +293,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/03/jscallapply/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/28/jscallapply/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Marsorsun">
@@ -310,7 +310,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">简聊 JavaScript call() apply() 与 bind()
+          <h1 class="post-title" itemprop="name headline">简聊 JavaScript call apply 与 bind
               
             
           </h1>
@@ -335,9 +335,25 @@
                 
               
 
-              <time title="创建时间：2018-08-03 17:21:04" itemprop="dateCreated datePublished" datetime="2018-08-03T17:21:04+08:00">2018-08-03</time>
+              <time title="创建时间：2018-04-28 20:46:25" itemprop="dateCreated datePublished" datetime="2018-04-28T20:46:25+08:00">2018-04-28</time>
             
 
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-08-12 19:45:27" itemprop="dateModified" datetime="2018-08-12T19:45:27+08:00">2018-08-12</time>
+              
             
           </span>
 
@@ -369,9 +385,7 @@
       
 
       
-        <h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&gt; <span class="function"><span class="keyword">function</span>.<span class="title">call</span>(<span class="params">thisArg, arg1, arg2, ...</span>)//在<span class="title">fun</span>函数运行时指定的<span class="title">this</span>值。需要注意的是，指定的<span class="title">this</span>值并不一定是该函数执行时真正的<span class="title">this</span>值，如果这个函数处于非严格模式下，则指定为<span class="title">null</span>和<span class="title">undefined</span>的<span class="title">this</span>值会自动指向全局对象(<span class="params">浏览器中就是window对象</span>)，同时值为原始值(<span class="params">数字，字符串，布尔值</span>)的<span class="title">this</span>会指向该原始值的自动包装对象。</span></div><div class="line"><span class="function">&gt; <span class="title">func</span>.<span class="title">apply</span>(<span class="params">thisArg, [argsArray]</span>)//同上</span></div><div class="line"><span class="function">&gt; <span class="title">fun</span>.<span class="title">bind</span>(<span class="params">thisArg[, arg1[, arg2[, ...]]]</span>)</span></div><div class="line"><span class="function">&gt; //<span class="title">thisArg</span>当绑定函数被调用时，该参数会作为原函数运行时的 <span class="title">this</span> 指向。当使用<span class="title">new</span> 操作符调用绑定函数时，该参数无效。</span></div><div class="line"><span class="function">&gt;</span></div></pre></td></tr></table></figure>
-</blockquote>
+        <h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span>.<span class="title">call</span>(<span class="params">thisArg, arg1, arg2, ...</span>)//在<span class="title">fun</span>函数运行时指定的<span class="title">this</span>值。需要注意的是，指定的<span class="title">this</span>值并不一定是该函数执行时真正的<span class="title">this</span>值，如果这个函数处于非严格模式下，则指定为<span class="title">null</span>和<span class="title">undefined</span>的<span class="title">this</span>值会自动指向全局对象(<span class="params">浏览器中就是window对象</span>)，同时值为原始值(<span class="params">数字，字符串，布尔值</span>)的<span class="title">this</span>会指向该原始值的自动包装对象。</span></div><div class="line"><span class="function"></span></div><div class="line"><span class="function"><span class="title">func</span>.<span class="title">apply</span>(<span class="params">thisArg, [argsArray]</span>)//同上</span></div><div class="line"><span class="function"></span></div><div class="line"><span class="function"><span class="title">fun</span>.<span class="title">bind</span>(<span class="params">thisArg[, arg1[, arg2[, ...]]]</span>)</span></div><div class="line"><span class="function"></span></div><div class="line"><span class="function">//<span class="title">thisArg</span>当绑定函数被调用时，该参数会作为原函数运行时的 <span class="title">this</span> 指向。当使用<span class="title">new</span> 操作符调用绑定函数时，该参数无效。</span></div></pre></td></tr></table></figure>
 <a id="more"></a>
 <h3 id="call-与-apply"><a href="#call-与-apply" class="headerlink" title="call 与 apply"></a>call 与 apply</h3><p>从语法上就可以看出出两个是比较相似的</p>
 <ul>
@@ -386,9 +400,7 @@
 <p>bind() 函数会创建一个新函数（称为绑定函数），新函数与被调函数（绑定函数的目标函数）具有相同的函数体（在 ECMAScript 5 规范中内置的<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Function/call" target="_blank" rel="external"><code>call</code></a>属性）。当<strong>新函数</strong>被调用时 this 值绑定到 bind() 的第一个参数，该参数不能被重写。绑定函数被调用时，bind() 也接受预设的参数提供给原函数。一个绑定函数也能使用<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/new" target="_blank" rel="external"><code>new</code></a>操作符创建对象：这种行为就像把原函数当成构造器。提供的 this 值被忽略，同时调用时的参数被提供给模拟函数。(mdn)</p>
 </blockquote>
 <p>觉得 mdn 上的例子很好了就直接抄下来</p>
-<blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&gt; <span class="keyword">this</span>.x = <span class="number">9</span></div><div class="line">&gt; <span class="keyword">var</span> modle = &#123;</div><div class="line">&gt;   x: <span class="number">81</span>,</div><div class="line">&gt;   getX: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;<span class="keyword">return</span> <span class="keyword">this</span>.x&#125;</div><div class="line">&gt; &#125;</div><div class="line">&gt; modle.getX()<span class="comment">//返回 81</span></div><div class="line">&gt; <span class="keyword">var</span> newX = modle.getX</div><div class="line">&gt; newX()<span class="comment">//9,this 指向全局</span></div><div class="line">&gt; <span class="comment">//创建新函数，将this绑定到modle对象</span></div><div class="line">&gt; <span class="keyword">var</span> nextX = newX.bind(modle)</div><div class="line">&gt; nextX()<span class="comment">//81</span></div><div class="line">&gt;</div></pre></td></tr></table></figure>
-</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">this</span>.x = <span class="number">9</span></div><div class="line"><span class="keyword">var</span> modle = &#123;</div><div class="line">  x: <span class="number">81</span>,</div><div class="line">  getX: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;<span class="keyword">return</span> <span class="keyword">this</span>.x&#125;</div><div class="line">&#125;</div><div class="line">modle.getX()<span class="comment">//返回 81</span></div><div class="line"><span class="keyword">var</span> newX = modle.getX</div><div class="line">newX()<span class="comment">//9,this 指向全局</span></div><div class="line"><span class="comment">//创建新函数，将this绑定到modle对象</span></div><div class="line"><span class="keyword">var</span> nextX = newX.bind(modle)</div><div class="line">nextX()<span class="comment">//81</span></div></pre></td></tr></table></figure>
 <p>可以看到bind并不是立即执行的</p>
 <h3 id="三者比较"><a href="#三者比较" class="headerlink" title="三者比较"></a>三者比较</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> obj = &#123;</div><div class="line">    x: <span class="number">8</span>,</div><div class="line">&#125;;</div><div class="line"><span class="keyword">var</span> foo = &#123;</div><div class="line">    getX: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.x;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(foo.getX.bind(obj)());  <span class="comment">//8</span></div><div class="line"><span class="built_in">console</span>.log(foo.getX.call(obj));    <span class="comment">//8</span></div><div class="line"><span class="built_in">console</span>.log(foo.getX.apply(obj));   <span class="comment">//8</span></div></pre></td></tr></table></figure>
 <ul>
@@ -473,8 +485,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/08/03/Whats-JSONP/" rel="next" title="What's JSONP">
-                <i class="fa fa-chevron-left"></i> What's JSONP
+              <a href="/2018/04/24/myCanvas/" rel="next" title="在线画板的制作">
+                <i class="fa fa-chevron-left"></i> 在线画板的制作
               </a>
             
           </div>
@@ -483,8 +495,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/08/03/closure/" rel="prev" title="啥是闭包">
-                啥是闭包 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/05/01/box-sizing/" rel="prev" title="box-sizing">
+                box-sizing <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
