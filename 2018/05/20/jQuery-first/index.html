@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.4.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/123.png?v=6.4.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/123.png?v=6.4.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/123.png?v=6.4.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.4.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '6.4.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="jQuery 可以说是大部分网站都会使用到的库了 builtwith今天从简单的地方入手去模拟 jQuery 的实现，但还不是真的实现原理，但是可以帮助我们去理解学习 jQuery ，其实程序员都是害怕麻烦的，有这么多的库就是为了让自己尽可能的少打代码，所以就将完成复杂过程的代码封装起来，在下一次用的时候只需要给出参数就能复用之前的代码使得自己不去干重复而无意义的事情，但是呢作为初学者直接就去使用">
+<meta name="keywords" content="JavaScript,jQuery">
+<meta property="og:type" content="article">
+<meta property="og:title" content="初探 jQuery">
+<meta property="og:url" content="http://yoursite.com/2018/05/20/jQuery-first/index.html">
+<meta property="og:site_name" content="Marsorsun">
+<meta property="og:description" content="jQuery 可以说是大部分网站都会使用到的库了 builtwith今天从简单的地方入手去模拟 jQuery 的实现，但还不是真的实现原理，但是可以帮助我们去理解学习 jQuery ，其实程序员都是害怕麻烦的，有这么多的库就是为了让自己尽可能的少打代码，所以就将完成复杂过程的代码封装起来，在下一次用的时候只需要给出参数就能复用之前的代码使得自己不去干重复而无意义的事情，但是呢作为初学者直接就去使用">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://yoursite.com/img/jQueryfirst.png">
+<meta property="og:updated_time" content="2018-05-20T12:58:51.127Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="初探 jQuery">
+<meta name="twitter:description" content="jQuery 可以说是大部分网站都会使用到的库了 builtwith今天从简单的地方入手去模拟 jQuery 的实现，但还不是真的实现原理，但是可以帮助我们去理解学习 jQuery ，其实程序员都是害怕麻烦的，有这么多的库就是为了让自己尽可能的少打代码，所以就将完成复杂过程的代码封装起来，在下一次用的时候只需要给出参数就能复用之前的代码使得自己不去干重复而无意义的事情，但是呢作为初学者直接就去使用">
+<meta name="twitter:image" content="http://yoursite.com/img/jQueryfirst.png">
+
+
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/05/20/jQuery-first/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>初探 jQuery | Marsorsun</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Marsorsun</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">心猿码意</p>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/20/jQuery-first/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Marsorsun">
+      <meta itemprop="description" content="“对我来说，博客首先是一种知识管理工具，其次才是传播工具。我的技术文章，主要用来整理我还不懂的知识。我只写那些我还没有完全掌握的东西，那些我精通的东西，往往没有动力写。炫耀从来不是我的动机，好奇才是。"">
+      <meta itemprop="image" content="/images/123.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Marsorsun">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">初探 jQuery
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-05-20 20:58:51" itemprop="dateCreated datePublished" datetime="2018-05-20T20:58:51+08:00">2018-05-20</time>
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="jQuery-可以说是大部分网站都会使用到的库了-builtwith"><a href="#jQuery-可以说是大部分网站都会使用到的库了-builtwith" class="headerlink" title="jQuery 可以说是大部分网站都会使用到的库了 builtwith"></a>jQuery 可以说是大部分网站都会使用到的库了 <a href="https://trends.builtwith.com/javascript" target="_blank" rel="external">builtwith</a></h3><p>今天从简单的地方入手去模拟 <code>jQuery</code> 的实现，但还不是真的实现原理，但是可以帮助我们去理解学习 <code>jQuery</code> ，其实程序员都是害怕麻烦的，有这么多的库就是为了让自己尽可能的少打代码，所以就将完成复杂过程的代码封装起来，在下一次用的时候只需要给出参数就能复用之前的代码使得自己不去干重复而无意义的事情，但是呢作为初学者直接就去使用 <code>jQuery</code> 看上去并无大碍，但一般就不会看到他最本质的东西。所以模拟来实现一个<code>jQuery</code></p>
+<a id="more"></a>
+<h3 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">window</span>.jQuery = ???</div><div class="line"><span class="built_in">window</span>.$ = jQuery</div><div class="line"></div><div class="line"><span class="keyword">var</span> $div = $(<span class="string">'div'</span>)</div><div class="line">$div.addClass(<span class="string">'red'</span>) <span class="comment">// 可将所有 div 的 class 添加一个 red</span></div><div class="line">$div.setText(<span class="string">'hi'</span>) <span class="comment">// 可将所有 div 的 textContent 变为 hi</span></div></pre></td></tr></table></figure>
+<h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><ol>
+<li><code>$(&#39;div&#39;)</code> 可以看出我们需要出入一个参数（jQuery 会自动判断为选择器还是节点）</li>
+<li>我们需要在该函数封装两个方法<code>addClass()</code> <code>setText()</code></li>
+<li>考虑到 div 可能不止一个需要用一个对象来保存多个节点</li>
+</ol>
+<h3 id="jQuery-函数"><a href="#jQuery-函数" class="headerlink" title="jQuery 函数"></a><code>jQuery</code> 函数</h3><p>根据传入参数的类型来判断如何初始化节点对象</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">window</span>.jQuery = <span class="function"><span class="keyword">function</span>(<span class="params">node</span>)</span>&#123;</div><div class="line">  <span class="keyword">let</span> nodes = &#123;&#125;<span class="comment">//声明一个空对象节点</span></div><div class="line">  <span class="keyword">if</span>(<span class="keyword">typeof</span> node === <span class="string">'string'</span>)&#123;</div><div class="line">    <span class="keyword">let</span> arr = <span class="built_in">document</span>.querySelectorAll(node)</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; arr.length; i++)&#123;</div><div class="line">        nodes[i] = arr[i]</div><div class="line">      &#125;</div><div class="line">      nodes.length = arr.length</div><div class="line">  &#125;<span class="keyword">else</span> <span class="keyword">if</span>(<span class="keyword">typeof</span> node === <span class="string">'Node'</span>)&#123;</div><div class="line">    nodes[<span class="number">0</span>] = node</div><div class="line">    nodes.length = <span class="number">1</span></div><div class="line">  &#125;</div><div class="line">  </div><div class="line">  <span class="keyword">return</span> nodes</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="built_in">window</span>.$ = jQuery<span class="comment">//给他弄一个名字让大家都不会弄重的名字</span></div></pre></td></tr></table></figure>
+<h3 id="addClass-函数"><a href="#addClass-函数" class="headerlink" title="addClass() 函数"></a><code>addClass()</code> 函数</h3><p>使用 <code>classList.add()</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">nodes.addClass = <span class="function"><span class="keyword">function</span>(<span class="params">style</span>)</span>&#123;</div><div class="line">    <span class="keyword">if</span>(<span class="keyword">typeof</span> style === <span class="string">'string'</span>)&#123;</div><div class="line">      <span class="keyword">for</span>(<span class="keyword">let</span> i =<span class="number">0</span>; i &lt; nodes.length; i++)&#123;</div><div class="line">        nodes[i].classList.add(style)</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
+<h3 id="setText-函数"><a href="#setText-函数" class="headerlink" title="setText() 函数"></a><code>setText()</code> 函数</h3><p>更改 <code>textContext</code> 属性</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">nodes.setText = <span class="function"><span class="keyword">function</span>(<span class="params">message</span>)</span>&#123;</div><div class="line">  <span class="keyword">for</span>(<span class="keyword">let</span> i =<span class="number">0</span>; i &lt; nodes.length; i++)&#123;</div><div class="line">      nodes[i].textContent = message</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h3><p><img src="/img/jQueryfirst.png" alt=""></p>
+<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>其实 jQuery 也就是一个对象，只是他单独封装他的属性与方法，将 DOM 的方法与属性隐藏得更深了一点，使用起来更方便更强大，兼容性更强。</p>
+<h3 id="思考"><a href="#思考" class="headerlink" title="思考"></a>思考</h3><blockquote>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt; <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">x</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">&gt;</div></pre></td></tr></table></figure>
+</blockquote>
+<p>&gt;</p>
+<blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&gt; <span class="keyword">var</span> div = <span class="built_in">document</span>.getElementById(<span class="string">'x'</span>)</div><div class="line">&gt; <span class="keyword">var</span> div = (<span class="string">'#x'</span>)</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+</blockquote>
+<p>&gt;</p>
+<blockquote>
+<p>请说出 <code>div</code> 和 <code>$div</code> 的联系和区别。</p>
+</blockquote>
+<p><code>document.getElementById()</code>返回的是 <code>DOM</code> 对象，而 <code>$()</code> 返回的是 <code>jQuery</code> 对象<br><code>div</code> 和 <code>$div</code> 的联系是：<br>只要 <code>$(div)</code>就可以把 <code>div</code>变成<code>$div</code><br>两种转换方式将一个<code>jQuery</code>对象转换成 <code>DOM</code> 对象：[index]和.get(index);<br>只要 $div[0] 与 $div.get(0) 就能$div 变成 div<br>div 和 $div 的区别是：<br>div 的属性和方法有<code>appendChild(),cloneNode(),contains(),hasChildNodes(),insertBefore(),isEqualNode(),isSameNode(),removeChild(),replaceChild(),normalize()</code><br>$div 的 属性和方法有 <code>add,addBack,addClass,after,ajaxComplete,ajaxError,ajaxSend,ajaxStart,ajaxStop,ajaxSuccess,andSelf,animate,append,appendTo...</code></p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>棒棒糖</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/img/wxpay.jpg" alt="Marsorsun 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/img/alipay.jpg" alt="Marsorsun 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+          
+            <a href="/tags/jQuery/" rel="tag"># jQuery</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/05/17/stacking-content/" rel="next" title="堆叠顺序">
+                <i class="fa fa-chevron-left"></i> 堆叠顺序
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/05/27/移动端如何适配（响应式）/" rel="prev" title="移动端如何适配（响应式）">
+                移动端如何适配（响应式） <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/123.jpg"
+                alt="Marsorsun" />
+            
+              <p class="site-author-name" itemprop="name">Marsorsun</p>
+              <p class="site-description motion-element" itemprop="description">“对我来说，博客首先是一种知识管理工具，其次才是传播工具。我的技术文章，主要用来整理我还不懂的知识。我只写那些我还没有完全掌握的东西，那些我精通的东西，往往没有动力写。炫耀从来不是我的动机，好奇才是。"</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">49</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">30</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/unbrain" target="_blank" title="GitHub"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:marsorsun@gmail.com" target="_blank" title="E-Mail"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://www.zhihu.com/people/chen-xi-zhao-yang-21/activities" target="_blank" title="知乎"><i class="fa fa-fw fa-zhihu"></i>知乎</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#jQuery-可以说是大部分网站都会使用到的库了-builtwith"><span class="nav-number">1.</span> <span class="nav-text">jQuery 可以说是大部分网站都会使用到的库了 builtwith</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#需求"><span class="nav-number">2.</span> <span class="nav-text">需求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分析"><span class="nav-number">3.</span> <span class="nav-text">分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#jQuery-函数"><span class="nav-number">4.</span> <span class="nav-text">jQuery 函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#addClass-函数"><span class="nav-number">5.</span> <span class="nav-text">addClass() 函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#setText-函数"><span class="nav-number">6.</span> <span class="nav-text">setText() 函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#效果"><span class="nav-number">7.</span> <span class="nav-text">效果</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#小结"><span class="nav-number">8.</span> <span class="nav-text">小结</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#思考"><span class="nav-number">9.</span> <span class="nav-text">思考</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Marsorsun</span>
+
+  
+
+  
+</div>
+
+
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动 v3.3.9</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Mist</a> v6.4.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.4.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.4.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
