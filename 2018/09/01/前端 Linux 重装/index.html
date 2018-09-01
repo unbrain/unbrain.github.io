@@ -116,7 +116,7 @@
 <meta property="og:site_name" content="Marsorsun">
 <meta property="og:description" content="前不久升级 deepin 然后 GG 了，所以写下来以免以后不用再去搜索 科学上网1sudo apt-get install python-pip; sudo pip install shadowsocks;">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-09-01T05:40:24.285Z">
+<meta property="og:updated_time" content="2018-09-01T12:50:48.147Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="前端 Linux 重装">
 <meta name="twitter:description" content="前不久升级 deepin 然后 GG 了，所以写下来以免以后不用再去搜索 科学上网1sudo apt-get install python-pip; sudo pip install shadowsocks;">
@@ -335,7 +335,7 @@
                 
               
 
-              <time title="创建时间：2018-09-01 00:00:00 / 修改时间：13:40:24" itemprop="dateCreated datePublished" datetime="2018-09-01T00:00:00+08:00">2018-09-01</time>
+              <time title="创建时间：2018-09-01 00:00:00 / 修改时间：20:50:48" itemprop="dateCreated datePublished" datetime="2018-09-01T00:00:00+08:00">2018-09-01</time>
             
 
             
@@ -384,7 +384,7 @@
 <p>创建 proxychains-ng 的配置文件，如果你不知道创建在哪，就创建在 ~/.proxychains.conf（用 <code>touch ~/.proxychains.conf</code> 即可创建文件），内容如下</p>
 <figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">strict_chain</div><div class="line">quiet_mode</div><div class="line">proxy_dns </div><div class="line"></div><div class="line">remote_dns_subnet <span class="number">224</span></div><div class="line">tcp_read_time_out <span class="number">15000</span></div><div class="line">tcp_connect_time_out <span class="number">8000</span></div><div class="line">[ProxyList]</div><div class="line">socks5     <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span> <span class="number">1080</span></div></pre></td></tr></table></figure>
 <p>在 ~/.bashrc 里添加一句 alias pc=’proxychains4 -f ~/.proxychains.conf’，保存</p>
-<h2 id="oh-mym-shell"><a href="#oh-mym-shell" class="headerlink" title="oh mym shell"></a>oh mym shell</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install zsh</div><div class="line">chsh -s /bin/zsh</div><div class="line">wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh</div></pre></td></tr></table></figure>
+<h2 id="oh-my-shell"><a href="#oh-my-shell" class="headerlink" title="oh my shell"></a>oh my shell</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install zsh</div><div class="line">chsh -s /bin/zsh</div><div class="line">wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh</div></pre></td></tr></table></figure>
 <h2 id="node"><a href="#node" class="headerlink" title="node"></a>node</h2><p>nvm 安装</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh | bash</div><div class="line">source ~/.nvm/nvm.sh</div><div class="line">nvm install node </div><div class="line">nvm use node</div></pre></td></tr></table></figure>
 <h3 id="更改-zshrc"><a href="#更改-zshrc" class="headerlink" title="更改 .zshrc"></a>更改 <code>.zshrc</code></h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">export NVM_DIR="/home/YOURUSERNAME/.nvm"#改成你的用户名</div><div class="line">[ -s "$NVM_DIR/nvm.sh" ] &amp;&amp; . "$NVM_DIR/nvm.sh"  # This loads nvm</div></pre></td></tr></table></figure>
@@ -665,7 +665,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#科学上网"><span class="nav-number">1.</span> <span class="nav-text">科学上网</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#配置-ssconf-json"><span class="nav-number">1.1.</span> <span class="nav-text">配置 ~/.ssconf.json</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#命令行代理"><span class="nav-number">1.2.</span> <span class="nav-text">命令行代理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#oh-mym-shell"><span class="nav-number">2.</span> <span class="nav-text">oh mym shell</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#node"><span class="nav-number">3.</span> <span class="nav-text">node</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#更改-zshrc"><span class="nav-number">3.1.</span> <span class="nav-text">更改 .zshrc</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#科学上网"><span class="nav-number">1.</span> <span class="nav-text">科学上网</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#配置-ssconf-json"><span class="nav-number">1.1.</span> <span class="nav-text">配置 ~/.ssconf.json</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#命令行代理"><span class="nav-number">1.2.</span> <span class="nav-text">命令行代理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#oh-my-shell"><span class="nav-number">2.</span> <span class="nav-text">oh my shell</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#node"><span class="nav-number">3.</span> <span class="nav-text">node</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#更改-zshrc"><span class="nav-number">3.1.</span> <span class="nav-text">更改 .zshrc</span></a></li></ol></li></ol></div>
             
 
           </div>
