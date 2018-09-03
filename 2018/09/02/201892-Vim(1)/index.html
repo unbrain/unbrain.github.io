@@ -108,19 +108,19 @@
 
 
 
-  <meta name="description" content="删除是会经常用到的  dd    删除一行     ndd    删除 n 行   蛮烦的时候就是使用可视来删除，今天看到了一个更好的方法  dt&amp;gt;     删除到 &amp;gt; 为止  可视块操作  ^ → 到行头  → 开始块操作  → 向下移动 (你也可以使用hjkl来移动光标，或是使用%，或是别的) I– [ESC] → I是插入，插入“–”，按ESC键来为每一行生效。    简明 VI">
+  <meta name="description" content="删除是会经常用到的  dd    删除一行     ndd    删除 n 行   蛮烦的时候就是使用可视来删除，今天看到了一个更好的方法  dt&amp;gt;     删除到 &amp;gt; 为止  可视块操作  ^→ 到行头 &amp;lt;C-v&amp;gt; → 开始块操作 &amp;lt;C-d&amp;gt; → 向下移动 (你也可以使用hjkl来移动光标，或是使用%，或是别的) I-- [ESC] → I是插入，插入“–”，">
 <meta name="keywords" content="编程,Vim">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Vim(1)">
 <meta property="og:url" content="http://yoursite.com/2018/09/02/201892-Vim(1)/index.html">
 <meta property="og:site_name" content="Marsorsun">
-<meta property="og:description" content="删除是会经常用到的  dd    删除一行     ndd    删除 n 行   蛮烦的时候就是使用可视来删除，今天看到了一个更好的方法  dt&amp;gt;     删除到 &amp;gt; 为止  可视块操作  ^ → 到行头  → 开始块操作  → 向下移动 (你也可以使用hjkl来移动光标，或是使用%，或是别的) I– [ESC] → I是插入，插入“–”，按ESC键来为每一行生效。    简明 VI">
+<meta property="og:description" content="删除是会经常用到的  dd    删除一行     ndd    删除 n 行   蛮烦的时候就是使用可视来删除，今天看到了一个更好的方法  dt&amp;gt;     删除到 &amp;gt; 为止  可视块操作  ^→ 到行头 &amp;lt;C-v&amp;gt; → 开始块操作 &amp;lt;C-d&amp;gt; → 向下移动 (你也可以使用hjkl来移动光标，或是使用%，或是别的) I-- [ESC] → I是插入，插入“–”，">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://yannesposito.com/Scratch/img/blog/Learn-Vim-Progressively/rectangular-blocks.gif">
-<meta property="og:updated_time" content="2018-09-02T09:15:45.219Z">
+<meta property="og:updated_time" content="2018-09-03T00:32:20.680Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Vim(1)">
-<meta name="twitter:description" content="删除是会经常用到的  dd    删除一行     ndd    删除 n 行   蛮烦的时候就是使用可视来删除，今天看到了一个更好的方法  dt&amp;gt;     删除到 &amp;gt; 为止  可视块操作  ^ → 到行头  → 开始块操作  → 向下移动 (你也可以使用hjkl来移动光标，或是使用%，或是别的) I– [ESC] → I是插入，插入“–”，按ESC键来为每一行生效。    简明 VI">
+<meta name="twitter:description" content="删除是会经常用到的  dd    删除一行     ndd    删除 n 行   蛮烦的时候就是使用可视来删除，今天看到了一个更好的方法  dt&amp;gt;     删除到 &amp;gt; 为止  可视块操作  ^→ 到行头 &amp;lt;C-v&amp;gt; → 开始块操作 &amp;lt;C-d&amp;gt; → 向下移动 (你也可以使用hjkl来移动光标，或是使用%，或是别的) I-- [ESC] → I是插入，插入“–”，">
 <meta name="twitter:image" content="http://yannesposito.com/Scratch/img/blog/Learn-Vim-Progressively/rectangular-blocks.gif">
 
 
@@ -337,12 +337,24 @@
                 
               
 
-              <time title="创建时间：2018-09-02 00:00:00 / 修改时间：17:15:45" itemprop="dateCreated datePublished" datetime="2018-09-02T00:00:00+08:00">2018-09-02</time>
+              <time title="创建时间：2018-09-02 00:00:00" itemprop="dateCreated datePublished" datetime="2018-09-02T00:00:00+08:00">2018-09-02</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-09-03 08:32:20" itemprop="dateModified" datetime="2018-09-03T08:32:20+08:00">2018-09-03</time>
               
             
           </span>
@@ -387,10 +399,10 @@
 </ul>
 <p>可视块操作</p>
 <ul>
-<li>^ → 到行头</li>
-<li><c-v> → 开始块操作</c-v></li>
-<li><c-d> → 向下移动 (你也可以使用hjkl来移动光标，或是使用%，或是别的)</c-d></li>
-<li>I– [ESC] → I是插入，插入“–”，按ESC键来为每一行生效。</li>
+<li><code>^</code>→ 到行头</li>
+<li><code>&lt;C-v&gt;</code> → 开始块操作</li>
+<li><code>&lt;C-d&gt;</code> → 向下移动 (你也可以使用hjkl来移动光标，或是使用%，或是别的)</li>
+<li><code>I-- [ESC] → I</code>是插入，插入“–”，按ESC键来为每一行生效。</li>
 </ul>
 <p><img src="http://yannesposito.com/Scratch/img/blog/Learn-Vim-Progressively/rectangular-blocks.gif" alt=""></p>
 <ul>
@@ -470,6 +482,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2018/09/03/201893-props/" rel="prev" title="props">
+                props <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -533,7 +549,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">52</span>
+                    <span class="site-state-item-count">53</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -608,7 +624,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">30</span>
+                      
+                    
+                    <span class="site-state-item-count">31</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
