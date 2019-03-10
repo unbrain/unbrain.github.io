@@ -116,7 +116,7 @@
 <meta property="og:site_name" content="Marsorsun">
 <meta property="og:description" content="webkit-text-size-adjust: none 已经对桌面 chrome 无效 中文版Chrome浏览器不支持12px以下字体的解决方案 vue使用rem实现 移动端屏幕适配 vscode 配置vutur 插件会自动修改 ‘ 为 ” 修改其配置可以杜绝 setting–&amp;gt;extensions–&amp;gt;vutur format html –&amp;gt; js-beautiful-htm">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-02-28T12:04:02.306Z">
+<meta property="og:updated_time" content="2019-03-10T11:44:50.905Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="第二周知识记录">
 <meta name="twitter:description" content="webkit-text-size-adjust: none 已经对桌面 chrome 无效 中文版Chrome浏览器不支持12px以下字体的解决方案 vue使用rem实现 移动端屏幕适配 vscode 配置vutur 插件会自动修改 ‘ 为 ” 修改其配置可以杜绝 setting–&amp;gt;extensions–&amp;gt;vutur format html –&amp;gt; js-beautiful-htm">
@@ -352,7 +352,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-02-28 20:04:02" itemprop="dateModified" datetime="2019-02-28T20:04:02+08:00">2019-02-28</time>
+                <time title="修改时间：2019-03-10 19:44:50" itemprop="dateModified" datetime="2019-03-10T19:44:50+08:00">2019-03-10</time>
               
             
           </span>
@@ -395,6 +395,7 @@
 <p>这几天使用 vscode 感觉写代码及其难受，每次打完一行代码回车本来缩进是对的但是就一小会儿它自动就跳到了行头，毫无体验感。然后没办法一个插件一个插件得看发现罪魁祸首是 <code>EditorConfig for VS Code</code> </p>
 <figure class="highlight applescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">indent_style</div><div class="line">indent_size</div><div class="line">tab_width</div><div class="line">end_of_line (<span class="keyword">on</span> save)</div><div class="line">insert_final_newline (<span class="keyword">on</span> save)</div><div class="line">trim_trailing_whitespace (<span class="keyword">on</span> save)&lt;<span class="comment">--保存时修剪尾随空格</span></div></pre></td></tr></table></figure>
 <p>其实主要是我的 vscode 使用了自动保存，所以就。。。然后修改为切换窗体保存就好了。</p>
+<a id="more"></a>
 <h3 id="一些样式解决方案"><a href="#一些样式解决方案" class="headerlink" title="一些样式解决方案"></a>一些样式解决方案</h3><p>第一次对设计稿并不熟习所以坑是比较多的</p>
 <p>一般使用使用 <code>视网膜@2X</code> 这样会比较好因为 iphone6/7/8 宽都为 375px 而我们的设计稿一般是 750px 的。使用其数据配合动态 rem 能够适配绝大多数的手机。</p>
 <p>当使用 fixed 布局时注意其已经脱离了正常文档流，控制其宽度为固定值能减少 bug 出现。 </p>
