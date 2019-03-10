@@ -118,7 +118,7 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://yoursite.com/img/t1.gif">
 <meta property="og:image" content="http://yoursite.com/img/t2.gif">
-<meta property="og:updated_time" content="2019-03-10T12:13:11.866Z">
+<meta property="og:updated_time" content="2019-03-10T12:15:28.258Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="邀请老铁项目总结">
 <meta name="twitter:description" content="vscode 的基本配置尽管自己大多数的时候是在使用 vscode 敲代码，但是对于其的配置没有过比较深的认识，带我的小姐姐很贴心地给了我很好的参考资料 能让你开发效率翻倍的 VSCode 插件配置（上） 能让你开发效率翻倍的 VSCode 插件配置（中） 在里面最喜欢的就是 Settings Sync，基于 gist，可以备份我们的一些配置，插件，当我们换了个环境也能快速的搭建我们自己喜欢的敲代">
@@ -338,7 +338,7 @@
                 
               
 
-              <time title="创建时间：2019-03-10 00:00:00 / 修改时间：20:13:11" itemprop="dateCreated datePublished" datetime="2019-03-10T00:00:00+08:00">2019-03-10</time>
+              <time title="创建时间：2019-03-10 00:00:00 / 修改时间：20:15:28" itemprop="dateCreated datePublished" datetime="2019-03-10T00:00:00+08:00">2019-03-10</time>
             
 
             
@@ -388,7 +388,7 @@
 <li><a href="http://www.ruanyifeng.com/blog/2016/06/css_modules.html" target="_blank" rel="external">css module</a></li>
 </ul>
 <p>刚开始使用 <code>CSS module</code> 就把自己放在坑里了。还问了带我的小姐姐我是不是哪里写错了，小姐姐看了代码说我是个天坑，我将好好地 <code>module</code> 写成了 <code>moudle</code> 当时还感觉自己拼的没问题，感到尴尬，所以说敲代码还是要细心，不过有个插件在这种时候就很有用，<a href="https://link.juejin.im/?target=https%3A%2F%2Fmarketplace.visualstudio.com%2Fitems%3FitemName%3Dstreetsidesoftware.code-spell-checker" target="_blank" rel="external">Code Spell Checker</a> 对于我这种英语烂的人，会提醒我是不是这个单词拼错了，很是方便。项目使用 <code>动态 rem</code> 而我用不想用 sass 用函数来解决，使用 <code>postcss</code> 很自然的搜索到了 <code>postcss-pxtorem</code>，而我当时直接将 <code>vue cli2</code> 下的 <code>.postcssrc.js</code> 迁移到 <code>vue-cli3</code> 下直接使用，发现没有效果（但是官网说的是能用  <a href="https://github.com/michael-ciniawsky/postcss-load-config" target="_blank" rel="external">postcss-load-config</a> 可能是我少了啥吧），后面看换成在根创建 <code>vue.config.js</code> </p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">module</span>.exports = &#123;</div><div class="line">    css: &#123;</div><div class="line">        loaderOptions: &#123;</div><div class="line">            postcss: &#123;</div><div class="line">                plugins: [</div><div class="line">                    <span class="built_in">require</span>(<span class="string">"postcss-pxtorem"</span>)(&#123;</div><div class="line">                        <span class="comment">// 把px单位换算成rem单位</span></div><div class="line">                        rootValue: <span class="number">16</span>, <span class="comment">// 换算的基数(设计图750的根字体为32)</span></div><div class="line">                        selectorBlackList: [<span class="string">"weui"</span>, <span class="string">"mu"</span>], <span class="comment">// 忽略转换正则匹配项</span></div><div class="line">                        propList: [<span class="string">"*"</span>]</div><div class="line">                        <span class="comment">//......</span></div></pre></td></tr></table></figure>
 <p>还有一种就是直接在 <code>package.json</code>  搜索 <code>postcss</code> 在其插件下添加要使用的插件后 <code>npm i</code> </p>
 <h3 id="Vue-知识点"><a href="#Vue-知识点" class="headerlink" title="Vue 知识点"></a>Vue 知识点</h3><h4 id="深入响应式原理"><a href="#深入响应式原理" class="headerlink" title="深入响应式原理"></a><a href="https://cn.vuejs.org/v2/guide/reactivity.html" target="_blank" rel="external">深入响应式原理</a></h4><p>官方文档中这一节应该是最最重要的，之前也是看了很多遍，但是自己其实了解的并不深入所以嘿嘿嘿忘光光。自己之前写的 <a href="https://unbrain.github.io/2018/08/03/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%EF%BC%88%E4%B8%80%EF%BC%89/" target="_blank" rel="external">面向对象程序设计</a> 中写了</p>
 <h3 id="对象的属性类型"><a href="#对象的属性类型" class="headerlink" title="对象的属性类型"></a>对象的属性类型</h3><blockquote>
