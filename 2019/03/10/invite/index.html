@@ -118,7 +118,7 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://yoursite.com/img/t1.gif">
 <meta property="og:image" content="http://yoursite.com/img/t2.gif">
-<meta property="og:updated_time" content="2019-03-10T12:15:28.258Z">
+<meta property="og:updated_time" content="2019-03-10T12:24:27.422Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="邀请老铁项目总结">
 <meta name="twitter:description" content="vscode 的基本配置尽管自己大多数的时候是在使用 vscode 敲代码，但是对于其的配置没有过比较深的认识，带我的小姐姐很贴心地给了我很好的参考资料 能让你开发效率翻倍的 VSCode 插件配置（上） 能让你开发效率翻倍的 VSCode 插件配置（中） 在里面最喜欢的就是 Settings Sync，基于 gist，可以备份我们的一些配置，插件，当我们换了个环境也能快速的搭建我们自己喜欢的敲代">
@@ -338,7 +338,7 @@
                 
               
 
-              <time title="创建时间：2019-03-10 00:00:00 / 修改时间：20:15:28" itemprop="dateCreated datePublished" datetime="2019-03-10T00:00:00+08:00">2019-03-10</time>
+              <time title="创建时间：2019-03-10 00:00:00 / 修改时间：20:24:27" itemprop="dateCreated datePublished" datetime="2019-03-10T00:00:00+08:00">2019-03-10</time>
             
 
             
@@ -411,7 +411,7 @@
 <figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.lists</span> &#123;</div><div class="line">  <span class="attribute">width</span>: <span class="number">154px</span>;</div><div class="line">  <span class="attribute">transition</span>: <span class="number">2s</span> ease;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-class">.list-enter</span> &#123;</div><div class="line">  <span class="attribute">transform</span>: <span class="built_in">translateY</span>(100%);</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.list-leave-to</span> &#123;</div><div class="line">  <span class="attribute">transform</span>: <span class="built_in">translateY</span>(-100%);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-class">.list-leave-active</span> &#123;</div><div class="line">  <span class="attribute">position</span>: absolute;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>改成这样就好了，我也是不知道咋说了。但是仍然有问题</p>
 <p><img src="/img/t2.gif" alt=""></p>
-<p> 到顶了应该往下往上是如何想的亲，我明明设置了你出去的时候可是 <code>translateY(-100%)</code> 你为啥不听话？？？后面想他可能是到头了</p>
+<p> 到顶了应该往上往下是如何想的亲，我明明设置了你出去的时候可是 <code>translateY(-100%)</code> 你为啥不听话？？？后面想他可能是到头了</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> a = <span class="keyword">this</span>.currArr.shift();</div><div class="line"><span class="keyword">this</span>.currArr.push(a);</div></pre></td></tr></table></figure>
 <p> 就好像轮播图他到顶的时候你不给他个假数据他是会一下越到开始，那个他填个假数据? 不过我使用了 <code>setTimeout</code> 让 <code>push</code> 延迟执行，就能运行了。</p>
 <h4 id="一些细节"><a href="#一些细节" class="headerlink" title="一些细节"></a>一些细节</h4><ul>
@@ -433,7 +433,9 @@
 <figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">diplay</span>： <span class="selector-tag">flex</span>；</div><div class="line"><span class="selector-tag">jiustify-content</span>：<span class="selector-tag">center</span>；</div><div class="line"><span class="selector-tag">align-items</span>： <span class="selector-tag">center</span>；</div></pre></td></tr></table></figure>
 <p>宁愿自己写上个几十遍也不用 <code>mixin</code>，这些习惯都是要尽快改的，用着 <code>postcss</code> 这样的工程化语言不减少机械的工作我用他干嘛。之前尽管也了解 <code>resetcss</code> 及 <code>normalize</code>，这段时间自己着去也尝试用了。</p>
 <p><code>JavaScript</code> 的编程规范，由于是团队合作，写的是上线项目，不像是平常怎么方便怎么来，代码更加严格是对自己负责也是对项目负责，好的编码习惯真的很重要，不然打开命令行，<code>eslint</code> 全线飘红，真的难受。</p>
-<p><a href="https://github.com/airbnb/javascript" target="_blank" rel="external">Airbnb JavaScript Style Guide</a></p>
+<ul>
+<li><a href="https://github.com/airbnb/javascript" target="_blank" rel="external">Airbnb JavaScript Style Guide</a></li>
+</ul>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>这次的 <code>demo</code> 让我更加贴近一个真正的上线项目他将经过的流程，会使用到的方法，问题如何解决，如何规避。同时也看到自身很多的不足，基础的知识慢慢在忘记，新的知识又不够了解，要走的路要学习的东西还有很多，希望自己不要浮躁，实在一点的同时能够快速成长汲取知识。对于拿到设计稿来做自己是比较生疏的，不够了解流程，对于如何与设计师交流，对于设计稿中的不合理的地方要敢于质疑，实现成本较高的时候用较为容易的方案替代，以及对于颜色要永远相信自己的眼睛，因为导出的时候可能出错，对于我这种不会欣赏的人我觉得未来有必要了解 UI/UX  设计。自己对于时间的把控还不够，不能估计出自己实现一个项目要花多长时间，这是在实习中应该尽快解决的问题。在平时的实践中，要多尝试，多去用没有使用过的东西，开阔眼界的同时，说不定哪天吹牛逼就用上了呢？尽管每一次开始用新东西的时候都有一堆坑在等着你，但是发现问题解决问题是一种很有成就感的事，前提是你解决了。。。写代码是件容易的事，但是写的明了简洁，可维护，可扩展是需要我多多实践以及思考的。如何将复杂的东西简单化，重复的事情不重做（Don’t Repeat Yourself），这些东西是我知道却还没能做到的也是需要加强的。非常感谢带我的小姐姐这些天的悉心指导，小姐姐真的很细心也很聪明，很多我想不到的解决方案她都能很快给我指一条清晰的路，很愧疚的是让她看了我那肮脏的代码，严重怀疑我代码加重了她的病情。</p>
 
       
@@ -509,6 +511,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2019/03/10/socket/" rel="prev" title="flask vue socket">
+                flask vue socket <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -581,7 +587,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">69</span>
+                    <span class="site-state-item-count">70</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
