@@ -292,6 +292,159 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/03/登录与注册/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Marsorsun">
+      <meta itemprop="description" content="“对我来说，博客首先是一种知识管理工具，其次才是传播工具。我的技术文章，主要用来整理我还不懂的知识。我只写那些我还没有完全掌握的东西，那些我精通的东西，往往没有动力写。炫耀从来不是我的动机，好奇才是。"">
+      <meta itemprop="image" content="/images/123.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Marsorsun">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/03/登录与注册/" itemprop="url">
+                  登录与注册
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-08-03 17:19:54" itemprop="dateCreated datePublished" datetime="2018-08-03T17:19:54+08:00">2018-08-03</time>
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="路由"><a href="#路由" class="headerlink" title="路由"></a>路由</h3><p>后端必需验证，curl 直接发请求绕过前端。</p>
+<h2 id="Cookie"><a href="#Cookie" class="headerlink" title="Cookie"></a>Cookie</h2><p><a href="https://zh.wikipedia.org/wiki/Cookie" target="_blank" rel="external">Cookie</a> 就好像游乐园的通行证</p>
+<ul>
+<li>服务器通过 Set-Cookie 响应头设置Cookie</li>
+<li>浏览器得到 Cookie 后，每次请求都会带上 Cookie</li>
+<li>服务器读到 Cookie 就知道登录用户是谁</li>
+</ul>
+<p>Cookie 可以做假</p>
+<p>http only</p>
+<p>Cookie 有有效期</p>
+<blockquote>
+<h2 id="Cookie的缺陷"><a href="#Cookie的缺陷" class="headerlink" title="Cookie的缺陷"></a>Cookie的缺陷</h2><ol>
+<li>Cookie会被附加在每个HTTP请求中，所以无形中增加了流量。</li>
+<li>由于在HTTP请求中的Cookie是明文传递的，所以安全性成问题，除非用<a href="https://zh.wikipedia.org/wiki/HTTPS" target="_blank" rel="external">HTTPS</a>。</li>
+<li>Cookie的大小限制在4KB左右，对于复杂的存储需求来说是不够用的。<a href="https://zh.wikipedia.org/wiki/Cookie#cite_note-3" target="_blank" rel="external">[3]</a></li>
+</ol>
+</blockquote>
+<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Caching_FAQ" target="_blank" rel="external">HTTP 缓存</a></p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/03/es6-promise/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1370,151 +1523,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/20/jQuery-first/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Marsorsun">
-      <meta itemprop="description" content="“对我来说，博客首先是一种知识管理工具，其次才是传播工具。我的技术文章，主要用来整理我还不懂的知识。我只写那些我还没有完全掌握的东西，那些我精通的东西，往往没有动力写。炫耀从来不是我的动机，好奇才是。"">
-      <meta itemprop="image" content="/images/123.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Marsorsun">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/20/jQuery-first/" itemprop="url">
-                  初探 jQuery
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-05-20 20:58:51" itemprop="dateCreated datePublished" datetime="2018-05-20T20:58:51+08:00">2018-05-20</time>
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h3 id="jQuery-可以说是大部分网站都会使用到的库了-builtwith"><a href="#jQuery-可以说是大部分网站都会使用到的库了-builtwith" class="headerlink" title="jQuery 可以说是大部分网站都会使用到的库了 builtwith"></a>jQuery 可以说是大部分网站都会使用到的库了 <a href="https://trends.builtwith.com/javascript" target="_blank" rel="external">builtwith</a></h3><p>今天从简单的地方入手去模拟 <code>jQuery</code> 的实现，但还不是真的实现原理，但是可以帮助我们去理解学习 <code>jQuery</code> ，其实程序员都是害怕麻烦的，有这么多的库就是为了让自己尽可能的少打代码，所以就将完成复杂过程的代码封装起来，在下一次用的时候只需要给出参数就能复用之前的代码使得自己不去干重复而无意义的事情，但是呢作为初学者直接就去使用 <code>jQuery</code> 看上去并无大碍，但一般就不会看到他最本质的东西。所以模拟来实现一个<code>jQuery</code></p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/05/20/jQuery-first/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -1561,7 +1574,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">72</span>
+                    <span class="site-state-item-count">73</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
