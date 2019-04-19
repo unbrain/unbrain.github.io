@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.4.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/123.png?v=6.4.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/123.png?v=6.4.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/123.png?v=6.4.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.4.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '6.4.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content=".sync 修饰符看 happy-scroll 源码的时候看到了  .sync 修饰符，没有用过所以看了下，它是在 vue 2.3.0+ 新增的，主要是解决使用 props 传值后子组件在使用了 emit 来进行 “双向绑定” ，但是父组件与子组件都没有明显的修改痕迹而不利于代码可读性。但是这样写的话可读性会好一些，在子组建中 1&amp;lt;div @click=&quot;$emit(&apos;update:num">
+<meta name="keywords" content="随笔">
+<meta property="og:type" content="article">
+<meta property="og:title" content="第九周随笔">
+<meta property="og:url" content="http://yoursite.com/2019/04/19/环境变量和模式/index.html">
+<meta property="og:site_name" content="Marsorsun">
+<meta property="og:description" content=".sync 修饰符看 happy-scroll 源码的时候看到了  .sync 修饰符，没有用过所以看了下，它是在 vue 2.3.0+ 新增的，主要是解决使用 props 传值后子组件在使用了 emit 来进行 “双向绑定” ，但是父组件与子组件都没有明显的修改痕迹而不利于代码可读性。但是这样写的话可读性会好一些，在子组建中 1&amp;lt;div @click=&quot;$emit(&apos;update:num">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://yoursite.com/img/night.png">
+<meta property="og:image" content="http://yoursite.com/img/xmind.png">
+<meta property="og:updated_time" content="2019-04-19T12:15:14.407Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="第九周随笔">
+<meta name="twitter:description" content=".sync 修饰符看 happy-scroll 源码的时候看到了  .sync 修饰符，没有用过所以看了下，它是在 vue 2.3.0+ 新增的，主要是解决使用 props 传值后子组件在使用了 emit 来进行 “双向绑定” ，但是父组件与子组件都没有明显的修改痕迹而不利于代码可读性。但是这样写的话可读性会好一些，在子组建中 1&amp;lt;div @click=&quot;$emit(&apos;update:num">
+<meta name="twitter:image" content="http://yoursite.com/img/night.png">
+
+
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/04/19/环境变量和模式/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>第九周随笔 | Marsorsun</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Marsorsun</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">心猿码意</p>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/19/环境变量和模式/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Marsorsun">
+      <meta itemprop="description" content="“对我来说，博客首先是一种知识管理工具，其次才是传播工具。我的技术文章，主要用来整理我还不懂的知识。我只写那些我还没有完全掌握的东西，那些我精通的东西，往往没有动力写。炫耀从来不是我的动机，好奇才是。"">
+      <meta itemprop="image" content="/images/123.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Marsorsun">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">第九周随笔
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-04-19 00:00:00 / 修改时间：20:15:14" itemprop="dateCreated datePublished" datetime="2019-04-19T00:00:00+08:00">2019-04-19</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="/img/night.png" alt=""></p>
+<h2 id="sync-修饰符"><a href="#sync-修饰符" class="headerlink" title=".sync 修饰符"></a><a href="https://cn.vuejs.org/v2/guide/components-custom-events.html#sync-%E4%BF%AE%E9%A5%B0%E7%AC%A6" target="_blank" rel="external"><code>.sync</code> 修饰符</a></h2><p>看 happy-scroll 源码的时候看到了  <code>.sync</code> 修饰符，没有用过所以看了下，它是在 vue 2.3.0+ 新增的，主要是解决使用 props 传值后子组件在使用了 emit 来进行 “双向绑定” ，但是父组件与子组件都没有明显的修改痕迹而不利于代码可读性。但是这样写的话可读性会好一些，在子组建中</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;div @click=<span class="string">"$emit('update:num', num+1)"</span>&gt;click &#123;&#123;num&#125;&#125;&lt;<span class="regexp">/div&gt;</span></div></pre></td></tr></table></figure>
+<p> 再父组件中</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;child :num=<span class="string">"num"</span> @update:num=<span class="string">"num = $event"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">child</span>&gt;</span></span></div></pre></td></tr></table></figure>
+<p>这样看起来就简单明了的，可是父组件书写是比较麻烦的，于是就有了这个我没有使用过的修饰符</p>
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;child :num.sync=<span class="string">"num"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">child</span>&gt;</span></span></div></pre></td></tr></table></figure>
+<p>现在父组件这样写就能达到相同的效果了。</p>
+<a id="more"></a>
+<h2 id="mixins"><a href="#mixins" class="headerlink" title="mixins"></a><a href="https://cn.vuejs.org/v2/guide/mixins.html" target="_blank" rel="external">mixins</a></h2><p><code>pcweibochat</code> 大量使用了 mixins 开始不是很懂，后面看了下文档个人觉得比较需要记录下的是选项合并，当遇到同名的时候并不是谁代替谁而是合并</p>
+<blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">&gt; <span class="keyword">var</span> mixin = &#123;</div><div class="line">&gt;   data: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">&gt;     <span class="keyword">return</span> &#123;</div><div class="line">&gt;       message: <span class="string">'hello'</span>,</div><div class="line">&gt;       foo: <span class="string">'abc'</span></div><div class="line">&gt;     &#125;</div><div class="line">&gt;   &#125;</div><div class="line">&gt; &#125;</div><div class="line">&gt; </div><div class="line">&gt; <span class="keyword">new</span> Vue(&#123;</div><div class="line">&gt;   mixins: [mixin],</div><div class="line">&gt;   data: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">&gt;     <span class="keyword">return</span> &#123;</div><div class="line">&gt;       message: <span class="string">'goodbye'</span>,</div><div class="line">&gt;       bar: <span class="string">'def'</span></div><div class="line">&gt;     &#125;</div><div class="line">&gt;   &#125;,</div><div class="line">&gt;   created: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">&gt;     <span class="built_in">console</span>.log(<span class="keyword">this</span>.$data)</div><div class="line">&gt;     <span class="comment">// =&gt; &#123; message: "goodbye", foo: "abc", bar: "def" &#125;</span></div><div class="line">&gt;   &#125;</div><div class="line">&gt; &#125;)</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+</blockquote>
+<h2 id="环境变量和模式"><a href="#环境变量和模式" class="headerlink" title="环境变量和模式"></a><a href="https://cli.vuejs.org/zh/guide/mode-and-env.html" target="_blank" rel="external">环境变量和模式</a></h2><blockquote>
+<p><strong>模式</strong>是 Vue CLI 项目中一个重要的概念。默认情况下，一个 Vue CLI 项目有三个模式：</p>
+<ul>
+<li><code>development</code> 模式用于 <code>vue-cli-service serve</code></li>
+<li><code>production</code> 模式用于 <code>vue-cli-service build</code> 和 <code>vue-cli-service test:e2e</code></li>
+<li><code>test</code> 模式用于 <code>vue-cli-service test:unit</code></li>
+</ul>
+<p>你可以通过传递 <code>--mode</code> 选项参数为命令行覆写默认的模式。例如，如果你想要在构建命令中使用开发环境变量，请在你的 <code>package.json</code> 脚本中加入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt; &quot;dev-build&quot;: &quot;vue-cli-service build --mode development&quot;,</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+</blockquote>
+<p>自从使用 vue cli 后自己对于 webpack 就没有去了解了，觉得是一个打包工具，了解下就好了，可是最近 pcweibochat 测试环境进行迁移，就触及到了知识盲区，感觉 webpack 的一些东西还是要好好地看看整理整理。</p>
+<p><a href="https://juejin.im/post/5cae0f616fb9a068a93f0613#heading-2" target="_blank" rel="external">24 个实例入门并掌握「Webpack4」(一)</a></p>
+<p><a href="https://cli.vuejs.org/zh/guide/webpack.html#webpack-%E7%9B%B8%E5%85%B3" target="_blank" rel="external">webpack 相关</a></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="string">"dev"</span>: <span class="string">"cross-env NODE_ENV=dev vue-cli-service serve"</span>,</div><div class="line"><span class="string">"build"</span>: <span class="string">"cross-env console_FLAG=1 vue-cli-service build"</span>,</div><div class="line"><span class="string">"test"</span>: <span class="string">"cross-env vue-cli-service build --mode test"</span>,</div></pre></td></tr></table></figure>
+<p><a href="https://github.com/kentcdodds/cross-env" target="_blank" rel="external">cross-env</a> cross-env使得您可以拥有一个命令，而无需担心为平台正确设置或使用环境变量。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">devServer: &#123;</div><div class="line">    open: process.platform === <span class="string">'darwin'</span>,</div><div class="line">    host: <span class="string">''</span>,</div><div class="line">    port: <span class="number">8092</span>,</div><div class="line">    hotOnly: <span class="literal">false</span>,</div><div class="line">    disableHostCheck: <span class="literal">true</span>,</div><div class="line">    before: <span class="function"><span class="params">app</span> =&gt;</span> &#123;&#125;,</div><div class="line">    proxy: <span class="string">'https://ppppppp'</span></div><div class="line">&#125;,</div></pre></td></tr></table></figure>
+<p><code>process.platform</code> 属性返回字符串，标识Node.js进程运行其上的操作系统平台。</p>
+<p><a href="https://webpack.js.org/configuration/dev-server/" target="_blank" rel="external">devServer</a></p>
+<blockquote>
+<p>在每次编译代码时，手动运行 <code>npm run build</code> 会显得很麻烦。</p>
+<p>webpack 提供几种可选方式，帮助你在代码发生变化后自动编译代码：</p>
+<ol>
+<li>webpack watch mode(webpack 观察模式)</li>
+<li>webpack-dev-server</li>
+<li>webpack-dev-middleware</li>
+</ol>
+</blockquote>
+<p><a href="https://github.com/webpack-contrib/uglifyjs-webpack-plugin" target="_blank" rel="external">UglifyJS Webpack Plugin</a></p>
+<h2 id="了解-jsbridge"><a href="#了解-jsbridge" class="headerlink" title="了解 jsbridge"></a>了解 jsbridge</h2><p>来公司很久了，不是会听到 jsbridge 这个名词，但是并不知道到是啥东东比较尴尬。。。</p>
+<p>看看 <a href="https://blog.ymfe.org/%E6%B7%B7%E5%90%88%E5%BC%80%E5%8F%91%E4%B8%AD%E7%9A%84JSBridge/" target="_blank" rel="external">移动混合开发中的 JSBridge</a> 算是有了一个比较初步的认识，其实就是 web 端如何实现去调取原生的一些接口的，就比如我们要在 h5 唤起客服端就可以使用 jsbridge 来进行实现。 <a href="https://github.com/suanmei/callapp-lib" target="_blank" rel="external"><strong>callapp-lib</strong></a></p>
+<p>之前的服务器被强了，但是有别人的代理就将就用着，可是上不了 telegram中午的时间抽空重新搭了下 vpp</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">wget -<span class="keyword">N</span> --<span class="keyword">no</span>-check-certificate http<span class="variable">s:</span>//raw.githubusercontent.<span class="keyword">com</span>/ToyoDAdoubi/doubi/master/ssr.<span class="keyword">sh</span> &amp;&amp; chmod +<span class="keyword">x</span> ssr.<span class="keyword">sh</span> &amp;&amp; bash ssr.<span class="keyword">sh</span></div></pre></td></tr></table></figure>
+<p>之前 telegram 一直看不了现在不担心，看了下对于 100000 的 group 的消息处理尤其是 web 端的</p>
+<p><a href="https://combot.org/telegram/top/chats/?lang=Global&amp;page=2" target="_blank" rel="external">telegram group 排行</a></p>
+<p><a href="https://blog.ymfe.org/%E7%94%A8%E7%A7%91%E5%AD%A6%E5%AE%9A%E4%B9%89%E8%AE%BE%E8%AE%A1/" target="_blank" rel="external">审美 VS 科学 —— 用科学定义设计</a></p>
+<p>下推逻辑整理</p>
+<p><img src="/img/xmind.png" alt="xmind"></p>
+<p>msgsync: 自己从其他非webim客户端发的消息  （个人发送 非群组）</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">dm_isRemind: <span class="number">0</span></div><div class="line">ext:</div><div class="line">dm_type: <span class="number">1</span></div><div class="line">send_from: <span class="string">"msg"</span></div><div class="line">__proto__: <span class="built_in">Object</span></div><div class="line">info:</div><div class="line">comment: <span class="string">""</span></div><div class="line">content: <span class="string">"youtube"</span></div><div class="line">dm_type: <span class="number">1</span></div><div class="line">dmid: <span class="string">"4362388403274607"</span></div><div class="line">fromuid: <span class="number">2502739550</span></div><div class="line">media_type: <span class="number">0</span></div><div class="line">receiver_box_type: <span class="number">2</span></div><div class="line">resource: <span class="string">""</span></div><div class="line">time: <span class="number">1555557907000</span></div><div class="line">__proto__: <span class="built_in">Object</span></div><div class="line">items: <span class="built_in">Array</span>(<span class="number">1</span>)</div><div class="line"><span class="number">0</span>: (<span class="number">8</span>) [<span class="number">2502739550</span>, <span class="string">"youtube"</span>, <span class="number">1555557907000</span>, <span class="string">""</span>, <span class="string">""</span>, <span class="built_in">Array</span>(<span class="number">0</span>), <span class="string">"4362388403274607"</span>, <span class="number">0</span>]</div><div class="line">length: <span class="number">1</span></div><div class="line">__proto__: <span class="built_in">Array</span>(<span class="number">0</span>)</div><div class="line">push_did: <span class="string">"1555557907412"</span></div><div class="line">type: <span class="string">"msgsync"</span></div><div class="line">__proto__: <span class="built_in">Object</span></div></pre></td></tr></table></figure>
+<blockquote>
+<p> 每一周的时间都很快</p>
+<p>​                     –鲁迅​        </p>
+</blockquote>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>棒棒糖</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/img/wxpay.jpg" alt="Marsorsun 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/img/alipay.jpg" alt="Marsorsun 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/随笔/" rel="tag"># 随笔</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/04/12/eight/" rel="next" title="第八周随笔">
+                <i class="fa fa-chevron-left"></i> 第八周随笔
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/04/19/面向对象程序设计（一）/" rel="prev" title="面向对象程序设计">
+                面向对象程序设计 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/123.jpg"
+                alt="Marsorsun" />
+            
+              <p class="site-author-name" itemprop="name">Marsorsun</p>
+              <p class="site-description motion-element" itemprop="description">“对我来说，博客首先是一种知识管理工具，其次才是传播工具。我的技术文章，主要用来整理我还不懂的知识。我只写那些我还没有完全掌握的东西，那些我精通的东西，往往没有动力写。炫耀从来不是我的动机，好奇才是。"</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">76</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">36</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/unbrain" target="_blank" title="GitHub"><i class="fa fa-fw fa-github-alt"></i>GitHub</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:marsorsun@gmail.com" target="_blank" title="E-Mail"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://www.zhihu.com/people/chen-xi-zhao-yang-21/activities" target="_blank" title="知乎"><i class="fa fa-fw fa-zhihu"></i>知乎</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="http://www.liuzhaoyang.com" target="_blank" title="个人网站"><i class="fa fa-fw fa-browser"></i>个人网站</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#sync-修饰符"><span class="nav-number">1.</span> <span class="nav-text">.sync 修饰符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mixins"><span class="nav-number">2.</span> <span class="nav-text">mixins</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#环境变量和模式"><span class="nav-number">3.</span> <span class="nav-text">环境变量和模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#了解-jsbridge"><span class="nav-number">4.</span> <span class="nav-text">了解 jsbridge</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Marsorsun</span>
+
+  
+
+  
+</div>
+
+
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动 v3.3.9</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Muse</a> v6.4.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.4.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.4.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
