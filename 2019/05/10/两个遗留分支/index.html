@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.4.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/123.png?v=6.4.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/123.png?v=6.4.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/123.png?v=6.4.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.4.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '6.4.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="qrcode 分支需求:私信拉粉丝群 功能已实现但设计稿不详 card2 判断是否为为未加群逻辑card2 都是解析连接的 先判断该链接是否为群 //判断是否是群链  群连接 weibo.com/p/230491${群id} 为群再使用群id获取群成员列表遍历是否在该群中，不在该群便弹出二维码。 添加了 modal4主要是二维码的模态框 ​     * 二维码配置 ​     * 详情见 http">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Marsorsun">
+<meta property="og:url" content="http://yoursite.com/2019/05/10/两个遗留分支/index.html">
+<meta property="og:site_name" content="Marsorsun">
+<meta property="og:description" content="qrcode 分支需求:私信拉粉丝群 功能已实现但设计稿不详 card2 判断是否为为未加群逻辑card2 都是解析连接的 先判断该链接是否为群 //判断是否是群链  群连接 weibo.com/p/230491${群id} 为群再使用群id获取群成员列表遍历是否在该群中，不在该群便弹出二维码。 添加了 modal4主要是二维码的模态框 ​     * 二维码配置 ​     * 详情见 http">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-05-10T07:13:17.293Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Marsorsun">
+<meta name="twitter:description" content="qrcode 分支需求:私信拉粉丝群 功能已实现但设计稿不详 card2 判断是否为为未加群逻辑card2 都是解析连接的 先判断该链接是否为群 //判断是否是群链  群连接 weibo.com/p/230491${群id} 为群再使用群id获取群成员列表遍历是否在该群中，不在该群便弹出二维码。 添加了 modal4主要是二维码的模态框 ​     * 二维码配置 ​     * 详情见 http">
+
+
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/05/10/两个遗留分支/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title> | Marsorsun</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Marsorsun</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">心猿码意</p>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/10/两个遗留分支/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Marsorsun">
+      <meta itemprop="description" content="“对我来说，博客首先是一种知识管理工具，其次才是传播工具。我的技术文章，主要用来整理我还不懂的知识。我只写那些我还没有完全掌握的东西，那些我精通的东西，往往没有动力写。炫耀从来不是我的动机，好奇才是。"">
+      <meta itemprop="image" content="/images/123.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Marsorsun">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-05-10 15:13:17" itemprop="dateCreated datePublished" datetime="2019-05-10T15:13:17+08:00">2019-05-10</time>
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="qrcode-分支"><a href="#qrcode-分支" class="headerlink" title="qrcode 分支"></a>qrcode 分支</h1><p><a href="http://ftp.client.weibo.cn/UE/IxD/Weibo/iPhone&amp;Android/Project/Message/2019/v_0.1/#g=1&amp;p=%E7%A7%81%E4%BF%A1%E6%8B%89%E7%B2%89%E4%B8%9D%E7%BE%A4" target="_blank" rel="external">需求:私信拉粉丝群</a> 功能已实现但设计稿不详</p>
+<h3 id="card2-判断是否为为未加群逻辑"><a href="#card2-判断是否为为未加群逻辑" class="headerlink" title="card2 判断是否为为未加群逻辑"></a>card2 判断是否为为未加群逻辑</h3><p>card2 都是解析连接的</p>
+<p>先判断该链接是否为群</p>
+<p><em>//判断是否是群链  群连接 weibo.com/p/230491${群id}</em></p>
+<p>为群再使用群id获取群成员列表遍历是否在该群中，不在该群便弹出二维码。</p>
+<h3 id="添加了-modal4"><a href="#添加了-modal4" class="headerlink" title="添加了 modal4"></a>添加了 modal4</h3><p>主要是二维码的模态框</p>
+<p>​     <em>* 二维码配置</em></p>
+<p>​     <em>* 详情见 <a href="https://github.com/davidshimjs/qrcodejs" target="_blank" rel="external">https://github.com/davidshimjs/qrcodejs</a></em></p>
+<p>​     <em>* npm i qrcodejs2 <a href="https://www.npmjs.com/package/qrcodejs2" target="_blank" rel="external">https://www.npmjs.com/package/qrcodejs2</a></em></p>
+<h3 id="vux-添加"><a href="#vux-添加" class="headerlink" title="vux 添加"></a>vux 添加</h3><p> qrcode: ‘’, *//群二维码</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//操作二维码(qrcode)</span></div><div class="line">exqrcode(state, val) &#123;</div><div class="line">	state.qrcode = val;</div><div class="line">&#125;,</div><div class="line">emptyqrcode(state) &#123;</div><div class="line">	state.qrcode = <span class="literal">null</span>;</div><div class="line">&#125;,</div></pre></td></tr></table></figure>
+<h1 id="sync-double-分支"><a href="#sync-double-分支" class="headerlink" title="sync_double 分支"></a>sync_double 分支</h1><p><a href="http://ftp.client.weibo.cn/UE/IxD/Weibo/iPhone&amp;Android/Project/Message/2019/v_0.1/#g=1&amp;p=%E6%96%B0%E6%B6%88%E6%81%AF%E6%8F%90%E9%86%92%E8%81%94%E5%8A%A8" target="_blank" rel="external">需求：新消息提醒联动</a></p>
+<p>1、群消息免打扰</p>
+<p>1-1   群消息免打扰功能，Web和App进行设置两边数据同步。【<strong>完成1</strong>】</p>
+<p>1-2  右键出现气泡，气泡第一条：“查看群资料”，点击打开群信息弹窗，第二条：“群消息免打扰”/“打开群消息通知”，第三条“删除对话”，和线上逻辑一致。【<strong>完成1</strong>】</p>
+<p>1-3  若点击“查看群资料”，回默认切换至当前聊天室，然后打开当前群的群资料弹窗。【<strong>完成1</strong>】</p>
+<p>1-4  设置为“群消息免打扰”后，userlist第二条栏目显示规则：</p>
+<p>[x条未读]+最新的一条消息+橙点（没有未读时显示免打扰icon【<strong>此icon还未使用最新设计稿icon</strong>】）【<strong>完成0.8</strong>】</p>
+<p>2、群消息免打扰功能【<strong>调整icon位置及大小未作</strong>】【<strong>完成0</strong>】</p>
+<p>3、群标题文案</p>
+<p>3-1   群标题文案位置左移，UI上需要调整。【<strong>完成1</strong>】</p>
+<p>3-2  鼠标碰到当前区域，鼠标变成手指icon。【<strong>完成1</strong>】</p>
+<p>4、原关闭该群提醒功能【<strong>完成0</strong>】</p>
+<h3 id="双端消息同步"><a href="#双端消息同步" class="headerlink" title="双端消息同步"></a>双端消息同步</h3><p>屏蔽消息状态码不在 pc/mobile 分开，都是用 mobile 的状态码</p>
+<p>所以第一次渲染 chatlist 时所拿取的信息的是 mobile 的</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">export</span> <span class="keyword">const</span> getchatlist = <span class="function"><span class="params">obj</span> =&gt;</span> &#123; </div><div class="line"> <span class="comment">//获取聊天列表 special_source 标记请求来源 默认为 0 手机端 3</span></div><div class="line">	<span class="keyword">return</span> axios.get(<span class="string">`/webim/2/direct_messages/contacts.json?special_source=3`</span>, obj).then(<span class="function"><span class="params">res</span> =&gt;</span> res.data);</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<h4 id="手机端修改"><a href="#手机端修改" class="headerlink" title="手机端修改"></a>手机端修改</h4><p>一旦手机端修改是否屏蔽的状态会有下推 </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">else</span> <span class="keyword">if</span> (type == <span class="string">'groupchat_remind_settings'</span>) &#123; <span class="comment">//群消息免打扰双端同步</span></div><div class="line">    <span class="keyword">let</span> &#123;</div><div class="line">        list,</div><div class="line">        i</div><div class="line">    &#125; = <span class="keyword">this</span>.listHandle(cometdMsg.gid);</div><div class="line">    <span class="keyword">this</span>.$store.commit(<span class="string">'update'</span> + list, &#123; <span class="comment">//更改chatlist  此时不置顶联系人</span></div><div class="line">        notTop: <span class="literal">true</span>,</div><div class="line">        i,</div><div class="line">        param: &#123;</div><div class="line">            remindSetting: cometdMsg.settings.mobile</div><div class="line">        &#125;</div><div class="line">    &#125;);</div><div class="line">    <span class="keyword">this</span>.cgProcessPoll(); <span class="comment">//结束当前消息处理</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>根据其id判断在列表的位置并修改屏蔽状态</p>
+<h4 id="pc-端修改"><a href="#pc-端修改" class="headerlink" title="pc 端修改"></a>pc 端修改</h4><p>一旦pc修改需要通知移动端修改</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">export</span> <span class="keyword">const</span> setnotice = <span class="function"><span class="params">obj</span> =&gt;</span> &#123; <span class="comment">//更改用户私信群设置</span></div><div class="line">	<span class="keyword">return</span> axios.post(<span class="string">`/webim/2/notice_center/discussion_group/set_push_settings.json`</span>, qs.stringify(obj)).then(<span class="function"><span class="params">res</span> =&gt;</span> res.data);</div><div class="line">	<span class="comment">//	return axios.post(`/webim/groupchat/update_user_settings.json`, qs.stringify(obj)).then(res =&gt; res.data);</span></div><div class="line">&#125;;</div><div class="line"><span class="comment">//switch	 提醒设置，1：关闭；2：打开；3：屏蔽</span></div><div class="line"><span class="comment">//call_from pc:表示更改PC端私信群提醒设置 mobile 手机端</span></div></pre></td></tr></table></figure>
+<p>所以全局搜 setnotice 修改参数就好了</p>
+<h3 id="查看群-个人资料"><a href="#查看群-个人资料" class="headerlink" title="查看群/个人资料"></a>查看群/个人资料</h3><p> 若点击“查看群资料”，默认切换至当前聊天室，然后打开当前群的群资料弹窗。</p>
+<p>当前是否选折了查看的的用户</p>
+<ul>
+<li><p>已选折正常逻辑</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">this</span>.$parent.$refs.cardcontaininfo.curView = <span class="string">"modal2"</span>)<span class="comment">//群</span></div><div class="line"><span class="keyword">this</span>.showUserInfo(<span class="number">0</span>, <span class="number">3</span>)<span class="comment">//人</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>未选折需要先选择同时注意时机问题</p>
+<ul>
+<li><p>群没事，由于群是根据存储在 vux selectid 进行渲染而在选折时就已经修改了 selectid</p>
+</li>
+<li><p>个人用户就需要注意时机问题，不然可能导致查看的资料是之前选取那个人的 usercardinfo，由于会重新渲染 message.vue, 而showUserInfo（） 的显示信息是根据 <em>usercardinfo</em> 获取的，但是 usercardinfo 的修改并不是一修改 slectedid 就会改变的，他的促发条件是聊天记录。这个时候我用的 eventbus</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">this</span>.$store.commit(<span class="string">'fillusercardinfo'</span>, other);</div><div class="line">Bus.$emit(<span class="string">'newUserCard'</span>);</div><div class="line"><span class="comment">//一旦修改 usercardinfo 代表着可以去展示用户资料了</span></div></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>棒棒糖</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/img/wxpay.jpg" alt="Marsorsun 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/img/alipay.jpg" alt="Marsorsun 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/05/09/arts/" rel="next" title="终？">
+                <i class="fa fa-chevron-left"></i> 终？
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/05/19/Arts（一）/" rel="prev" title="Arts（一）">
+                Arts（一） <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/123.jpg"
+                alt="Marsorsun" />
+            
+              <p class="site-author-name" itemprop="name">Marsorsun</p>
+              <p class="site-description motion-element" itemprop="description">“对我来说，博客首先是一种知识管理工具，其次才是传播工具。我的技术文章，主要用来整理我还不懂的知识。我只写那些我还没有完全掌握的东西，那些我精通的东西，往往没有动力写。炫耀从来不是我的动机，好奇才是。"</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">79</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">36</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/unbrain" target="_blank" title="GitHub"><i class="fa fa-fw fa-github-alt"></i>GitHub</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:marsorsun@gmail.com" target="_blank" title="E-Mail"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://www.zhihu.com/people/chen-xi-zhao-yang-21/activities" target="_blank" title="知乎"><i class="fa fa-fw fa-zhihu"></i>知乎</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="http://www.liuzhaoyang.com" target="_blank" title="个人网站"><i class="fa fa-fw fa-browser"></i>个人网站</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#qrcode-分支"><span class="nav-number">1.</span> <span class="nav-text">qrcode 分支</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#card2-判断是否为为未加群逻辑"><span class="nav-number">1.0.1.</span> <span class="nav-text">card2 判断是否为为未加群逻辑</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加了-modal4"><span class="nav-number">1.0.2.</span> <span class="nav-text">添加了 modal4</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vux-添加"><span class="nav-number">1.0.3.</span> <span class="nav-text">vux 添加</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#sync-double-分支"><span class="nav-number">2.</span> <span class="nav-text">sync_double 分支</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#双端消息同步"><span class="nav-number">2.0.1.</span> <span class="nav-text">双端消息同步</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#手机端修改"><span class="nav-number">2.0.1.1.</span> <span class="nav-text">手机端修改</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#pc-端修改"><span class="nav-number">2.0.1.2.</span> <span class="nav-text">pc 端修改</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看群-个人资料"><span class="nav-number">2.0.2.</span> <span class="nav-text">查看群/个人资料</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Marsorsun</span>
+
+  
+
+  
+</div>
+
+
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动 v3.3.9</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Muse</a> v6.4.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.4.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.4.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

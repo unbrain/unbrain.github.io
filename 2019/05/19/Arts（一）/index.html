@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.4.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/123.png?v=6.4.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/123.png?v=6.4.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/123.png?v=6.4.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.4.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '6.4.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="AlgorithmAdd Two Numbers、 ReviewVirtual DOM is pure overhead Virtual DOM is pure overheadLet’s retire the ‘virtual DOM is fast’ myth once and for all 虚拟DOM是纯粹的开销 让我们一劳永逸地退出“虚拟DOM是快的”的神话">
+<meta name="keywords" content="随笔">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Arts（一）">
+<meta property="og:url" content="http://yoursite.com/2019/05/19/Arts（一）/index.html">
+<meta property="og:site_name" content="Marsorsun">
+<meta property="og:description" content="AlgorithmAdd Two Numbers、 ReviewVirtual DOM is pure overhead Virtual DOM is pure overheadLet’s retire the ‘virtual DOM is fast’ myth once and for all 虚拟DOM是纯粹的开销 让我们一劳永逸地退出“虚拟DOM是快的”的神话">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://yoursite.com/img/bboc.png">
+<meta property="og:updated_time" content="2019-05-19T13:02:36.737Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Arts（一）">
+<meta name="twitter:description" content="AlgorithmAdd Two Numbers、 ReviewVirtual DOM is pure overhead Virtual DOM is pure overheadLet’s retire the ‘virtual DOM is fast’ myth once and for all 虚拟DOM是纯粹的开销 让我们一劳永逸地退出“虚拟DOM是快的”的神话">
+<meta name="twitter:image" content="http://yoursite.com/img/bboc.png">
+
+
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/05/19/Arts（一）/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Arts（一） | Marsorsun</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Marsorsun</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">心猿码意</p>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/19/Arts（一）/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Marsorsun">
+      <meta itemprop="description" content="“对我来说，博客首先是一种知识管理工具，其次才是传播工具。我的技术文章，主要用来整理我还不懂的知识。我只写那些我还没有完全掌握的东西，那些我精通的东西，往往没有动力写。炫耀从来不是我的动机，好奇才是。"">
+      <meta itemprop="image" content="/images/123.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Marsorsun">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Arts（一）
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-05-19 00:00:00 / 修改时间：21:02:36" itemprop="dateCreated datePublished" datetime="2019-05-19T00:00:00+08:00">2019-05-19</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="/img/bboc.png" alt=""></p>
+<h2 id="Algorithm"><a href="#Algorithm" class="headerlink" title="Algorithm"></a>Algorithm</h2><p><a href="https://github.com/unbrain/Arts/issues/1" target="_blank" rel="external">Add Two Numbers</a>、</p>
+<h1 id="Review"><a href="#Review" class="headerlink" title="Review"></a>Review</h1><p><a href="https://svelte.dev/blog/virtual-dom-is-pure-overhead" target="_blank" rel="external">Virtual DOM is pure overhead</a></p>
+<h1 id="Virtual-DOM-is-pure-overhead"><a href="#Virtual-DOM-is-pure-overhead" class="headerlink" title="Virtual DOM is pure overhead"></a>Virtual DOM is pure overhead</h1><p>Let’s retire the ‘virtual DOM is fast’ myth once and for all</p>
+<p>虚拟DOM是纯粹的开销</p>
+<p>让我们一劳永逸地退出“虚拟DOM是快的”的神话</p>
+<a id="more"></a>
+<p>If you’ve used JavaScript frameworks in the last few years, you’ve probably heard the phrase ‘the virtual DOM is fast’, often said to mean that it’s faster than the <em>real</em> DOM. It’s a surprisingly resilient meme — for example people have asked how Svelte can be fast when it doesn’t use a virtual DOM.</p>
+<p>It’s time to take a closer look.</p>
+<p>如果在过去几年里使用过 Javascript 框架，那么你可能已经听过 “虚拟 DOM 是快速的” 这一说法了，通常被认为着他比真正的 DOM 更快。这是一种令人惊讶的 meme——例如人们会问为啥 Svelte（一种前端框架）能够快而不使用虚拟 DOM</p>
+<h2 id="What-is-the-virtual-DOM"><a href="#What-is-the-virtual-DOM" class="headerlink" title="What is the virtual DOM?"></a>What is the virtual DOM?</h2><p>In many frameworks, you build an app by creating <code>render()</code> functions, like this simple <a href="https://reactjs.org/" target="_blank" rel="external">React</a>component:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">HelloMessage</span>(<span class="params">props</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> (</div><div class="line">    &lt;div className=<span class="string">"greeting"</span>&gt;</div><div class="line">      Hello &#123;props.name&#125;</div><div class="line">    &lt;<span class="regexp">/div&gt;</span></div><div class="line"><span class="regexp">  );</span></div><div class="line"><span class="regexp">&#125;</span></div></pre></td></tr></table></figure>
+<p>You can do the same thing without JSX…</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">HelloMessage</span>(<span class="params">props</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> React.createElement(</div><div class="line">    <span class="string">'div'</span>,</div><div class="line">    &#123; <span class="attr">className</span>: <span class="string">'greeting'</span> &#125;,</div><div class="line">    <span class="string">'Hello '</span>,</div><div class="line">    props.name</div><div class="line">  );</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>…but the result is the same — an object representing how the page should now look. That object is the virtual DOM. Every time your app’s state updates (for example when the <code>name</code> prop changes), you create a new one. The framework’s job is to <em>reconcile</em> the new one against the old one, to figure out what changes are necessary and apply them to the real DOM.</p>
+<h2 id="什么是虚拟-DOM"><a href="#什么是虚拟-DOM" class="headerlink" title="什么是虚拟 DOM"></a>什么是虚拟 DOM</h2><p>在许多的框架，你可以使用 render() 函数来构建应用，比如简单的 react 组件</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">HelloMessage</span>(<span class="params">props</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> (</div><div class="line">    &lt;div className=<span class="string">"greeting"</span>&gt;</div><div class="line">      Hello &#123;props.name&#125;</div><div class="line">    &lt;<span class="regexp">/div&gt;</span></div><div class="line"><span class="regexp">  );</span></div><div class="line"><span class="regexp">&#125;</span></div></pre></td></tr></table></figure>
+<p>你也可以不使用 JSX 达到目的</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">HelloMessage</span>(<span class="params">props</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> React.createElement(</div><div class="line">    <span class="string">'div'</span>,</div><div class="line">    &#123; <span class="attr">className</span>: <span class="string">'greeting'</span> &#125;,</div><div class="line">    <span class="string">'Hello '</span>,</div><div class="line">    props.name</div><div class="line">  );</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>但他们结果是一样的——是一个对象表示页面该如何去渲染。这个对象就是虚拟 DOM。每一次你页面状态进行更新（比如当 props 中的 name 发生改变），你都需要重新渲染。框架的工作就是找到新旧之间真正有必要去改变的地方并应用在真实 DOM 上。</p>
+<h2 id="How-did-the-meme-start"><a href="#How-did-the-meme-start" class="headerlink" title="How did the meme start?"></a>How did the meme start?</h2><p>Misunderstood claims about virtual DOM performance date back to the launch of React. In <a href="https://www.youtube.com/watch?v=x7cQ3mrcKaY" target="_blank" rel="external">Rethinking Best Practices</a>, a seminal 2013 talk by former React core team member Pete Hunt, we learned the following:</p>
+<blockquote>
+<p>This is actually extremely fast, primarily because most DOM operations tend to be slow. There’s been a lot of performance work on the DOM, but most DOM operations tend to drop frames.</p>
+</blockquote>
+<h2 id="meme-是如何开始的"><a href="#meme-是如何开始的" class="headerlink" title="meme 是如何开始的"></a>meme 是如何开始的</h2><p>对虚拟 DOM 的性能误解可以追溯到 React。 在 <a href="https://www.youtube.com/watch?v=x7cQ3mrcKaY" target="_blank" rel="external">Rethinking Best Practices</a> 中，前React核心团队成员Pete Hunt在2013年的开创性讲话中，我们学到了以下内容：</p>
+<blockquote>
+<p>这实际上非常快，主要是因为大多数 DOM 操作往往很慢。DOM 上有很多性能工作，但大多数 DOM 操作都会丢帧。</p>
+</blockquote>
+<p>But hang on a minute! The virtual DOM operations are <em>in addition to</em> the eventual operations on the real DOM. The only way it could be faster is if we were comparing it to a less efficient framework (there were plenty to go around back in 2013!), or arguing against a straw man — that the alternative is to do something no-one actually does:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">onEveryStateChange(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">  <span class="built_in">document</span>.body.innerHTML = renderMyApp();</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>但是等一下！虚拟 DOM 操作是对真实 DOM 上的最终操作的补充。它可能更快的唯一方法是，如果我们将它与一个效率较低的框架进行比较（2013年还有很多这样的框架），或者反对一个稻草人 ——一种选择做一些没有人实际做的事情：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">onEveryStateChange(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">  <span class="built_in">document</span>.body.innerHTML = renderMyApp();</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>Pete clarifies soon after…</p>
+<blockquote>
+<p>React is not magic. Just like you can drop into assembler with C and beat the C compiler, you can drop into raw DOM operations and DOM API calls and beat React if you wanted to. However, using C or Java or JavaScript is an order of magnitude performance improvement because you don’t have to worry…about the specifics of the platform. With React you can build applications without even thinking about performance and the default state is fast.</p>
+</blockquote>
+<p>…but that’s not the part that stuck.</p>
+<p>Pete 很快就澄清了</p>
+<blockquote>
+<p>React 并不神奇。就像你可以使用 C 进入汇编程序并击败 C 编译器一样，如果你愿意，你可以放入原始 DOM 操作和 DOM API 调用并击败 React。但是，使用 C 或 Java 或 JavaScript 是一个数量级的性能提升，因为您不必担心…框架的细节。使用 React，您甚至可以在不考虑性能的情况下构建应用程序，并且默认状态很快。</p>
+</blockquote>
+<p>…..但那不是卡住的部分。</p>
+<h2 id="So…-is-the-virtual-DOM-slow"><a href="#So…-is-the-virtual-DOM-slow" class="headerlink" title="So… is the virtual DOM slow?"></a>So… is the virtual DOM <em>slow</em>?</h2><p>Not exactly. It’s more like ‘the virtual DOM is usually fast enough’, but with certain caveats.</p>
+<p>The original promise of React was that you could re-render your entire app on every single state change without worrying about performance. In practice, I don’t think that’s turned out to be accurate. If it was, there’d be no need for optimisations like <code>shouldComponentUpdate</code> (which is a way of telling React when it can safely skip a component).</p>
+<p>Even with <code>shouldComponentUpdate</code>, updating your entire app’s virtual DOM in one go is a lot of work. A while back, the React team introduced something called React Fiber which allows the update to be broken into smaller chunks. This means (among other things) that updates don’t block the main thread for long periods of time, though it doesn’t reduce the total amount of work or the time an update takes.</p>
+<h2 id="所以，虚拟-DOM-是慢的？"><a href="#所以，虚拟-DOM-是慢的？" class="headerlink" title="所以，虚拟 DOM 是慢的？"></a>所以，虚拟 DOM 是慢的？</h2><p>不完全是。它更像是“虚拟DOM通常足够快”，但有一些注意事项。</p>
+<p>React的最初承诺是，您可以在每次状态更改时重新呈现整个应用程序，而无需担心性能。在实践中，我认为这不是准确的。如果是的话，就不需要像 shouldComponentUpdate 这样的优化（这是一种告诉 React 什么时候可以安全跳过组件的方法）。</p>
+<p>即使使用 shouldComponentUpdate，一次性更新整个应用程序的虚拟DOM也需要做很多工作。不久前，React 团队推出了一种叫做 React Fiber 的东西，它允许将更新分解成更小的块。这意味着（除其他外）更新不会长时间阻塞主线程，尽管它不会减少工作总量或更新所需的时间。</p>
+<h2 id="Where-does-the-overhead-come-from"><a href="#Where-does-the-overhead-come-from" class="headerlink" title="Where does the overhead come from?"></a>Where does the overhead come from?</h2><p>Most obviously, <a href="https://twitter.com/pcwalton/status/1015694528857047040" target="_blank" rel="external">diffing isn’t free</a>. You can’t apply changes to the real DOM without first comparing the new virtual DOM with the previous snapshot. To take the earlier <code>HelloMessage</code> example, suppose the <code>name</code> prop changed from ‘world’ to ‘everybody’.</p>
+<ol>
+<li>Both snapshots contain a single element. In both cases it’s a <code>&lt;div&gt;</code>, which means we can keep the same DOM node</li>
+<li>We enumerate all the attributes on the old <code>&lt;div&gt;</code> and the new one to see if any need to be changed, added or removed. In both cases we have a single attribute — a <code>className</code>with a value of <code>&quot;greeting&quot;</code></li>
+<li>Descending into the element, we see that the text has changed, so we’ll need to update the real DOM</li>
+</ol>
+<p>Of these three steps, only the third has value in this case, since — as is the case in the vast majority of updates — the basic structure of the app is unchanged. It would be much more efficient if we could skip straight to step 3:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (changed.name) &#123;</div><div class="line">  text.data = name;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>(This is almost exactly the update code that Svelte generates. Unlike traditional UI frameworks, Svelte is a compiler that knows at <em>build time</em> how things could change in your app, rather than waiting to do the work at <em>run time</em>.)</p>
+<h2 id="开销来自哪里？"><a href="#开销来自哪里？" class="headerlink" title="开销来自哪里？"></a>开销来自哪里？</h2><p>最明显的是，<a href="https://twitter.com/pcwalton/status/1015694528857047040" target="_blank" rel="external">diffing isn’t free</a>。如果不先将新虚拟 DOM与 之前的快照进行比较，则无法对真实DOM应用更改。要采用早期的 HelloMessage 示例，假设名称prop从 “world” 更改为 “everybody”。</p>
+<ol>
+<li>两个快照都包含一个元素。在这两种情况下，它都是 <code>&lt;div&gt;</code>，这意味着我们可以保持相同的 DOM 节点</li>
+<li>我们枚举旧 <code>&lt;div&gt;</code> 和新的属性上的所有属性，以查看是否需要更改，添加或删除任何属性。</li>
+<li>在这两种情况下，我们都有一个属性一个 className，其值为 “greeting” 下降到元素，我们看到文本已经改变，所以我们需要更新真正的 DOM</li>
+</ol>
+<p>在这三个步骤中，只有第三个步骤在这种情况下具有价值，因为 - 绝大多数更新中的情况 - 应用程序的基本结构不变。如果我们可以直接跳到第3步，那将会更有效率。</p>
+<p>这几乎就是 Svelte 生成的更新代码。与传统的UI框架不同，Svelte 是一个编译器，它在构建时知道应用程序中的内容如何变化，而不是等待在运行时进行工作。</p>
+<h2 id="It’s-not-just-the-diffing-though"><a href="#It’s-not-just-the-diffing-though" class="headerlink" title="It’s not just the diffing though"></a>It’s not just the diffing though</h2><p>The diffing algorithms used by React and other virtual DOM frameworks are fast. Arguably, the greater overhead is in the components themselves. You wouldn’t write code like this…</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">StrawManComponent</span>(<span class="params">props</span>) </span>&#123;</div><div class="line">  <span class="keyword">const</span> value = expensivelyCalculateValue(props.foo);</div><div class="line"></div><div class="line">  <span class="keyword">return</span> (</div><div class="line">    &lt;p&gt;the value is &#123;value&#125;&lt;<span class="regexp">/p&gt;</span></div><div class="line"><span class="regexp">  );</span></div><div class="line"><span class="regexp">&#125;</span></div></pre></td></tr></table></figure>
+<p>…because you’d be carelessly recalculating <code>value</code> on every update, regardless of whether <code>props.foo</code>had changed. But it’s extremely common to do unnecessary computation and allocation in ways that seem much more benign:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">MoreRealisticComponent</span>(<span class="params">props</span>) </span>&#123;</div><div class="line">  <span class="keyword">const</span> [selected, setSelected] = useState(<span class="literal">null</span>);</div><div class="line"></div><div class="line">  <span class="keyword">return</span> (</div><div class="line">    &lt;div&gt;</div><div class="line">      &lt;p&gt;Selected &#123;selected ? selected.name : <span class="string">'nothing'</span>&#125;&lt;<span class="regexp">/p&gt;</span></div><div class="line"><span class="regexp"></span></div><div class="line"><span class="regexp">      &lt;ul&gt;</span></div><div class="line"><span class="regexp">        &#123;props.items.map(item =&gt;</span></div><div class="line"><span class="regexp">          &lt;li&gt;</span></div><div class="line"><span class="regexp">            &lt;button onClick=&#123;() =&gt; setSelected(item)&#125;&gt;</span></div><div class="line"><span class="regexp">              &#123;item.name&#125;</span></div><div class="line"><span class="regexp">            &lt;/</span>button&gt;</div><div class="line">          &lt;<span class="regexp">/li&gt;</span></div><div class="line"><span class="regexp">        )&#125;</span></div><div class="line"><span class="regexp">      &lt;/u</span>l&gt;</div><div class="line">    &lt;<span class="regexp">/div&gt;</span></div><div class="line"><span class="regexp">  );</span></div><div class="line"><span class="regexp">&#125;</span></div></pre></td></tr></table></figure>
+<p>Here, we’re generating a new array of virtual <code>&lt;li&gt;</code> elements — each with their own inline event handler — on every state change, regardless of whether <code>props.items</code> has changed. Unless you’re unhealthily obsessed with performance, you’re not going to optimise that. There’s no point. It’s plenty fast enough. But you know what would be even faster? <em>Not doing that.</em></p>
+<h2 id="这不仅仅是差异"><a href="#这不仅仅是差异" class="headerlink" title="这不仅仅是差异"></a>这不仅仅是差异</h2><p>React 和其他虚拟 DOM 框架使用的差异算法很快。可以说，组件本身的开销更大。你不会写这样的代码……</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">StrawManComponent</span>(<span class="params">props</span>) </span>&#123;</div><div class="line">  <span class="keyword">const</span> value = expensivelyCalculateValue(props.foo);</div><div class="line"></div><div class="line">  <span class="keyword">return</span> (</div><div class="line">    &lt;p&gt;the value is &#123;value&#125;&lt;<span class="regexp">/p&gt;</span></div><div class="line"><span class="regexp">  );</span></div><div class="line"><span class="regexp">&#125;</span></div></pre></td></tr></table></figure>
+<p>因为无论 props.foo 是否已更改，您都会在每次更新时不小心重新计算值。但是以不同的方式进行不必要的计算和分配是非常常见的：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">MoreRealisticComponent</span>(<span class="params">props</span>) </span>&#123;</div><div class="line">  <span class="keyword">const</span> [selected, setSelected] = useState(<span class="literal">null</span>);</div><div class="line"></div><div class="line">  <span class="keyword">return</span> (</div><div class="line">    &lt;div&gt;</div><div class="line">      &lt;p&gt;Selected &#123;selected ? selected.name : <span class="string">'nothing'</span>&#125;&lt;<span class="regexp">/p&gt;</span></div><div class="line"><span class="regexp"></span></div><div class="line"><span class="regexp">      &lt;ul&gt;</span></div><div class="line"><span class="regexp">        &#123;props.items.map(item =&gt;</span></div><div class="line"><span class="regexp">          &lt;li&gt;</span></div><div class="line"><span class="regexp">            &lt;button onClick=&#123;() =&gt; setSelected(item)&#125;&gt;</span></div><div class="line"><span class="regexp">              &#123;item.name&#125;</span></div><div class="line"><span class="regexp">            &lt;/</span>button&gt;</div><div class="line">          &lt;<span class="regexp">/li&gt;</span></div><div class="line"><span class="regexp">        )&#125;</span></div><div class="line"><span class="regexp">      &lt;/u</span>l&gt;</div><div class="line">    &lt;<span class="regexp">/div&gt;</span></div><div class="line"><span class="regexp">  );</span></div><div class="line"><span class="regexp">&#125;</span></div></pre></td></tr></table></figure>
+<p>在这里，无论 props.items 是否发生了变化，我们都会在每次状态更改时生成一个新的虚拟 <code>&lt;li&gt;</code> 元素数组 - 每个元素都有自己的内联事件处理程序。除非你不熟悉性能，否则你不会优化它。毫无意义。它足够快。但你知道什么会更快吗？不这样做。</p>
+<p>The danger of defaulting to doing unnecessary work, even if that work is trivial, is that your app will eventually succumb to ‘death by a thousand cuts’ with no clear bottleneck to aim at once it’s time to optimise.</p>
+<p>Svelte is explicitly designed to prevent you from ending up in that situation.</p>
+<p>做不必要的工作默认是危险的，即使这项工作是微不足道的，你的应用程序最终会屈服于“千人减少死亡”，没有明确的瓶颈，无法一次性瞄准优化。Svelte 明确旨在防止您在这种情况下结束。</p>
+<h2 id="Why-do-frameworks-use-the-virtual-DOM-then"><a href="#Why-do-frameworks-use-the-virtual-DOM-then" class="headerlink" title="Why do frameworks use the virtual DOM then?"></a>Why do frameworks use the virtual DOM then?</h2><p>It’s important to understand that virtual DOM <em>isn’t a feature</em>. It’s a means to an end, the end being declarative, state-driven UI development. Virtual DOM is valuable because it allows you to build apps without thinking about state transitions, with performance that is <em>generally good enough</em>. That means less buggy code, and more time spent on creative tasks instead of tedious ones.</p>
+<p>But it turns out that we can achieve a similar programming model without using virtual DOM — and that’s where Svelte comes in.</p>
+<h2 id="为什么框架会使用虚拟-DOM-呢？"><a href="#为什么框架会使用虚拟-DOM-呢？" class="headerlink" title="为什么框架会使用虚拟 DOM 呢？"></a>为什么框架会使用虚拟 DOM 呢？</h2><p>了解虚拟 DOM 不是一项特性非常重要。它是达到目的的手段，最终是声明性的，由状态驱动的 UI 开发。虚拟 DOM 很有价值，因为它允许您在不考虑状态转换的情况下构建应用程序，其性能通常足够好。这意味着更少的错误代码，更多的时间花在创造性任务而不是乏味的任务上。但事实证明，我们可以在不使用虚拟 DOM 的情况下实现类似的编程模型 - 这就是 Svelte 的用武之地。</p>
+<h1 id="Technique"><a href="#Technique" class="headerlink" title="Technique"></a>Technique</h1><h2 id="Share"><a href="#Share" class="headerlink" title="Share"></a>Share</h2><p><a href="https://github.com/unbrain/Arts/issues/2" target="_blank" rel="external">《Don’t make me think》读书笔记</a></p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>棒棒糖</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/img/wxpay.jpg" alt="Marsorsun 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/img/alipay.jpg" alt="Marsorsun 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/随笔/" rel="tag"># 随笔</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/05/10/两个遗留分支/" rel="next" title="">
+                <i class="fa fa-chevron-left"></i> 
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/123.jpg"
+                alt="Marsorsun" />
+            
+              <p class="site-author-name" itemprop="name">Marsorsun</p>
+              <p class="site-description motion-element" itemprop="description">“对我来说，博客首先是一种知识管理工具，其次才是传播工具。我的技术文章，主要用来整理我还不懂的知识。我只写那些我还没有完全掌握的东西，那些我精通的东西，往往没有动力写。炫耀从来不是我的动机，好奇才是。"</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">79</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">36</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/unbrain" target="_blank" title="GitHub"><i class="fa fa-fw fa-github-alt"></i>GitHub</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:marsorsun@gmail.com" target="_blank" title="E-Mail"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://www.zhihu.com/people/chen-xi-zhao-yang-21/activities" target="_blank" title="知乎"><i class="fa fa-fw fa-zhihu"></i>知乎</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="http://www.liuzhaoyang.com" target="_blank" title="个人网站"><i class="fa fa-fw fa-browser"></i>个人网站</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Algorithm"><span class="nav-number">1.</span> <span class="nav-text">Algorithm</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Review"><span class="nav-number"></span> <span class="nav-text">Review</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Virtual-DOM-is-pure-overhead"><span class="nav-number"></span> <span class="nav-text">Virtual DOM is pure overhead</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#What-is-the-virtual-DOM"><span class="nav-number">1.</span> <span class="nav-text">What is the virtual DOM?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是虚拟-DOM"><span class="nav-number">2.</span> <span class="nav-text">什么是虚拟 DOM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#How-did-the-meme-start"><span class="nav-number">3.</span> <span class="nav-text">How did the meme start?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#meme-是如何开始的"><span class="nav-number">4.</span> <span class="nav-text">meme 是如何开始的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#So…-is-the-virtual-DOM-slow"><span class="nav-number">5.</span> <span class="nav-text">So… is the virtual DOM slow?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#所以，虚拟-DOM-是慢的？"><span class="nav-number">6.</span> <span class="nav-text">所以，虚拟 DOM 是慢的？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Where-does-the-overhead-come-from"><span class="nav-number">7.</span> <span class="nav-text">Where does the overhead come from?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开销来自哪里？"><span class="nav-number">8.</span> <span class="nav-text">开销来自哪里？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#It’s-not-just-the-diffing-though"><span class="nav-number">9.</span> <span class="nav-text">It’s not just the diffing though</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#这不仅仅是差异"><span class="nav-number">10.</span> <span class="nav-text">这不仅仅是差异</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Why-do-frameworks-use-the-virtual-DOM-then"><span class="nav-number">11.</span> <span class="nav-text">Why do frameworks use the virtual DOM then?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么框架会使用虚拟-DOM-呢？"><span class="nav-number">12.</span> <span class="nav-text">为什么框架会使用虚拟 DOM 呢？</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Technique"><span class="nav-number"></span> <span class="nav-text">Technique</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Share"><span class="nav-number">1.</span> <span class="nav-text">Share</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Marsorsun</span>
+
+  
+
+  
+</div>
+
+
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动 v3.3.9</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Muse</a> v6.4.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.4.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.4.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
