@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/123.png?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/123.png?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/123.png?v=7.4.0">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.4.0" color="#222">
+
+<link rel="stylesheet" href="/css/main.css?v=7.4.0">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '7.4.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="不知不觉工作的时间已将近三个月了，公司的培训也结束，已经标志着自己的职场生涯的游戏拉开了序幕。自己感觉自己早已习惯工作的节奏，但是状态并不好，想的很多，做的却很少。曾经想的坚持  锻炼 技术笔记 读书（书倒是买了不少，看的话就是个笑话） 随笔 给父母的电话  ……">
+<meta name="keywords" content="随笔">
+<meta property="og:type" content="article">
+<meta property="og:title" content="随笔">
+<meta property="og:url" content="http://yoursite.com/2019/09/15/随笔/index.html">
+<meta property="og:site_name" content="Marsorsun">
+<meta property="og:description" content="不知不觉工作的时间已将近三个月了，公司的培训也结束，已经标志着自己的职场生涯的游戏拉开了序幕。自己感觉自己早已习惯工作的节奏，但是状态并不好，想的很多，做的却很少。曾经想的坚持  锻炼 技术笔记 读书（书倒是买了不少，看的话就是个笑话） 随笔 给父母的电话  ……">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-09-15T08:37:17.995Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="随笔">
+<meta name="twitter:description" content="不知不觉工作的时间已将近三个月了，公司的培训也结束，已经标志着自己的职场生涯的游戏拉开了序幕。自己感觉自己早已习惯工作的节奏，但是状态并不好，想的很多，做的却很少。曾经想的坚持  锻炼 技术笔记 读书（书倒是买了不少，看的话就是个笑话） 随笔 给父母的电话  ……">
+  <link rel="canonical" href="http://yoursite.com/2019/09/15/随笔/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>随笔 | Marsorsun</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Marsorsun</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">心猿码意</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+  </ul>
+
+    
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+      <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block post">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/15/随笔/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Marsorsun">
+      <meta itemprop="description" content="“对我来说，博客首先是一种知识管理工具，其次才是传播工具。我的技术文章，主要用来整理我还不懂的知识。我只写那些我还没有完全掌握的东西，那些我精通的东西，往往没有动力写。炫耀从来不是我的动机，好奇才是。"">
+      <meta itemprop="image" content="/images/123.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Marsorsun">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">随笔
+
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019/09/15 00:00:00 / 修改时间：16:37:17" itemprop="dateCreated datePublished" datetime="2019-09-15T00:00:00+08:00">2019/09/15</time>
+            </span>
+          
+            
+
+            
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>不知不觉工作的时间已将近三个月了，公司的培训也结束，已经标志着自己的职场生涯的游戏拉开了序幕。自己感觉自己早已习惯工作的节奏，但是状态并不好，想的很多，做的却很少。曾经想的坚持</p>
+<ul>
+<li>锻炼</li>
+<li>技术笔记</li>
+<li>读书（书倒是买了不少，看的话就是个笑话）</li>
+<li>随笔</li>
+<li>给父母的电话</li>
+</ul>
+<p>……</p>
+<a id="more"></a>
+<p>都没有坚持下来，到是</p>
+<ul>
+<li>抽烟喝酒</li>
+<li>电视剧</li>
+<li>游戏</li>
+</ul>
+<p>……</p>
+<p>这些东西可是没停过，活成了自己最舒（tui）适（fei）的状态……</p>
+<p>你在想象中总是天马行空，信誓旦旦，说出的话也是如此动听。可是行走的时候的你将自己变成了一个懦夫，你的梦想与现实差的实在有点遥远。年少的你想像的 23 岁可曾是这个样子么，我想你自己知道自己想要的，知道厌恶什么，知道自己爱什么，所以活成自己最好的自己吧，警醒自己定要慎独，大嘴巴请你少说多想多做，看到别人身上的闪光点，也许你厌恶它，但是你知道你不得不接受它，这样的你能更加的理性去看待问题。要有的不仅仅是细心，更要有的是心胸，技术除了做技术更多的时候是和人去做协调，解决问题才是首要的。</p>
+<p>工作上让自己觉得捉襟见肘的应该是排期吧，从自己的角度看自己觉得自己做得并不好，还有就是工作的时候看到了一些知识点搜索后自己的记录并不充足，很多可以做笔记的自己都没有做好记录，这是自己现阶段最后悔的事了。平常和同事感觉自己总是唧唧歪歪的话多……希望不被他们打吧。感觉同事和老大人都超级棒，这是我来到北方工作最最满意的事了，所以自己做好手上的事吧。公司培训的时候也认识了很多的有意思的人。还有感觉能够成为很好朋友的人，遇见本就是一种缘分，so nice。</p>
+<p>这几个月有三件很神奇的事，我同学给我介绍了一个她的女闺蜜……我突然感觉这就像梦幻一样，这事也能出现在我身上？看来是我一般表现得还不够傻逼哈哈哈，但是他在成都也，忒远了，我感觉自己是不会回成都的，我该如何说我们可以做朋友（男女做朋友……想到了《当哈利遇上莎莉》）。还有就是公司培训的时候我喜欢上了一个像精灵般一样的女孩，她的眼睛真好看,一举一动就好像如梦如幻，带着魔力的女孩，感觉魂牵梦萦哈哈哈尽管当时才认识了一晚上，比较傻逼的就是自己了，约出来喝酒，她和我说了她有男友我特么还给她说了我喜欢她（qnm的一见钟情），我这是有多直，不过没有啥尴尬感，哈哈我脸皮越来越厚了。还有就是我的考研同学说她去检查后结果不好可能要放弃考研了，当时我人都蒙了，后面她不相信换了一家医院第二次检查结果没什么不需要住院，😁相信她会好好的吧，感觉这些都是很有意思的经历吧，自己慢慢的调整状态吧。</p>
+<p>回看这几个月，有不少遗憾，但仍充满欢笑，在苦中的甘甜总会让人记忆犹新。但是对于生活不轻松的东西自己不在应该得过且过，该坚持的坚持，说的漂亮的也需要做的漂亮。你自己懂得</p>
+<ul>
+<li>锻炼</li>
+<li>技术笔记</li>
+<li>读书（书倒是买了不少，看的话就是个笑话）</li>
+<li>随笔</li>
+<li>给父母的电话</li>
+</ul>
+<blockquote>
+<p>黑色的不是夜晚 是漫长的孤单<br>看脚下一片黑暗 望头顶星光璀璨<br>叹世万物皆可盼 唯真爱最短暂<br>失去的永不复返 世守恒而今倍还<br>刺猬</p>
+</blockquote>
+
+    </div>
+
+    
+    
+    
+        
+      
+
+      <footer class="post-footer">
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/tags/随笔/" rel="tag"># 随笔</a>
+            
+          </div>
+        
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/2019/05/19/Arts（一）/" rel="next" title="Arts（一）">
+                  <i class="fa fa-chevron-left"></i> Arts（一）
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </div>
+  
+  
+  
+  </article>
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+      src="/images/123.jpg"
+      alt="Marsorsun">
+  <p class="site-author-name" itemprop="name">Marsorsun</p>
+  <div class="site-description" itemprop="description">“对我来说，博客首先是一种知识管理工具，其次才是传播工具。我的技术文章，主要用来整理我还不懂的知识。我只写那些我还没有完全掌握的东西，那些我精通的东西，往往没有动力写。炫耀从来不是我的动机，好奇才是。"</div>
+</div>
+  <nav class="site-state motion-element">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">79</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/">
+          
+        
+        <span class="site-state-item-count">36</span>
+        <span class="site-state-item-name">标签</span>
+        </a>
+      </div>
+    
+  </nav>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://github.com/unbrain" title="GitHub &rarr; https://github.com/unbrain" rel="noopener" target="_blank"><i class="fa fa-fw fa-github-alt"></i>GitHub</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="mailto:marsorsun@gmail.com" title="E-Mail &rarr; mailto:marsorsun@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://www.zhihu.com/people/chen-xi-zhao-yang-21/activities" title="知乎 &rarr; https://www.zhihu.com/people/chen-xi-zhao-yang-21/activities" rel="noopener" target="_blank"><i class="fa fa-fw fa-zhihu"></i>知乎</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="http://www.liuzhaoyang.com" title="个人网站 &rarr; http://www.liuzhaoyang.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-browser"></i>个人网站</a>
+      </span>
+    
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Marsorsun</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.4.0</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+
+
+  <script src="/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="/js/utils.js?v=7.4.0"></script><script src="/js/motion.js?v=7.4.0"></script>
+<script src="/js/schemes/muse.js?v=7.4.0"></script>
+<script src="/js/next-boot.js?v=7.4.0"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>

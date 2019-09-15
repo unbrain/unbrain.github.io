@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/123.png?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/123.png?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/123.png?v=7.4.0">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.4.0" color="#222">
+
+<link rel="stylesheet" href="/css/main.css?v=7.4.0">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '7.4.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="JS 中数据类型有七种　number null undefined string boolean object symbol(es6) 今天就来看看他们的一些平常会用到的东西 JavaScript 历史">
+<meta name="keywords" content="JavaScript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="浅谈 JS 数据">
+<meta property="og:url" content="http://yoursite.com/2018/03/05/JSdata/index.html">
+<meta property="og:site_name" content="Marsorsun">
+<meta property="og:description" content="JS 中数据类型有七种　number null undefined string boolean object symbol(es6) 今天就来看看他们的一些平常会用到的东西 JavaScript 历史">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-09-15T09:25:38.719Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="浅谈 JS 数据">
+<meta name="twitter:description" content="JS 中数据类型有七种　number null undefined string boolean object symbol(es6) 今天就来看看他们的一些平常会用到的东西 JavaScript 历史">
+  <link rel="canonical" href="http://yoursite.com/2018/03/05/JSdata/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>浅谈 JS 数据 | Marsorsun</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Marsorsun</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">心猿码意</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+  </ul>
+
+    
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+      <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block post">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/05/JSdata/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Marsorsun">
+      <meta itemprop="description" content="“对我来说，博客首先是一种知识管理工具，其次才是传播工具。我的技术文章，主要用来整理我还不懂的知识。我只写那些我还没有完全掌握的东西，那些我精通的东西，往往没有动力写。炫耀从来不是我的动机，好奇才是。"">
+      <meta itemprop="image" content="/images/123.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Marsorsun">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">浅谈 JS 数据
+
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2018/03/05 00:00:00" itemprop="dateCreated datePublished" datetime="2018-03-05T00:00:00+08:00">2018/03/05</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019/09/15 17:25:38" itemprop="dateModified" datetime="2019-09-15T17:25:38+08:00">2019/09/15</time>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h3 id="JS-中数据类型有七种-number-null-undefined-string-boolean-object-symbol-es6-今天就来看看他们的一些平常会用到的东西"><a href="#JS-中数据类型有七种-number-null-undefined-string-boolean-object-symbol-es6-今天就来看看他们的一些平常会用到的东西" class="headerlink" title="JS 中数据类型有七种　number null undefined string boolean object symbol(es6) 今天就来看看他们的一些平常会用到的东西"></a>JS 中数据类型有七种　number null undefined string boolean object symbol(es6) 今天就来看看他们的一些平常会用到的东西</h3><blockquote>
+<p><a href="http://javascript.ruanyifeng.com/introduction/history.html" target="_blank" rel="noopener">JavaScript 历史</a></p>
+</blockquote>
+<a id="more"></a>
+<p>这七种不包括 Array Funtion 这两种其实就是　object</p>
+<h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><p>#####１．number</p>
+<ul>
+<li>八进制: <code>011</code> (es5新增　0o11　语法)</li>
+</ul>
+<h5 id="２．string"><a href="#２．string" class="headerlink" title="２．string"></a>２．string</h5><ul>
+<li><p>多行代码</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">var</span> s = <span class="string">'12345'</span> +</span><br><span class="line">             <span class="string">'67890'</span> <span class="comment">// 无回车符号</span></span><br><span class="line"> 或</span><br><span class="line"> <span class="keyword">var</span> s = <span class="string">`12345</span></span><br><span class="line"><span class="string"> 67890`</span> <span class="comment">// 含回车符号</span></span><br><span class="line"> <span class="comment">//其实还可以但不推荐,因为若在\后面有' '就会报错且不易发现</span></span><br><span class="line"> <span class="keyword">var</span> longString = <span class="string">'Long \</span></span><br><span class="line"><span class="string">string'</span>;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h5 id="３．undefined-与-null"><a href="#３．undefined-与-null" class="headerlink" title="３．undefined 与 null"></a>３．undefined 与 null</h5><p>就连 JS 之父都说这是他当初没有设计好的地方</p>
+<p>不过一般情况下会对一个未赋值的对象，就用 null</p>
+<p>对于不是对象的数据类型没有赋值，就是 undefined</p>
+<h3 id="typeof-操作符"><a href="#typeof-操作符" class="headerlink" title="typeof 操作符"></a>typeof 操作符</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typeof</span> <span class="built_in">String</span></span><br><span class="line"><span class="comment">//"function"</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="string">'hello'</span></span><br><span class="line"><span class="comment">//"string"</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="number">1</span></span><br><span class="line"><span class="comment">//"number"</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="literal">true</span></span><br><span class="line"><span class="comment">//"boolean"</span></span><br><span class="line"><span class="keyword">typeof</span> &#123;&#125;</span><br><span class="line"><span class="comment">//"object"</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="literal">null</span></span><br><span class="line"><span class="comment">//"object"</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="literal">null</span></span><br><span class="line"><span class="comment">//undefined</span></span><br><span class="line"><span class="keyword">typeof</span> a</span><br><span class="line"><span class="comment">//"object"</span></span><br><span class="line"><span class="keyword">var</span> b = <span class="built_in">Symbol</span>()</span><br><span class="line"><span class="comment">//undefined</span></span><br><span class="line"><span class="keyword">typeof</span> b</span><br><span class="line"><span class="comment">//"symbol"</span></span><br></pre></td></tr></table></figure>
+<p>需要注意的就是 null 和 function, function并不是一个类型</p>
+<h3 id="数据转换"><a href="#数据转换" class="headerlink" title="数据转换"></a>数据转换</h3><p>可以说在 code 的世界中有很大一部分的事情就是在将数据的格式进行转换</p>
+<h6 id="任意类型转-String"><a href="#任意类型转-String" class="headerlink" title="任意类型转 String"></a>任意类型转 String</h6><p>有三种 <code>String()</code> <code>.toString()</code> 与最方便的 <code>&#39;&#39;+1/true...</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">String</span>(<span class="number">1</span>)</span><br><span class="line"><span class="comment">//"1"</span></span><br><span class="line"><span class="built_in">String</span>(&#123;&#125;)</span><br><span class="line"><span class="comment">//"[object Object]"</span></span><br><span class="line"><span class="built_in">String</span>(&#123;</span><br><span class="line">key: <span class="string">'99'</span>,</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">//"[object Object]"</span></span><br><span class="line">(<span class="number">1</span>).toString()</span><br><span class="line"><span class="comment">//"1"</span></span><br><span class="line"><span class="number">1</span> + <span class="string">''</span></span><br><span class="line"><span class="comment">//"1"</span></span><br><span class="line"><span class="literal">null</span> + <span class="string">''</span></span><br><span class="line"><span class="comment">//"null"</span></span><br><span class="line"><span class="literal">undefined</span> + <span class="string">''</span></span><br><span class="line"><span class="comment">//"undefined"</span></span><br></pre></td></tr></table></figure>
+<p>需要注意的是 null/undefined 是没有 <code>toString()</code> 方法的，会报错</p>
+<h5 id="任意类型转数字"><a href="#任意类型转数字" class="headerlink" title="任意类型转数字"></a>任意类型转数字</h5><ol>
+<li>Number(x)</li>
+<li>parseInt(x, 10) <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/parseInt" target="_blank" rel="noopener">MDN</a></li>
+<li>parseFloat(x) <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/parseFloat" target="_blank" rel="noopener">MDN</a></li>
+<li>x - 0</li>
+<li>+x</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="string">'1'</span></span><br><span class="line"><span class="comment">//undefined</span></span><br><span class="line"><span class="built_in">Number</span>(a)</span><br><span class="line"><span class="comment">//1</span></span><br><span class="line"><span class="built_in">parseInt</span>(a)</span><br><span class="line"><span class="comment">//1</span></span><br><span class="line"><span class="built_in">parseInt</span>(a, <span class="number">10</span>)</span><br><span class="line"><span class="comment">//1</span></span><br><span class="line"><span class="built_in">parseFloat</span>(a)</span><br><span class="line"><span class="comment">//1</span></span><br><span class="line">a - <span class="number">0</span></span><br><span class="line"><span class="comment">//1</span></span><br><span class="line">+a</span><br><span class="line"><span class="comment">//1</span></span><br></pre></td></tr></table></figure>
+<h5 id="任意类型转布尔"><a href="#任意类型转布尔" class="headerlink" title="任意类型转布尔"></a>任意类型转布尔</h5><ol>
+<li>Boolean(x)</li>
+<li>!!x</li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Glossary/Falsy" target="_blank" rel="noopener">五个 Falsy 值</a><code>nul undefined NaN &#39;&#39; 0</code></li>
+</ol>
+<h3 id="面试题"><a href="#面试题" class="headerlink" title="面试题"></a>面试题</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">1</span></span><br><span class="line"><span class="keyword">var</span> b = a</span><br><span class="line">b = <span class="number">2</span></span><br><span class="line">请问 a 显示是几？</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = &#123;<span class="attr">name</span>: <span class="string">'a'</span>&#125;</span><br><span class="line"><span class="keyword">var</span> b = a</span><br><span class="line">b = &#123;<span class="attr">name</span>: <span class="string">'b'</span>&#125;</span><br><span class="line">请问现在 a.name 是多少？</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = &#123;<span class="attr">name</span>: <span class="string">'a'</span>&#125;</span><br><span class="line"><span class="keyword">var</span> b = a</span><br><span class="line">b.name = <span class="string">'b'</span></span><br><span class="line">请问现在 a.name 是多少？</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = &#123;<span class="attr">name</span>: <span class="string">'a'</span>&#125;</span><br><span class="line"><span class="keyword">var</span> b = a</span><br><span class="line">b = <span class="literal">null</span></span><br><span class="line">请问现在 a 是什么？</span><br></pre></td></tr></table></figure>
+<p>主要是画内存图，分清楚 <code>Heap</code> 和 <code>Stack</code> ，像复杂类型一般都是放到 <code>Stack</code>中的比如对象。</p>
+<h3 id="垃圾回收"><a href="#垃圾回收" class="headerlink" title="垃圾回收"></a>垃圾回收</h3><p>JavaScript 的 gc 个人觉得与Java 是很像的，至少表面上看都是当不被引用的时候就会被当做垃圾然后就会等待垃圾车的到来。</p>
+<h3 id="深复制与浅复制"><a href="#深复制与浅复制" class="headerlink" title="深复制与浅复制"></a>深复制与浅复制</h3><p>这是一个浅拷贝的例子</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = &#123;<span class="attr">name</span>: <span class="string">'frank'</span>&#125;</span><br><span class="line"><span class="keyword">var</span> b = a</span><br><span class="line">b.name = <span class="string">'b'</span></span><br><span class="line">a.name === <span class="string">'b'</span> <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<p>因为我们对 b 操作后，a 也变了</p>
+<p>什么是深拷贝了，就是对 Heap 内存进行完全的拷贝。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = &#123;<span class="attr">name</span>: <span class="string">'frank'</span>&#125;</span><br><span class="line"><span class="keyword">var</span> b = deepClone(a) <span class="comment">// deepClone 还不知道怎么实现</span></span><br><span class="line">b.name = <span class="string">'b'</span></span><br><span class="line">a.name === <span class="string">'a'</span> <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+    </div>
+
+    
+    
+    
+        
+      
+        <div id="reward-container">
+  <div></div>
+  <button id="reward-button" disable="enable" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+
+  </div>
+</div>
+
+      
+
+      <footer class="post-footer">
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+            
+          </div>
+        
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/2018/03/05/JSobject/" rel="next" title="JS　里面的对象">
+                  <i class="fa fa-chevron-left"></i> JS　里面的对象
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/2018/03/16/closure/" rel="prev" title="啥是闭包">
+                  啥是闭包 <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </div>
+  
+  
+  
+  </article>
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#JS-中数据类型有七种-number-null-undefined-string-boolean-object-symbol-es6-今天就来看看他们的一些平常会用到的东西"><span class="nav-number">1.</span> <span class="nav-text">JS 中数据类型有七种　number null undefined string boolean object symbol(es6) 今天就来看看他们的一些平常会用到的东西</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注意事项"><span class="nav-number">2.</span> <span class="nav-text">注意事项</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#２．string"><span class="nav-number">2.0.1.</span> <span class="nav-text">２．string</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#３．undefined-与-null"><span class="nav-number">2.0.2.</span> <span class="nav-text">３．undefined 与 null</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#typeof-操作符"><span class="nav-number">3.</span> <span class="nav-text">typeof 操作符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据转换"><span class="nav-number">4.</span> <span class="nav-text">数据转换</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#任意类型转-String"><span class="nav-number">4.0.0.1.</span> <span class="nav-text">任意类型转 String</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#任意类型转数字"><span class="nav-number">4.0.1.</span> <span class="nav-text">任意类型转数字</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#任意类型转布尔"><span class="nav-number">4.0.2.</span> <span class="nav-text">任意类型转布尔</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#面试题"><span class="nav-number">5.</span> <span class="nav-text">面试题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#垃圾回收"><span class="nav-number">6.</span> <span class="nav-text">垃圾回收</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#深复制与浅复制"><span class="nav-number">7.</span> <span class="nav-text">深复制与浅复制</span></a></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+      src="/images/123.jpg"
+      alt="Marsorsun">
+  <p class="site-author-name" itemprop="name">Marsorsun</p>
+  <div class="site-description" itemprop="description">“对我来说，博客首先是一种知识管理工具，其次才是传播工具。我的技术文章，主要用来整理我还不懂的知识。我只写那些我还没有完全掌握的东西，那些我精通的东西，往往没有动力写。炫耀从来不是我的动机，好奇才是。"</div>
+</div>
+  <nav class="site-state motion-element">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">79</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/">
+          
+        
+        <span class="site-state-item-count">36</span>
+        <span class="site-state-item-name">标签</span>
+        </a>
+      </div>
+    
+  </nav>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://github.com/unbrain" title="GitHub &rarr; https://github.com/unbrain" rel="noopener" target="_blank"><i class="fa fa-fw fa-github-alt"></i>GitHub</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="mailto:marsorsun@gmail.com" title="E-Mail &rarr; mailto:marsorsun@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://www.zhihu.com/people/chen-xi-zhao-yang-21/activities" title="知乎 &rarr; https://www.zhihu.com/people/chen-xi-zhao-yang-21/activities" rel="noopener" target="_blank"><i class="fa fa-fw fa-zhihu"></i>知乎</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="http://www.liuzhaoyang.com" title="个人网站 &rarr; http://www.liuzhaoyang.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-browser"></i>个人网站</a>
+      </span>
+    
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Marsorsun</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.4.0</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+
+
+  <script src="/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="/js/utils.js?v=7.4.0"></script><script src="/js/motion.js?v=7.4.0"></script>
+<script src="/js/schemes/muse.js?v=7.4.0"></script>
+<script src="/js/next-boot.js?v=7.4.0"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>

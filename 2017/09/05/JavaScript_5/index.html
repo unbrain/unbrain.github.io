@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/123.png?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/123.png?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/123.png?v=7.4.0">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.4.0" color="#222">
+
+<link rel="stylesheet" href="/css/main.css?v=7.4.0">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '7.4.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="DOM节点childNodes     nodeType 节点类型    –&amp;gt;3文本节点     –&amp;gt;1元素节点 获取子节点 children    子节点 parentNode    父节点">
+<meta name="keywords" content="JavaScript,blue视频笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="DOM 操作">
+<meta property="og:url" content="http://yoursite.com/2017/09/05/JavaScript_5/index.html">
+<meta property="og:site_name" content="Marsorsun">
+<meta property="og:description" content="DOM节点childNodes     nodeType 节点类型    –&amp;gt;3文本节点     –&amp;gt;1元素节点 获取子节点 children    子节点 parentNode    父节点">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-09-15T09:25:00.468Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="DOM 操作">
+<meta name="twitter:description" content="DOM节点childNodes     nodeType 节点类型    –&amp;gt;3文本节点     –&amp;gt;1元素节点 获取子节点 children    子节点 parentNode    父节点">
+  <link rel="canonical" href="http://yoursite.com/2017/09/05/JavaScript_5/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>DOM 操作 | Marsorsun</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Marsorsun</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">心猿码意</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+  </ul>
+
+    
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+      <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block post">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/05/JavaScript_5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Marsorsun">
+      <meta itemprop="description" content="“对我来说，博客首先是一种知识管理工具，其次才是传播工具。我的技术文章，主要用来整理我还不懂的知识。我只写那些我还没有完全掌握的东西，那些我精通的东西，往往没有动力写。炫耀从来不是我的动机，好奇才是。"">
+      <meta itemprop="image" content="/images/123.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Marsorsun">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">DOM 操作
+
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2017/09/05 00:00:00" itemprop="dateCreated datePublished" datetime="2017-09-05T00:00:00+08:00">2017/09/05</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019/09/15 17:25:00" itemprop="dateModified" datetime="2019-09-15T17:25:00+08:00">2019/09/15</time>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h3 id="DOM节点"><a href="#DOM节点" class="headerlink" title="DOM节点"></a>DOM节点</h3><p>childNodes     nodeType 节点类型    –&gt;3文本节点     –&gt;1元素节点</p>
+<p>获取子节点</p>
+<p>children    子节点</p>
+<p>parentNode    父节点</p>
+<a id="more"></a>
+<p>例子：点击链接，隐藏整个li</p>
+<p>offsetParent    获取元素在页面上相对谁定位</p>
+<p>首尾子节点</p>
+<p>有兼容性问题    –&gt;    nodeType    </p>
+<p>firstChild、firstElementChild </p>
+<p>lastChild 、lastElementChild</p>
+<p>兄弟节点</p>
+<p>有兼容性问题</p>
+<p>nextSibling、nextElementSibling</p>
+<p>previousSibling、previousElementSibling</p>
+<h3 id="操纵元素属性"><a href="#操纵元素属性" class="headerlink" title="操纵元素属性"></a>操纵元素属性</h3><p>元素属性操作</p>
+<p>第一种：oDiv.style.display=“block”;</p>
+<p>第二种：oDiv.style[“display”]=“block”;</p>
+<p>第三种：Dom方式</p>
+<p>DOM方式操作元素属性</p>
+<p>获取：getAttribute(名称)</p>
+<p>设置：setAttribute(名称, 值)</p>
+<p>删除：removeAttribute(名称)</p>
+<h3 id="DOM元素灵活查找"><a href="#DOM元素灵活查找" class="headerlink" title="DOM元素灵活查找"></a>DOM元素灵活查找</h3><p>用className选择元素</p>
+<p>如何用className选择元素</p>
+<p>选出所有元素</p>
+<p>通过className条件筛选</p>
+<p>封装成函数</p>
+<h3 id="创建、插入和删除元素"><a href="#创建、插入和删除元素" class="headerlink" title="创建、插入和删除元素"></a>创建、插入和删除元素</h3><p>创建DOM元素</p>
+<p>createElement(标签名)        创建一个节点    document.createElement(‘li’);</p>
+<p>appendChild(节点)            追加一个节点    父级.apppendChild(子节点)</p>
+<p>例子：为ul插入li</p>
+<p>插入元素</p>
+<p>insertBefore(节点, 原有节点)    在已有元素前插入    oUl.insertBefore(oLi, aLi[0]);</p>
+<p>例子：倒序插入li</p>
+<p>删除DOM元素</p>
+<p>removeChild(节点)            删除一个节点    oUl.removeChild(this.parentNode);</p>
+<p>例子：删除li</p>
+<h3 id="文档碎片"><a href="#文档碎片" class="headerlink" title="文档碎片"></a>文档碎片</h3><p>文档碎片可以提高DOM操作性能(理论上)</p>
+<p>文档碎片原理</p>
+<p>document.createDocumentFragment()    //但是现在几乎不用这个  低级浏览器    几乎无用</p>
+<h3 id="表格应用"><a href="#表格应用" class="headerlink" title="表格应用"></a>表格应用</h3><p>tBodies、tHead、tFoot、rows、cells</p>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// alert(<span class="name">aTb</span>.getElementsByTagName('tbody')[<span class="number">0</span>].getElementsByTagName('tr')[<span class="number">0</span>].getElementsByTagName('td')[<span class="number">1</span>].innerHTML)<span class="comment">;</span></span><br><span class="line">alert(<span class="name">aTb</span>.tBodies[<span class="number">0</span>].rows[<span class="number">0</span>].cells[<span class="number">1</span>].innerHTML)<span class="comment">;</span></span><br></pre></td></tr></table></figure>
+<p>隔行变色</p>
+<p>鼠标移入高亮</p>
+<p>添加、删除一行</p>
+<h3 id="DOM方法的使用"><a href="#DOM方法的使用" class="headerlink" title="DOM方法的使用"></a>DOM方法的使用</h3><p>搜索    —-&gt;    主要是后端</p>
+<p>版本1：基础版本——字符串比较</p>
+<p>版本2：忽略大小写——大小写转换</p>
+<p>版本3：模糊搜索——search的使用</p>
+<p>版本4：多关键词——split</p>
+<p>高亮显示、筛选    background / display</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.onload =<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">var</span> oTb = <span class="built_in">document</span>.getElementById(<span class="string">'table1'</span>);</span><br><span class="line">	<span class="keyword">var</span> oT1 = <span class="built_in">document</span>.getElementById(<span class="string">'text1'</span>);</span><br><span class="line">	<span class="keyword">var</span> oBtn1 = <span class="built_in">document</span>.getElementById(<span class="string">'btn1'</span>);</span><br><span class="line"></span><br><span class="line">	oBtn1.onclick = <span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; oTb.tBodies[<span class="number">0</span>].rows.length; i++)&#123;</span><br><span class="line">			<span class="keyword">var</span> search = oT1.value.toLowerCase();</span><br><span class="line">			<span class="keyword">var</span> oldText = oTb.tBodies[<span class="number">0</span>].rows[i].cells[<span class="number">1</span>].innerHTML.toLowerCase();</span><br><span class="line">			<span class="keyword">var</span> arr = search.split(<span class="string">' '</span>);</span><br><span class="line">			oTb.tBodies[<span class="number">0</span>].rows[i].style.background = <span class="string">''</span>;</span><br><span class="line"></span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">var</span> j = <span class="number">0</span>; j &lt; arr.length; j++)&#123;</span><br><span class="line">				<span class="keyword">if</span>( oldText.search(arr[j]) != <span class="number">-1</span>)&#123;</span><br><span class="line">					oTb.tBodies[<span class="number">0</span>].rows[i].style.background = <span class="string">'green'</span>;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;	</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>排序</p>
+<p>移动Li    appendChild(); //1.从原有父级删掉2.添加到新的父级</p>
+<p>元素排序：转换——排序——插入</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.onload =<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">var</span> oTb = <span class="built_in">document</span>.getElementById(<span class="string">'table1'</span>);</span><br><span class="line">	<span class="keyword">var</span> oBtn1 = <span class="built_in">document</span>.getElementById(<span class="string">'btn1'</span>);</span><br><span class="line"></span><br><span class="line">	oBtn1.onclick = <span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">		<span class="keyword">var</span> arr = [];</span><br><span class="line"></span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; oTb.tBodies[<span class="number">0</span>].rows.length; i++)&#123;</span><br><span class="line">			arr[i] = oTb.tBodies[<span class="number">0</span>].rows[i];</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		arr.sort(<span class="function"><span class="keyword">function</span> (<span class="params">num1, num2</span>)</span>&#123;</span><br><span class="line">			<span class="keyword">var</span> n1 = <span class="built_in">parseInt</span>(num1.cells[<span class="number">0</span>].innerHTML);</span><br><span class="line">			<span class="keyword">var</span> n2 = <span class="built_in">parseInt</span>(num2.cells[<span class="number">0</span>].innerHTML);</span><br><span class="line"></span><br><span class="line">			<span class="keyword">return</span> (n1 - n2);</span><br><span class="line">		&#125;);</span><br><span class="line"></span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">var</span> i <span class="keyword">in</span> arr)&#123;</span><br><span class="line">			oTb.tBodies[<span class="number">0</span>].appendChild(arr[i]);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="表单应用"><a href="#表单应用" class="headerlink" title="表单应用"></a>表单应用</h3><p>表单基础知识</p>
+<p>什么是表单</p>
+<p>向服务器提交数据，比如：用户注册</p>
+<p>action        提交到哪里 </p>
+<p>表单事件</p>
+<p>onsubmit    提交时发生</p>
+<p>onreset        重置时发生</p>
+<p>表单内容验证</p>
+<p>阻止用户输入非法字符        阻止事件</p>
+<p>输入时、失去焦点时验证        onkeyup、onblur</p>
+<p>提交时检查                onsubmit</p>
+<p><em>后台数据检查</em></p>
+
+    </div>
+
+    
+    
+    
+        
+      
+        <div id="reward-container">
+  <div></div>
+  <button id="reward-button" disable="enable" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+
+  </div>
+</div>
+
+      
+
+      <footer class="post-footer">
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+            
+              <a href="/tags/blue视频笔记/" rel="tag"># blue视频笔记</a>
+            
+          </div>
+        
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/2017/09/01/English-learning/" rel="next" title="极简英语语法">
+                  <i class="fa fa-chevron-left"></i> 极简英语语法
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/2017/09/05/JavaScript_3/" rel="prev" title="深入 JavaScript">
+                  深入 JavaScript <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </div>
+  
+  
+  
+  </article>
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#DOM节点"><span class="nav-number">1.</span> <span class="nav-text">DOM节点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#操纵元素属性"><span class="nav-number">2.</span> <span class="nav-text">操纵元素属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DOM元素灵活查找"><span class="nav-number">3.</span> <span class="nav-text">DOM元素灵活查找</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建、插入和删除元素"><span class="nav-number">4.</span> <span class="nav-text">创建、插入和删除元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文档碎片"><span class="nav-number">5.</span> <span class="nav-text">文档碎片</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#表格应用"><span class="nav-number">6.</span> <span class="nav-text">表格应用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DOM方法的使用"><span class="nav-number">7.</span> <span class="nav-text">DOM方法的使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#表单应用"><span class="nav-number">8.</span> <span class="nav-text">表单应用</span></a></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+      src="/images/123.jpg"
+      alt="Marsorsun">
+  <p class="site-author-name" itemprop="name">Marsorsun</p>
+  <div class="site-description" itemprop="description">“对我来说，博客首先是一种知识管理工具，其次才是传播工具。我的技术文章，主要用来整理我还不懂的知识。我只写那些我还没有完全掌握的东西，那些我精通的东西，往往没有动力写。炫耀从来不是我的动机，好奇才是。"</div>
+</div>
+  <nav class="site-state motion-element">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">79</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/">
+          
+        
+        <span class="site-state-item-count">36</span>
+        <span class="site-state-item-name">标签</span>
+        </a>
+      </div>
+    
+  </nav>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://github.com/unbrain" title="GitHub &rarr; https://github.com/unbrain" rel="noopener" target="_blank"><i class="fa fa-fw fa-github-alt"></i>GitHub</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="mailto:marsorsun@gmail.com" title="E-Mail &rarr; mailto:marsorsun@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://www.zhihu.com/people/chen-xi-zhao-yang-21/activities" title="知乎 &rarr; https://www.zhihu.com/people/chen-xi-zhao-yang-21/activities" rel="noopener" target="_blank"><i class="fa fa-fw fa-zhihu"></i>知乎</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="http://www.liuzhaoyang.com" title="个人网站 &rarr; http://www.liuzhaoyang.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-browser"></i>个人网站</a>
+      </span>
+    
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Marsorsun</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.4.0</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+
+
+  <script src="/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="/js/utils.js?v=7.4.0"></script><script src="/js/motion.js?v=7.4.0"></script>
+<script src="/js/schemes/muse.js?v=7.4.0"></script>
+<script src="/js/next-boot.js?v=7.4.0"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>

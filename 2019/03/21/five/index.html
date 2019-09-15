@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/123.png?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/123.png?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/123.png?v=7.4.0">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.4.0" color="#222">
+
+<link rel="stylesheet" href="/css/main.css?v=7.4.0">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '7.4.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="新的项目使用 vue cli3 搭建，适配选折的是根据 vw 进行适配，写还是写 px 只是使用了 postcss 的相关插件 1234567891011121314151617181920212223  &quot;postcss&quot;: &amp;#123;    &quot;plugins&quot;: &amp;#123;      &quot;postcss-import&quot;: &amp;#123;&amp;#125;,      &quot;postcss-mixins&quot;">
+<meta name="keywords" content="随笔">
+<meta property="og:type" content="article">
+<meta property="og:title" content="第五周">
+<meta property="og:url" content="http://yoursite.com/2019/03/21/five/index.html">
+<meta property="og:site_name" content="Marsorsun">
+<meta property="og:description" content="新的项目使用 vue cli3 搭建，适配选折的是根据 vw 进行适配，写还是写 px 只是使用了 postcss 的相关插件 1234567891011121314151617181920212223  &quot;postcss&quot;: &amp;#123;    &quot;plugins&quot;: &amp;#123;      &quot;postcss-import&quot;: &amp;#123;&amp;#125;,      &quot;postcss-mixins&quot;">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://yoursite.com/img/1553169554723.png">
+<meta property="og:image" content="http://yoursite.com/img/1553169573583.png">
+<meta property="og:image" content="http://yoursite.com/img/1553169588894.png">
+<meta property="og:image" content="http://yoursite.com/img/1553169169425.png">
+<meta property="og:image" content="http://yoursite.com/img/1553169307071.png">
+<meta property="og:image" content="http://yoursite.com/img/1553169420514.png">
+<meta property="og:image" content="http://yoursite.com/img/1553169465186.png">
+<meta property="og:image" content="http://yoursite.com/img/1553169480025.png">
+<meta property="og:image" content="http://yoursite.com/img/1553169507173.png">
+<meta property="og:updated_time" content="2019-09-15T08:17:31.969Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="第五周">
+<meta name="twitter:description" content="新的项目使用 vue cli3 搭建，适配选折的是根据 vw 进行适配，写还是写 px 只是使用了 postcss 的相关插件 1234567891011121314151617181920212223  &quot;postcss&quot;: &amp;#123;    &quot;plugins&quot;: &amp;#123;      &quot;postcss-import&quot;: &amp;#123;&amp;#125;,      &quot;postcss-mixins&quot;">
+<meta name="twitter:image" content="http://yoursite.com/img/1553169554723.png">
+  <link rel="canonical" href="http://yoursite.com/2019/03/21/five/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>第五周 | Marsorsun</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Marsorsun</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">心猿码意</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+  </ul>
+
+    
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+      <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block post">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/21/five/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Marsorsun">
+      <meta itemprop="description" content="“对我来说，博客首先是一种知识管理工具，其次才是传播工具。我的技术文章，主要用来整理我还不懂的知识。我只写那些我还没有完全掌握的东西，那些我精通的东西，往往没有动力写。炫耀从来不是我的动机，好奇才是。"">
+      <meta itemprop="image" content="/images/123.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Marsorsun">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">第五周
+
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019/03/21 00:00:00" itemprop="dateCreated datePublished" datetime="2019-03-21T00:00:00+08:00">2019/03/21</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019/09/15 16:17:31" itemprop="dateModified" datetime="2019-09-15T16:17:31+08:00">2019/09/15</time>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>新的项目使用 vue cli3 搭建，适配选折的是根据 vw 进行适配，写还是写 px 只是使用了 postcss 的相关插件</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">  "postcss": &#123;</span><br><span class="line">    "plugins": &#123;</span><br><span class="line">      "postcss-import": &#123;&#125;,</span><br><span class="line">      "postcss-mixins": &#123;&#125;,</span><br><span class="line">      "postcss-aspect-ratio-mini": &#123;&#125;,title:  flask vue socket</span><br><span class="line">date: 2019/03/10</span><br><span class="line">tags:	</span><br><span class="line">	- 项目</span><br><span class="line">      "postcss-write-svg": &#123;&#125;,</span><br><span class="line">      "postcss-cssnext": &#123;&#125;,</span><br><span class="line">      "postcss-px-to-viewport": &#123;</span><br><span class="line">        "viewportWidth": 375,</span><br><span class="line">        "viewportHeight": 667,</span><br><span class="line">        "unitPrecision": 3,</span><br><span class="line">        "selectorBlackList": [</span><br><span class="line">          ".ignore",</span><br><span class="line">          <span class="string">".hairlines"</span></span><br><span class="line">        ],</span><br><span class="line">        "minPixelValue": 1,</span><br><span class="line">        "mediaQuery": false</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<p>最主要的就是 <code>postcss-px-to-viewport</code>，使用插件有两个坑，第一个是使用的 <code>postcss-write-svg</code> 将其写在了 <code>postcss-mixins</code> 的前面哎</p>
+<p>报错是 Cannot read property ‘forEach’ of undefined 等一大窜当时就蒙了，这是啥报错，我当时感觉自己啥都没有干啊，就只是添加了一个插件就报错，删除这个插件了就没事，一度觉得是别人的插件有问题，幻想着可以提 issue。。。后面想到在之前使用 <code>vue-socket</code> 由于使用顺序而导致踩坑想到是一部是插件使用是的顺序问题，果然将其放在 <code>postcss-mixins</code> 后问题完美解决。</p>
+<p>第二个是 <code>postcss-url</code> 自己当时搭建项目是参考了大漠的 <a href="https://www.w3cplus.com/mobile/vw-layout-in-vue.html" target="_blank" rel="noopener">如何在Vue项目中使用vw实现移动端适配</a> 于是和自然是用了这个插件，但是当时并不知道他会干嘛。于是我就与之前在一样在 css 中使用 url 便出现了问题，</p>
+<p><img src="/img/1553169554723.png" alt></p>
+<p>平常这样写是能够渲染出来的，可是现在去 chrome 看会看到一片空白，看样式</p>
+<p><img src="/img/1553169573583.png" alt></p>
+<p>当时就尝试着把双引号去</p>
+<p><img src="/img/1553169588894.png" alt></p>
+<p>发现可以了渲染出图片当时就没有去管了，后面回想起来就觉得很奇怪，当时也没想到是 postcss 插件的问题，觉得是在 vue build 中 cli2 与 cli3 有啥区别，就在项目全局搜索了 png/url 等一些东西就发现了 <code>postcss-url</code> 这个东西把它删掉就算是解决了。</p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/background-size" target="_blank" rel="noopener">background-size</a> </p>
+<p><img src="/img/1553169169425.png" alt></p>
+<p>对于小于 12px 的字体很自然的在 chrome 浏览器不再变小，这是 chrome 默认的（可以更改的）。但是在 chrome 该如何适配呢？首选当然是使用 transform。（zoom 依旧会受到 12px 的限制）</p>
+<p><img src="/img/1553169307071.png" alt></p>
+<p>可以看到蓝色区域莫名的多出来了，这是因为scale只能引起重绘，而没有引起重排，所以页面外元素布局是不会改变，自身的样式会重新绘制。那要如何才让他不占位置？脱离文档流。</p>
+<p><img src="/img/1553169420514.png" alt></p>
+<p>这样看似乎解决了这个问题？来我们把字加长点</p>
+<p><img src="/img/1553169465186.png" alt></p>
+<p>这好像不太对劲，添上 white-space: no-wrap</p>
+<p><img src="/img/1553169480025.png" alt></p>
+<p>似乎解决，但是如果再次加长就。。。</p>
+<p><img src="/img/1553169507173.png" alt></p>
+<p>感觉这是能想到最后的了，一般这么小的字是不可能超过一行的，字太小对于用户不友好。当字太小的时候不要选择去实现它，让我们拿着刀区找设计师就对了。。。</p>
+<p><a href="https://github.com/vuejs/vue/blob/v2.1.10/flow/compiler.js#L63-L142" target="_blank" rel="noopener">vue ast</a></p>
+<p><a href="https://github.com/vuejs/vue/blob/v2.1.10/src/core/vdom/vnode.js#L23-L50" target="_blank" rel="noopener">vnode数据结构</a></p>
+<p><a href="https://github.com/aooy/blog/issues/2" target="_blank" rel="noopener">解析vue2.0的diff算法</a></p>
+
+    </div>
+
+    
+    
+    
+        
+      
+
+      <footer class="post-footer">
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/tags/随笔/" rel="tag"># 随笔</a>
+            
+          </div>
+        
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/2019/03/15/Retina下1px的解决方案/" rel="next" title="Retina 下 1px 的解决方案">
+                  <i class="fa fa-chevron-left"></i> Retina 下 1px 的解决方案
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/2019/03/22/两个遗留分支/" rel="prev" title="qrcode 分支">
+                  qrcode 分支 <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </div>
+  
+  
+  
+  </article>
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+      src="/images/123.jpg"
+      alt="Marsorsun">
+  <p class="site-author-name" itemprop="name">Marsorsun</p>
+  <div class="site-description" itemprop="description">“对我来说，博客首先是一种知识管理工具，其次才是传播工具。我的技术文章，主要用来整理我还不懂的知识。我只写那些我还没有完全掌握的东西，那些我精通的东西，往往没有动力写。炫耀从来不是我的动机，好奇才是。"</div>
+</div>
+  <nav class="site-state motion-element">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">79</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/">
+          
+        
+        <span class="site-state-item-count">36</span>
+        <span class="site-state-item-name">标签</span>
+        </a>
+      </div>
+    
+  </nav>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://github.com/unbrain" title="GitHub &rarr; https://github.com/unbrain" rel="noopener" target="_blank"><i class="fa fa-fw fa-github-alt"></i>GitHub</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="mailto:marsorsun@gmail.com" title="E-Mail &rarr; mailto:marsorsun@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://www.zhihu.com/people/chen-xi-zhao-yang-21/activities" title="知乎 &rarr; https://www.zhihu.com/people/chen-xi-zhao-yang-21/activities" rel="noopener" target="_blank"><i class="fa fa-fw fa-zhihu"></i>知乎</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="http://www.liuzhaoyang.com" title="个人网站 &rarr; http://www.liuzhaoyang.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-browser"></i>个人网站</a>
+      </span>
+    
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Marsorsun</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.4.0</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+
+
+  <script src="/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="/js/utils.js?v=7.4.0"></script><script src="/js/motion.js?v=7.4.0"></script>
+<script src="/js/schemes/muse.js?v=7.4.0"></script>
+<script src="/js/next-boot.js?v=7.4.0"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>

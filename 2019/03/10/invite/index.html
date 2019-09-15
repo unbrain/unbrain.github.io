@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/123.png?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/123.png?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/123.png?v=7.4.0">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.4.0" color="#222">
+
+<link rel="stylesheet" href="/css/main.css?v=7.4.0">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '7.4.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="vscode 的基本配置尽管自己大多数的时候是在使用 vscode 敲代码，但是对于其的配置没有过比较深的认识，带我的小姐姐很贴心地给了我很好的参考资料 能让你开发效率翻倍的 VSCode 插件配置（上） 能让你开发效率翻倍的 VSCode 插件配置（中） 在里面最喜欢的就是 Settings Sync，基于 gist，可以备份我们的一些配置，插件，当我们换了个环境也能快速的搭建我们自己喜欢的敲代">
+<meta name="keywords" content="随笔,项目">
+<meta property="og:type" content="article">
+<meta property="og:title" content="邀请老铁项目总结">
+<meta property="og:url" content="http://yoursite.com/2019/03/10/invite/index.html">
+<meta property="og:site_name" content="Marsorsun">
+<meta property="og:description" content="vscode 的基本配置尽管自己大多数的时候是在使用 vscode 敲代码，但是对于其的配置没有过比较深的认识，带我的小姐姐很贴心地给了我很好的参考资料 能让你开发效率翻倍的 VSCode 插件配置（上） 能让你开发效率翻倍的 VSCode 插件配置（中） 在里面最喜欢的就是 Settings Sync，基于 gist，可以备份我们的一些配置，插件，当我们换了个环境也能快速的搭建我们自己喜欢的敲代">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://yoursite.com/img/t1.gif">
+<meta property="og:image" content="http://yoursite.com/img/t2.gif">
+<meta property="og:updated_time" content="2019-09-15T08:17:31.969Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="邀请老铁项目总结">
+<meta name="twitter:description" content="vscode 的基本配置尽管自己大多数的时候是在使用 vscode 敲代码，但是对于其的配置没有过比较深的认识，带我的小姐姐很贴心地给了我很好的参考资料 能让你开发效率翻倍的 VSCode 插件配置（上） 能让你开发效率翻倍的 VSCode 插件配置（中） 在里面最喜欢的就是 Settings Sync，基于 gist，可以备份我们的一些配置，插件，当我们换了个环境也能快速的搭建我们自己喜欢的敲代">
+<meta name="twitter:image" content="http://yoursite.com/img/t1.gif">
+  <link rel="canonical" href="http://yoursite.com/2019/03/10/invite/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>邀请老铁项目总结 | Marsorsun</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Marsorsun</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">心猿码意</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+  </ul>
+
+    
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+      <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block post">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/10/invite/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Marsorsun">
+      <meta itemprop="description" content="“对我来说，博客首先是一种知识管理工具，其次才是传播工具。我的技术文章，主要用来整理我还不懂的知识。我只写那些我还没有完全掌握的东西，那些我精通的东西，往往没有动力写。炫耀从来不是我的动机，好奇才是。"">
+      <meta itemprop="image" content="/images/123.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Marsorsun">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">邀请老铁项目总结
+
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019/03/10 00:00:00" itemprop="dateCreated datePublished" datetime="2019-03-10T00:00:00+08:00">2019/03/10</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019/09/15 16:17:31" itemprop="dateModified" datetime="2019-09-15T16:17:31+08:00">2019/09/15</time>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h3 id="vscode-的基本配置"><a href="#vscode-的基本配置" class="headerlink" title="vscode 的基本配置"></a><code>vscode</code> 的基本配置</h3><p>尽管自己大多数的时候是在使用 <code>vscode</code> 敲代码，但是对于其的配置没有过比较深的认识，带我的小姐姐很贴心地给了我很好的参考资料</p>
+<p><a href="https://juejin.im/post/5a08d1d6f265da430f31950e" target="_blank" rel="noopener">能让你开发效率翻倍的 VSCode 插件配置（上）</a></p>
+<p><a href="https://juejin.im/post/5ad13d8a6fb9a028ce7c0721" target="_blank" rel="noopener">能让你开发效率翻倍的 VSCode 插件配置（中）</a></p>
+<p>在里面最喜欢的就是 <a href="https://link.juejin.im/?target=https%3A%2F%2Fmarketplace.visualstudio.com%2Fitems%3FitemName%3DShan.code-settings-sync" target="_blank" rel="noopener">Settings Sync</a>，基于 <code>gist</code>，可以备份我们的一些配置，插件，当我们换了个环境也能快速的搭建我们自己喜欢的敲代码的环境。</p>
+<p>由于自己对于一些插件的不熟悉，就踩了坑。由于不了解  <code>EditorConfig for VS Code</code> 而自己又在项目中添加了 <code>.editorconfig</code>，且自己使用了 <code>vscode</code> 的自动保存功能，导致代码刚刚敲完停顿一下就自动换行了，了解了 <code>insert_final_newline (on save)</code> 这句的意义修改 <code>vscode</code> 自动保存的机制就完美避开了。<br><a id="more"></a></p>
+<p>不过自己还是需要更多地了解 <a href="https://jeasonstudio.gitbooks.io/vscode-cn-doc/content/" target="_blank" rel="noopener">Microsoft Visual Studio Code 中文手册</a></p>
+<h3 id="Vue-项目的搭建"><a href="#Vue-项目的搭建" class="headerlink" title="Vue 项目的搭建"></a>Vue 项目的搭建</h3><p>大概秋招过后对于前端的知识就开始比较懈怠了，<code>vue cli3</code> 出来后都没有去尝试过，当时搭项目还是用的 <code>vue cli2</code> 照着 <code>taskcenter</code> 项目进行的配置。其实项目是能跑的，就是其中一些插件没有使用过，导致出了些问题，而自己对于其中的与案例并不了解所以糊里糊涂的。 主要知识点是 <a href="https://cli.vuejs.org/zh/guide/css.html" target="_blank" rel="noopener"><code>css</code></a> 相关的</p>
+<ul>
+<li><a href="https://postcss.org/" target="_blank" rel="noopener">postcss</a></li>
+<li><a href="http://www.ruanyifeng.com/blog/2016/06/css_modules.html" target="_blank" rel="noopener">css module</a></li>
+</ul>
+<p>刚开始使用 <code>CSS module</code> 就把自己放在坑里了。还问了带我的小姐姐我是不是哪里写错了，小姐姐看了代码说我是个天坑，我将好好地 <code>module</code> 写成了 <code>moudle</code> 当时还感觉自己拼的没问题，感到尴尬，所以说敲代码还是要细心，不过有个插件在这种时候就很有用，<a href="https://link.juejin.im/?target=https%3A%2F%2Fmarketplace.visualstudio.com%2Fitems%3FitemName%3Dstreetsidesoftware.code-spell-checker" target="_blank" rel="noopener">Code Spell Checker</a> 对于我这种英语烂的人，会提醒我是不是这个单词拼错了，很是方便。项目使用 <code>动态 rem</code> 而我用不想用 sass 用函数来解决，使用 <code>postcss</code> 很自然的搜索到了 <code>postcss-pxtorem</code>，而我当时直接将 <code>vue cli2</code> 下的 <code>.postcssrc.js</code> 迁移到 <code>vue-cli3</code> 下直接使用，发现没有效果（但是官网说的是能用  <a href="https://github.com/michael-ciniawsky/postcss-load-config" target="_blank" rel="noopener">postcss-load-config</a> 可能是我少了啥吧），后面看换成在根创建 <code>vue.config.js</code> </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    css: &#123;</span><br><span class="line">        loaderOptions: &#123;</span><br><span class="line">            postcss: &#123;</span><br><span class="line">                plugins: [</span><br><span class="line">                    <span class="built_in">require</span>(<span class="string">"postcss-pxtorem"</span>)(&#123;</span><br><span class="line">                        <span class="comment">// 把px单位换算成rem单位</span></span><br><span class="line">                        rootValue: <span class="number">16</span>, <span class="comment">// 换算的基数(设计图750的根字体为32)</span></span><br><span class="line">                        selectorBlackList: [<span class="string">"weui"</span>, <span class="string">"mu"</span>], <span class="comment">// 忽略转换正则匹配项</span></span><br><span class="line">                        propList: [<span class="string">"*"</span>]</span><br><span class="line">                        <span class="comment">//......</span></span><br></pre></td></tr></table></figure>
+<p>还有一种就是直接在 <code>package.json</code>  搜索 <code>postcss</code> 在其插件下添加要使用的插件后 <code>npm i</code> </p>
+<h3 id="Vue-知识点"><a href="#Vue-知识点" class="headerlink" title="Vue 知识点"></a>Vue 知识点</h3><h4 id="深入响应式原理"><a href="#深入响应式原理" class="headerlink" title="深入响应式原理"></a><a href="https://cn.vuejs.org/v2/guide/reactivity.html" target="_blank" rel="noopener">深入响应式原理</a></h4><p>官方文档中这一节应该是最最重要的，之前也是看了很多遍，但是自己其实了解的并不深入所以嘿嘿嘿忘光光。自己之前写的 <a href="https://unbrain.github.io/2018/08/03/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%EF%BC%88%E4%B8%80%EF%BC%89/" target="_blank" rel="noopener">面向对象程序设计</a> 中写了</p>
+<h4 id="对象的属性类型"><a href="#对象的属性类型" class="headerlink" title="对象的属性类型"></a>对象的属性类型</h4><blockquote>
+<ul>
+<li>数据属性<br><code>[[Configurable]]</code> <code>[[Enumerable]]</code> <code>[[Writable]]</code> <code>[[Value]]</code></li>
+<li>访问器属性<br><code>[[Get]]</code> <code>[[Set]]</code> <code>[[Configurable]]</code> <code>[[Enumerable]]</code><br>访问器属性必须通过 Object.defineProperty() 来进行定义<br>定义多个属性使用 Object.defineProperties()<br>Vue 的响应式就离不开访问器属性，但是 Object.defineProperty() 这东西又支持的 IE9+，IE8部分支持这也就是为什么 Vue 不支持 IE8 以及更低版本浏览器的原因。<br><a href="https://www.zhihu.com/question/44724640" target="_blank" rel="noopener">如何监听 js 中变量的变化?</a><br>读取属性的特性使用 Object.getOwnPropertyDescriptor()</li>
+</ul>
+</blockquote>
+<p>那天一起实习的问我为啥她给对象赋值而 Vue 并没有检测到，当时也没有一下反应过来，直到看到一个空对象</p>
+<blockquote>
+<p>Vue <strong>不能检测到对象属性的添加或删除</strong>。由于 Vue 会在初始化实例时对属性执行 <code>getter/setter</code> 转化过程，所以属性必须在 <code>data</code> 对象上存在才能让 Vue 转换它，这样才能让它是响应的。使用 <code>Vue.set(object, key, value)</code> 方法将响应属性添加到嵌套的对象上。</p>
+</blockquote>
+<p>顺便注意 Vue 中 <code>Array</code> 不能检测到数组修改 <code>length</code>，以及用索引来设置一个项。</p>
+<h4 id="实例生命周期钩子"><a href="#实例生命周期钩子" class="headerlink" title="实例生命周期钩子"></a><a href="https://cn.vuejs.org/v2/guide/instance.html#%E5%AE%9E%E4%BE%8B%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E9%92%A9%E5%AD%90" target="_blank" rel="noopener">实例生命周期钩子</a></h4><p> 对生命周期的了解不够，当时我做滚播的时候需要去获取文本的宽度，而我用的是 <code>beforeCreate</code> 以至于报错，在后面我使用 <code>json-server</code> 来 mock 数据时又再一次使用了 <code>beforeCreate</code> 而一般是使用 <code>created</code> 比较好。 <a href="https://cn.vuejs.org/v2/api/#created" target="_blank" rel="noopener"><code>created</code></a> 钩子可以用来在一个实例被创建之后执行代码。</p>
+<h4 id="进入-离开-amp-列表过渡"><a href="#进入-离开-amp-列表过渡" class="headerlink" title="进入/离开 &amp; 列表过渡"></a><a href="https://cn.vuejs.org/v2/guide/transitions.html" target="_blank" rel="noopener">进入/离开 &amp; 列表过渡</a></h4><p>写滚播组件小姐姐鼓励让我用更多的方法去实现，开始没有使用 Vue 提供的 <code>transition</code> 封装组件，而是使用 <code>refs</code> 去获取宽高做一个垂直水平的不定长的数据无缝滚播，当时代码个人觉得使用 method 在 JavaScript 中去控制了 CSS 耦合性较高，后面看别人开源项目的代码改成使用 computed 绑定 <code>style</code> 来解决。后面自己也使用了 <code>transition-group</code> 实现了较为相同的效果。不过后面小姐姐让我试试 push shift 来实现，然后我就踩坑了。按照官方文档写的样式动出来的效果让我怀疑了人生不值得啊。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.lists</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">154px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.list-enter</span> &#123;</span><br><span class="line">  <span class="attribute">transition</span>: <span class="number">2s</span> ease;</span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">translateY</span>(100%);</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.list-leave-to</span> &#123;</span><br><span class="line">  <span class="attribute">transition</span>: <span class="number">2s</span> ease;</span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">translateY</span>(-100%);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p> 效果：</p>
+<p><img src="/img/t1.gif" alt></p>
+<p>这不行啊，照着官方弄出来的样子<a href="https://cn.vuejs.org/v2/guide/transitions.html#%E5%88%97%E8%A1%A8%E7%9A%84%E6%8E%92%E5%BA%8F%E8%BF%87%E6%B8%A1" target="_blank" rel="noopener">列表的排序过渡</a></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.lists</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">154px</span>;</span><br><span class="line">  <span class="attribute">transition</span>: <span class="number">2s</span> ease;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.list-enter</span> &#123;</span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">translateY</span>(100%);</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.list-leave-to</span> &#123;</span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">translateY</span>(-100%);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.list-leave-active</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>改成这样就好了，我也是不知道咋说了。但是仍然有问题</p>
+<p><img src="/img/t2.gif" alt></p>
+<p> 到顶了应该往上往下是如何想的亲，我明明设置了你出去的时候可是 <code>translateY(-100%)</code> 你为啥不听话？？？后面想他可能是到头了</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> a = <span class="keyword">this</span>.currArr.shift();</span><br><span class="line"><span class="keyword">this</span>.currArr.push(a);</span><br></pre></td></tr></table></figure>
+<p> 就好像轮播图他到顶的时候你不给他个假数据他是会一下越到开始，那个他填个假数据? 不过我使用了 <code>setTimeout</code> 让 <code>push</code> 延迟执行，就能运行了。</p>
+<h4 id="一些细节"><a href="#一些细节" class="headerlink" title="一些细节"></a>一些细节</h4><ul>
+<li>模板语言一般能使用 <code>v-text</code> 就不用双括号</li>
+<li><code>v-for</code> 的 <code>key</code> 不要给 <code>item</code>，说不定他哪天变成了 <code>object</code> 了呢。</li>
+<li>不使用相对路径，用 <code>&#39;@/&#39;</code></li>
+<li>数据能放 <code>data</code> 就放 <code>data</code> 与函数解耦</li>
+</ul>
+<h3 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h3><p>css 的知识点一直是蛮多，需要自己多用，判断不同的环境下使用什么样的解决方案才是最优的，css 是前端的一个石头需要下功夫。最近在项目上去学习了如何适配 iphone x 这样的异形屏，在视网膜屏下如何去实现 1px 以及兼容问题。同时自己对于浏览器的一些机制不够了解也踩了些坑，比如 chrome pc 上默认最小字号为 12px等等，对 css 的继承弄的也不是很清晰了<a href="https://www.smashingmagazine.com/2016/11/css-inheritance-cascade-global-scope-new-old-worst-best-friends/" target="_blank" rel="noopener">CSS Inheritance, The Cascade And Global Scope: Your New Old Worst Best Friends</a>。使用 <code>iconfont</code> 当时就有一个坑，我想改变 svg 的颜色，但是用 <code>fill：color</code> 没有用，查资料才知道要先去色才能使用 <code>fill</code>。</p>
+<h3 id="代码规范"><a href="#代码规范" class="headerlink" title="代码规范"></a>代码规范</h3><p>自己以前都是自己写自己的代码，对于可读性是毫不关心的，命名如何简单如何来，恩，反正我自己的代码我自己都不想看。实习才认识到代码可读性的重要，代码语义化，去 <code>github</code> 看别人好的开源代码命名都是非常的清晰明了的，这样有助于维护，至少你没有让来看你代码的人去猜测你到底写的是啥，接手你代码的人不会骂你妈妈。团队中样式代码的顺序</p>
+<blockquote>
+<p>展示类–定位类–结构类–文本结构类–文本类–动画变形</p>
+</blockquote>
+<ul>
+<li><a href="https://google.github.io/styleguide/htmlcssguide.html" target="_blank" rel="noopener">Google HTML/CSS Style Guide</a></li>
+<li><a href="https://github.com/necolas/idiomatic-css" target="_blank" rel="noopener">Principles of writing consistent, idiomatic CSS</a></li>
+</ul>
+<p>感觉自己写的 <code>CSS</code> 还要好好规范，自己以前写代码尽管知道 <code>mixin</code> 但是对于自己的代码分析不够清晰，也没有想着去用像</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">diplay</span>： <span class="selector-tag">flex</span>；</span><br><span class="line"><span class="selector-tag">jiustify-content</span>：<span class="selector-tag">center</span>；</span><br><span class="line"><span class="selector-tag">align-items</span>： <span class="selector-tag">center</span>；</span><br></pre></td></tr></table></figure>
+<p>宁愿自己写上个几十遍也不用 <code>mixin</code>，这些习惯都是要尽快改的，用着 <code>postcss</code> 这样的工程化语言不减少机械的工作我用他干嘛。之前尽管也了解 <code>resetcss</code> 及 <code>normalize</code>，这段时间自己着去也尝试用了。</p>
+<p><code>JavaScript</code> 的编程规范，由于是团队合作，写的是上线项目，不像是平常怎么方便怎么来，代码更加严格是对自己负责也是对项目负责，好的编码习惯真的很重要，不然打开命令行，<code>eslint</code> 全线飘红，真的难受。</p>
+<ul>
+<li><a href="https://github.com/airbnb/javascript" target="_blank" rel="noopener">Airbnb JavaScript Style Guide</a></li>
+</ul>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>这次的 <code>demo</code> 让我更加贴近一个真正的上线项目他将经过的流程，会使用到的方法，问题如何解决，如何规避。同时也看到自身很多的不足，基础的知识慢慢在忘记，新的知识又不够了解，要走的路要学习的东西还有很多，希望自己不要浮躁，实在一点的同时能够快速成长汲取知识。对于拿到设计稿来做自己是比较生疏的，不够了解流程，对于如何与设计师交流，对于设计稿中的不合理的地方要敢于质疑，实现成本较高的时候用较为容易的方案替代，以及对于颜色要永远相信自己的眼睛，因为导出的时候可能出错，对于我这种不会欣赏的人我觉得未来有必要了解 UI/UX  设计。自己对于时间的把控还不够，不能估计出自己实现一个项目要花多长时间，这是在实习中应该尽快解决的问题。在平时的实践中，要多尝试，多去用没有使用过的东西，开阔眼界的同时，说不定哪天吹牛逼就用上了呢？尽管每一次开始用新东西的时候都有一堆坑在等着你，但是发现问题解决问题是一种很有成就感的事，前提是你解决了。。。写代码是件容易的事，但是写的明了简洁，可维护，可扩展是需要我多多实践以及思考的。如何将复杂的东西简单化，重复的事情不重做（Don’t Repeat Yourself），这些东西是我知道却还没能做到的也是需要加强的。非常感谢带我的小姐姐这些天的悉心指导，小姐姐真的很细心也很机智，很多我想不到的解决方案她都能很快给我指一条清晰的路，很愧疚的是让她看了我那肮脏的代码，严重怀疑我代码加重了她的病情。</p>
+
+    </div>
+
+    
+    
+    
+        
+      
+
+      <footer class="post-footer">
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/tags/随笔/" rel="tag"># 随笔</a>
+            
+              <a href="/tags/项目/" rel="tag"># 项目</a>
+            
+          </div>
+        
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/2019/03/10/socket/" rel="next" title="flask vue socket">
+                  <i class="fa fa-chevron-left"></i> flask vue socket
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/2019/03/15/Retina下1px的解决方案/" rel="prev" title="Retina 下 1px 的解决方案">
+                  Retina 下 1px 的解决方案 <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </div>
+  
+  
+  
+  </article>
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#vscode-的基本配置"><span class="nav-number">1.</span> <span class="nav-text">vscode 的基本配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Vue-项目的搭建"><span class="nav-number">2.</span> <span class="nav-text">Vue 项目的搭建</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Vue-知识点"><span class="nav-number">3.</span> <span class="nav-text">Vue 知识点</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#深入响应式原理"><span class="nav-number">3.1.</span> <span class="nav-text">深入响应式原理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#对象的属性类型"><span class="nav-number">3.2.</span> <span class="nav-text">对象的属性类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实例生命周期钩子"><span class="nav-number">3.3.</span> <span class="nav-text">实例生命周期钩子</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#进入-离开-amp-列表过渡"><span class="nav-number">3.4.</span> <span class="nav-text">进入/离开 &amp; 列表过渡</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#一些细节"><span class="nav-number">3.5.</span> <span class="nav-text">一些细节</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS"><span class="nav-number">4.</span> <span class="nav-text">CSS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码规范"><span class="nav-number">5.</span> <span class="nav-text">代码规范</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number"></span> <span class="nav-text">总结</span></a></div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+      src="/images/123.jpg"
+      alt="Marsorsun">
+  <p class="site-author-name" itemprop="name">Marsorsun</p>
+  <div class="site-description" itemprop="description">“对我来说，博客首先是一种知识管理工具，其次才是传播工具。我的技术文章，主要用来整理我还不懂的知识。我只写那些我还没有完全掌握的东西，那些我精通的东西，往往没有动力写。炫耀从来不是我的动机，好奇才是。"</div>
+</div>
+  <nav class="site-state motion-element">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">79</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/">
+          
+        
+        <span class="site-state-item-count">36</span>
+        <span class="site-state-item-name">标签</span>
+        </a>
+      </div>
+    
+  </nav>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://github.com/unbrain" title="GitHub &rarr; https://github.com/unbrain" rel="noopener" target="_blank"><i class="fa fa-fw fa-github-alt"></i>GitHub</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="mailto:marsorsun@gmail.com" title="E-Mail &rarr; mailto:marsorsun@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://www.zhihu.com/people/chen-xi-zhao-yang-21/activities" title="知乎 &rarr; https://www.zhihu.com/people/chen-xi-zhao-yang-21/activities" rel="noopener" target="_blank"><i class="fa fa-fw fa-zhihu"></i>知乎</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="http://www.liuzhaoyang.com" title="个人网站 &rarr; http://www.liuzhaoyang.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-browser"></i>个人网站</a>
+      </span>
+    
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Marsorsun</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.4.0</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+
+
+  <script src="/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="/js/utils.js?v=7.4.0"></script><script src="/js/motion.js?v=7.4.0"></script>
+<script src="/js/schemes/muse.js?v=7.4.0"></script>
+<script src="/js/next-boot.js?v=7.4.0"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>

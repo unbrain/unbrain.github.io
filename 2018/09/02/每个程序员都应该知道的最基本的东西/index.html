@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/123.png?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/123.png?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/123.png?v=7.4.0">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.4.0" color="#222">
+
+<link rel="stylesheet" href="/css/main.css?v=7.4.0">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '7.4.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="Bad architecture causes more problems than bad code. 垃圾的代码结构将比垃圾代码产生更多的问题  You will spend more time thinking than coding. 你将花更多的时间来思考而不是敲代吗  The best opportunity to get paid more is when you’re negot">
+<meta name="keywords" content="编程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="每个程序员都应该知道的最基本的东西">
+<meta property="og:url" content="http://yoursite.com/2018/09/02/每个程序员都应该知道的最基本的东西/index.html">
+<meta property="og:site_name" content="Marsorsun">
+<meta property="og:description" content="Bad architecture causes more problems than bad code. 垃圾的代码结构将比垃圾代码产生更多的问题  You will spend more time thinking than coding. 你将花更多的时间来思考而不是敲代吗  The best opportunity to get paid more is when you’re negot">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-09-15T08:17:31.975Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="每个程序员都应该知道的最基本的东西">
+<meta name="twitter:description" content="Bad architecture causes more problems than bad code. 垃圾的代码结构将比垃圾代码产生更多的问题  You will spend more time thinking than coding. 你将花更多的时间来思考而不是敲代吗  The best opportunity to get paid more is when you’re negot">
+  <link rel="canonical" href="http://yoursite.com/2018/09/02/每个程序员都应该知道的最基本的东西/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>每个程序员都应该知道的最基本的东西 | Marsorsun</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Marsorsun</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">心猿码意</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+  </ul>
+
+    
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+      <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block post">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/02/每个程序员都应该知道的最基本的东西/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Marsorsun">
+      <meta itemprop="description" content="“对我来说，博客首先是一种知识管理工具，其次才是传播工具。我的技术文章，主要用来整理我还不懂的知识。我只写那些我还没有完全掌握的东西，那些我精通的东西，往往没有动力写。炫耀从来不是我的动机，好奇才是。"">
+      <meta itemprop="image" content="/images/123.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Marsorsun">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">每个程序员都应该知道的最基本的东西
+
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2018/09/02 14:40:25" itemprop="dateCreated datePublished" datetime="2018-09-02T14:40:25+08:00">2018/09/02</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019/09/15 16:17:31" itemprop="dateModified" datetime="2019-09-15T16:17:31+08:00">2019/09/15</time>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <ol>
+<li><p>Bad architecture causes more problems than bad code.</p>
+<p>垃圾的代码结构将比垃圾代码产生更多的问题</p>
+</li>
+<li><p>You will spend more time thinking than coding.</p>
+<p>你将花更多的时间来思考而不是敲代吗</p>
+</li>
+<li><p>The best opportunity to get paid more is when you’re negotiating salary before getting hired.</p>
+<p>获得更高薪水的绝佳机会是在你被雇佣前的谈判</p>
+</li>
+<li><p>People skills determine your success more than technical skills.</p>
+<p>人的技能决定了你的成功而不是技术技能。</p>
+</li>
+<li><p>Users will find impressive and bizarre ways to solve their own problems.</p>
+<p>用户将找到印象深刻且奇怪的方式来解决他们的问题</p>
+</li>
+</ol>
+<a id="more"></a>
+<ol start="6">
+<li><p>Commit code more often.</p>
+<p>及时提交你的代码</p>
+</li>
+<li><p>Always work in feature branches.</p>
+<p>在特定的分支上工作</p>
+</li>
+<li><p>Basic UNIX skills are helpful, but not required.</p>
+<p>基本 UNIX 技能会很有帮助但不是必需</p>
+</li>
+<li><p>Learning VIM or EMACS will change your world.</p>
+<p>学习 VIM 或者 EMACS 将改变你的世界</p>
+</li>
+<li><p>All estimates are lies and “good estimates” are bigger lies.</p>
+<p>估计是不存在的，而最好的估计就是搞传销</p>
+</li>
+</ol>
+<!--more-->
+<ol start="11">
+<li><p>80% of programmers are barely capable of doing their job.</p>
+<p>80%的程序员无法独立完成自己的工作</p>
+</li>
+<li><p>Businesses exist to make money, not to make code.</p>
+<p>企业的存在是为了赚钱而不是敲代码</p>
+</li>
+<li><p>Software exists to solve problems, it’s not art.</p>
+<p>软件的存在是为了解决问题而不是为了艺术</p>
+</li>
+<li><p>Agile is a trap. You can’t avoid it.</p>
+<p>快速是个陷阱你无法避免</p>
+</li>
+<li><p>80% of programmers never invest in improving their skills and never learn outside of work.</p>
+<p>80%的程序员从来不投资与提高技能也不再工作外学习</p>
+</li>
+<li><p>Your boss believes you are replaceable.</p>
+<p>你的老板相信你是可替代的</p>
+</li>
+<li><p>Work is a job, not a family, not a church, not a religion. You do it to get paid.</p>
+<p>工作是个职业，不是家庭，不是教堂，不是信仰。你这样只是为了得到报酬</p>
+</li>
+<li><p>Company culture is often used as a trick to pay you less money.</p>
+<p>公司文化常常是想你支付更少钱的一种伎俩</p>
+</li>
+<li><p>The best programmers are always building things.</p>
+<p>最棒的程序员常常是在构建东西</p>
+</li>
+<li><p>Your IDE doesn’t matter.</p>
+<p>你使用的 IDE 无关紧要</p>
+</li>
+<li><p>The language you use doesn’t matter.</p>
+<p>你使用的编程语言无关紧要</p>
+</li>
+<li><p>The framework you use doesn’t matter.</p>
+<p>你使用的框架无关紧要</p>
+</li>
+<li><p>All technology arguments boil down to children fighting over which toy to play with.</p>
+<p>所有的技术论点就好像儿童互相争夺玩具</p>
+</li>
+<li><p>You probably won’t get rich by winning the startup lottery.</p>
+<p>创业不大可能让你致富</p>
+</li>
+<li><p>Make friends with QA testers, they will make your life better.</p>
+<p>多与测试人员交朋友这将使得你的生活更精彩</p>
+</li>
+<li><p>Always know how your business makes money, that determines who gets paid what.</p>
+<p>始终知道你的公司如何赚钱，这取决人们为了什么而付费</p>
+</li>
+<li><p>If you want to feel important as a software developer, work at a tech company.</p>
+<p>如果你想作为软件人员而感到自己的价值，为科技公司工作</p>
+</li>
+<li><p>People will always prioritize new features over refactoring legacy code.</p>
+<p>人们将优先考虑新功能而不是去重构遗留的代码</p>
+</li>
+<li><p>Sometimes a train wreck has to happen for anyone to care about the brakes.</p>
+<p>有时火车残骸必须发生在任何人关心制动器上。</p>
+</li>
+</ol>
+<ul>
+<li><a href="https://www.quora.com/What-are-some-of-the-most-basic-things-every-programmer-should-know" target="_blank" rel="noopener">What are some of the most basic things every programmer should know?</a></li>
+</ul>
+
+    </div>
+
+    
+    
+    
+        
+      
+
+      <footer class="post-footer">
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/tags/编程/" rel="tag"># 编程</a>
+            
+          </div>
+        
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/2018/09/01/HTTP-入门/" rel="next" title="HTTP 入门">
+                  <i class="fa fa-chevron-left"></i> HTTP 入门
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/2018/09/02/201892-Vim(1)/" rel="prev" title="Vim(1)">
+                  Vim(1) <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </div>
+  
+  
+  
+  </article>
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+      src="/images/123.jpg"
+      alt="Marsorsun">
+  <p class="site-author-name" itemprop="name">Marsorsun</p>
+  <div class="site-description" itemprop="description">“对我来说，博客首先是一种知识管理工具，其次才是传播工具。我的技术文章，主要用来整理我还不懂的知识。我只写那些我还没有完全掌握的东西，那些我精通的东西，往往没有动力写。炫耀从来不是我的动机，好奇才是。"</div>
+</div>
+  <nav class="site-state motion-element">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">79</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/">
+          
+        
+        <span class="site-state-item-count">36</span>
+        <span class="site-state-item-name">标签</span>
+        </a>
+      </div>
+    
+  </nav>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://github.com/unbrain" title="GitHub &rarr; https://github.com/unbrain" rel="noopener" target="_blank"><i class="fa fa-fw fa-github-alt"></i>GitHub</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="mailto:marsorsun@gmail.com" title="E-Mail &rarr; mailto:marsorsun@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://www.zhihu.com/people/chen-xi-zhao-yang-21/activities" title="知乎 &rarr; https://www.zhihu.com/people/chen-xi-zhao-yang-21/activities" rel="noopener" target="_blank"><i class="fa fa-fw fa-zhihu"></i>知乎</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="http://www.liuzhaoyang.com" title="个人网站 &rarr; http://www.liuzhaoyang.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-browser"></i>个人网站</a>
+      </span>
+    
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Marsorsun</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.4.0</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+
+
+  <script src="/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="/js/utils.js?v=7.4.0"></script><script src="/js/motion.js?v=7.4.0"></script>
+<script src="/js/schemes/muse.js?v=7.4.0"></script>
+<script src="/js/next-boot.js?v=7.4.0"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>

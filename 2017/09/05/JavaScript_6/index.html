@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/123.png?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/123.png?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/123.png?v=7.4.0">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.4.0" color="#222">
+
+<link rel="stylesheet" href="/css/main.css?v=7.4.0">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '7.4.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="运动基础让 Div 运动起来 速度——物体运动的快慢 运动中的 Bug 不会停止 –&amp;gt;临界值问题 速度取某些值会无法停止 到达位置后再点击还会运动    –&amp;gt;    clearInterval() 重复点击速度加快">
+<meta name="keywords" content="JavaScript,blue视频笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript 运动">
+<meta property="og:url" content="http://yoursite.com/2017/09/05/JavaScript_6/index.html">
+<meta property="og:site_name" content="Marsorsun">
+<meta property="og:description" content="运动基础让 Div 运动起来 速度——物体运动的快慢 运动中的 Bug 不会停止 –&amp;gt;临界值问题 速度取某些值会无法停止 到达位置后再点击还会运动    –&amp;gt;    clearInterval() 重复点击速度加快">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-09-15T09:25:05.670Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JavaScript 运动">
+<meta name="twitter:description" content="运动基础让 Div 运动起来 速度——物体运动的快慢 运动中的 Bug 不会停止 –&amp;gt;临界值问题 速度取某些值会无法停止 到达位置后再点击还会运动    –&amp;gt;    clearInterval() 重复点击速度加快">
+  <link rel="canonical" href="http://yoursite.com/2017/09/05/JavaScript_6/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>JavaScript 运动 | Marsorsun</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Marsorsun</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">心猿码意</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+  </ul>
+
+    
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+      <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block post">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/05/JavaScript_6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Marsorsun">
+      <meta itemprop="description" content="“对我来说，博客首先是一种知识管理工具，其次才是传播工具。我的技术文章，主要用来整理我还不懂的知识。我只写那些我还没有完全掌握的东西，那些我精通的东西，往往没有动力写。炫耀从来不是我的动机，好奇才是。"">
+      <meta itemprop="image" content="/images/123.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Marsorsun">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">JavaScript 运动
+
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2017/09/05 00:00:00" itemprop="dateCreated datePublished" datetime="2017-09-05T00:00:00+08:00">2017/09/05</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019/09/15 17:25:05" itemprop="dateModified" datetime="2019-09-15T17:25:05+08:00">2019/09/15</time>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h3 id="运动基础"><a href="#运动基础" class="headerlink" title="运动基础"></a>运动基础</h3><p>让 Div 运动起来</p>
+<p>速度——物体运动的快慢</p>
+<p>运动中的 Bug</p>
+<p>不会停止 –&gt;临界值问题</p>
+<p>速度取某些值会无法停止</p>
+<p>到达位置后再点击还会运动    –&gt;    clearInterval()</p>
+<p>重复点击速度加快</p>
+<a id="more"></a>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="keyword">var</span> oBtn = <span class="built_in">document</span>.getElementById(<span class="string">'btn1'</span>);</span><br><span class="line">	<span class="keyword">var</span> oDiv = <span class="built_in">document</span>.getElementById(<span class="string">'div1'</span>);</span><br><span class="line">	<span class="keyword">var</span> timer = <span class="literal">null</span>;</span><br><span class="line"></span><br><span class="line">	oBtn.onclick = <span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">		clearInterval(timer);	<span class="comment">//保证就1个定时器</span></span><br><span class="line">		timer = setInterval(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">			<span class="keyword">var</span> speed = <span class="number">1</span>;</span><br><span class="line">			<span class="keyword">if</span>(oDiv.offsetLeft &gt; <span class="number">300</span>)&#123;</span><br><span class="line">				clearInterval(timer);</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span>&#123;</span><br><span class="line">				oDiv.style.left = oDiv.offsetLeft + speed + <span class="string">'px'</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">		&#125;, <span class="number">30</span>);</span><br><span class="line"></span><br><span class="line">		</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<p>运动框架</p>
+<p>在开始运动时，关闭已有定时器</p>
+<p>把运动和停止隔开(if / else)</p>
+<p>运动框架实例</p>
+<p>例子1：“分享到”侧边栏    –&gt;    <a href="./demo2.html">demo2.html</a></p>
+<p>通过目标点，计算速度值</p>
+<p>例子2：淡入淡出的图片</p>
+<p>用变量存储透明度        –&gt;    <a href="./demo3.html">demo3.html</a></p>
+<p>主要是设置 opcity 并为其赋值</p>
+<h3 id="缓冲运动"><a href="#缓冲运动" class="headerlink" title="缓冲运动"></a>缓冲运动</h3><p>逐渐变慢，最后停止</p>
+<p>距离越远速度越大</p>
+<p>速度由距离决定</p>
+<p>速度 = (目标值-当前值) / 缩放系数</p>
+<p>例子：缓冲菜单    –&gt;    <a href="./demo4.html">demo4</a></p>
+<p>Bug：速度取整    speed &gt; 0 ? Math.ceil(speed) ：Math.floor(speed)</p>
+<p>跟随页面滚动的缓冲侧边栏</p>
+<p>潜在问题：目标值不是整数时    parseInt();</p>
+<h3 id="运动终止条件"><a href="#运动终止条件" class="headerlink" title="运动终止条件"></a>运动终止条件</h3><p>匀速运动：距离足够近</p>
+<p>缓冲运动：两点重合</p>
+<h3 id="多个物体同时运动"><a href="#多个物体同时运动" class="headerlink" title="多个物体同时运动"></a>多个物体同时运动</h3><p>例子：多个 Div，鼠标移入变宽    –&gt;    <a href="demo5.html">demo5</a></p>
+<p>单定时器，存在问题</p>
+<p>每个 Div 一个定时器</p>
+<p>多物体运动框架</p>
+<p>定时器作为物体的属性</p>
+<p>参数的传递：物体、目标值</p>
+<p>例子：多个 Div 淡入淡出    –&gt; <a href="./demo.html">demo6</a></p>
+<p>所有东西都不能公用</p>
+<p>属性与运动对象绑定：速度、其他属性值（如透明度等）</p>
+<h3 id="任意值运动框架"><a href="#任意值运动框架" class="headerlink" title="任意值运动框架"></a>任意值运动框架</h3><p>offset 属性的 Bug</p>
+<p>有边框的 Div 变宽</p>
+<p>用currentStyle / computedStyle(obj, flase)[name] 代替 offset</p>
+<p>原有运动框架的问题</p>
+<p>只能让某个值运动起来</p>
+<p>如果想让其他值运动起来，要修改程序</p>
+<p>扩展的运动框架    –&gt; <a href="./demo7.html">demo7</a></p>
+<p>运动属性作为参数</p>
+<p>封装 opacity</p>
+<p>小数的问题    –&gt; Math.round()    主要是为了适配 IE7</p>
+<h3 id="图片展示"><a href="#图片展示" class="headerlink" title="图片展示"></a>图片展示</h3><p>效果思路</p>
+<p>两边的按钮——淡入淡出</p>
+<p>大图下拉——层级、高度变化</p>
+<p>下方的 li——多物体淡入淡出</p>
+<p>下方的 Ul——位置计算</p>
+<p>左右按钮</p>
+<p>淡入淡出</p>
+<p>第一个小问题： 鼠标移到按钮上，按钮会消失</p>
+<p>层级问题</p>
+<p>按钮和遮罩上都得加上事件</p>
+<p>下方 Li 效果</p>
+<p>点击切换大图——选项卡</p>
+<p>Li 淡入淡出——移入移出</p>
+<p>Ul 移动——位置计算</p>
+<p>大图片切换</p>
+<p>图片层级—— zIndex 一直加1</p>
+<p>图片下拉效果(运动框架)</p>
+<p>可以改为淡入淡出</p>
+<p>加入自动播放</p>
+<p>和选项卡一样</p>
+<p>另一个问题：ul 开始的宽度并不够， 需要计算后赋值</p>
+<p>自己看着敲了一边在默敲一遍，自己的问题还是比较多，细节与思路还是不够。    –&gt;    <a href="./demo9.html">demo9</a></p>
+<h3 id="最后运动框架"><a href="#最后运动框架" class="headerlink" title="最后运动框架"></a>最后运动框架</h3><p>多个值同时变化</p>
+<p>setStyle同时设置多个属性</p>
+<p>参数传递</p>
+<p>Json的使用</p>
+<p>for in 遍历属性</p>
+<p>运用到运动框架</p>
+<p>检测运动停止</p>
+<p>标志变量</p>
+<p>例子：伸缩同时淡入淡出的菜单</p>
+<p>还有就是链式运动， 依次完成运动，可以参考后面几个 demo </p>
+
+    </div>
+
+    
+    
+    
+        
+      
+        <div id="reward-container">
+  <div></div>
+  <button id="reward-button" disable="enable" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+
+  </div>
+</div>
+
+      
+
+      <footer class="post-footer">
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+            
+              <a href="/tags/blue视频笔记/" rel="tag"># blue视频笔记</a>
+            
+          </div>
+        
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/2017/09/05/JavaScript_3/" rel="next" title="深入 JavaScript">
+                  <i class="fa fa-chevron-left"></i> 深入 JavaScript
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/2017/09/05/JavaScript_4/" rel="prev" title="定时器的使用">
+                  定时器的使用 <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </div>
+  
+  
+  
+  </article>
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#运动基础"><span class="nav-number">1.</span> <span class="nav-text">运动基础</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#缓冲运动"><span class="nav-number">2.</span> <span class="nav-text">缓冲运动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#运动终止条件"><span class="nav-number">3.</span> <span class="nav-text">运动终止条件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多个物体同时运动"><span class="nav-number">4.</span> <span class="nav-text">多个物体同时运动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#任意值运动框架"><span class="nav-number">5.</span> <span class="nav-text">任意值运动框架</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图片展示"><span class="nav-number">6.</span> <span class="nav-text">图片展示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最后运动框架"><span class="nav-number">7.</span> <span class="nav-text">最后运动框架</span></a></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+      src="/images/123.jpg"
+      alt="Marsorsun">
+  <p class="site-author-name" itemprop="name">Marsorsun</p>
+  <div class="site-description" itemprop="description">“对我来说，博客首先是一种知识管理工具，其次才是传播工具。我的技术文章，主要用来整理我还不懂的知识。我只写那些我还没有完全掌握的东西，那些我精通的东西，往往没有动力写。炫耀从来不是我的动机，好奇才是。"</div>
+</div>
+  <nav class="site-state motion-element">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">79</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/">
+          
+        
+        <span class="site-state-item-count">36</span>
+        <span class="site-state-item-name">标签</span>
+        </a>
+      </div>
+    
+  </nav>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://github.com/unbrain" title="GitHub &rarr; https://github.com/unbrain" rel="noopener" target="_blank"><i class="fa fa-fw fa-github-alt"></i>GitHub</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="mailto:marsorsun@gmail.com" title="E-Mail &rarr; mailto:marsorsun@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://www.zhihu.com/people/chen-xi-zhao-yang-21/activities" title="知乎 &rarr; https://www.zhihu.com/people/chen-xi-zhao-yang-21/activities" rel="noopener" target="_blank"><i class="fa fa-fw fa-zhihu"></i>知乎</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="http://www.liuzhaoyang.com" title="个人网站 &rarr; http://www.liuzhaoyang.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-browser"></i>个人网站</a>
+      </span>
+    
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Marsorsun</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.4.0</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+
+
+  <script src="/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="/js/utils.js?v=7.4.0"></script><script src="/js/motion.js?v=7.4.0"></script>
+<script src="/js/schemes/muse.js?v=7.4.0"></script>
+<script src="/js/next-boot.js?v=7.4.0"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>
